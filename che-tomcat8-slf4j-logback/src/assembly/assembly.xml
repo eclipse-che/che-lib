@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2012-2016 Codenvy, S.A.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+
+    Contributors:
+      Codenvy, S.A. - initial API and implementation
+
+-->
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+
+    <id>tomcat-zip</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <dependencySets>
+        <dependencySet>
+            <unpack>false</unpack>
+            <scope>runtime</scope>
+            <outputDirectory>lib</outputDirectory>
+            <includes>
+                <include>ch.qos.logback:logback-access</include>
+                <include>org.apache.tomcat:tomcat-catalina-jmx-remote</include>
+            </includes>
+        </dependencySet>
+        <dependencySet>
+            <unpack>false</unpack>
+            <scope>runtime</scope>
+            <outputDirectory>endorsed</outputDirectory>
+            <includes>
+                <include>ch.qos.logback:logback-core</include>
+                <include>ch.qos.logback:logback-classic</include>
+                <include>org.slf4j:jul-to-slf4j</include>
+                <include>org.slf4j:log4j-over-slf4j</include>
+                <include>org.slf4j:slf4j-api</include>
+                <include>javax.mail:mail</include>
+                <include>javax.activation:activation</include>
+            </includes>
+        </dependencySet>
+    </dependencySets>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/dependency/apache-tomcat-${org.apache.tomcat.version}</directory>
+            <outputDirectory></outputDirectory>
+            <excludes>
+                <exclude>**/webapps/**</exclude>
+                <exclude>**/bin/setenv.*</exclude>
+                <exclude>**/bin/*.sh</exclude>
+                <exclude>**/bin/catalina-tasks.xml</exclude>
+                <exclude>**/bin/tomcat-juli.jar</exclude>
+                <exclude>**/bin/*.tar.gz</exclude>
+                <exclude>**/conf/tomcat-users.xml</exclude>
+                <exclude>**/conf/server.xml</exclude>
+                <exclude>**/conf/context.xml</exclude>
+                <exclude>**/conf/logging.properties</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/dependency/apache-tomcat-${org.apache.tomcat.version}</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>**/bin/*.sh</include>
+            </includes>
+            <fileMode>755</fileMode>
+        </fileSet>
+
+
+        <fileSet>
+            <directory>${project.basedir}/src/assembly</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>LICENSE-mit.txt</include>
+                <include>LICENSE-logback.txt</include>
+                <include>LICENSE-slf4j.txt</include>
+                <include>LICENSE-tomcat.txt</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/assembly/bin</directory>
+            <outputDirectory>bin</outputDirectory>
+            <includes>
+                <include>setenv.bat</include>
+                <include>setenv.sh</include>
+            </includes>
+            <fileMode>755</fileMode>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>bin</outputDirectory>
+            <includes>
+                <include>tomcat-juli.jar</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/assembly/conf</directory>
+            <outputDirectory>conf</outputDirectory>
+            <includes>
+                <include>logback-access-localhost.xml</include>
+                <include>logback.xml</include>
+                <include>server.xml</include>
+                <include>context.xml</include>
+                <include>logging.properties</include>
+                <include>jmxremote.access</include>
+                <include>jmxremote.password</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>bin</outputDirectory>
+            <includes>
+                <include>tomcat-juli.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
