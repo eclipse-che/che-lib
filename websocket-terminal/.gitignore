@@ -1,0 +1,6 @@
+websocket-terminal
+*.swp
+*.bak
+target/*
+*.iml
+.idea/*

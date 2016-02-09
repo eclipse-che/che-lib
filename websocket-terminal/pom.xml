@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2012-2016 Codenvy, S.A.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+
+    Contributors:
+      Codenvy, S.A. - initial API and implementation
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>maven-depmgt-pom</artifactId>
+        <groupId>org.eclipse.che.depmgt</groupId>
+        <version>4.0.0-RC2</version>
+    </parent>
+    <groupId>org.eclipse.che.terminal</groupId>
+    <artifactId>che-websocket-terminal</artifactId>
+    <version>4.0.0-RC2</version>
+    <packaging>pom</packaging>
+    <name>Che Terminal</name>
+    <scm>
+        <connection>scm:git:git@github.com:codenvy/websocket-terminal.git</connection>
+        <developerConnection>scm:git:git@github.com:codenvy/websocket-terminal.git</developerConnection>
+        <tag>4.0.0-RC2</tag>
+        <url>https://github.com/codenvy/websocket-terminal</url>
+    </scm>
+    <properties>
+        <project.go.build.dir>${project.build.directory}/go</project.go.build.dir>
+        <project.zip.dir>${project.build.directory}/dir/terminal</project.zip.dir>
+    </properties>
+    <repositories>
+        <repository>
+            <id>codenvy-public-repo</id>
+            <name>codenvy public</name>
+            <url>https://maven.codenvycorp.com/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>codenvy-public-snapshots-repo</id>
+            <name>codenvy public snapshots</name>
+            <url>https://maven.codenvycorp.com/content/repositories/codenvy-public-snapshots/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>codenvy-public-repo</id>
+            <name>codenvy public</name>
+            <url>https://maven.codenvycorp.com/content/groups/public/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>codenvy-public-snapshots-repo</id>
+            <name>codenvy public snapshots</name>
+            <url>https://maven.codenvycorp.com/content/repositories/codenvy-public-snapshots/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <updateOnly>false</updateOnly>
+                            <descriptor>${project.basedir}/src/assembly/assembly.xml</descriptor>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <copy file="src/main/resources/index.html" todir="${project.zip.dir}" />
+                                <copy file="src/main/resources/term.js" todir="${project.zip.dir}" />
+                                <copy file="src/main/go/server.go" todir="${project.go.build.dir}" />
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-terminal-bin</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <copy file="${project.go.build.dir}/terminal" todir="${project.zip.dir}" />
+                                <chmod file="${project.zip.dir}/terminal" perm="+x" />
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>compile-websocket</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>go</executable>
+                            <workingDirectory>${project.go.build.dir}</workingDirectory>
+                            <arguments>
+                                <argument>get</argument>
+                                <argument>github.com/codenvy/websocket</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>compile-pty</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>go</executable>
+                            <workingDirectory>${project.go.build.dir}</workingDirectory>
+                            <arguments>
+                                <argument>get</argument>
+                                <argument>github.com/codenvy/pty</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>compile-server</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>go</executable>
+                            <workingDirectory>${project.go.build.dir}</workingDirectory>
+                            <arguments>
+                                <argument>build</argument>
+                                <argument>-o</argument>
+                                <argument>terminal</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>src/main/go/server.go</exclude>
+                        <exclude>src/main/resources/index.html</exclude>
+                        <exclude>src/main/resources/term.js</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
