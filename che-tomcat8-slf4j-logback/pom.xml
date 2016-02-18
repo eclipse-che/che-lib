@@ -16,7 +16,7 @@
     <parent>
         <artifactId>che-lib-parent</artifactId>
         <groupId>org.eclipse.che.lib</groupId>
-        <version>4.0.0-RC5</version>
+        <version>4.0.0-RC6-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>che-tomcat8-slf4j-logback</artifactId>
