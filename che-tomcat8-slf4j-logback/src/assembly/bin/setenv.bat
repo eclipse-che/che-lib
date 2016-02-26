@@ -17,7 +17,7 @@ if "%CHE_LOCAL_CONF_DIR%"==""   (
    exit
 )
 
-if "%JAVA_OPTS%"=="" (set JAVA_OPTS=-Xms256m -Xmx2048m -XX:MaxPermSize=256m -server)
+if "%JAVA_OPTS%"=="" (set JAVA_OPTS=-Xms256m -Xmx2048m)
 
 if "%CHE_LOGS_DIR%"=="" (set CHE_LOGS_DIR=%CATALINA_HOME%\logs)
 

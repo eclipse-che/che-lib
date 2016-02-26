@@ -15,7 +15,7 @@ if [ -z "${CHE_LOCAL_CONF_DIR}" ]; then
 fi
 
 #Global JAVA options
-[ -z "${JAVA_OPTS}" ]  && JAVA_OPTS="-Xms256m -Xmx2048m -XX:MaxPermSize=256m -server"
+[ -z "${JAVA_OPTS}" ]  && JAVA_OPTS="-Xms256m -Xmx2048m -Djava.security.egd=file:/dev/./urandom"
 
 #Global LOGS DIR
 [ -z "${CHE_LOGS_DIR}" ]  && CHE_LOGS_DIR="$CATALINA_HOME/logs"
