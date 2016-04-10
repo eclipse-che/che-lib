@@ -2579,6 +2579,17 @@ Terminal.prototype.keyDown = function(ev) {
       key = '\x1b[24~';
       break;
     default:
+      //Mac OS key combination for copy text: Command-C and Command-V
+      if (this.isMac && ev.metaKey) {
+    	  //Command-C
+    	  if (ev.keyCode === 67) {
+    		  return;
+    	  }
+    	  //Commad-V
+    	  if (ev.keyCode === 86) {
+    		  return;
+    	  }
+      }
       // a-z and space
       if (ev.ctrlKey) {
         if (ev.keyCode >= 65 && ev.keyCode <= 90) {
