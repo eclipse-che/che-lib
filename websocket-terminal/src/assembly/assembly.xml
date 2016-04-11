@@ -19,7 +19,7 @@
     <includeBaseDirectory>false</includeBaseDirectory>
     <fileSets>
         <fileSet>
-            <directory>${project.build.directory}/dir</directory>
+            <directory>${project.build.directory}/${arch-name}/dir</directory>
             <outputDirectory></outputDirectory>
         </fileSet>
     </fileSets>

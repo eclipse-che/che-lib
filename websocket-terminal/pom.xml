@@ -23,10 +23,6 @@
     <version>4.2.0-RC1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Che Lib :: Terminal</name>
-    <properties>
-        <project.go.build.dir>${project.build.directory}/go</project.go.build.dir>
-        <project.zip.dir>${project.build.directory}/dir/terminal</project.zip.dir>
-    </properties>
     <build>
         <plugins>
             <plugin>
@@ -43,6 +39,7 @@
                             <appendAssemblyId>false</appendAssemblyId>
                             <updateOnly>false</updateOnly>
                             <descriptor>${project.basedir}/src/assembly/assembly.xml</descriptor>
+                            <finalName>${project.artifactId}-${project.version}${arch-prefix}</finalName>
                         </configuration>
                     </execution>
                 </executions>
@@ -72,8 +69,8 @@
                         </goals>
                         <configuration>
                             <target>
-                                <copy file="${project.go.build.dir}/terminal" todir="${project.zip.dir}" />
-                                <chmod file="${project.zip.dir}/terminal" perm="+x" />
+                                <copy file="${project.go.build.dir}/che-websocket-terminal" todir="${project.zip.dir}" />
+                                <chmod file="${project.zip.dir}/che-websocket-terminal" perm="+x" />
                             </target>
                         </configuration>
                     </execution>
@@ -84,7 +81,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>compile-websocket</id>
+                        <id>compile-websocket${arch-prefix}</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>exec</goal>
@@ -96,10 +93,15 @@
                                 <argument>get</argument>
                                 <argument>github.com/eclipse/che-lib/websocket</argument>
                             </arguments>
+                            <environmentVariables>
+                                <GOOS>${go.os}</GOOS>
+                                <GOARCH>${go.arch}</GOARCH>
+                                <GOARM>${go.arm}</GOARM>
+                            </environmentVariables>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>compile-pty</id>
+                        <id>compile-pty${arch-prefix}</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>exec</goal>
@@ -111,10 +113,15 @@
                                 <argument>get</argument>
                                 <argument>github.com/eclipse/che-lib/pty</argument>
                             </arguments>
+                            <environmentVariables>
+                                <GOOS>${go.os}</GOOS>
+                                <GOARCH>${go.arch}</GOARCH>
+                                <GOARM>${go.arm}</GOARM>
+                            </environmentVariables>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>compile-server</id>
+                        <id>compile-server${arch-prefix}</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>exec</goal>
@@ -125,8 +132,13 @@
                             <arguments>
                                 <argument>build</argument>
                                 <argument>-o</argument>
-                                <argument>terminal</argument>
+                                <argument>che-websocket-terminal</argument>
                             </arguments>
+                            <environmentVariables>
+                                <GOOS>${go.os}</GOOS>
+                                <GOARCH>${go.arch}</GOARCH>
+                                <GOARM>${go.arm}</GOARM>
+                            </environmentVariables>
                         </configuration>
                     </execution>
                 </executions>
@@ -144,4 +156,211 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>compile-websocket${arch-prefix}</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>mvn</executable>
+                                    <workingDirectory>${project.basedir}</workingDirectory>
+                                    <arguments>
+                                        <argument>-P</argument>
+                                        <argument>linux-amd64</argument>
+                                        <argument>package</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <properties>
+                <arch-name>linux-amd64</arch-name>
+                <arch-prefix />
+                <go.arch>amd64</go.arch>
+                <go.arm>ignored</go.arm>
+                <go.os>linux</go.os>
+                <project.go.build.dir>${project.build.directory}/linux-amd64/go</project.go.build.dir>
+                <project.zip.dir>${project.build.directory}/linux-amd64/dir/terminal</project.zip.dir>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux-amd64</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>compile-websocket${arch-prefix}</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>mvn</executable>
+                                    <workingDirectory>${project.basedir}</workingDirectory>
+                                    <arguments>
+                                        <argument>-P</argument>
+                                        <argument>linux-i386</argument>
+                                        <argument>package</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <properties>
+                <arch-name>linux-amd64</arch-name>
+                <arch-prefix>-linux-amd64</arch-prefix>
+                <go.arch>amd64</go.arch>
+                <go.arm>ignored</go.arm>
+                <go.os>linux</go.os>
+                <project.go.build.dir>${project.build.directory}/linux-amd64/go</project.go.build.dir>
+                <project.zip.dir>${project.build.directory}/linux-amd64/dir/terminal</project.zip.dir>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux-i386</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>compile-websocket${arch-prefix}</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>mvn</executable>
+                                    <workingDirectory>${project.basedir}</workingDirectory>
+                                    <arguments>
+                                        <argument>-P</argument>
+                                        <argument>linux-arm-5</argument>
+                                        <argument>package</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <properties>
+                <arch-name>linux-i386</arch-name>
+                <arch-prefix>-linux-i386</arch-prefix>
+                <go.arch>386</go.arch>
+                <go.arm>ignored</go.arm>
+                <go.os>linux</go.os>
+                <project.go.build.dir>${project.build.directory}/linux-i386/go</project.go.build.dir>
+                <project.zip.dir>${project.build.directory}/linux-i386/dir/terminal</project.zip.dir>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux-arm-5</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>compile-websocket${arch-prefix}</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>mvn</executable>
+                                    <workingDirectory>${project.basedir}</workingDirectory>
+                                    <arguments>
+                                        <argument>-P</argument>
+                                        <argument>linux-arm-6</argument>
+                                        <argument>package</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <properties>
+                <arch-name>linux-arm-5</arch-name>
+                <arch-prefix>-linux-arm-5</arch-prefix>
+                <go.arch>arm</go.arch>
+                <go.arm>5</go.arm>
+                <go.os>linux</go.os>
+                <project.go.build.dir>${project.build.directory}/linux-arm-5/go</project.go.build.dir>
+                <project.zip.dir>${project.build.directory}/linux-arm-5/dir/terminal</project.zip.dir>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux-arm-6</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>compile-websocket${arch-prefix}</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>mvn</executable>
+                                    <workingDirectory>${project.basedir}</workingDirectory>
+                                    <arguments>
+                                        <argument>-P</argument>
+                                        <argument>linux-arm-7</argument>
+                                        <argument>package</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <properties>
+                <arch-name>linux-arm-6</arch-name>
+                <arch-prefix>-linux-arm-6</arch-prefix>
+                <go.arch>arm</go.arch>
+                <go.arm>6</go.arm>
+                <go.os>linux</go.os>
+                <project.go.build.dir>${project.build.directory}/linux-arm-6/go</project.go.build.dir>
+                <project.zip.dir>${project.build.directory}/linux-arm-6/dir/terminal</project.zip.dir>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux-arm-7</id>
+            <properties>
+                <arch-name>linux-arm-7</arch-name>
+                <arch-prefix>-linux-arm-7</arch-prefix>
+                <go.arch>arm</go.arch>
+                <go.arm>7</go.arm>
+                <go.os>linux</go.os>
+                <project.go.build.dir>${project.build.directory}/linux-arm-7/go</project.go.build.dir>
+                <project.zip.dir>${project.build.directory}/linux-arm-7/dir/terminal</project.zip.dir>
+            </properties>
+        </profile>
+    </profiles>
 </project>
