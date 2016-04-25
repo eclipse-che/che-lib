@@ -16,7 +16,7 @@
     <parent>
         <artifactId>che-swagger-parent</artifactId>
         <groupId>org.eclipse.che.lib</groupId>
-        <version>4.2.0-RC1-SNAPSHOT</version>
+        <version>4.2.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>che-swagger-module</artifactId>
