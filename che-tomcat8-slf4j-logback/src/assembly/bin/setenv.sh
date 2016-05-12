@@ -20,6 +20,8 @@ fi
 #Global LOGS DIR
 [ -z "${CHE_LOGS_DIR}" ]  && CHE_LOGS_DIR="$CATALINA_HOME/logs"
 
+[ -z "${CHE_LOGS_LEVEL}" ]  && CHE_LOGS_LEVEL="INFO"
+
 [ -z "${JPDA_ADDRESS}" ]  && JPDA_ADDRESS="8000"
 
 #Tomcat options
@@ -35,4 +37,4 @@ if [ ! -z "${TOMCAT_CLASSPATH}" ]; then
 fi
 
 
-export JAVA_OPTS="$JAVA_OPTS  -Dche.logs.dir=${CHE_LOGS_DIR}"
+export JAVA_OPTS="$JAVA_OPTS  -Dche.logs.dir=${CHE_LOGS_DIR} -Dche.logs.level=${CHE_LOGS_LEVEL}"

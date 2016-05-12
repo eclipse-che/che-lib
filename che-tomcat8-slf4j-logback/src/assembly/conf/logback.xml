@@ -45,7 +45,7 @@
     <logger name="org.apache.catalina.session.PersistentManagerBase" level="OFF"/>
     <logger name="org.apache.jasper.servlet.TldScanner" level="OFF"/>
 
-    <root level="INFO">
+    <root level="${che.logs.level:-INFO}">
         <appender-ref ref="stdout"/>
         <appender-ref ref="file"/>
     </root>
