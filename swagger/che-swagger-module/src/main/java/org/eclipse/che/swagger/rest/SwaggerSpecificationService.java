@@ -11,9 +11,15 @@
 package org.eclipse.che.swagger.rest;
 
 import io.swagger.jaxrs.listing.ApiListingResource;
+import io.swagger.util.Yaml;
+
+import com.google.common.base.Strings;
+
+import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.ServletConfig;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
@@ -21,11 +27,15 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 
-@Path("/docs")
+@Path("/docs/swagger.{type:json|yaml}")
 public class SwaggerSpecificationService extends ApiListingResource {
+
     @Override
-    public Response getListingYaml(@Context Application app, @Context ServletConfig sc, @Context HttpHeaders headers,
-                                   @Context UriInfo uriInfo) {
-        return Response.status(Response.Status.NOT_IMPLEMENTED).build();
+    public Response getListing(@Context Application app, @Context ServletConfig sc, @Context HttpHeaders headers,
+                                   @Context UriInfo uriInfo, @PathParam("type") String type) {
+        if (type.trim().equalsIgnoreCase("yaml")) {
+            return Response.status(Response.Status.NOT_IMPLEMENTED).build();
+        }
+        return super.getListing(app, sc, headers, uriInfo, type);
     }
 }
