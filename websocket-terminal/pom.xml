@@ -16,11 +16,11 @@
     <parent>
         <artifactId>che-lib-parent</artifactId>
         <groupId>org.eclipse.che.lib</groupId>
-        <version>4.3.0</version>
+        <version>4.4.0-RC1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>che-websocket-terminal</artifactId>
-    <version>4.3.0</version>
+    <version>4.4.0-RC1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Che Lib :: Terminal</name>
     <build>
