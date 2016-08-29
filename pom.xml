@@ -20,7 +20,7 @@
     </parent>
     <groupId>org.eclipse.che.lib</groupId>
     <artifactId>che-lib-parent</artifactId>
-    <version>4.7.0-RC2-SNAPSHOT</version>
+    <version>4.7.0</version>
     <packaging>pom</packaging>
     <name>Che Lib :: Parent</name>
     <modules>
@@ -32,7 +32,7 @@
     <scm>
         <connection>scm:git:git@github.com:eclipse/che-lib.git</connection>
         <developerConnection>scm:git:git@github.com:eclipse/che-lib.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>4.7.0</tag>
         <url>https://github.com/eclipse/che-lib</url>
     </scm>
     <properties>
