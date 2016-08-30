@@ -269,6 +269,70 @@ function Terminal(options) {
 
 inherits(Terminal, EventEmitter);
 
+/**
+* Text buffer
+* */
+
+// selection buffer
+Terminal.textSelectionBuffer = '';
+
+/**
+* Update selection
+* */
+
+// update selection buffer value
+Terminal.updateSelection = function() {
+  var sel = window.getSelection && window.getSelection();
+  if (sel && sel.rangeCount > 0) {
+    Terminal.textSelectionBuffer = sel.toString();
+    var term = Terminal.focus;
+    if (!term) {
+      return;
+    }
+    var inputEl = term.element.getElementsByTagName('input')[0];
+    if (inputEl && Terminal.textSelectionBuffer.length > 0) {
+      inputEl.focus();
+    }
+  }
+};
+
+/**
+* Clear selection
+* */
+
+// clear selection buffer
+Terminal.clearSelection = function() {
+  Terminal.textSelectionBuffer = '';
+};
+
+/**
+* Set input focus
+* */
+
+// set focus on invisible input for Firefox
+Terminal.setInputFocus = function() {
+  var term = Terminal.focus;
+  if (!term) {
+    return;
+  }
+  var inputEl = term.element.getElementsByTagName('input')[0];
+  if (inputEl) {
+    inputEl.focus();
+  }
+};
+
+/**
+* Set default focus
+* */
+
+// set focus on terminal
+Terminal.setDefaultFocus = function() {
+  var term = Terminal.focus;
+  if (term) {
+    term.element.focus();
+  }
+};
+
 // back_color_erase feature for xterm.
 Terminal.prototype.eraseAttr = function() {
   // if (this.is('screen')) return this.defAttr;
@@ -494,6 +558,7 @@ Terminal.bindPaste = function(document) {
     } else if (term.context.clipboardData) {
       term.send(term.context.clipboardData.getData('Text'));
     }
+    Terminal.setDefaultFocus();
     // Not necessary. Do it anyway for good measure.
     term.element.contentEditable = 'inherit';
     return cancel(ev);
@@ -576,20 +641,28 @@ Terminal.bindCopy = function(document) {
   // Copies to primary selection *and* clipboard.
   // NOTE: This may work better on capture phase,
   // or using the `beforecopy` event.
-  on(window, 'copy', function(ev) {
+  on(window, 'copy', function (ev) {
     var term = Terminal.focus;
     if (!term) return;
-    if (!term._selected) return;
     var textarea = term.getCopyTextarea();
-    var text = term.grabText(
-      term._selected.x1, term._selected.x2,
-      term._selected.y1, term._selected.y2);
+    var text;
+    if (term.isFirefox) {
+      text = Terminal.textSelectionBuffer;
+      Terminal.clearSelection();
+      ev.clipboardData.setData('text/plain', text);
+      ev.preventDefault();
+    } else {
+      if (!term._selected) return;
+      text = term.grabText(
+        term._selected.x1, term._selected.x2,
+        term._selected.y1, term._selected.y2);
+    }
     term.emit('copy', text);
     textarea.focus();
     textarea.textContent = text;
     textarea.value = text;
     textarea.setSelectionRange(0, text.length);
-    setTimeout(function() {
+    setTimeout(function () {
       term.element.focus();
       term.focus();
     }, 1);
@@ -658,11 +731,22 @@ Terminal.insertStyle = function(document, bg, fg) {
     + '  line-height: 13px;\n'
     + '  color: ' + fg + ';\n'
     + '  background: ' + bg + ';\n'
+    + '  -webkit-user-select: text;\n'
+    + '  -moz-user-select: text;\n'
+    + '  user-select: text;\n'
     + '}\n'
     + '\n'
     + '.terminal-cursor {\n'
     + '  color: ' + bg + ';\n'
     + '  background: ' + fg + ';\n'
+    + '}\n'
+    + '.terminal input {\n'
+    + '  border: medium none;\n'
+    + '  position: absolute;\n'
+    + '  bottom: 0;\n'
+    + '  width: 1px;\n'
+    + '  height: 1px;\n'
+    + '  opacity: 0;\n'
     + '}\n';
 
   // var out = '';
@@ -709,6 +793,7 @@ Terminal.prototype.open = function(parent) {
     this.isAndroid = !!~this.context.navigator.userAgent.indexOf('Android');
     this.isMobile = this.isIpad || this.isIphone || this.isAndroid;
     this.isMSIE = !!~this.context.navigator.userAgent.indexOf('MSIE');
+    this.isFirefox = this.context.navigator.userAgent.includes('Firefox');
   }
 
   // Create our main terminal element.
@@ -719,6 +804,11 @@ Terminal.prototype.open = function(parent) {
   this.element.setAttribute('spellcheck', 'false');
   this.element.style.backgroundColor = this.colors[256];
   this.element.style.color = this.colors[257];
+
+  // add invisible input element for firefox
+  if (this.isFirefox) {
+    this.element.appendChild(this.document.createElement('input'));
+  }
 
   // Create the lines for our terminal.
   this.children = [];
@@ -2581,17 +2671,20 @@ Terminal.prototype.keyDown = function(ev) {
     default:
       //Mac OS key combination for copy text: Command-C and Command-V
       if (this.isMac && ev.metaKey) {
+        Terminal.updateSelection();
     	  //Command-C
     	  if (ev.keyCode === 67) {
     		  return;
     	  }
     	  //Commad-V
     	  if (ev.keyCode === 86) {
+          Terminal.setInputFocus();
     		  return;
     	  }
       }
       // a-z and space
       if (ev.ctrlKey) {
+        Terminal.updateSelection();
         if (ev.keyCode >= 65 && ev.keyCode <= 90) {
           // Ctrl-A
           if (ev.keyCode === 65) {
@@ -2599,18 +2692,14 @@ Terminal.prototype.keyDown = function(ev) {
           }
           // Ctrl-V
           if (ev.keyCode === 86) {
+            Terminal.setInputFocus();
             return;
           }
           // Ctrl-C
-          var sel = window.getSelection && window.getSelection();
-            if (sel && sel.rangeCount > 0) {
-              sel = window.getSelection().getRangeAt(0);
-              var range = sel.endOffset - sel.startOffset;
-              if (ev.keyCode === 67 && range > 0) {
-                return;
-              }
-            }
-            key = String.fromCharCode(ev.keyCode - 64);
+          if (ev.keyCode === 67 && Terminal.textSelectionBuffer.length > 0) {
+            return;
+          }
+          key = String.fromCharCode(ev.keyCode - 64);
         } else if (ev.keyCode === 32) {
           // NUL
           key = String.fromCharCode(0);
