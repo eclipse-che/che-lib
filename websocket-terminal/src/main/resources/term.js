@@ -2674,30 +2674,36 @@ Terminal.prototype.keyDown = function(ev) {
         Terminal.updateSelection();
     	  //Command-C
     	  if (ev.keyCode === 67) {
-    		  return;
+            break;
     	  }
     	  //Commad-V
     	  if (ev.keyCode === 86) {
-          Terminal.setInputFocus();
-    		  return;
+            Terminal.setInputFocus();
+            break;
     	  }
       }
+
+      //Ctrl + Alt => AltGr_key, see more https://en.wikipedia.org/wiki/AltGr_key
+      if (ev.altKey && ev.ctrlKey) {
+        break;
+      }
+
       // a-z and space
       if (ev.ctrlKey) {
         Terminal.updateSelection();
         if (ev.keyCode >= 65 && ev.keyCode <= 90) {
           // Ctrl-A
           if (ev.keyCode === 65) {
-            return;
+            break;
           }
           // Ctrl-V
           if (ev.keyCode === 86) {
             Terminal.setInputFocus();
-            return;
+            break;
           }
           // Ctrl-C
           if (ev.keyCode === 67 && Terminal.textSelectionBuffer.length > 0) {
-            return;
+            break;
           }
           key = String.fromCharCode(ev.keyCode - 64);
         } else if (ev.keyCode === 32) {
@@ -2751,24 +2757,28 @@ Terminal.prototype.setgCharset = function(g, charset) {
   }
 };
 
-Terminal.prototype.keyPress = function(ev) {
-  var key;
-
-  cancel(ev);
-
-  if (ev.charCode) {
-    key = ev.charCode;
-  } else if (ev.which == null) {
-    key = ev.keyCode;
-  } else if (ev.which !== 0 && ev.charCode !== 0) {
-    key = ev.which;
-  } else {
-    return false;
+function getChar(ev) {
+  if (ev.which == null) { // IE
+    if (ev.keyCode < 32) { // special symbols
+      return null;
+    }
+    return String.fromCharCode(ev.keyCode)
   }
 
-  if (!key || ev.ctrlKey || ev.altKey || ev.metaKey) return false;
+  if (ev.which != 0 && ev.charCode != 0) { // except IE
+    if (ev.which < 32) {
+      return null; // special symbols
+    }
+    return String.fromCharCode(ev.which); // all other
+  }
 
-  key = String.fromCharCode(key);
+  return null; // special symbol
+}
+
+Terminal.prototype.keyPress = function(ev) {
+  cancel(ev);
+
+  var key = getChar(ev);
 
   if (this.selectMode) {
     this.keySelect(ev, key);
