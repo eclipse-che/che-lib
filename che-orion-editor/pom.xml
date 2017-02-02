@@ -24,16 +24,18 @@
     <properties>
         <findbugs.failonerror>false</findbugs.failonerror>
         <patches.location>${basedir}/src/main/patches</patches.location>
-        <requirejs.upstream.url>http://requirejs.org/docs/release/${requirejs.upstream.version}/comments/</requirejs.upstream.url>
-        <requirejs.upstream.version>2.1.15</requirejs.upstream.version>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>requirejs</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
     <build>
-       <resources>
+        <resources>
             <resource>
                 <directory>src/main/resources</directory>
-            </resource>
-            <resource>
-                <directory>target/requirejs-${requirejs.upstream.version}</directory>
             </resource>
         </resources>
         <plugins>
@@ -66,19 +68,45 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>wagon-maven-plugin</artifactId>
-                <version>1.0-beta-4</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <phase>generate-resources</phase>
+                        <id>copy</id>
+                        <phase>process-resources</phase>
                         <goals>
-                            <goal>download-single</goal>
+                            <goal>unpack</goal>
                         </goals>
                         <configuration>
-                            <url>${requirejs.upstream.url}</url>
-                            <fromFile>require.js</fromFile>
-                            <toFile>${project.build.directory}/requirejs-${requirejs.upstream.version}/org/eclipse/che/orion/public/require.js</toFile>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.webjars</groupId>
+                                    <artifactId>requirejs</artifactId>
+                                </artifactItem>
+                            </artifactItems>
+                            <!-- other configurations here -->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <!-- here the phase you need -->
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/classes/org/eclipse/che/orion/public</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/target/dependency/META-INF/resources/webjars/requirejs/${requirejs.upstream.version}</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
                         </configuration>
                     </execution>
                 </executions>
