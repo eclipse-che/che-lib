@@ -28,6 +28,7 @@
         <module>swagger</module>
         <module>websocket-terminal</module>
         <module>org-eclipse-jdt-core-repack</module>
+        <module>che-orion-editor</module>
     </modules>
     <scm>
         <connection>scm:git:git@github.com:eclipse/che-lib.git</connection>
