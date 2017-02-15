@@ -25,13 +25,6 @@
         <findbugs.failonerror>false</findbugs.failonerror>
         <patches.location>${basedir}/src/main/patches</patches.location>
     </properties>
-    <dependencies>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>requirejs</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-    </dependencies>
     <build>
         <resources>
             <resource>
@@ -63,50 +56,6 @@
                             <strictPatching>true</strictPatching>
                             <strip>1</strip>
                             <targetDirectory>${project.build.directory}/classes</targetDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.webjars</groupId>
-                                    <artifactId>requirejs</artifactId>
-                                </artifactItem>
-                            </artifactItems>
-                            <!-- other configurations here -->
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-resources</id>
-                        <!-- here the phase you need -->
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${basedir}/target/classes/org/eclipse/che/orion/public</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/target/dependency/META-INF/resources/webjars/requirejs/${requirejs.upstream.version}</directory>
-                                    <filtering>true</filtering>
-                                </resource>
-                            </resources>
                         </configuration>
                     </execution>
                 </executions>
