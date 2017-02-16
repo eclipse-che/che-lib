@@ -23,6 +23,7 @@
     <name>Che Plugin :: Orion :: Editor</name>
     <properties>
         <findbugs.failonerror>false</findbugs.failonerror>
+        <orion.editor.version>13.1</orion.editor.version>
         <patches.location>${basedir}/src/main/patches</patches.location>
     </properties>
     <build>
@@ -48,9 +49,9 @@
                             <patchDirectory>${patches.location}</patchDirectory>
                             <patches>
                                 <patch>fix_linked_mode.diff</patch>
+                                <patch>fix_focus.diff</patch>
                                 <patch>fix_goto_line.diff</patch>
                                 <patch>fix_scrolling.diff</patch>
-                                <patch>fix_focus.diff</patch>
                             </patches>
                             <optimizations>false</optimizations>
                             <strictPatching>true</strictPatching>
@@ -66,9 +67,9 @@
                 <configuration>
                     <excludes>
                         <!-- Orion - EPL License -->
-                        <exclude>**/org/eclipse/che/orion/public/built-codeEdit-12.0/**</exclude>
+                        <exclude>**/org/eclipse/che/orion/public/built-codeEdit/**</exclude>
                         <exclude>**/org/eclipse/che/orion/public/cheJavaHighlightingPlugin/lib/plugin.js</exclude>
-                        <exclude>**/org/eclipse/che/orion/public/built-compare-12.0/*</exclude>
+                        <exclude>**/org/eclipse/che/orion/public/built-compare/*</exclude>
                     </excludes>
                 </configuration>
             </plugin>
