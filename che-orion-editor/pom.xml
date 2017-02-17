@@ -20,7 +20,7 @@
     </parent>
     <artifactId>che-orion-editor</artifactId>
     <packaging>jar</packaging>
-    <name>Che Plugin :: Orion :: Editor</name>
+    <name>Che Plugin :: Orion-13.1 :: Editor</name>
     <properties>
         <findbugs.failonerror>false</findbugs.failonerror>
         <patches.location>${basedir}/src/main/patches</patches.location>
