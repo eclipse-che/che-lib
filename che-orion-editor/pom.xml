@@ -23,7 +23,6 @@
     <name>Che Plugin :: Orion :: Editor</name>
     <properties>
         <findbugs.failonerror>false</findbugs.failonerror>
-        <orion.editor.version>13.1</orion.editor.version>
         <patches.location>${basedir}/src/main/patches</patches.location>
     </properties>
     <build>
