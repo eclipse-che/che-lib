@@ -17,7 +17,7 @@
 	align-items: center;
 }
 .fsToolbarLayout {
-	height: 30px; 
+	height: 26px; 
 }
 .bannerLeftArea{
 	
@@ -228,8 +228,7 @@
 	background:#3b4b54;
 }
 .sidebarWrapper {
-	overflow-x: auto;
-	overflow-y: hidden;
+	overflow: hidden;
 	min-width: 0;
 }
 .sidebarWrapper > .sidebar {
@@ -517,6 +516,33 @@ and (max-device-width : 1024px)  {
 	bottom: 0;
 	left: 0;
 }
+.menuScrollButton:hover {
+	opacity: 1;
+}
+.menuScrollButton {
+	background-color: rgba(0,0,0,0) !important;
+	color: #3B4B54 !important;
+	display: none;
+	cursor: pointer;
+	height: 24px;
+	opacity: 0.5;
+	position: absolute;
+	width: 100%;
+	max-width: 125px;
+	z-index: 200;
+}
+.menuTopScrollButton {
+	-webkit-transform: rotate(180deg);		
+	transform: rotate(180deg);
+}
+button.menuScrollButton.menuTopScrollButton.core-sprite-openarrow::before {
+	font-size: larger;
+	padding-right: 90px;
+}
+button.menuScrollButton.menuBottomScrollButton.core-sprite-openarrow::before {
+	font-size: larger;
+	padding-left: 90px;
+}
 .sideMenuItem > .submenu-trigger {
 	color:  #6D8B93 !important;
 	font-size:16px;
@@ -740,12 +766,65 @@ and (max-device-width : 1024px)  {
 	color:grey;
 }
 .splashLoadingImage {
-	background: url(../../images/loading_24.gif) no-repeat top left;
-	vertical-align: middle;
+	-webkit-animation: 1.2s dark-theme-spinner steps(6) infinite;
+	animation: 1.2s dark-theme-spinner steps(6) infinite;
+	
+	padding: 0;
+	background: inherit;
 	display: inline-block;
-	border: none;	
-	height:24px;
-	width:24px;
+	vertical-align: middle;
+	margin-left: 9px;
+	margin-top: 8px;
+	width: 6px;
+	height: 6px;
+	font-size: 10px;
+	border-radius: 50%;
+	z-index: 101;
+	-webkit-font-smoothing: antialiased;
+}
+.splashLoadingImage.initial {
+}
+@-webkit-keyframes dark-theme-spinner {
+	0%,
+  100% {
+		box-shadow: -0.45em -0.78em 0 0 rgba(0, 178, 153, 1), -0.9em 0 0 0 rgba(0, 178, 153, 0.8), -0.45em 0.78em 0 0 rgba(0, 178, 153, 0.6), 0.45em 0.78em 0 0 rgba(0, 178, 153, 0.4), 0.9em 0 0 0 rgba(0, 178, 153, 0.3), 0.45em -0.78em 0 0 rgba(0, 178, 153, 0.1);
+	}
+	16.67% {
+		box-shadow: -0.45em -0.78em 0 0 rgba(0, 178, 153, 0.8), -0.9em 0 0 0 rgba(0, 178, 153, 0.6), -0.45em 0.78em 0 0 rgba(0, 178, 153, 0.4), 0.45em 0.78em 0 0 rgba(0, 178, 153, 0.3), 0.9em 0 0 0 rgba(0, 178, 153, 0.1), 0.45em -0.78em 0 0 rgba(0, 178, 153, 1);
+	}
+	33.33% {
+		box-shadow: -0.45em -0.78em 0 0 rgba(0, 178, 153, 0.6), -0.9em 0 0 0 rgba(0, 178, 153, 0.4), -0.45em 0.78em 0 0 rgba(0, 178, 153, 0.3), 0.45em 0.78em 0 0 rgba(0, 178, 153, 0.1), 0.9em 0 0 0 rgba(0, 178, 153, 1), 0.45em -0.78em 0 0 rgba(0, 178, 153, 0.8);
+	}
+	50% {
+		box-shadow: -0.45em -0.78em 0 0 rgba(0, 178, 153, 0.4), -0.9em 0 0 0 rgba(0, 178, 153, 0.3), -0.45em 0.78em 0 0 rgba(0, 178, 153, 0.1), 0.45em 0.78em 0 0 rgba(0, 178, 153, 1), 0.9em 0 0 0 rgba(0, 178, 153, 0.8), 0.45em -0.78em 0 0 rgba(0, 178, 153, 0.6);
+	}
+	66.67% {
+		box-shadow: -0.45em -0.78em 0 0 rgba(0, 178, 153, 0.3), -0.9em 0 0 0 rgba(0, 178, 153, 0.1), -0.45em 0.78em 0 0 rgba(0, 178, 153, 1), 0.45em 0.78em 0 0 rgba(0, 178, 153, 0.8), 0.9em 0 0 0 rgba(0, 178, 153, 0.6), 0.45em -0.78em 0 0 rgba(0, 178, 153, 0.4);
+	}
+	83.33% {
+		box-shadow: -0.45em -0.78em 0 0 rgba(0, 178, 153, 0.1), -0.9em 0 0 0 rgba(0, 178, 153, 1), -0.45em 0.78em 0 0 rgba(0, 178, 153, 0.8), 0.45em 0.78em 0 0 rgba(0, 178, 153, 0.6), 0.9em 0 0 0 rgba(0, 178, 153, 0.4), 0.45em -0.78em 0 0 rgba(0, 178, 153, 0.3);
+	}
+}
+@keyframes dark-theme-spinner {
+	0%,
+  100% {
+		box-shadow: -0.45em -0.78em 0 0 rgba(0, 178, 153, 1), -0.9em 0 0 0 rgba(0, 178, 153, 0.8), -0.45em 0.78em 0 0 rgba(0, 178, 153, 0.6), 0.45em 0.78em 0 0 rgba(0, 178, 153, 0.4), 0.9em 0 0 0 rgba(0, 178, 153, 0.3), 0.45em -0.78em 0 0 rgba(0, 178, 153, 0.1);
+	}
+	16.67% {
+		box-shadow: -0.45em -0.78em 0 0 rgba(0, 178, 153, 0.8), -0.9em 0 0 0 rgba(0, 178, 153, 0.6), -0.45em 0.78em 0 0 rgba(0, 178, 153, 0.4), 0.45em 0.78em 0 0 rgba(0, 178, 153, 0.3), 0.9em 0 0 0 rgba(0, 178, 153, 0.1), 0.45em -0.78em 0 0 rgba(0, 178, 153, 1);
+	}
+	33.33% {
+		box-shadow: -0.45em -0.78em 0 0 rgba(0, 178, 153, 0.6), -0.9em 0 0 0 rgba(0, 178, 153, 0.4), -0.45em 0.78em 0 0 rgba(0, 178, 153, 0.3), 0.45em 0.78em 0 0 rgba(0, 178, 153, 0.1), 0.9em 0 0 0 rgba(0, 178, 153, 1), 0.45em -0.78em 0 0 rgba(0, 178, 153, 0.8);
+	}
+	50% {
+		box-shadow: -0.45em -0.78em 0 0 rgba(0, 178, 153, 0.4), -0.9em 0 0 0 rgba(0, 178, 153, 0.3), -0.45em 0.78em 0 0 rgba(0, 178, 153, 0.1), 0.45em 0.78em 0 0 rgba(0, 178, 153, 1), 0.9em 0 0 0 rgba(0, 178, 153, 0.8), 0.45em -0.78em 0 0 rgba(0, 178, 153, 0.6);
+	}
+	66.67% {
+		box-shadow: -0.45em -0.78em 0 0 rgba(0, 178, 153, 0.3), -0.9em 0 0 0 rgba(0, 178, 153, 0.1), -0.45em 0.78em 0 0 rgba(0, 178, 153, 1), 0.45em 0.78em 0 0 rgba(0, 178, 153, 0.8), 0.9em 0 0 0 rgba(0, 178, 153, 0.6), 0.45em -0.78em 0 0 rgba(0, 178, 153, 0.4);
+	}
+	83.33% {
+		box-shadow: -0.45em -0.78em 0 0 rgba(0, 178, 153, 0.1), -0.9em 0 0 0 rgba(0, 178, 153, 1), -0.45em 0.78em 0 0 rgba(0, 178, 153, 0.8), 0.45em 0.78em 0 0 rgba(0, 178, 153, 0.6), 0.9em 0 0 0 rgba(0, 178, 153, 0.4), 0.45em -0.78em 0 0 rgba(0, 178, 153, 0.3);
+	}
 }
 .splashSuccessImage {
 	background: url(../../images/message_success_24.png) no-repeat top left;
@@ -802,8 +881,10 @@ and (max-device-width : 1024px)  {
 	height: 16px;
 	background: transparent;
 	border: none;
+	margin-top: -2px;
 	margin-right: 6px;
 	margin-left: 12px;
+	padding: 1px;
 	flex: 0 0 auto;
 	-ms-flex: 0 0 auto;
 	-webkit-flex: 0 0 auto;
@@ -972,7 +1053,7 @@ and (max-device-width : 1024px)  {
 .notificationShow {
 	color: white; 
 	background-color: #1BB199; 
-	top: 0;
+	bottom: 0;
 	position: fixed;
 	float: left; 
 	margin-left: 20%; 
@@ -984,19 +1065,19 @@ and (max-device-width : 1024px)  {
 	padding-bottom: 5px;
 	padding-left: 5px;
 	z-index: 7000; 
-	border-bottom-right-radius: 5px; 
-	border-bottom-left-radius: 5px; 
+	border-top-right-radius: 5px; 
+	border-top-left-radius: 5px; 
 	border:none;
-	transition:top 0.7s;
-	-webkit-transition: top 0.7s;	
-	-moz-transition: top 0.7s;
-	-ms-transition: top 0.7s;
-	-o-transition: top 0.7s;
+	transition:bottom 0.7s;
+	-webkit-transition: bottom 0.7s;	
+	-moz-transition: bottom 0.7s;
+	-ms-transition: bottom 0.7s;
+	-o-transition: bottom 0.7s;
 }
 .notificationHide {
 	color: white; 
 	background-color: #1BB199; 
-	top: -45px;
+	bottom: -45px;
 	position: fixed;
 	text-align:center;
 	float: left; 
@@ -1008,13 +1089,13 @@ and (max-device-width : 1024px)  {
 	overflow: hidden;
 	padding-left: 5px;
 	z-index: 300;
-	border-bottom-right-radius: 5px; 
-	border-bottom-left-radius: 5px; 
-	transition:top 0.7s;
-	-webkit-transition: top 0.7s;	
-	-moz-transition: top 0.7s;
-	-ms-transition: top 0.7s;
-	-o-transition: top 0.7s;
+	border-top-right-radius: 5px; 
+	border-top-left-radius: 5px; 
+	transition:bottom 0.7s;
+	-webkit-transition: bottom 0.7s;	
+	-moz-transition: bottom 0.7s;
+	-ms-transition: bottom 0.7s;
+	-o-transition: bottom 0.7s;
 }
 .notifications a {
 	color: white;
@@ -1643,6 +1724,7 @@ html[dir="rtl"] .keyAssistFloat {
 }
 .keyAssistFloat h2 {
 	color: gold;
+	margin: auto;
 }
 .keyAssistName {
 	text-align: left;
@@ -1758,6 +1840,7 @@ html[dir="rtl"] #treeButtons {
 	padding-right: 8px;
 	padding-top: 8px;
 	vertical-align:top;
+	white-space: nowrap;
 }
 html[dir="rtl"] .secondaryColumn { 
 	padding-left: 8px;
@@ -2353,6 +2436,260 @@ html[dir="rtl"] .fileExplorerProgressDiv {
 	margin-right: 10px;
 	margin-left: auto;	
 }
+
+.lightPage .dropdownTrigger:not(.dropdownDefaultButton),
+.lightPage .mainToolbar .commandImage.dropdownTrigger,
+.lightPage .dropdownButtonWithIcon,
+.lightPage .sideMenuItem,
+.lightPage .editorViewerHeader,
+.lightPage .filesystemName,
+.lightPage .mainToolbar {
+	color: rgb(21, 41, 53) !important;
+}
+.lightPage .mainToolbar,
+.lightPage .sectionTable,
+.lightPage .sideMenu,
+.lightPage .workingTarget {
+	background-color: white;
+}
+.lightPage .mainToolbar .commandButton.orionButton.dropdownTrigger .dropdownTriggerButtonLabel,
+.lightPage .mainToolbar .commandButton.orionButton.dropdownTrigger.launchConfigurationsButton .dropdownArrowDown {
+	color: white;
+}
+.lightPage .statusLight {
+	background: lightgray;
+}
+.lightPage .statusLight.statusLightGreen {
+	background: #13dd6d;
+}
+.lightPage .statusLight.statusLightRed {
+	background: #C1272D;
+}
+.lightPage .statusLight.statusLightAmber {
+	background: #FFE141;
+}
+.lightPage .statusLight.statusLightProgress {
+	background: transparent;
+	border-color: lightgray;
+	border-top-color: transparent;
+}
+.lightPage .split {
+	background: #c4c5c8;
+	width: 4px;
+}
+.lightPage .splitThumb {
+	background: #c4c5c8
+}
+.lightPage .statusContainer {
+	color: black;
+	background: #f5f7fa;
+}
+.lightPage .launchConfigurationMenuItem.dropdownMenuItemActive {
+	background: #f5f7fa;
+}
+.lightPage .editorViewerHeader,
+.lightPage .titleActionContainer,
+.lightPage .sidebarWrapper {
+	color: black;
+	background: #f5f7fa !important;
+}
+.lightPage .content-fixedHeight,
+.lightPage .auxpane,
+.lightPage .mainpane {
+	background: #c4c5c8 !important;
+}
+.lightPage .splash,
+.lightPage .splashLoader {
+	background: #f5f7fa !important;
+	box-shadow: none;
+}
+.lightPage .gitStatusSection,
+.lightPage .gitCommitMessageSection,
+.lightPage .treeIterationCursorRow_Dotted,
+.lightPage .treeIterationCursorRow {
+	background-color: rgba(61, 114, 179, 0.25);
+}
+.lightPage label.parameterInput,
+.lightPage .tooltip h2,
+.lightPage .tooltip .operationError,
+.lightPage .checkedRow .gitStatusTitle,
+.lightPage .checkedRow .gitCommitMore,
+.lightPage .checkedRow .gitStatusIcon {
+	color: white !important;
+}
+.lightPage .liveUpdateLabel,
+.lightPage .splashAbout,
+.lightPage .splashVerbal,
+.lightPage .gitCommitMore,
+.lightPage .gitStatusTitle,
+.lightPage .gitStatusIcon,
+.lightPage .sideMenuItem > .submenu-trigger:hover {
+	color: rgb(61, 114, 179) !important;
+}
+.lightPage .sideMenuItemActive:hover {
+	color: white;
+	background: rgba(61, 114, 179, 0.25) !important;
+}
+.lightPage .splashDetailedMessage,
+.lightPage .splashMessage,
+.lightPage .status,
+.lightPage .projectNavColumn {
+	color: black;
+}
+.lightPage #configSection {
+	color: black !important;
+	background: white !important;
+}
+.lightPage .fixedToolbarHolder {
+	background: white;
+}
+.lightPage .gitCommitMessage .gitCommitMessageTopRow {
+	border: 1px solid rgb(61, 114, 179);
+}
+.lightPage .tooltip {
+	background-color: rgb(61, 114, 179);
+	border: 1px solid rgb(61, 114, 170);
+ 	color: white;
+}
+.lightPage .editorViewerHeader {
+	border-bottom: 1px solid #f5f7fa;	
+}
+.lightPage .tooltipTailFromright:before,
+.lightPage .tooltipTailFromright:after {
+	border-right-color: rgb(61, 114, 179);
+}
+.lightPage .tooltipTailFromleft:before,
+.lightPage .tooltipTailFromleft:after {
+	border-left-color: rgb(61, 114, 179);
+}
+.lightPage .tooltipTailFrombelow:before,
+.lightPage .tooltipTailFrombelow:after {
+	border-bottom-color: rgb(61, 114, 179);
+}
+.lightPage .tooltipTailFromabove:before,
+.lightPage .tooltipTailFromabove:after {
+	border-top-color: rgb(61, 114, 179);
+}
+.lightPage .searchResultsWrapperDiv .selectableNavRow:hover,
+.lightPage .dropdownMenu .dropdownMenuItemSelected {
+	border-left-color: rgb(61, 114, 179);
+	background: rgba(61, 114, 179, 0.25);
+}
+.lightPage .dialogTitle,
+.lightPage .orionSwitchLabel,
+.lightPage .launchConfsDropdown .dropdownDefaultButton,
+.lightPage .launchConfsLabel,
+.lightPage .tooltip .navlinkonpage,
+.lightPage .mainToolbar .sectionWrapper,
+.lightPage .mainToolbar .gitSectionLabel,
+.lightPage .launchConfigurationsWrapper > .launchConfigurationsButton.dropdownTrigger,
+.lightPage .slideParameters,
+.lightPage .outlineExplorer .treeIterationCursorRow_Dotted,
+.lightPage .navbar-item-selected,
+.lightPage .sideMenuItemActive,
+.lightPage .tooltip,
+.lightPage .checkedRow {
+	background-color: rgb(61, 114, 179) !important;
+ 	color: white !important;
+}
+.lightPage .primaryButton {  
+	background-color: rgb(61, 114, 179) !important;
+	color: white !important;
+	border: 1px solid rgb(61, 114, 179) !important;
+	border-radius: 0 !important;
+}
+.lightPage .primaryButton:hover, .primaryButton:focus {
+	background: rgb(61, 114, 179);
+	border-color: rgb(61, 114, 179);
+}
+.lightPage .checkedRow .commandButton {
+	color: white;
+	border-color: white;
+}
+.lightPage .commandButton.orionButton.dropdownTrigger:hover {
+	border-color: #ccc;
+}
+.lightPage .commandButton {
+	color: rgb(61, 114, 179);
+	border: 1px solid rgb(61, 114, 179);
+	background-color: rgba(0, 0, 0, 0);
+}
+.lightPage .commandButton.disabled {
+	color: #cdcdcd;
+}
+.lightPage .textviewTooltip {
+	background-color: rgb(61, 114, 179);
+}
+.lightPage .textviewTooltip .commandButton { 
+	border-color: white;
+	border: 1px solid white;
+	background-color: inherit;
+	color: white;
+	margin-bottom: 2px;
+}
+.lightPage .commandButton:not(.primaryButton):hover,
+.lightPage .commandButton:not(.primaryButton):focus {
+	color: black;
+	background-color: rgba(61, 114, 179, 0.25);
+	box-shadow: 0 1px 2px 0 rgb(61, 114, 179);
+}
+.lightPage .checkedRow .commandButton:not(.primaryButton):hover,
+.lightPage .checkedRow .commandButton:not(.primaryButton):focus {
+	color: black;
+	background: rgba(255, 255, 255, 0.50);
+	box-shadow: 0 1px 2px 0 rgb(61, 114, 179);
+}
+.lightPage .launchConfigurationsButton .commandButton.orionButton.dropdownTrigger {
+	color: white !important;
+}
+.lightPage .mainToolbar .commandButton.orionButton.dropdownTrigger {
+	color: black !important;
+}
+.lightPage .core-sprite-error {
+	color: red;
+}
+.lightPage #log {
+	margin: 5px;
+	width: calc(100% - 17px);
+}
+.lightPage .splashLoadingImage {
+	display: inline-block;
+	background: none;
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	border-radius: 50%;
+	border: 2px solid #00b299;
+	border-right-color: transparent;
+	-webkit-animation: rotateThis .5s infinite linear;
+	animation: rotateThis .5s infinite linear;
+	opacity: .4;
+}
+.lightPage .splashLoadingImage.initial {
+	height: 40px;
+	width: 40px;
+	border-width: 4px;
+}
+@-webkit-keyframes rotateThis {
+	0% {
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(1turn);
+		-webkit-transform: rotate(1turn)
+	}
+}
+@keyframes rotateThis {
+	0% {
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(1turn);
+		-webkit-transform: rotate(1turn)
+	}
+}
 .commandSprite {
    background: url(../../images/core_sprites.png) no-repeat top left;
    vertical-align: middle;
@@ -2517,6 +2854,7 @@ html[dir="rtl"] .fileExplorerProgressDiv {
 	font-size: 14px;
 	line-height:16px;
 	padding: 2px;
+	vertical-align: bottom;
 }
 .core-sprite-folder {
 	line-height: 16px;
@@ -2652,7 +2990,14 @@ html[dir="rtl"] .fileExplorerProgressDiv {
 .file-sprite-javascript:hover{
 	text-decoration:none;
 }
+.setting-local-indicator.on::before {
+	content: '\2605';
+}
+.setting-local-indicator.off::before {
+	content: '\2606';
+}
 .textview {
+	color: #333;
 	background-color: white;
 	font-family: "Consolas", "Monaco", "Vera Mono", monospace;
 	font-size: 12px;
@@ -2749,7 +3094,7 @@ html[dir="rtl"] .fileExplorerProgressDiv {
 .textviewTooltip {
 	font-family: "Consolas", "Monaco", "Vera Mono", monospace;
 	font-size: 12px;
-	background-color: #325C80; 
+	background-color: #3B4B54; 
 	color: #FAFAFA;
 	padding: 8px;
 	
@@ -2888,6 +3233,7 @@ html[dir="rtl"] .fileExplorerProgressDiv {
 .contentassist {
 	font-size:12px;
 	display: none;
+	color: black;
 	background-color: white;
 	position: fixed;
 	top: 100px;
@@ -3809,9 +4155,9 @@ a.breadcrumb.currentLocation {
 .filesystemName {
 	display: inline-block;
 	font-weight: normal;
-	margin-left: 10px;
-	margin-top: 8px;
-	margin-bottom: 8px;
+	margin-left: 4px;
+	margin-top: 6px;
+	margin-bottom: 4px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -3991,11 +4337,6 @@ a.breadcrumb.currentLocation {
 .orionSwitch {
 	position: relative;
 	width: auto;
-}
-.orionSwitchCheck {
- 	display: none;
-}
-.orionSwitchLabel {
 	display: block;
 	overflow: hidden;
 	cursor: pointer;
@@ -4042,7 +4383,6 @@ a.breadcrumb.currentLocation {
 	margin: 0;
 	background: #DFE6EB;
 	border: 1px solid #DFE6EB;
-	border-radius: 3px;
 	position: absolute; 
 	top: 0; 
 	bottom: 0; 
@@ -4052,11 +4392,11 @@ a.breadcrumb.currentLocation {
 	-o-transition: all 0.2s ease-in 0s; 
 	transition: all 0.2s ease-in 0s; 
 }
-.orionSwitchCheck:checked + .orionSwitchLabel .orionSwitchInner {
+.orionSwitch[aria-pressed="true"] .orionSwitchInner {
 	margin-left: 0;
 }
-.orionSwitchCheck:checked + .orionSwitchLabel .orionSwitchSwitch {
-	right: 0px; 
+.orionSwitch[aria-pressed="true"] .orionSwitchSwitch {
+	right: 0;
 }
 .commandMissingImageButton {
 	font-weight: normal;
@@ -4111,6 +4451,12 @@ a.breadcrumb.currentLocation {
 	color: #FFFFFF; 
  	border-color: transparent;
 }
+.dialogContent .dropdownTrigger:not(.dropdownDefaultButton) {
+	border: 1px solid #00AED1 !important;
+}
+.dialogContent .dropdownTrigger:not(.dropdownDefaultButton):not(:hover) {
+	color: #00AED1 !important;
+}
 .dropdownTrigger a {
 	text-decoration: none;
 }
@@ -4146,6 +4492,7 @@ a.breadcrumb.currentLocation {
 .dropdownSubMenu > ul {
 	top: 0;
 	left: 100%;
+	max-height: 316px;
 }
 .dropdownMenu > li {
 	min-width: 120px;
@@ -4510,7 +4857,7 @@ a.breadcrumb.currentLocation {
 	transition: opacity 0.2s ease-in;
 }
 .textviewTooltip {
-	background-color: #158d7a;
+	background-color: #3B4B54;
 }
 .textviewTooltip .commandButton {
 	border-color: white;
@@ -4519,6 +4866,34 @@ a.breadcrumb.currentLocation {
 }
 .core-sprite-git-logo {
 	font-size: 20px !important;
+}
+.sprite-switch-check-x {
+	font-size: 14px;
+	line-height: 22px;
+	color: white;
+	padding-right: 5px;
+	background: none;
+	border: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	vertical-align:middle;
+}
+.orionSwitchInner.sprite-switch-check-x:before{
+	color: white;
+	background-color: #1bb199;
+	content: '\e050'; 
+	font-family: 'Orion Icon Font';
+	margin-top: -3px;
+	padding-left: 3px;
+	padding-right: 0;
+}
+.orionSwitchInner.sprite-switch-check-x:after{
+	color: white;
+	background-color: gray;
+	content: '\e02a'; 
+	font-family: 'Orion Icon Font';
+	margin-top: -3px;
+	padding-right: 4px;
 }
 .outlineExplorer .navlinkonpage {
 	color: #333 !important;	
