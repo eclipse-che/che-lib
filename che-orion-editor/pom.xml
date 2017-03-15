@@ -16,7 +16,7 @@
     <parent>
         <artifactId>che-lib-parent</artifactId>
         <groupId>org.eclipse.che.lib</groupId>
-        <version>5.5.0-SNAPSHOT</version>
+        <version>5.5.0</version>
     </parent>
     <artifactId>che-orion-editor</artifactId>
     <packaging>jar</packaging>
@@ -74,10 +74,7 @@
                         </goals>
                         <configuration>
                             <target>
-                                <replace
-                                        file="${project.build.outputDirectory}/org/eclipse/che/orion/public/built-codeEdit/webtools/plugins/webToolsPlugin.js"
-                                        token="../webtools/images"
-                                        value="../_app/built-codeEdit/webtools/images"/>
+                                <replace file="${project.build.outputDirectory}/org/eclipse/che/orion/public/built-codeEdit/webtools/plugins/webToolsPlugin.js" token="../webtools/images" value="../_app/built-codeEdit/webtools/images" />
                             </target>
                         </configuration>
                     </execution>
