@@ -1,0 +1,46 @@
+{
+  "name": "xterm",
+  "description": "Full xterm terminal, in your browser",
+  "version": "2.4.0",
+  "ignore": [
+    ".gitignore"
+  ],
+  "main": "lib/xterm.js",
+  "repository": "https://github.com/sourcelair/xterm.js",
+  "license": "MIT",
+  "files": [
+    "*.js",
+    "*.json",
+    "lib/*.css",
+    "lib/**/*.css",
+    "lib/*.js",
+    "lib/*.js.map",
+    "lib/**/*.js",
+    "lib/**/*.js.map",
+    "src/*.css",
+    "src/**/*.css",
+    "src/*.js",
+    "src/*.js.map",
+    "src/*.ts",
+    "src/**/*.js",
+    "src/**/*.js.map",
+    "src/**/*.ts"
+  ],
+  "devDependencies": {
+    "@types/node": "6.0.41",
+    "browserify": "13.1.0",
+    "fs-extra": "1.0.0",
+    "gulp": "3.9.1",
+    "gulp-sourcemaps": "2.4.0",
+    "gulp-typescript": "3.1.4",
+    "merge-stream": "1.0.1",
+    "sorcery": "0.10.0",
+    "gulp-uglify": "2.0.0",
+    "typescript": "2.1.5",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-source-stream": "1.1.0"
+  },
+  "scripts": {
+    "build": "gulp build"
+  }
+}
