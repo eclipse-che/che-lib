@@ -13,31 +13,32 @@
 -->
 <configuration>
 
+    <property name="max.retention.days" value="60" />
+
     <jmxConfigurator/>
 
-    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- daily rollover -->
-            <fileNamePattern>${che.logs.dir}/%d{yyyy/MM/dd}/catalina-%i.log</fileNamePattern>
-            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <!-- or whenever the file size reaches 2MB -->
-                <maxFileSize>20MB</maxFileSize>
-            </timeBasedFileNamingAndTriggeringPolicy>
+    <appender name="stdout" class="org.apache.juli.logging.ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-41(%date[%.15thread]) %-45([%-5level] [%.30logger{30} %L]) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="file" class="org.apache.juli.logging.ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${che.logs.dir}/logs/catalina.log</file>
+        <append>true</append>
+        <encoder>
+            <charset>utf-8</charset>
+            <pattern>%-41(%date[%.15thread]) %-45([%-5level] [%.30logger{30} %L]) - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="org.apache.juli.logging.ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${che.logs.dir}/archive/catalina-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
+            <maxHistory>${max.retention.days}</maxHistory>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+            <maxFileSize>20MB</maxFileSize>
         </rollingPolicy>
-        <encoder>
-            <pattern>%-41(%date[%.15thread]) %-45([%-5level] [%.30logger{30} %L]) - %msg%n</pattern>
-        </encoder>
     </appender>
 
 
-    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%-41(%date[%.15thread]) %-45([%-5level] [%.30logger{30} %L]) - %msg%n</pattern>
-        </encoder>
-        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>info</level>
-        </filter>
-    </appender>
 
     <include optional="true" file="${che.local.conf.dir}/logback/logback-additional-appenders.xml"/>
 

@@ -37,4 +37,4 @@ if [ ! -z "${TOMCAT_CLASSPATH}" ]; then
 fi
 
 
-export JAVA_OPTS="$JAVA_OPTS  -Dche.logs.dir=${CHE_LOGS_DIR} -Dche.logs.level=${CHE_LOGS_LEVEL}"
+export JAVA_OPTS="$JAVA_OPTS  -Dche.logs.dir=${CHE_LOGS_DIR} -Dche.logs.level=${CHE_LOGS_LEVEL} -Djuli-logback.configurationFile=$CATALINA_HOME/conf/logback.xml"

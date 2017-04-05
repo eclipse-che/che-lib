@@ -83,49 +83,73 @@
                             <artifactSet>
                                 <includes>
                                     <include>org.apache.tomcat:tomcat-juli</include>
+
                                     <include>org.slf4j:jcl-over-slf4j</include>
+                                    <include>org.slf4j:slf4j-api</include>
+                                    <include>ch.qos.logback:logback-classic</include>
+                                    <include>ch.qos.logback:logback-core</include>
                                 </includes>
                             </artifactSet>
+
                             <filters>
                                 <filter>
                                     <artifact>org.apache.tomcat:tomcat-juli</artifact>
                                     <includes>
                                         <include>org/apache/juli/ClassLoaderLogManager**</include>
                                         <include>org/apache/juli/WebappProperties.class</include>
-                                        <include>META-INF/LICENSE</include>
                                         <include>META-INF/NOTICE</include>
                                     </includes>
                                 </filter>
+
+                                <!-- Exclude services from jcl-over-slf4j as not needed in this classloader-->
                                 <filter>
                                     <artifact>org.slf4j:jcl-over-slf4j</artifact>
                                     <excludes>
                                         <exclude>META-INF/services/**</exclude>
                                     </excludes>
                                 </filter>
+
+                                <!-- Exclude services from logback-classic as not needed in this classloader -->
                                 <filter>
-                                    <artifact>org.slf4j:jul-to-slf4</artifact>
-                                    <excludes>
-                                        <exclude>META-INF/services/**</exclude>
-                                    </excludes>
-                                </filter>
-                                <filter>
-                                    <artifact>org.slf4j:log4j-over-slf4j</artifact>
+                                    <artifact>ch.qos.logback:logback-classic</artifact>
                                     <excludes>
                                         <exclude>META-INF/services/**</exclude>
                                     </excludes>
                                 </filter>
                             </filters>
+
                             <relocations>
                                 <relocation>
                                     <pattern>org.apache.commons.logging</pattern>
                                     <shadedPattern>org.apache.juli.logging</shadedPattern>
                                 </relocation>
                                 <relocation>
+                                    <pattern>org.slf4j</pattern>
+                                    <shadedPattern>org.apache.juli.logging.org.slf4j</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>ch.qos.logback</pattern>
+                                    <shadedPattern>org.apache.juli.logging.ch.qos.logback</shadedPattern>
+                                </relocation>
+
+                                <!-- Located in org.apache.juli.logging.ch.qos.logback.classic.util.ContextInitializer -->
+                                <relocation>
+                                    <pattern>logback.configurationFile</pattern>
+                                    <shadedPattern>juli-logback.configurationFile</shadedPattern>
+                                </relocation>
+
+                                <!-- Located in org.apache.juli.logging.ch.qos.logback.classic.ClassicConstants -->
+                                <relocation>
                                     <pattern>logback.ContextSelector</pattern>
                                     <shadedPattern>juli-logback.ContextSelector</shadedPattern>
                                 </relocation>
                             </relocations>
+
                             <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
+                                    <resource>META-INF/LICENSE</resource>
+                                    <file>${project.basedir}/LICENSE</file>
+                                </transformer>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
                                     <resource>META-INF/LICENSE-logback.txt</resource>
                                     <file>${project.basedir}/src/assembly/LICENSE-logback.txt</file>
@@ -135,8 +159,8 @@
                                     <file>${project.basedir}/src/assembly/LICENSE-slf4j.txt</file>
                                 </transformer>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
-                                    <resource>META-INF/services/org.apache.commons.logging.LogFactory</resource>
-                                    <file>${project.basedir}/src/assembly/services/org.apache.commons.logging.LogFactory</file>
+                                    <resource>META-INF/LICENSE-tomcat.txt</resource>
+                                    <file>${project.basedir}/src/assembly/LICENSE-tomcat.txt</file>
                                 </transformer>
                             </transformers>
                         </configuration>
@@ -158,7 +182,9 @@
                 <configuration>
                     <appendAssemblyId>false</appendAssemblyId>
                     <updateOnly>false</updateOnly>
-                    <descriptor>${project.basedir}/src/assembly/assembly.xml</descriptor>
+                    <descriptors>
+                        <descriptor>${project.basedir}/src/assembly/assembly.xml</descriptor>
+                    </descriptors>
                 </configuration>
             </plugin>
             <plugin>
@@ -222,23 +248,12 @@
                             <Logback-Version>${ch.qos.logback.version}</Logback-Version>
                             <Os-Name>${os.name}</Os-Name>
                             <Os-Arch>${os.arch}</Os-Arch>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                             <Os-Version>${os.version}</Os-Version>
                             <X-Compile-Source-JDK>${maven.compiler.source}</X-Compile-Source-JDK>
                             <X-Compile-Target-JDK>${maven.compiler.target}</X-Compile-Target-JDK>
                         </manifestEntries>
                     </archive>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>com.mycila</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>**/conf/context.xml</exclude>
-                        <exclude>**/**/LICENSE*.txt</exclude>
-                        <exclude>**/conf/logging.properties</exclude>
-                        <exclude>**/conf/server.xml</exclude>
-                    </excludes>
                 </configuration>
             </plugin>
         </plugins>
