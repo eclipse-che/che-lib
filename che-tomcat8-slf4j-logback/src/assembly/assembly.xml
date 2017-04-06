@@ -93,6 +93,7 @@
             <includes>
                 <include>logback-access-localhost.xml</include>
                 <include>logback.xml</include>
+                <include>tomcat-logger.xml</include>
                 <include>server.xml</include>
                 <include>context.xml</include>
                 <include>logging.properties</include>

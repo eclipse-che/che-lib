@@ -29,7 +29,7 @@ if "%CATALINA_OPTS%"=="" (set CATALINA_OPTS=-Dcom.sun.management.jmxremote -Dcom
 
 if "%CLASSPATH%"=="" (set CLASSPATH=%CATALINA_HOME%\conf\;%JAVA_HOME%\lib\tools.jar)
 
-set LOG_OPTS=-Dche.logs.dir=%CHE_LOGS_DIR% -Dche.logs.level=%CHE_LOGS_LEVEL% -Djuli-logback.configurationFile=%CATALINA_HOME%\conf\logback.xml
+set LOG_OPTS=-Dche.logs.dir=%CHE_LOGS_DIR% -Dche.logs.level=%CHE_LOGS_LEVEL% -Djuli-logback.configurationFile=file:%CATALINA_HOME%\conf\tomcat-logger.xml
 
 set JAVA_OPTS=%JAVA_OPTS% %LOG_OPTS%
 echo "======="
