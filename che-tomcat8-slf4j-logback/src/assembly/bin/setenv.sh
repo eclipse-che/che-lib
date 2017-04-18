@@ -9,10 +9,8 @@
 #   Codenvy, S.A. - initial API and implementation
 #
 
-if [ -z "${CHE_LOCAL_CONF_DIR}" ]; then
-    echo "Need to set CHE_LOCAL_CONF_DIR"
-    exit 1
-fi
+#Global Conf dir
+[ -z "${CHE_LOCAL_CONF_DIR}" ]  && CHE_LOCAL_CONF_DIR="${CATALINA_HOME}/conf/"
 
 #Global JAVA options
 [ -z "${JAVA_OPTS}" ]  && JAVA_OPTS="-Xms256m -Xmx2048m -Djava.security.egd=file:/dev/./urandom"
@@ -31,10 +29,7 @@ fi
                                              -Dche.local.conf.dir=${CHE_LOCAL_CONF_DIR}"
 
 #Class path
-CLASSPATH="${CATALINA_HOME}/conf/:${JAVA_HOME}/lib/tools.jar"
-if [ ! -z "${TOMCAT_CLASSPATH}" ]; then
- CLASSPATH=${CLASSPATH}:${TOMCAT_CLASSPATH}
-fi
+[ -z "${CLASSPATH}" ]  && CLASSPATH="${CATALINA_HOME}/conf/:${JAVA_HOME}/lib/tools.jar"
 
 
-export JAVA_OPTS="$JAVA_OPTS  -Dche.logs.dir=${CHE_LOGS_DIR} -Dche.logs.level=${CHE_LOGS_LEVEL}"
+export JAVA_OPTS="$JAVA_OPTS  -Dche.logs.dir=${CHE_LOGS_DIR} -Dche.logs.level=${CHE_LOGS_LEVEL} -Djuli-logback.configurationFile=file:$CATALINA_HOME/conf/tomcat-logger.xml"
