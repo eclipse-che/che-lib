@@ -31,7 +31,7 @@
             <pattern>%-41(%date[%.15thread]) %-45([%-5level] [%.30logger{30} %L]) - %msg%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${che.logs.dir}/archive/catalina-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
+            <fileNamePattern>${che.logs.dir}/archive/catalina-%d{yyyyMMdd}-%i.log</fileNamePattern>
             <maxHistory>${max.retention.days}</maxHistory>
             <cleanHistoryOnStart>true</cleanHistoryOnStart>
             <maxFileSize>20MB</maxFileSize>
