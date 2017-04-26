@@ -3,7 +3,7 @@ This patch fixes bug related to setting active EditorView on switching between d
 diff --git a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js b/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js
 --- a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js
 +++ b/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js
-@@ -44160,6 +44160,9 @@
+@@ -44550,6 +44550,9 @@
  			domNode.addEventListener("mousedown", function() { //$NON-NLS-0$
  				this.setActiveEditorView(this.editorView);
  			}.bind(this), true);

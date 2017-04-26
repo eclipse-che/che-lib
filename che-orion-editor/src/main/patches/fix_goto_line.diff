@@ -3,11 +3,13 @@ This patch replaces using browser's native prompt dialog by Che's dialog.
 diff --git a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js b/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js
 --- a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js
 +++ b/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js
-@@ -13942,16 +13942,40 @@
+@@ -14044,20 +14044,44 @@
+ 					var line;
+ 					var editor = this.editor || that.editor;
  					var model = editor.getModel();
- 					if (data.parameters && data.parameters.valueFor('line')) { //$NON-NLS-0$
- 						line = data.parameters.valueFor('line'); //$NON-NLS-0$
--					} else {
+-					if (data.parameters && data.parameters.valueFor('line')) { //$NON-NLS-0$
+-						line = data.parameters.valueFor('line'); //$NON-NLS-0$
+-					} else if(!util.isElectron){
 -						line = model.getLineAtOffset(editor.getCaretOffset());
 -						line = prompt(messages.gotoLinePrompt, line + 1);
 -						if (line) {
@@ -17,6 +19,10 @@ diff --git a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdi
 -					if (line) {
 -						editor.onGotoLine(line - 1, 0);
 -					}
+-				}
+-			});
++                    if (data.parameters && data.parameters.valueFor('line')) { //$NON-NLS-0$
++                        line = data.parameters.valueFor('line'); //$NON-NLS-0$
 +                        if (!line) return;
 +                        editor.onGotoLine(line - 1, 0);
 +                        return;
@@ -51,6 +57,8 @@ diff --git a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdi
 +                    line = parseInt(line, 10);
 +                    if (!line) return;
 +                    editor.onGotoLine(line - 1, 0);
- 				}
- 			});
++                }
++            });
  			this.commandService.addCommand(gotoLineCommand);
+ 		},
+ 		_createFindCommnand: function() {

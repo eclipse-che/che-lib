@@ -792,6 +792,43 @@ define('orion/nls/root/messages',{//Default message bundle
 
 /*******************************************************************************
  * @license
+ * Copyright (c) 2012, 2015 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials are made 
+ * available under the terms of the Eclipse Public License v1.0 
+ * (http://www.eclipse.org/legal/epl-v10.html), and the Eclipse Distribution 
+ * License v1.0 (http://www.eclipse.org/org/documents/edl-v10.html). 
+ *
+ * Contributors: IBM Corporation - initial API and implementation
+ *******************************************************************************/
+/*eslint-env browser, amd*/
+/*global requirejs*/
+define('orion/i18nUtil',[], function() {
+	/**
+	 * Performs string substitution. Can be invoked in 2 ways:
+	 *
+	 * i) vargs giving numbered substition values:
+	 *   formatMessage("${0} is ${1}", "foo", "bar")  // "foo is bar"
+	 *
+	 * ii) a map giving the substitutions:
+	 *   formatMessage("${thing} is ${1}", {1: "bar", thing: "foo"})  // "foo is bar"
+	 */
+	function formatMessage(msg) {
+		var pattern = /\$\{([^\}]+)\}/g, args = arguments;
+		if (args.length === 2 && args[1] && typeof args[1] === "object") {
+			return msg.replace(pattern, function(str, key) {
+				return args[1][key];
+			});
+		}
+		return msg.replace(pattern, function(str, index) {
+			return args[(index << 0) + 1];
+		});
+	}
+	return {
+		formatMessage: formatMessage
+	};
+});
+/*******************************************************************************
+ * @license
  * Copyright (c) 2012 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials are made 
  * available under the terms of the Eclipse Public License v1.0 
@@ -1297,7 +1334,7 @@ define('orion/webui/littlelib',["orion/util"], function(util) {
 		DOWN: 40,
 		INSERT: 45,
 		DEL: 46,
-		COMMAND: 991
+		COMMAND: 91
 	};
 	/**
 	 * Maps a <code>keyCode</code> to <tt>KEY</tt> name. This is the inverse of {@link orion.webui.littlelib.KEY}.
@@ -2638,7 +2675,7 @@ define('text!orion/webui/checkedmenuitem.html',[],function () { return '<li><lab
 
 /*******************************************************************************
  * @license
- * Copyright (c) 2012, 2016 IBM Corporation and others.
+ * Copyright (c) 2012, 2017 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials are made 
  * available under the terms of the Eclipse Public License v1.0 
  * (http://www.eclipse.org/legal/epl-v10.html), and the Eclipse Distribution 
@@ -2784,7 +2821,16 @@ define('orion/webui/tooltip',['orion/webui/littlelib'], function(lib) {
 			return this._tip;
 		},
 		
-		_positionTip: function(position, force) {
+		/**
+		 * @description Positions the tooltip relative to its parent
+		 * @function
+		 * @private
+		 * @param position {String} above, below, left or right
+		 * @param allowMove {Boolean} whether the tooltip can be shifted over to avoid extending over the browser window
+		 * @param force {Boolean} whether to force the tooltip into the position even if it overlaps the parent
+		 * @returns returns {Boolean} whether the tooltip was successfully positioned
+		 */
+		_positionTip: function(position, allowMove, force) {
 			this._makeTipNode();  // lazy initialize
 			
 			this._tip.classList.add("tooltipShowing"); //$NON-NLS-0$
@@ -2825,6 +2871,7 @@ define('orion/webui/tooltip',['orion/webui/littlelib'], function(lib) {
 					break;
 			}
 			//Checking if the tooltip will fit inside the viewport of the browser
+			var tailChanged = false;
 			var body = document.body, html = document.documentElement;
 			var vPortLeft = Math.max(html.scrollLeft, body.scrollLeft);
 			var vPortTop = Math.max(html.scrollTop, body.scrollTop);
@@ -2832,15 +2879,17 @@ define('orion/webui/tooltip',['orion/webui/littlelib'], function(lib) {
 			var vPortBottom = vPortTop + html.clientHeight;			
 			
 			if (top + tipRect.height > vPortBottom) {
-				if (force) {
+				if (force || (allowMove && (position === "left" || position === "right"))) {
 					top = vPortBottom - tipRect.height - 1;
+					tailChanged = true;
 				} else {
 					return false;
 				}
 			}
 			if (left + tipRect.width > vPortRight) {
-				if (force) {
+				if (force || (allowMove && (position === "above" || position === "below"))) {
 					left = vPortRight - tipRect.width - 1;
+					tailChanged = true;
 				} else {
 					return false;
 				}
@@ -2848,6 +2897,7 @@ define('orion/webui/tooltip',['orion/webui/littlelib'], function(lib) {
 			if (left < vPortLeft) {
 				if (force) {
 					left = vPortLeft + 4;
+					tailChanged = true;
 				} else {
 					return false;
 				}
@@ -2855,12 +2905,13 @@ define('orion/webui/tooltip',['orion/webui/littlelib'], function(lib) {
 			if (top < vPortTop) {
 				if (force) {
 					top = vPortTop + 4;
+					tailChanged = true;
 				} else {
 					return false;
 				}
 			}
 			
-			if (this._tail && (this._tail.previousPosition !== position)) {
+			if (this._tail && (this._tail.previousPosition !== position || tailChanged)) {
 				//position has changed, tail needs to be modified
 				this._tip.removeChild(this._tail);
 				this._tail = null;
@@ -2875,7 +2926,18 @@ define('orion/webui/tooltip',['orion/webui/littlelib'], function(lib) {
 				} else {
 					this._tip.insertBefore(this._tail, this._tipInner);
 				}
-				this._tail.previousPosition = position;
+				// Move the tail to match up with the anchor
+				if (tailChanged){
+					if (position === "above" || position === "below") { //$NON-NLS-1$//$NON-NLS-0$
+						// tip goes after content
+						this._tail.style.left = (rect.left - left + this._tailSize) + "px";
+					} else {
+						this._tail.style.top = (rect.top - top + this._tailSize) + "px";
+					}
+					this._tail.previousPosition = null;
+				} else {
+					this._tail.previousPosition = position;
+				}
 			}
 			this._tip.style.top = top + "px"; //$NON-NLS-0$
 			this._tip.style.left = left + "px"; //$NON-NLS-0$ 
@@ -2915,12 +2977,20 @@ define('orion/webui/tooltip',['orion/webui/littlelib'], function(lib) {
 		_showImmediately: function() {
 			var positioned = false;
 			var index = 0;
+			// See if the tooltip can fit anywhere around the anchor
 			while (!positioned && index < this._position.length) {
 				positioned = this._positionTip(this._position[index]);
 				index++;
 			}
+			index = 0;
+			// See if the tooltip can be moved over to fit around the anchor
+			while (!positioned && index < this._position.length) {
+				positioned = this._positionTip(this._position[index], true, false);
+				index++;
+			}
+			// Place the tooltip even if it overlaps the anchor
 			if (!positioned) {
-				this._positionTip(this._position[0], true);  // force it in, it doesn't fit anywhere
+				this._positionTip(this._position[0], false, true);  // force it in, it doesn't fit anywhere
 			}
 			if (this._afterShowing) {
 				this._afterShowing();
@@ -3121,6 +3191,7 @@ define('orion/metrics',[
  
 define('orion/commands',[
 	'i18n!orion/nls/messages',
+	'orion/i18nUtil',
 	'orion/webui/littlelib',
 	'orion/commandsProxy',
 	'orion/webui/dropdown',
@@ -3129,7 +3200,7 @@ define('orion/commands',[
 	'text!orion/webui/checkedmenuitem.html',
 	'orion/webui/tooltip',
 	'orion/metrics'
-], function(messages, lib, mCommandsProxy, Dropdown, DropdownButtonFragment, DropdownButtonWithArrowFragment, CheckedMenuItemFragment, Tooltip, mMetrics) {
+], function(messages, i18nUtil, lib, mCommandsProxy, Dropdown, DropdownButtonFragment, DropdownButtonWithArrowFragment, CheckedMenuItemFragment, Tooltip, mMetrics) {
 		/**
 		 * @name orion.commands.NO_IMAGE
 		 * @description Image data for 16x16 transparent png.
@@ -3352,7 +3423,12 @@ define('orion/commands',[
 			button.classList.add(command.extraClass);
 		}
 		button.classList.add("commandButton"); //$NON-NLS-1$
-		var text = document.createTextNode(command.name);
+		
+		var buttonText = command.name;
+		if (commandInvocation.userData.annotation.data && commandInvocation.userData.annotation.data.ruleId){
+			buttonText = i18nUtil.formatMessage(command.name, commandInvocation.userData.annotation.data.ruleId);
+		}
+		var text = document.createTextNode(buttonText);
 		button.appendChild(text);
 		
 		var onClick = callback || command.callback;
@@ -4202,43 +4278,6 @@ define('orion/explorers/navigationUtils',[], function() {
 	};
 });
 
-/*******************************************************************************
- * @license
- * Copyright (c) 2012, 2015 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials are made 
- * available under the terms of the Eclipse Public License v1.0 
- * (http://www.eclipse.org/legal/epl-v10.html), and the Eclipse Distribution 
- * License v1.0 (http://www.eclipse.org/org/documents/edl-v10.html). 
- *
- * Contributors: IBM Corporation - initial API and implementation
- *******************************************************************************/
-/*eslint-env browser, amd*/
-/*global requirejs*/
-define('orion/i18nUtil',[], function() {
-	/**
-	 * Performs string substitution. Can be invoked in 2 ways:
-	 *
-	 * i) vargs giving numbered substition values:
-	 *   formatMessage("${0} is ${1}", "foo", "bar")  // "foo is bar"
-	 *
-	 * ii) a map giving the substitutions:
-	 *   formatMessage("${thing} is ${1}", {1: "bar", thing: "foo"})  // "foo is bar"
-	 */
-	function formatMessage(msg) {
-		var pattern = /\$\{([^\}]+)\}/g, args = arguments;
-		if (args.length === 2 && args[1] && typeof args[1] === "object") {
-			return msg.replace(pattern, function(str, key) {
-				return args[1][key];
-			});
-		}
-		return msg.replace(pattern, function(str, index) {
-			return args[(index << 0) + 1];
-		});
-	}
-	return {
-		formatMessage: formatMessage
-	};
-});
 /*******************************************************************************
  * @license
  * Copyright (c) 2011, 2013 IBM Corporation and others.
@@ -5344,7 +5383,6 @@ define('orion/commandRegistry',[
 	'orion/commands',
 	'orion/keyBinding',
 	'orion/explorers/navigationUtils',
-	'orion/i18nUtil',
 	'orion/bidiUtils',
 	'orion/PageUtil',
 	'orion/uiUtils',
@@ -5355,7 +5393,7 @@ define('orion/commandRegistry',[
 	'orion/metrics',
 	'orion/Deferred',
 	'orion/EventTarget'
-], function(Commands, mKeyBinding, mNavUtils, i18nUtil, bidiUtils, PageUtil, UIUtil, lib, mDropdown, mTooltip, SubMenuButtonFragment, mMetrics, mDeferred, mEventTarget) {
+], function(Commands, mKeyBinding, mNavUtils, bidiUtils, PageUtil, UIUtil, lib, mDropdown, mTooltip, SubMenuButtonFragment, mMetrics, mDeferred, mEventTarget) {
 
 	/**
 	 * Constructs a new command registry with the given options.
@@ -5571,61 +5609,59 @@ define('orion/commandRegistry',[
 		 * will be called with boolean indicating whether the command was confirmed.
 		 */
 		confirm: function(node, message, yesString, noString, modal, onConfirm) {
-			this._popupDialog(true, node, message, yesString, noString, modal, onConfirm);
+			this._popupDialog(modal,"CONFIRM", node, message, [{label:yesString,callback:onConfirm,type:"ok"},{label:noString,callback:null,type:"cancel"}]);
 		},
 		
 		/**
 		 * Open a parameter collector to confirm a command or collect user input.
 		 *
-		 * @param {Boolean} isConfirm that determinds the popup dialog's type.
+		 * @param {Boolean} modal indicates whether the confirmation prompt should be modal.
+		 * @param {String}  determinds the popup dialog's type, could be "PROMPT" or "CONFIRM"
 		 * @param {DOMElement} node the dom node that is displaying the command
 		 * @param {String} message the message to show when confirming the command
-		 * @param {String} yesString the label to show on a yes/true choice
-		 * @param {String} noString the label to show on a no/false choice
-		 * @param {Boolean} modal indicates whether the confirmation prompt should be modal.
-		 * @param {Function} onConfirm a function that will be called when the user confirms the command.  The function
+		 * @param {Array} an array of button label, callback, type objects; if the type is "yes", either input.value or true will be passed to callback depends on the dialog's type
 		 * @param {String} default message in the input box.
-		 * will be called with boolean indicating whether the command was confirmed.
 		 */
-		_popupDialog: function(isConfirm, node, message, yesString, noString, modal, onConfirm, defaultInput) {
-			var result = isConfirm ? false : "";
+		_popupDialog: function(modal, style, node, message, buttonStringCallList, defaultInput) {
+			var result;
 			if (this._parameterCollector && !modal) {
 				var self = this;
-				var okCallback = function() {onConfirm(result);};
 				var closeFunction = function(){self._parameterCollector.close();}
 				var fillFunction = function(parent, buttonParent) {
 					var label = document.createElement("span"); //$NON-NLS-0$
 					label.classList.add("parameterPrompt"); //$NON-NLS-0$
 					label.textContent = message;
 					parent.appendChild(label);
-					if(!isConfirm){
+					if(style === "PROMPT"){
 						var input = document.createElement("input");
 						input.setAttribute("value", defaultInput);
 						input.classList.add("parameterInput");
 						bidiUtils.initInputField(input);
 						parent.appendChild(input);
 					}
-					var yesButton = document.createElement("button"); //$NON-NLS-0$
-					yesButton.addEventListener("click", function(event) { //$NON-NLS-0$
-						result = isConfirm ? true : input.value;
-						okCallback();
-						closeFunction();
-					}, false);
-					buttonParent.appendChild(yesButton);
-					yesButton.appendChild(document.createTextNode(yesString)); //$NON-NLS-0$
-					yesButton.className = "dismissButton"; //$NON-NLS-0$
-					var button = document.createElement("button"); //$NON-NLS-0$
-					button.addEventListener("click", function(event) { //$NON-NLS-0$
-						result = isConfirm ? false : "";
-						closeFunction();
-					}, false);
-					buttonParent.appendChild(button);
-					button.appendChild(document.createTextNode(noString)); //$NON-NLS-0$
-					button.className = "dismissButton"; //$NON-NLS-0$
-					return yesButton;
+					
+					var buttons = Object.keys(buttonStringCallList).map(function(key){
+						var button = document.createElement("button"); //$NON-NLS-0$
+						button.addEventListener("click", function(event) { //$NON-NLS-0$
+							if(buttonStringCallList[key].type === "ok"){
+								result = style === "PROMPT" ? input.value : true;
+							}else if(buttonStringCallList[key].type === "cancel"){
+								result = style === "PROMPT" ? "" : false;
+							}else{
+								result = true;
+							}
+							buttonStringCallList[key].callback && buttonStringCallList[key].callback(result);
+							closeFunction();
+						}, false);
+						buttonParent.appendChild(button);
+						button.appendChild(document.createTextNode(buttonStringCallList[key]["label"])); //$NON-NLS-0$
+						button.className = "dismissButton";
+						return button;
+					});
+					return buttons[0];
 				};
 				this._parameterCollector.close();
-				if(isConfirm || !isConfirm && !node ){
+				if(!node){
 					// Do this if this is a confirm or if this is a prompt but without node specified.
 					var opened = this._parameterCollector.open(node, fillFunction, function(){});
 				}
@@ -5636,7 +5672,7 @@ define('orion/commandRegistry',[
 							this.destroy();
 						},
 						trigger: "click", //$NON-NLS-0$
-						position: isConfirm ? ["below", "right", "above", "left"] : ["right","above", "below", "left"]//$NON-NLS-4$ //$NON-NLS-3$ //$NON-NLS-2$ //$NON-NLS-1$
+						position: style !== "PROMPT" ? ["below", "right", "above", "left"] : ["right","above", "below", "left"]//$NON-NLS-4$ //$NON-NLS-3$ //$NON-NLS-2$ //$NON-NLS-1$
 					});
 					var parameterArea = tooltip.contentContainer();
 					parameterArea.classList.add("parameterPopup"); //$NON-NLS-0$
@@ -5670,7 +5706,7 @@ define('orion/commandRegistry',[
 				return;
 			} 
 			result = window.confirm(message);
-			onConfirm(result);
+			buttonStringCallList[0].callback(result);
 		},
 		
 		/**
@@ -5686,7 +5722,18 @@ define('orion/commandRegistry',[
 		 * will be called with boolean indicating whether the command was confirmed.
 		 */
 		prompt: function(node, message, yesString, noString, defaultInput, modal, onConfirm) {
-			this._popupDialog(false, node, message, yesString, noString, modal, onConfirm ,defaultInput);
+			this._popupDialog(modal,"PROMPT", node, message, [{label:yesString,callback:onConfirm,type:"ok"},{label:noString,callback:null,type:"cancel"}], defaultInput);
+		},
+		
+		/**
+		 * Open a dialog with several buttons.
+		 *
+		 * @param {DOMElement} node the dom node that is displaying the command
+		 * @param {String} message the message to show when confirming the command
+		 * @param {Array} an array of button label, callback, type objects;
+		 */
+		confirmWithButtons: function(node, message, buttonsCallbackList){
+			this._popupDialog(false, "CONFIRM", node, message, buttonsCallbackList);
 		},
 		
 		/**
@@ -6586,7 +6633,10 @@ define('orion/commandRegistry',[
 							invocation.handler = invocation.handler || this;
 							invocation.domParent = parent;
 							var element;
-							var onClick = function(event) {
+							/**
+							 * @callback
+							 */
+							var onClick = function(e) {
 								self._invoke(invocation);
 							};
 							if (renderType === "menu") {
@@ -6601,14 +6651,29 @@ define('orion/commandRegistry',[
 								self._registerRenderedCommand(command.id, scopeId, invocation);
 							} else if (renderType === "quickfix") {
 								id = renderType + command.id + index; // using the index ensures unique ids within the DOM when a command repeats for each item
-								var commandDiv = document.createElement("div"); //$NON-NLS-0$
-								parent.appendChild(commandDiv);
-								parent.classList.add('quickFixList');
-								element = Commands.createQuickfixItem(commandDiv, command, invocation, onClick, self._prefService);
+								parent.classList.add('quickFixList'); //$NON-NLS-1$
+								var QUICKFIX_ID = 'quickfixDetails'; //$NON-NLS-1$
+								var quickfixDetails = parent.childNodes.item(QUICKFIX_ID);
+								if (command.id === 'ignore.in.file.fix'){
+									if (!quickfixDetails){
+										quickfixDetails = document.createElement("div");
+										quickfixDetails.id = QUICKFIX_ID;
+										parent.appendChild(quickfixDetails);
+									}
+									element = Commands.createQuickfixItem(quickfixDetails, command, invocation, onClick, self._prefService);
+								} else {
+									var commandDiv = document.createElement("div");
+									if (quickfixDetails){
+										parent.insertBefore(commandDiv, quickfixDetails);
+									} else {
+										parent.appendChild(commandDiv);
+									}
+									element = Commands.createQuickfixItem(commandDiv, command, invocation, onClick, self._prefService);
+								}
 							} else {
 								id = renderType + command.id + index;  // // using the index ensures unique ids within the DOM when a command repeats for each item
 								element = Commands.createCommandItem(parent, command, invocation, id, null, renderType === "tool", onClick);
-							} 
+							}
 							mNavUtils.generateNavGrid(domNodeWrapperList, element);
 							invocation.domNode = element;
 							index++;
@@ -7018,7 +7083,7 @@ define('orion/editor/nls/messages',["module"],function(module){
 
 /*******************************************************************************
  * @license
- * Copyright (c) 2010, 2012 IBM Corporation and others.
+ * Copyright (c) 2010, 2017 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials are made 
  * available under the terms of the Eclipse Public License v1.0 
  * (http://www.eclipse.org/legal/epl-v10.html), and the Eclipse Distribution 
@@ -7037,6 +7102,7 @@ define('orion/editor/nls/root/messages',{//Default message bundle
 	"task": "Task", //$NON-NLS-1$ //$NON-NLS-0$
 	"error": "Error", //$NON-NLS-1$ //$NON-NLS-0$
 	"warning": "Warning", //$NON-NLS-1$ //$NON-NLS-0$
+	"info": "Info", //$NON-NLS-1$ //$NON-NLS-0$
 	"currentSearch": "Current Search", //$NON-NLS-1$ //$NON-NLS-0$
 	"currentLine": "Current Line", //$NON-NLS-1$ //$NON-NLS-0$
 	"matchingBracket": "Matching Bracket", //$NON-NLS-1$ //$NON-NLS-0$
@@ -7386,7 +7452,7 @@ define("orion/editor/eventTarget", [], function() {
 
 /*******************************************************************************
  * @license
- * Copyright (c) 2010, 2014 IBM Corporation and others.
+ * Copyright (c) 2010, 2017 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Eclipse Public License v1.0
  * (http://www.eclipse.org/legal/epl-v10.html), and the Eclipse Distribution
@@ -7539,6 +7605,11 @@ define("orion/editor/annotations", ['i18n!orion/editor/nls/messages', 'orion/edi
 	 */
 	AnnotationType.ANNOTATION_WARNING = "orion.annotation.warning"; //$NON-NLS-0$
 	/**
+	 * Info annotation type.
+	 * @since 14.0
+	 */
+	AnnotationType.ANNOTATION_INFO = "orion.annotation.info"; //$NON-NLS-0$
+	/**
 	 * Task annotation type.
 	 */
 	AnnotationType.ANNOTATION_TASK = "orion.annotation.task"; //$NON-NLS-0$
@@ -7686,6 +7757,7 @@ define("orion/editor/annotations", ['i18n!orion/editor/nls/messages', 'orion/edi
 	}
 	registerType(AnnotationType.ANNOTATION_ERROR);
 	registerType(AnnotationType.ANNOTATION_WARNING);
+	registerType(AnnotationType.ANNOTATION_INFO);
 	registerType(AnnotationType.ANNOTATION_TASK);
 	registerType(AnnotationType.ANNOTATION_BREAKPOINT);
 	registerType(AnnotationType.ANNOTATION_BOOKMARK);
@@ -7793,8 +7865,7 @@ define("orion/editor/annotations", ['i18n!orion/editor/nls/messages', 'orion/edi
 			var annotation, annotations = [];
 			while (iter.hasNext()) {
 				annotation = iter.next();
-				var priority = this.getAnnotationTypePriority(annotation.type);
-				if (priority === 0) { continue; }
+				if (!this.isAnnotationTypeVisible(annotation.type)) { continue; }
 				annotations.push(annotation);
 			}
 			var self = this;
@@ -7813,7 +7884,24 @@ define("orion/editor/annotations", ['i18n!orion/editor/nls/messages', 'orion/edi
 		 * @see orion.editor.AnnotationTypeList#removeAnnotationType
 		 */
 		isAnnotationTypeVisible: function(type) {
-			return this.getAnnotationTypePriority(type) !== 0;
+			if (this.getAnnotationTypePriority(type) === 0) return false;
+			return !this._visibleAnnotationTypes || this._visibleAnnotationTypes[type] === undefined || this._visibleAnnotationTypes[type] === true;
+		},
+		/**
+		 * Sets whether annotations of the given annotation type are visble. By default
+		 * all annotations added to the receiver are visible.
+		 * 
+		 * @param {Object} type
+		 * @param {Boolean} visible
+		 * @since 14.0
+		 */
+		setAnnotationTypeVisible: function(type, visible) {
+			if (typeof type === "object") {
+				this._visibleAnnotationTypes = type;
+			} else {
+				if (!this._visibleAnnotationTypes) this._visibleAnnotationTypes = {};
+				this._visibleAnnotationTypes[type] = visible;
+			}
 		},
 		/**
 		 * Removes an annotation type from the receiver.
@@ -8406,12 +8494,12 @@ define("orion/editor/textStyler", ['orion/editor/annotations', 'orion/editor/eve
 		return JSON.parse(JSON.stringify(object));
 	}
 
-	var createPatternBasedAdapter = function(grammars, rootId, contentType) {
-		return new PatternBasedAdapter(grammars, rootId, contentType);
+	var createPatternBasedAdapter = function(grammars, rootIds, contentType) {
+		return new PatternBasedAdapter(grammars, rootIds, contentType);
 	};
 
-	function PatternBasedAdapter(grammars, rootId, contentType) {
-		this._patternManager = new PatternManager(grammars, rootId);
+	function PatternBasedAdapter(grammars, rootIds, contentType) {
+		this._patternManager = new PatternManager(grammars, rootIds);
 		this._contentType = contentType;
 	}
 	PatternBasedAdapter.prototype = {
@@ -8610,6 +8698,9 @@ define("orion/editor/textStyler", ['orion/editor/annotations', 'orion/editor/eve
 					newBlock.enclosurePatterns = {};
 					this._initPatterns(this._patternManager, newBlock);
 				}.bind(this));
+		},
+		destroy: function() {
+			this._textModel.removeEventListener("Changed", this._listener); //$NON-NLS-0$
 		},
 		getBlockCommentDelimiters: function(index) {
 			var languageBlock = this._getLanguageBlock(index);
@@ -8834,7 +8925,14 @@ define("orion/editor/textStyler", ['orion/editor/annotations', 'orion/editor/eve
 			});
 		},
 		setStyler: function(styler) {
+			if (this._styler) {
+				this._textModel.removeEventListener("Changed", this._listener); //$NON-NLS-0$
+			}
 			this._styler = styler;
+			this._listener = this._onModelChanged.bind(this);
+			this._textModel = this._styler.getTextModel();
+			this._textModel.addEventListener("Changed", this._listener); //$NON-NLS-0$
+			this._patternManager.firstLineChanged(this._textModel.getLine(0));
 		},
 		verifyBlock: function(baseModel, text, ancestorBlock, changeCount) {
 			var result = null;
@@ -9068,6 +9166,16 @@ define("orion/editor/textStyler", ['orion/editor/annotations', 'orion/editor/eve
 				resultStyles.push({start: i, end: fullStyle.end, style: fullStyle.style});
 			}
 		},
+		_onModelChanged: function(e) {
+			var startLine = this._textModel.getLineAtOffset(e.start);
+			if (startLine === 0) {
+				/* a change in the first line can change the grammar to be applied throughout */
+				if (this._patternManager.firstLineChanged(this._textModel.getLine(0))) {
+					/* the grammar has changed */
+					this._styler.computeRootBlock(this._textModel);
+				}
+			}
+		},
 		_substituteCaptureValues: function(regex, resolvedResult) {
 			var regexString = regex.toString();
 			this._captureReferenceRegex.lastIndex = 0;
@@ -9105,7 +9213,7 @@ define("orion/editor/textStyler", ['orion/editor/annotations', 'orion/editor/eve
 		_containsCaptureRegex: /\((?!\?:)/, //$NON-NLS-0$
 		_eolRegex: /$/,
 		_ignoreCaseRegex: /^\(\?i\)\s*/,
-		_linebreakRegex: /(.*)(?:[\r\n]|$)/g,
+		_linebreakRegex: /([\s\S]*?)(?:[\r\n]|$)/g,
 		_CR: "\r", //$NON-NLS-0$
 		_FLAGS: "g", //$NON-NLS-0$
 		_NEWLINE: "\n", //$NON-NLS-0$
@@ -9113,19 +9221,35 @@ define("orion/editor/textStyler", ['orion/editor/annotations', 'orion/editor/eve
 		_PUNCTUATION_SECTION_END: ".end" //$NON-NLS-0$
 	};
 
-	function PatternManager(grammars, rootId) {
+	function PatternManager(grammars, rootIds) {
 		this._unnamedCounter = 0;
 		this._patterns = [];
-		this._rootId = rootId;
+		this._firstLineMatches = {};
+		if (!Array.isArray(rootIds)) {
+			rootIds = [rootIds];
+		}
+		this._rootIds = rootIds;
 		grammars.forEach(function(grammar) {
 			this._addRepositoryPatterns(grammar.repository || {}, grammar.id);
 			this._addPatterns(grammar.patterns || [], grammar.id);
+			if (grammar.firstLineMatch) {
+				this._firstLineMatches[grammar.id] = new RegExp(grammar.firstLineMatch);
+			}
 		}.bind(this));
 	}
 	PatternManager.prototype = {
+		firstLineChanged: function(text) {
+			var newId = this._computeRootId(text);
+			var changed = this._rootId !== newId;
+			this._rootId = newId;
+			return changed;
+		},
 		getPatterns: function(pattern) {
 			var parentId;
 			if (!pattern) {
+				if (!this._rootId) { /* currently no root id */
+					return [];
+				}
 				parentId = this._rootId + "#" + this._NO_ID;
 			} else {
 				if (typeof(pattern) === "string") { //$NON-NLS-0$
@@ -9180,6 +9304,19 @@ define("orion/editor/textStyler", ['orion/editor/annotations', 'orion/editor/eve
 			keys.forEach(function(key) {
 				this._addPattern(repository[key], key, parentId);
 			}.bind(this));
+		},
+		_computeRootId: function(firstLineText) {
+			var defaultId = null; /* an acceptable fallback if no firstLineMatches are made */
+			var matchId = null;
+			for (var i = 0; i < this._rootIds.length; i++) {
+				var firstLineMatch = this._firstLineMatches[this._rootIds[i]]; 
+				if (!firstLineMatch) {
+					defaultId = this._rootIds[i];
+				} else if (firstLineMatch.test(firstLineText)) {
+					matchId = this._rootIds[i];
+				}
+			}
+			return matchId || defaultId; 
 		},
 		_processInclude: function(pattern, indexCounter, resultObject) {
 			var searchExp;
@@ -9309,34 +9446,7 @@ define("orion/editor/textStyler", ['orion/editor/annotations', 'orion/editor/eve
 		view.addEventListener("Selection", this._listener.onSelection); //$NON-NLS-0$
 		view.addEventListener("Destroy", this._listener.onDestroy); //$NON-NLS-0$
 		view.addEventListener("LineStyle", this._listener.onLineStyle); //$NON-NLS-0$
-
-		var charCount = model.getCharCount();
-		var rootBounds = {start: 0, contentStart: 0, end: charCount, contentEnd: charCount};
-		if (charCount >= 50000) {
-			var startTime = Date.now();
-		}
-		this._rootBlock = this._stylerAdapter.createBlock(rootBounds, this, model, null);
-		if (startTime) {
-			var interval = Date.now() - startTime;
-			if (interval > 10) {
-				mMetrics.logTiming(
-					"editor", //$NON-NLS-0$
-					"styler compute blocks (ms/50000 chars)", //$NON-NLS-0$
-					interval * 50000 / charCount,
-					stylerAdapter.getContentType());
-			}
-		}
-		if (annotationModel) {
-			var add = [];
-			annotationModel.removeAnnotations(mAnnotations.AnnotationType.ANNOTATION_FOLDING);
-			this._computeFolding(this._rootBlock.getBlocks(), view.getModel(), add);
-			if (this._detectTasks) {
-				annotationModel.removeAnnotations(mAnnotations.AnnotationType.ANNOTATION_TASK);
-				this._computeTasks(this._rootBlock, model, add);
-			}
-			this._replaceAnnotations([], add);
-		}
-		view.redrawLines();
+		this.computeRootBlock(model);
 	}
 	TextStyler.prototype = {
 		addAnnotationProvider: function(value) {
@@ -9347,7 +9457,37 @@ define("orion/editor/textStyler", ['orion/editor/annotations', 'orion/editor/eve
 		computeBlocks: function(model, text, block, offset, startIndex, endIndex, maxBlockCount) {
 			return this._stylerAdapter.computeBlocks(model, text, block, offset, startIndex, endIndex, maxBlockCount);
 		},
+		computeRootBlock: function(model) {
+			var charCount = model.getCharCount();
+			var rootBounds = {start: 0, contentStart: 0, end: charCount, contentEnd: charCount};
+			if (charCount >= 50000) {
+				var startTime = Date.now();
+			}
+			this._rootBlock = this._stylerAdapter.createBlock(rootBounds, this, model, null);
+			if (startTime) {
+				var interval = Date.now() - startTime;
+				if (interval > 10) {
+					mMetrics.logTiming(
+						"editor", //$NON-NLS-0$
+						"styler compute blocks (ms/50000 chars)", //$NON-NLS-0$
+						interval * 50000 / charCount,
+						this._stylerAdapter.getContentType());
+				}
+			}
+			if (this._annotationModel) {
+				var add = [];
+				this._annotationModel.removeAnnotations(mAnnotations.AnnotationType.ANNOTATION_FOLDING);
+				this._computeFolding(this._rootBlock.getBlocks(), this._view.getModel(), add);
+				if (this._detectTasks) {
+					this._annotationModel.removeAnnotations(mAnnotations.AnnotationType.ANNOTATION_TASK);
+					this._computeTasks(this._rootBlock, model, add);
+				}
+				this._replaceAnnotations([], add);
+			}
+			this._view.redrawLines();
+		},
 		destroy: function() {
+			this._stylerAdapter.destroy();
 			if (this._view) {
 				var model = this._view.getModel();
 				if (model.getBaseModel) {
@@ -12272,7 +12412,7 @@ define("orion/editor/stylers/text_x-c__src/syntax", ["orion/editor/stylers/lib/s
 
 /*******************************************************************************
  * @license
- * Copyright (c) 2014 IBM Corporation and others.
+ * Copyright (c) 2014, 2017 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Eclipse Public License v1.0
  * (http://www.eclipse.org/legal/epl-v10.html), and the Eclipse Distribution
@@ -12284,13 +12424,17 @@ define("orion/editor/stylers/text_x-c__src/syntax", ["orion/editor/stylers/lib/s
 /*eslint-env browser, amd*/
 define("orion/editor/stylers/text_x-dockerfile/syntax", ["orion/editor/stylers/lib/syntax"], function(mLib) {
 	var keywords = [
-		"add",
+		"add", "arg",
 		"cmd", "copy",
 		"entrypoint", "env", "expose",
 		"from",
+		"healthcheck",
+		"label",
 		"maintainer",
 		"onbuild",
 		"run",
+		"shell",
+		"stopsignal",
 		"user",
 		"volume",
 		"workdir"
@@ -15128,6 +15272,7 @@ define('orion/compare/nls/root/messages',{//Default message bundle
 	'readingFileMetadata': 'Reading file metadata: ${0}...',
 	'comparingFile': 'Comparing: ${0}...',
 	'compareTreeTitle': 'Compare Folders',
+	'compareFileTitle': 'Compare Files',
 	'IgnoreWhitespace': 'Ignore white space',
 	'IgnoreWhitespaceTooltip': 'Ignore white space where applicable',
 	'UseWhitespace': 'Use white space',
@@ -17695,6 +17840,34 @@ define("orion/editor/util", [], function() { //$NON-NLS-0$
 		}
 	}
 	/** @private */
+	function compare(s1, s2) {
+		if (s1 === s2) { return true; }
+		if (s1 && !s2 || !s1 && s2) { return false; }
+		if ((s1 && s1.constructor === String) || (s2 && s2.constructor === String)) { return false; }
+		if (s1 instanceof Array || s2 instanceof Array) {
+			if (!(s1 instanceof Array && s2 instanceof Array)) { return false; }
+			if (s1.length !== s2.length) { return false; }
+			for (var i = 0; i < s1.length; i++) {
+				if (!compare(s1[i], s2[i])) {
+					return false;
+				}
+			}
+			return true;
+		}
+		if (!(s1 instanceof Object) || !(s2 instanceof Object)) { return false; }
+		var p;
+		for (p in s1) {
+			if (s1.hasOwnProperty(p)) {
+				if (!s2.hasOwnProperty(p)) { return false; }
+				if (!compare(s1[p], s2[p])) {return false; }
+			}
+		}
+		for (p in s2) {
+			if (!s1.hasOwnProperty(p)) { return false; }
+		}
+		return true;
+	}
+	/** @private */
 	function contains(topNode, node) {
 		if (!node) { return false; }
 		if (!topNode.compareDocumentPosition) {
@@ -17797,6 +17970,7 @@ define("orion/editor/util", [], function() { //$NON-NLS-0$
 	}());
 
 	return {
+		compare: compare,
 		contains: contains,
 		getNodeStyle: getNodeStyle,
 		addEventListener: addEventListener,
@@ -17900,33 +18074,7 @@ define("orion/editor/textView", [  //$NON-NLS-1$
 		return obj1;
 	}
 	/** @private */
-	function compare(s1, s2) {
-		if (s1 === s2) { return true; }
-		if (s1 && !s2 || !s1 && s2) { return false; }
-		if ((s1 && s1.constructor === String) || (s2 && s2.constructor === String)) { return false; }
-		if (s1 instanceof Array || s2 instanceof Array) {
-			if (!(s1 instanceof Array && s2 instanceof Array)) { return false; }
-			if (s1.length !== s2.length) { return false; }
-			for (var i = 0; i < s1.length; i++) {
-				if (!compare(s1[i], s2[i])) {
-					return false;
-				}
-			}
-			return true;
-		}
-		if (!(s1 instanceof Object) || !(s2 instanceof Object)) { return false; }
-		var p;
-		for (p in s1) {
-			if (s1.hasOwnProperty(p)) {
-				if (!s2.hasOwnProperty(p)) { return false; }
-				if (!compare(s1[p], s2[p])) {return false; }
-			}
-		}
-		for (p in s2) {
-			if (!s1.hasOwnProperty(p)) { return false; }
-		}
-		return true;
-	}
+	var compare = textUtil.compare;
 	/** @private */
 	function convertDelimiter(text, addTextFunc, addDelimiterFunc) {
 		var cr = 0, lf = 0, index = 0, len = text.length;
@@ -26645,8 +26793,6 @@ function Tooltip (view, editor) {
 			this._tooltipDiv.style.overflowX = "";
 			this._tooltipDiv.style.overflowY = "";
 			
-			this._giveFocus = undefined;
-			
 			this._anchorArea = undefined;  // Area of text/ruler/etc. we are showing a tooltip for
 			this._tooltipArea = undefined;  // The area the tooltip covers
 			this._outerArea = undefined; // The rectangle encapsulating both anchor and tooltip areas where we want to keep the tooltip open
@@ -26800,7 +26946,7 @@ function Tooltip (view, editor) {
 			if (!this._outerArea){
 				this._outerArea = this._computeOuterArea(this._anchorArea, this._tooltipArea);
 			}
-
+			
 			this._tooltipDiv.style.visibility = "visible"; //$NON-NLS-0$
 			this._tipShowing = true;
 			
@@ -26910,7 +27056,21 @@ function Tooltip (view, editor) {
 			
 			// Now that we have our width recalculate the desired height...
 			tooltipDiv.style.width = (tipRect.width - padding) + "px"; //$NON-NLS-1$
-			tipRect.height = Math.min(tooltipDiv.getBoundingClientRect().height, defHeight);
+			tipRect.height = Math.min(tooltipDiv.clientHeight, defHeight);
+			
+			// If there will be Y overflow, increase width to fit the scrollbar
+			if (tooltipDiv.clientHeight > defHeight){
+				var contentWidth = this._tooltipContents.offsetWidth;
+				tooltipDiv.style.overflowY = "scroll";
+				var scrollWidth = contentWidth - this._tooltipContents.offsetWidth;
+				if (scrollWidth > 0){
+					tipRect.width += scrollWidth;
+					if (tipRect.width > viewportWidth){
+						tipRect.width = viewportWidth;
+					}
+				}
+				tooltipDiv.style.overflowY = null;
+			}
 			
 			// Hack for single line tooltips that wrap, set a minimum height to make them show 2 lines without scrolling
 			// The largest line height was MacOS Chrome with 20px+padding.  So 25 is the minimum height we are sure we are one two lines
@@ -27230,8 +27390,8 @@ function Tooltip (view, editor) {
 				this._tooltipDiv.classList.add("textviewTooltipCodeProjection"); //$NON-NLS-0$
 				var size = contentsView.computeSize();
 				// Adjust the size for the padding
-				contentsDiv.style.width = (size.width+8) + "px"; //$NON-NLS-0$
-				contentsDiv.style.height = (size.height+8) + "px"; //$NON-NLS-0$
+				contentsDiv.style.width = (size.width+16) + "px"; //$NON-NLS-0$
+				contentsDiv.style.height = (size.height+16) + "px"; //$NON-NLS-0$
 				contentsView.resize();
 				this._tooltipDiv.removeChild(contentsDiv);
 				return true;
@@ -27445,7 +27605,7 @@ define('orion/objects',[], function() {
 });
 /*******************************************************************************
  * @license
- * Copyright (c) 2009, 2015 IBM Corporation and others.
+ * Copyright (c) 2009, 2017 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Eclipse Public License v1.0
  * (http://www.eclipse.org/legal/epl-v10.html), and the Eclipse Distribution
@@ -27461,8 +27621,9 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 	'orion/editor/tooltip', //$NON-NLS-0$
 	'orion/editor/annotations', //$NON-NLS-0$
 	'orion/objects', //$NON-NLS-0$
+	'orion/editor/util', //$NON-NLS-1$
 	'orion/util' //$NON-NLS-0$
-], function(messages, mEventTarget, mTooltip, mAnnotations, objects, util) {
+], function(messages, mEventTarget, mTooltip, mAnnotations, objects, textUtil, util) {
 	
 	var AT = mAnnotations.AnnotationType;
 
@@ -27625,9 +27786,30 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 		 * @param {Boolean} dirty
 		 */
 		setDirty: function(dirty) {
+			this._setSyntaxCheckRequired(dirty);
 			if (this._dirty === dirty) { return; }
 			this._dirty = dirty;
 			this.onDirtyChanged({type: "DirtyChanged"}); //$NON-NLS-0$
+		},
+		/**
+		 * Sets a flag indicating whether the editor contents have been modified since
+		 * the last syntax check (validation) operation.
+		 * 
+		 * @function
+		 * @param required {Boolean} what to set the flag to, true indicates the editor is dirty and needs syntax checking
+		 */
+		_setSyntaxCheckRequired: function _setSyntaxCheckRequired(required){
+			this._syntaxCheckRequired = required;
+		},
+		/**
+		 * Returns the state of the syntax check required flag, indicating whether the editor contents have
+		 * been modified since the last syntax check (validation) operation.
+		 * 
+		 * @function
+		 * @returns returns {Boolean} whether the flag has been set indicating a syntax check (validation) operation is required
+		 */
+		_isSyntaxCheckRequired: function _isSyntaxCheckRequired() {
+			return this._syntaxCheckRequired;
 		},
 		/**
 		 * @private
@@ -28034,6 +28216,48 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 			} else {
 				textView.removeRuler(this._zoomRuler);
 			}
+		},
+		
+		/**
+		 * Sets which annotations types are shown in the annotation ruler.  Annotations are visible by default.
+		 * 
+		 * @param {Object} types a hash table mapping annotation type to visibility (i.e. AnnotationType.ANNOTATION_INFO -> true).
+		 * @since 14.0
+		 */
+		setAnnotationTypesVisible: function(types) {
+			if (textUtil.compare(this._annotationTypesVisible, types)) return;
+			this._annotationTypesVisible = types;
+			if (!this._annotationRuler || !this._textView || !this._annotationRulerVisible) { return; }
+			this._annotationRuler.setAnnotationTypeVisible(types);
+			this._textView.redrawLines(0, undefined, this._annotationRuler);
+		},
+		
+		/**
+		 * Sets which annotations types are shown in the overview ruler.  Annotations are visible by default.
+		 * 
+		 * @param {Object} types a hash table mapping annotation type to visibility (i.e. AnnotationType.ANNOTATION_INFO -> true).
+		 * @since 14.0
+		 */
+		setOverviewAnnotationTypesVisible: function(types) {
+			if (textUtil.compare(this._overviewAnnotationTypesVisible, types)) return;
+			this._overviewAnnotationTypesVisible = types;
+			if (!this._overviewRuler || !this._textView || !this._overviewRulerVisible) { return; }
+			this._overviewRuler.setAnnotationTypeVisible(types);
+			this._textView.redrawLines(0, undefined, this._overviewRuler);
+		},
+		
+		/**
+		 * Sets which annotations types are shown in the text.  Annotations are visible by default.
+		 * 
+		 * @param {Object} types a hash table mapping annotation type to visibility (i.e. AnnotationType.ANNOTATION_INFO -> true).
+		 * @since 14.0
+		 */
+		setTextAnnotationTypesVisible: function(types) {
+			if (textUtil.compare(this._textAnnotationTypesVisible, types)) return;
+			this._textAnnotationTypesVisible = types;
+			if (!this._annotationStyler || !this._textView) { return; }
+			this._annotationStyler.setAnnotationTypeVisible(types);
+			this._textView.redrawLines(0, undefined);
 		},
 
 		mapOffset: function(offset, _parent) {
@@ -28446,6 +28670,7 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 						styler.addAnnotationType(AT.ANNOTATION_MATCHING_SEARCH);
 						styler.addAnnotationType(AT.ANNOTATION_ERROR);
 						styler.addAnnotationType(AT.ANNOTATION_WARNING);
+						styler.addAnnotationType(AT.ANNOTATION_INFO);
 						styler.addAnnotationType(AT.ANNOTATION_MATCHING_BRACKET);
 						styler.addAnnotationType(AT.ANNOTATION_CURRENT_BRACKET);
 						styler.addAnnotationType(AT.ANNOTATION_CURRENT_LINE);
@@ -28455,6 +28680,8 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 						styler.addAnnotationType(AT.ANNOTATION_CURRENT_LINKED_GROUP);
 						styler.addAnnotationType(AT.ANNOTATION_LINKED_GROUP);
 						styler.addAnnotationType(HIGHLIGHT_ERROR_ANNOTATION);
+
+						styler.setAnnotationTypeVisible(this._textAnnotationTypesVisible);
 					}
 				}
 
@@ -28465,11 +28692,14 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 					ruler.setMultiAnnotationOverlay({html: "<div class='annotationHTML overlay'></div>"}); //$NON-NLS-0$
 					ruler.addAnnotationType(AT.ANNOTATION_ERROR);
 					ruler.addAnnotationType(AT.ANNOTATION_WARNING);
+					ruler.addAnnotationType(AT.ANNOTATION_INFO);
 					ruler.addAnnotationType(AT.ANNOTATION_TASK);
 					ruler.addAnnotationType(AT.ANNOTATION_BOOKMARK);
 					ruler.addAnnotationType(AT.ANNOTATION_DIFF_ADDED);
 					ruler.addAnnotationType(AT.ANNOTATION_DIFF_DELETED);
 					ruler.addAnnotationType(AT.ANNOTATION_DIFF_MODIFIED);
+					
+					ruler.setAnnotationTypeVisible(this._annotationTypesVisible);
 				}
 				this.setAnnotationRulerVisible(this._annotationRulerVisible || this._annotationRulerVisible === undefined, true);
 
@@ -28483,6 +28713,7 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 					ruler.addAnnotationType(AT.ANNOTATION_CURRENT_BLAME);
 					ruler.addAnnotationType(AT.ANNOTATION_ERROR);
 					ruler.addAnnotationType(AT.ANNOTATION_WARNING);
+					ruler.addAnnotationType(AT.ANNOTATION_INFO);
 					ruler.addAnnotationType(AT.ANNOTATION_TASK);
 					ruler.addAnnotationType(AT.ANNOTATION_BOOKMARK);
 					ruler.addAnnotationType(AT.ANNOTATION_MATCHING_BRACKET);
@@ -28491,7 +28722,8 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 					ruler.addAnnotationType(AT.ANNOTATION_DIFF_ADDED);
 					ruler.addAnnotationType(AT.ANNOTATION_DIFF_DELETED);
 					ruler.addAnnotationType(AT.ANNOTATION_DIFF_MODIFIED);
-
+					
+					ruler.setAnnotationTypeVisible(this._overviewAnnotationTypesVisible);
 				}
 				this.setOverviewRulerVisible(this._overviewRulerVisible || this._overviewRulerVisible === undefined, true);
 			}
@@ -28649,12 +28881,14 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 			this.showAnnotations(problems, [
 				AT.ANNOTATION_ERROR,
 				AT.ANNOTATION_WARNING,
-				AT.ANNOTATION_TASK
+				AT.ANNOTATION_TASK,
+				AT.ANNOTATION_INFO
 			], null, function(annotation) {
 				switch (annotation.severity) {
 					case "error": return AT.ANNOTATION_ERROR; //$NON-NLS-0$
 					case "warning": return AT.ANNOTATION_WARNING; //$NON-NLS-0$
 					case "task": return AT.ANNOTATION_TASK; //$NON-NLS-0$
+					case "info": return AT.ANNOTATION_INFO;
 				}
 				return null;
 			});
@@ -30182,14 +30416,44 @@ define("orion/editor/actions", [ //$NON-NLS-0$
 			if (!annotationModel) { return true; }
 			var list = editor.getOverviewRuler() || editor.getAnnotationStyler();
 			if (!list) { return true; }
-			function ignore(annotation) {
-				return !!annotation.lineStyle ||
-					annotation.type === AT.ANNOTATION_MATCHING_BRACKET ||
-					annotation.type === AT.ANNOTATION_CURRENT_BRACKET ||
-					!list.isAnnotationTypeVisible(annotation.type);
+
+			function ignore(annotation, iterationMode) {
+				switch (iterationMode) {
+					case AT.ANNOTATION_ERROR:
+						return annotation.type !== AT.ANNOTATION_ERROR && annotation.type !== AT.ANNOTATION_WARNING && annotation.type !== AT.ANNOTATION_INFO;
+					case AT.ANNOTATION_READ_OCCURRENCE:
+						return annotation.type !== AT.ANNOTATION_READ_OCCURRENCE && annotation.type !== AT.ANNOTATION_WRITE_OCCURRENCE;
+					case AT.ANNOTATION_CURRENT_SEARCH:
+						return annotation.type !== AT.ANNOTATION_CURRENT_SEARCH && annotation.type !== AT.ANNOTATION_MATCHING_SEARCH;
+					case AT.ANNOTATION_TASK:
+						return annotation.type !== AT.ANNOTATION_TASK && annotation.type !== AT.ANNOTATION_BOOKMARK;
+				}
+				return true;
 			}
+			
 			var model = editor.getModel();
 			var currentOffset = editor.getCaretOffset();
+
+			// reset the iteration mode if the cursor moves between invocations			
+			if (!this._lastPosition || this._lastPosition !== currentOffset) {
+				var curAnnotations = annotationModel.getAnnotations(currentOffset, currentOffset);
+				var theMode = null;
+				while (curAnnotations.hasNext()) {
+					var annotation = curAnnotations.next();
+					if (annotation.type === AT.ANNOTATION_ERROR || annotation.type === AT.ANNOTATION_WARNING || annotation.type === AT.ANNOTATION_INFO) {
+						theMode = AT.ANNOTATION_ERROR;
+						break;
+					} else if (annotation.type === AT.ANNOTATION_READ_OCCURRENCE || annotation.type === AT.ANNOTATION_WRITE_OCCURRENCE) {
+						theMode = AT.ANNOTATION_READ_OCCURRENCE;
+					} else if (annotation.type === AT.ANNOTATION_TASK || annotation.type === AT.ANNOTATION_BOOKMARK && theMode !== AT.ANNOTATION_READ_OCCURRENCE) {
+						theMode = AT.ANNOTATION_TASK;
+					} else if (annotation.type === AT.ANNOTATION_CURRENT_SEARCH || annotation.type === AT.ANNOTATION_MATCHING_SEARCH && !theMode) {
+						theMode = AT.ANNOTATION_CURRENT_SEARCH;
+					}
+				}
+				this._iterationMode = theMode ?  theMode : AT.ANNOTATION_ERROR; // Iterate Errors / Warnings by default;
+			}
+
 			var annotations = annotationModel.getAnnotations(forward ? currentOffset : 0, forward ? model.getCharCount() : currentOffset);
 			var foundAnnotation = null;
 			while (annotations.hasNext()) {
@@ -30199,7 +30463,7 @@ define("orion/editor/actions", [ //$NON-NLS-0$
 				} else {
 					if (annotation.start >= currentOffset) { continue; }
 				}
-				if (ignore(annotation)) {
+				if (ignore(annotation, this._iterationMode)) {
 					continue;
 				}
 				foundAnnotation = annotation;
@@ -30212,12 +30476,13 @@ define("orion/editor/actions", [ //$NON-NLS-0$
 				annotations = annotationModel.getAnnotations(foundAnnotation.start, foundAnnotation.start);
 				while (annotations.hasNext()) {
 					annotation = annotations.next();
-					if (annotation !== foundAnnotation && !ignore(annotation)) {
+					if (annotation !== foundAnnotation && !ignore(annotation, this._iterationMode)) {
 						foundAnnotations.push(annotation);
 					}
 				}
 				var view = editor.getTextView();
 				var tooltip = mTooltip.Tooltip.getTooltip(view, editor);
+				this._lastPosition = foundAnnotation.start;
 				if (!tooltip) {
 					editor.moveSelection(foundAnnotation.start);
 					return true;

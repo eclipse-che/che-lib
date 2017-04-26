@@ -3,7 +3,7 @@ This patch fixes bug related to linked mode.
 diff --git a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js b/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js
 --- a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js
 +++ b/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js
-@@ -33022,8 +33022,9 @@
+@@ -33336,8 +33336,9 @@
  	'orion/editor/keyModes',
  	'orion/editor/annotations',
  	'orion/objects',
@@ -14,7 +14,7 @@ diff --git a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdi
 
  	var exports = {};
 
-@@ -33107,11 +33108,11 @@
+@@ -33421,11 +33422,11 @@
  		this.linkedModeModel = null;
 
  		textView.setAction("linkedModeEnter", function() { //$NON-NLS-0$
@@ -28,7 +28,7 @@ diff --git a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdi
  			return true;
  		}.bind(this));
  		textView.setAction("linkedModeNextGroup", function() { //$NON-NLS-0$
-@@ -33149,7 +33150,7 @@
+@@ -33463,7 +33464,7 @@
  					changed = positionChanged.position;
  					if (changed === undefined || changed.model !== model) {
  						// The change has been done outside of the positions, exit the Linked Mode
@@ -37,7 +37,7 @@ diff --git a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdi
  						model = this.linkedModeModel;
  					} else {
  						break;
-@@ -33194,7 +33195,7 @@
+@@ -33508,7 +33509,7 @@
  					changed = positionChanged.position;
  					if (changed === undefined || changed.model !== model) {
  						// The change has been done outside of the positions, exit the Linked Mode
@@ -46,7 +46,7 @@ diff --git a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdi
  						model = this.linkedModeModel;
  					} else {
  						break;
-@@ -33326,10 +33327,11 @@
+@@ -33640,10 +33641,11 @@
  		 * Exits Linked Mode. Optionally places the caret at linkedMode escapePosition.
  		 * @param {Boolean} [escapePosition=false] if true, place the caret at the  escape position.
  		 */
@@ -59,7 +59,7 @@ diff --git a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdi
  			if (this._compoundChange) {
  				this.endUndo();
  				this._compoundChange = null;
-@@ -33575,6 +33577,7 @@
+@@ -33889,6 +33891,7 @@
  			annotationModel.replaceAnnotations(remove, add);
  		}
  	});
