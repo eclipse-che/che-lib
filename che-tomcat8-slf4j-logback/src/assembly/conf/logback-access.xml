@@ -29,7 +29,7 @@
             <pattern>common</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${che.logs.dir}/archive/localhost-access-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
+            <fileNamePattern>${che.logs.dir}/archive/localhost-access-%d{yyyyMMdd}-%i.log</fileNamePattern>
             <maxHistory>${max.retention.days}</maxHistory>
             <maxFileSize>20MB</maxFileSize>
         </rollingPolicy>
