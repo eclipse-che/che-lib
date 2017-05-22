@@ -52,7 +52,7 @@
               clientId: "your-client-id",
               clientSecret: "your-client-secret-if-required",
               realm: "your-realms",
-              appName: "your-app-name", 
+              appName: "your-app-name",
               scopeSeparator: ",",
               additionalQueryStringParams: {}
             });
@@ -67,6 +67,7 @@
           });
 
           addApiKeyAuthorization();
+          addCsrfAuthorization();
         },
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
@@ -86,6 +87,21 @@
             log("added key " + key);
         }
       }
+
+      function addCsrfAuthorization() {
+        $.ajax({
+       	  url : "/api/profile",
+          beforeSend: function(xhr) { xhr.setRequestHeader("X-CSRF-Token", "Fetch"); },
+          complete: function(xhr) {
+            var csrfToken = xhr.getResponseHeader("X-CSRF-Token");
+            if (csrfToken) {
+              window.swaggerUi.api.clientAuthorizations.add("csrf", new SwaggerClient.ApiKeyAuthorization("X-CSRF-Token", csrfToken, "header"));
+            } else {
+              console.log("Warn! Could not fetch X-CSRF-Token, all modifying requests won't include it!");
+            }
+          }
+        });
+      };
 
       $('#input_apiKey').change(addApiKeyAuthorization);
 
