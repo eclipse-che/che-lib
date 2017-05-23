@@ -24,20 +24,17 @@
     </appender>
 
     <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${che.logs.dir}/logs/catalina.log</file>
         <append>true</append>
+        <prudent>true</prudent>
         <encoder>
             <charset>utf-8</charset>
             <pattern>%-41(%date[%.15thread]) %-45([%-5level] [%.30logger{30} %L]) - %msg%n</pattern>
         </encoder>
-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${che.logs.dir}/archive/catalina-%d{yyyyMMdd}-%i.log</fileNamePattern>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${che.logs.dir}/archive/%d{yyyy/MM/dd}/catalina.log</fileNamePattern>
             <maxHistory>${max.retention.days}</maxHistory>
-            <cleanHistoryOnStart>true</cleanHistoryOnStart>
-            <maxFileSize>20MB</maxFileSize>
         </rollingPolicy>
     </appender>
-
 
 
     <include optional="true" file="${che.local.conf.dir}/logback/logback-additional-appenders.xml"/>
