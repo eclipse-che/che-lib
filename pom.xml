@@ -30,6 +30,7 @@
         <module>org-eclipse-jdt-core-repack</module>
         <module>che-orion-editor</module>
         <module>che-terminal-client</module>
+        <module>che-test-ls</module>
     </modules>
     <scm>
         <connection>scm:git:git@github.com:eclipse/che-lib.git</connection>
