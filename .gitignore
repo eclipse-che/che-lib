@@ -56,3 +56,5 @@ Icon?
 Thumbs.db
 */overlays
 *~
+
+/**/node_modules/
