@@ -1048,20 +1048,6 @@ and (max-device-width : 1024px)  {
   font-weight:  400;
 }
 
-html {
-  cursor: default;
-  height: 100%;
-}
-html, body {
-	margin: 0;
-	padding: 0;
-	font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 
-		'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-	font-size: 9pt;
-	min-width:700px;
-	-webkit-font-smoothing: antialiased;
-  	-moz-osx-font-smoothing: grayscale;
-} 
 h2 {
 	font-size: 1.1em;
 	font-weight: bold;
