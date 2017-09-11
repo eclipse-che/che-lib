@@ -382,6 +382,16 @@ Terminal.prototype.focus = function() {
 };
 
 /**
+ * Returns true in case terminal contains selection or false otherwise.
+ */
+Terminal.prototype.hasSelection = function() {
+  var selection = this.document.getSelection();
+  var collapsed = selection.isCollapsed;
+  var isRange = typeof collapsed === 'boolean' ? !collapsed : selection.type === 'Range';
+  return this.rowContainer.contains(selection.focusNode) && isRange;
+};
+
+/**
  * Retrieves an option's value from the terminal.
  * @param {string} key The option key.
  */
@@ -673,10 +683,7 @@ Terminal.prototype.open = function(parent) {
   }
 
   on(this.element, 'click', function() {
-    var selection = document.getSelection(),
-        collapsed = selection.isCollapsed,
-        isRange = typeof collapsed == 'boolean' ? !collapsed : selection.type == 'Range';
-    if (!isRange) {
+    if (!self.hasSelection()) {
       self.focus();
     }
   });
