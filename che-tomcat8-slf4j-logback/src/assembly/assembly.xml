@@ -28,8 +28,14 @@
             <outputDirectory>lib</outputDirectory>
             <includes>
                 <include>ch.qos.logback:logback-access</include>
+                <include>ch.qos.logback:logback-classic</include>
                 <include>ch.qos.logback:logback-core</include>
+                <include>com.fasterxml.jackson.core:jackson-annotations</include>
+                <include>com.fasterxml.jackson.core:jackson-core</include>
+                <include>com.fasterxml.jackson.core:jackson-databind</include>
+                <include>net.logstash.logback:logstash-logback-encoder</include>
                 <include>org.apache.tomcat:tomcat-catalina-jmx-remote</include>
+                <include>org.slf4j:slf4j-api</include>
             </includes>
         </dependencySet>
     </dependencySets>
