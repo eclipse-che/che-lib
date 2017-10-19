@@ -23,7 +23,8 @@ public class DocsModule extends AbstractModule {
 
     bind(org.eclipse.che.swagger.rest.SwaggerSpecificationService.class);
     bind(org.eclipse.che.swagger.rest.SwaggerSerializers.class).asEagerSingleton();
-    //trim is a fake to make this module dependent to commons lang3 and have correct version. this is need for dependency convergence.
+    // trim is a fake to make this module dependent to commons lang3 and have correct version. this
+    // is need for dependency convergence.
     final Multibinder<Class> ignoredCodenvyJsonClasses =
         Multibinder.newSetBinder(
             binder(), Class.class, Names.named(StringUtils.trim("che.json.ignored_classes")));

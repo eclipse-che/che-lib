@@ -8,7 +8,8 @@
  * Contributors:
  *   Red Hat, Inc. - initial API and implementation
  */
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g 2013-02-07 15:54:12
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g
+// 2013-02-07 15:54:12
 
 package org.eclipse.che.plugin.jdb.server.expression;
 
@@ -2030,9 +2031,11 @@ public class JavaLexer extends Lexer {
     try {
       int _type = HEX_LITERAL;
       int _channel = DEFAULT_TOKEN_CHANNEL;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1083:13: ( '0' ( 'x' | 'X' ) ( HEX_DIGIT )+ (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1083:13: ( '0' ( 'x' | 'X' ) (
+      // HEX_DIGIT )+ (
       // INTEGER_TYPE_SUFFIX )? )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1083:15: '0' ( 'x' | 'X' ) ( HEX_DIGIT )+ (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1083:15: '0' ( 'x' | 'X' ) (
+      // HEX_DIGIT )+ (
       // INTEGER_TYPE_SUFFIX )?
       {
         match('0');
@@ -2074,7 +2077,8 @@ public class JavaLexer extends Lexer {
           cnt1++;
         } while (true);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1083:40: ( INTEGER_TYPE_SUFFIX )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1083:40: ( INTEGER_TYPE_SUFFIX
+        // )?
         int alt2 = 2;
         int LA2_0 = input.LA(1);
 
@@ -2083,7 +2087,8 @@ public class JavaLexer extends Lexer {
         }
         switch (alt2) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1083:40: INTEGER_TYPE_SUFFIX
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1083:40:
+            // INTEGER_TYPE_SUFFIX
             {
               mINTEGER_TYPE_SUFFIX();
             }
@@ -2103,12 +2108,15 @@ public class JavaLexer extends Lexer {
     try {
       int _type = DECIMAL_LITERAL;
       int _channel = DEFAULT_TOKEN_CHANNEL;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1085:17: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1085:17: ( ( '0' | '1' .. '9' (
+      // '0' .. '9' )* ) (
       // INTEGER_TYPE_SUFFIX )? )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1085:19: ( '0' | '1' .. '9' ( '0' .. '9' )* ) (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1085:19: ( '0' | '1' .. '9' ( '0'
+      // .. '9' )* ) (
       // INTEGER_TYPE_SUFFIX )?
       {
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1085:19: ( '0' | '1' .. '9' ( '0' .. '9' )* )
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1085:19: ( '0' | '1' .. '9' (
+        // '0' .. '9' )* )
         int alt4 = 2;
         int LA4_0 = input.LA(1);
 
@@ -2129,7 +2137,8 @@ public class JavaLexer extends Lexer {
             }
             break;
           case 2:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1085:26: '1' .. '9' ( '0' .. '9' )*
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1085:26: '1' .. '9' ( '0'
+            // .. '9' )*
             {
               matchRange('1', '9');
               // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1085:35: ( '0' .. '9' )*
@@ -2158,7 +2167,8 @@ public class JavaLexer extends Lexer {
             break;
         }
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1085:46: ( INTEGER_TYPE_SUFFIX )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1085:46: ( INTEGER_TYPE_SUFFIX
+        // )?
         int alt5 = 2;
         int LA5_0 = input.LA(1);
 
@@ -2167,7 +2177,8 @@ public class JavaLexer extends Lexer {
         }
         switch (alt5) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1085:46: INTEGER_TYPE_SUFFIX
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1085:46:
+            // INTEGER_TYPE_SUFFIX
             {
               mINTEGER_TYPE_SUFFIX();
             }
@@ -2187,8 +2198,10 @@ public class JavaLexer extends Lexer {
     try {
       int _type = OCTAL_LITERAL;
       int _channel = DEFAULT_TOKEN_CHANNEL;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1087:15: ( '0' ( '0' .. '7' )+ ( INTEGER_TYPE_SUFFIX )? )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1087:17: '0' ( '0' .. '7' )+ ( INTEGER_TYPE_SUFFIX )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1087:15: ( '0' ( '0' .. '7' )+ (
+      // INTEGER_TYPE_SUFFIX )? )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1087:17: '0' ( '0' .. '7' )+ (
+      // INTEGER_TYPE_SUFFIX )?
       {
         match('0');
         // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1087:21: ( '0' .. '7' )+
@@ -2218,7 +2231,8 @@ public class JavaLexer extends Lexer {
           cnt6++;
         } while (true);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1087:33: ( INTEGER_TYPE_SUFFIX )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1087:33: ( INTEGER_TYPE_SUFFIX
+        // )?
         int alt7 = 2;
         int LA7_0 = input.LA(1);
 
@@ -2227,7 +2241,8 @@ public class JavaLexer extends Lexer {
         }
         switch (alt7) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1087:33: INTEGER_TYPE_SUFFIX
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1087:33:
+            // INTEGER_TYPE_SUFFIX
             {
               mINTEGER_TYPE_SUFFIX();
             }
@@ -2245,8 +2260,10 @@ public class JavaLexer extends Lexer {
   // $ANTLR start "HEX_DIGIT"
   public final void mHEX_DIGIT() throws RecognitionException {
     try {
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1090:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1090:13: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1090:11: ( ( '0' .. '9' | 'a' ..
+      // 'f' | 'A' .. 'F' ) )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1090:13: ( '0' .. '9' | 'a' ..
+      // 'f' | 'A' .. 'F' )
       {
         if ((input.LA(1) >= '0' && input.LA(1) <= '9')
             || (input.LA(1) >= 'A' && input.LA(1) <= 'F')
@@ -2291,8 +2308,10 @@ public class JavaLexer extends Lexer {
     try {
       int _type = FLOATING_POINT_LITERAL;
       int _channel = DEFAULT_TOKEN_CHANNEL;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1096:5: ( ( '0' .. '9' )+ ( DOT ( '0' .. '9' )* ( EXPONENT
-      // )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX ) | DOT ( '0' .. '9' )+ ( EXPONENT )? (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1096:5: ( ( '0' .. '9' )+ ( DOT (
+      // '0' .. '9' )* ( EXPONENT
+      // )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX ) | DOT (
+      // '0' .. '9' )+ ( EXPONENT )? (
       // FLOAT_TYPE_SUFFIX )? )
       int alt17 = 2;
       int LA17_0 = input.LA(1);
@@ -2308,8 +2327,10 @@ public class JavaLexer extends Lexer {
       }
       switch (alt17) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1096:9: ( '0' .. '9' )+ ( DOT ( '0' .. '9' )* (
-          // EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX )
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1096:9: ( '0' .. '9' )+ ( DOT
+          // ( '0' .. '9' )* (
+          // EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? |
+          // FLOAT_TYPE_SUFFIX )
           {
             // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1096:9: ( '0' .. '9' )+
             int cnt8 = 0;
@@ -2338,7 +2359,8 @@ public class JavaLexer extends Lexer {
               cnt8++;
             } while (true);
 
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1097:9: ( DOT ( '0' .. '9' )* ( EXPONENT )? (
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1097:9: ( DOT ( '0' .. '9'
+            // )* ( EXPONENT )? (
             // FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX )
             int alt13 = 3;
             switch (input.LA(1)) {
@@ -2369,11 +2391,13 @@ public class JavaLexer extends Lexer {
 
             switch (alt13) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1098:13: DOT ( '0' .. '9' )* ( EXPONENT )?
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1098:13: DOT ( '0' ..
+                // '9' )* ( EXPONENT )?
                 // ( FLOAT_TYPE_SUFFIX )?
                 {
                   mDOT();
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1098:17: ( '0' .. '9' )*
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1098:17: ( '0' .. '9'
+                  // )*
                   loop9:
                   do {
                     int alt9 = 2;
@@ -2385,7 +2409,8 @@ public class JavaLexer extends Lexer {
 
                     switch (alt9) {
                       case 1:
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1098:18: '0' .. '9'
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1098:18: '0' ..
+                        // '9'
                         {
                           matchRange('0', '9');
                         }
@@ -2396,7 +2421,8 @@ public class JavaLexer extends Lexer {
                     }
                   } while (true);
 
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1098:29: ( EXPONENT )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1098:29: ( EXPONENT
+                  // )?
                   int alt10 = 2;
                   int LA10_0 = input.LA(1);
 
@@ -2412,7 +2438,8 @@ public class JavaLexer extends Lexer {
                       break;
                   }
 
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1098:39: ( FLOAT_TYPE_SUFFIX )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1098:39: (
+                  // FLOAT_TYPE_SUFFIX )?
                   int alt11 = 2;
                   int LA11_0 = input.LA(1);
 
@@ -2421,7 +2448,8 @@ public class JavaLexer extends Lexer {
                   }
                   switch (alt11) {
                     case 1:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1098:39: FLOAT_TYPE_SUFFIX
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1098:39:
+                      // FLOAT_TYPE_SUFFIX
                       {
                         mFLOAT_TYPE_SUFFIX();
                       }
@@ -2430,10 +2458,12 @@ public class JavaLexer extends Lexer {
                 }
                 break;
               case 2:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1099:13: EXPONENT ( FLOAT_TYPE_SUFFIX )?
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1099:13: EXPONENT (
+                // FLOAT_TYPE_SUFFIX )?
                 {
                   mEXPONENT();
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1099:22: ( FLOAT_TYPE_SUFFIX )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1099:22: (
+                  // FLOAT_TYPE_SUFFIX )?
                   int alt12 = 2;
                   int LA12_0 = input.LA(1);
 
@@ -2442,7 +2472,8 @@ public class JavaLexer extends Lexer {
                   }
                   switch (alt12) {
                     case 1:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1099:22: FLOAT_TYPE_SUFFIX
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1099:22:
+                      // FLOAT_TYPE_SUFFIX
                       {
                         mFLOAT_TYPE_SUFFIX();
                       }
@@ -2451,7 +2482,8 @@ public class JavaLexer extends Lexer {
                 }
                 break;
               case 3:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1100:13: FLOAT_TYPE_SUFFIX
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1100:13:
+                // FLOAT_TYPE_SUFFIX
                 {
                   mFLOAT_TYPE_SUFFIX();
                 }
@@ -2460,7 +2492,8 @@ public class JavaLexer extends Lexer {
           }
           break;
         case 2:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1102:9: DOT ( '0' .. '9' )+ ( EXPONENT )? (
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1102:9: DOT ( '0' .. '9' )+ (
+          // EXPONENT )? (
           // FLOAT_TYPE_SUFFIX )?
           {
             mDOT();
@@ -2507,7 +2540,8 @@ public class JavaLexer extends Lexer {
                 break;
             }
 
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1102:35: ( FLOAT_TYPE_SUFFIX )?
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1102:35: (
+            // FLOAT_TYPE_SUFFIX )?
             int alt16 = 2;
             int LA16_0 = input.LA(1);
 
@@ -2516,7 +2550,8 @@ public class JavaLexer extends Lexer {
             }
             switch (alt16) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1102:35: FLOAT_TYPE_SUFFIX
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1102:35:
+                // FLOAT_TYPE_SUFFIX
                 {
                   mFLOAT_TYPE_SUFFIX();
                 }
@@ -2535,8 +2570,10 @@ public class JavaLexer extends Lexer {
   // $ANTLR start "EXPONENT"
   public final void mEXPONENT() throws RecognitionException {
     try {
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1106:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1106:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1106:10: ( ( 'e' | 'E' ) ( '+' |
+      // '-' )? ( '0' .. '9' )+ )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1106:12: ( 'e' | 'E' ) ( '+' |
+      // '-' )? ( '0' .. '9' )+
       {
         if (input.LA(1) == 'E' || input.LA(1) == 'e') {
           input.consume();
@@ -2606,8 +2643,10 @@ public class JavaLexer extends Lexer {
   // $ANTLR start "FLOAT_TYPE_SUFFIX"
   public final void mFLOAT_TYPE_SUFFIX() throws RecognitionException {
     try {
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1109:19: ( ( 'f' | 'F' | 'd' | 'D' ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1109:21: ( 'f' | 'F' | 'd' | 'D' )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1109:19: ( ( 'f' | 'F' | 'd' |
+      // 'D' ) )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1109:21: ( 'f' | 'F' | 'd' | 'D'
+      // )
       {
         if (input.LA(1) == 'D' || input.LA(1) == 'F' || input.LA(1) == 'd' || input.LA(1) == 'f') {
           input.consume();
@@ -2629,13 +2668,16 @@ public class JavaLexer extends Lexer {
     try {
       int _type = CHARACTER_LITERAL;
       int _channel = DEFAULT_TOKEN_CHANNEL;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1112:5: ( '\\'' ( ESCAPE_SEQUENCE | ~ ( '\\'' | '\\\\' ) )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1112:5: ( '\\'' ( ESCAPE_SEQUENCE
+      // | ~ ( '\\'' | '\\\\' ) )
       // '\\'' )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1112:9: '\\'' ( ESCAPE_SEQUENCE | ~ ( '\\'' | '\\\\' ) )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1112:9: '\\'' ( ESCAPE_SEQUENCE |
+      // ~ ( '\\'' | '\\\\' ) )
       // '\\''
       {
         match('\'');
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1112:14: ( ESCAPE_SEQUENCE | ~ ( '\\'' | '\\\\' ) )
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1112:14: ( ESCAPE_SEQUENCE | ~
+        // ( '\\'' | '\\\\' ) )
         int alt20 = 2;
         int LA20_0 = input.LA(1);
 
@@ -2658,7 +2700,8 @@ public class JavaLexer extends Lexer {
             }
             break;
           case 2:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1112:34: ~ ( '\\'' | '\\\\' )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1112:34: ~ ( '\\'' | '\\\\'
+            // )
             {
               if ((input.LA(1) >= '\u0000' && input.LA(1) <= '&')
                   || (input.LA(1) >= '(' && input.LA(1) <= '[')
@@ -2689,12 +2732,15 @@ public class JavaLexer extends Lexer {
     try {
       int _type = STRING_LITERAL;
       int _channel = DEFAULT_TOKEN_CHANNEL;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1116:5: ( '\"' ( ESCAPE_SEQUENCE | ~ ( '\\\\' | '\"' ) )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1116:5: ( '\"' ( ESCAPE_SEQUENCE
+      // | ~ ( '\\\\' | '\"' ) )*
       // '\"' )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1116:8: '\"' ( ESCAPE_SEQUENCE | ~ ( '\\\\' | '\"' ) )* '\"'
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1116:8: '\"' ( ESCAPE_SEQUENCE |
+      // ~ ( '\\\\' | '\"' ) )* '\"'
       {
         match('\"');
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1116:12: ( ESCAPE_SEQUENCE | ~ ( '\\\\' | '\"' ) )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1116:12: ( ESCAPE_SEQUENCE | ~
+        // ( '\\\\' | '\"' ) )*
         loop21:
         do {
           int alt21 = 3;
@@ -2716,7 +2762,8 @@ public class JavaLexer extends Lexer {
               }
               break;
             case 2:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1116:32: ~ ( '\\\\' | '\"' )
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1116:32: ~ ( '\\\\' |
+              // '\"' )
               {
                 if ((input.LA(1) >= '\u0000' && input.LA(1) <= '!')
                     || (input.LA(1) >= '#' && input.LA(1) <= '[')
@@ -2749,7 +2796,8 @@ public class JavaLexer extends Lexer {
   // $ANTLR start "ESCAPE_SEQUENCE"
   public final void mESCAPE_SEQUENCE() throws RecognitionException {
     try {
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1121:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1121:5: ( '\\\\' ( 'b' | 't' |
+      // 'n' | 'f' | 'r' | '\\\"' |
       // '\\'' | '\\\\' ) | UNICODE_ESCAPE | OCTAL_ESCAPE )
       int alt22 = 3;
       int LA22_0 = input.LA(1);
@@ -2798,7 +2846,8 @@ public class JavaLexer extends Lexer {
       }
       switch (alt22) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1121:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' |
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1121:9: '\\\\' ( 'b' | 't' |
+          // 'n' | 'f' | 'r' |
           // '\\\"' | '\\'' | '\\\\' )
           {
             match('\\');
@@ -2840,7 +2889,8 @@ public class JavaLexer extends Lexer {
   // $ANTLR start "OCTAL_ESCAPE"
   public final void mOCTAL_ESCAPE() throws RecognitionException {
     try {
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1128:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' ..
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1128:5: ( '\\\\' ( '0' .. '3' ) (
+      // '0' .. '7' ) ( '0' ..
       // '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
       int alt23 = 3;
       int LA23_0 = input.LA(1);
@@ -2882,7 +2932,8 @@ public class JavaLexer extends Lexer {
       }
       switch (alt23) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1128:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0'
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1128:9: '\\\\' ( '0' .. '3' )
+          // ( '0' .. '7' ) ( '0'
           // .. '7' )
           {
             match('\\');
@@ -2906,7 +2957,8 @@ public class JavaLexer extends Lexer {
           }
           break;
         case 2:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1129:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1129:9: '\\\\' ( '0' .. '7' )
+          // ( '0' .. '7' )
           {
             match('\\');
             // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1129:14: ( '0' .. '7' )
@@ -2942,9 +2994,11 @@ public class JavaLexer extends Lexer {
   // $ANTLR start "UNICODE_ESCAPE"
   public final void mUNICODE_ESCAPE() throws RecognitionException {
     try {
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1135:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1135:5: ( '\\\\' 'u' HEX_DIGIT
+      // HEX_DIGIT HEX_DIGIT
       // HEX_DIGIT )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1135:9: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1135:9: '\\\\' 'u' HEX_DIGIT
+      // HEX_DIGIT HEX_DIGIT HEX_DIGIT
       {
         match('\\');
         match('u');
@@ -2964,8 +3018,10 @@ public class JavaLexer extends Lexer {
     try {
       int _type = IDENT;
       int _channel = DEFAULT_TOKEN_CHANNEL;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1139:5: ( JAVA_ID_START ( JAVA_ID_PART )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1139:9: JAVA_ID_START ( JAVA_ID_PART )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1139:5: ( JAVA_ID_START (
+      // JAVA_ID_PART )* )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1139:9: JAVA_ID_START (
+      // JAVA_ID_PART )*
       {
         mJAVA_ID_START();
         // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1139:23: ( JAVA_ID_PART )*
@@ -3014,9 +3070,12 @@ public class JavaLexer extends Lexer {
   // $ANTLR start "JAVA_ID_START"
   public final void mJAVA_ID_START() throws RecognitionException {
     try {
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1144:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' |
-      // '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff'
-      // | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' ..
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1144:5: ( '\\u0024' | '\\u0041'
+      // .. '\\u005a' | '\\u005f' |
+      // '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' ..
+      // '\\u00ff' | '\\u0100' .. '\\u1fff'
+      // | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' ..
+      // '\\u9fff' | '\\uf900' ..
       // '\\ufaff' )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:
       {
@@ -3049,7 +3108,8 @@ public class JavaLexer extends Lexer {
   // $ANTLR start "JAVA_ID_PART"
   public final void mJAVA_ID_PART() throws RecognitionException {
     try {
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1161:5: ( JAVA_ID_START | '\\u0030' .. '\\u0039' )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1161:5: ( JAVA_ID_START |
+      // '\\u0030' .. '\\u0039' )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:
       {
         if (input.LA(1) == '$'
@@ -3084,8 +3144,10 @@ public class JavaLexer extends Lexer {
     try {
       int _type = WS;
       int _channel = DEFAULT_TOKEN_CHANNEL;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1165:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1165:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1165:5: ( ( ' ' | '\\r' | '\\t' |
+      // '\\u000C' | '\\n' ) )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1165:8: ( ' ' | '\\r' | '\\t' |
+      // '\\u000C' | '\\n' )
       {
         if ((input.LA(1) >= '\t' && input.LA(1) <= '\n')
             || (input.LA(1) >= '\f' && input.LA(1) <= '\r')
@@ -3117,12 +3179,15 @@ public class JavaLexer extends Lexer {
     try {
       int _type = COMMENT;
       int _channel = DEFAULT_TOKEN_CHANNEL;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1176:5: ( '/*' ( options {greedy=false; } : . )* '*/' )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1176:9: '/*' ( options {greedy=false; } : . )* '*/'
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1176:5: ( '/*' ( options
+      // {greedy=false; } : . )* '*/' )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1176:9: '/*' ( options
+      // {greedy=false; } : . )* '*/'
       {
         match("/*");
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1176:14: ( options {greedy=false; } : . )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1176:14: ( options
+        // {greedy=false; } : . )*
         loop25:
         do {
           int alt25 = 2;
@@ -3177,12 +3242,15 @@ public class JavaLexer extends Lexer {
     try {
       int _type = LINE_COMMENT;
       int _channel = DEFAULT_TOKEN_CHANNEL;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1187:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1187:7: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1187:5: ( '//' (~ ( '\\n' | '\\r'
+      // ) )* ( '\\r' )? '\\n' )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1187:7: '//' (~ ( '\\n' | '\\r' )
+      // )* ( '\\r' )? '\\n'
       {
         match("//");
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1187:12: (~ ( '\\n' | '\\r' ) )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1187:12: (~ ( '\\n' | '\\r' )
+        // )*
         loop26:
         do {
           int alt26 = 2;
@@ -3196,7 +3264,8 @@ public class JavaLexer extends Lexer {
 
           switch (alt26) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1187:12: ~ ( '\\n' | '\\r' )
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1187:12: ~ ( '\\n' |
+              // '\\r' )
               {
                 if ((input.LA(1) >= '\u0000' && input.LA(1) <= '\t')
                     || (input.LA(1) >= '\u000B' && input.LA(1) <= '\f')
@@ -3249,16 +3318,26 @@ public class JavaLexer extends Lexer {
   // $ANTLR end "LINE_COMMENT"
 
   public void mTokens() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1:8: ( AND | AND_ASSIGN | ASSIGN | AT | BIT_SHIFT_RIGHT |
-    // BIT_SHIFT_RIGHT_ASSIGN | COLON | COMMA | DEC | DIV | DIV_ASSIGN | DOT | DOTSTAR | ELLIPSIS | EQUAL | GREATER_OR_EQUAL |
-    // GREATER_THAN | INC | LBRACK | LCURLY | LESS_OR_EQUAL | LESS_THAN | LOGICAL_AND | LOGICAL_NOT | LOGICAL_OR | LPAREN | MINUS |
-    // MINUS_ASSIGN | MOD | MOD_ASSIGN | NOT | NOT_EQUAL | OR | OR_ASSIGN | PLUS | PLUS_ASSIGN | QUESTION | RBRACK | RCURLY | RPAREN
-    // | SEMI | SHIFT_LEFT | SHIFT_LEFT_ASSIGN | SHIFT_RIGHT | SHIFT_RIGHT_ASSIGN | STAR | STAR_ASSIGN | XOR | XOR_ASSIGN | ABSTRACT
-    // | ASSERT | BOOLEAN | BREAK | BYTE | CASE | CATCH | CHAR | CLASS | CONTINUE | DEFAULT | DO | DOUBLE | ELSE | ENUM | EXTENDS |
-    // FALSE | FINAL | FINALLY | FLOAT | FOR | IF | IMPLEMENTS | INSTANCEOF | INTERFACE | IMPORT | INT | LONG | NATIVE | NEW | NULL |
-    // PACKAGE | PRIVATE | PROTECTED | PUBLIC | RETURN | SHORT | STATIC | STRICTFP | SUPER | SWITCH | SYNCHRONIZED | THIS | THROW |
-    // THROWS | TRANSIENT | TRUE | TRY | VOID | VOLATILE | WHILE | HEX_LITERAL | DECIMAL_LITERAL | OCTAL_LITERAL |
-    // FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | IDENT | WS | COMMENT | LINE_COMMENT )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1:8: ( AND | AND_ASSIGN | ASSIGN |
+    // AT | BIT_SHIFT_RIGHT |
+    // BIT_SHIFT_RIGHT_ASSIGN | COLON | COMMA | DEC | DIV | DIV_ASSIGN | DOT | DOTSTAR | ELLIPSIS |
+    // EQUAL | GREATER_OR_EQUAL |
+    // GREATER_THAN | INC | LBRACK | LCURLY | LESS_OR_EQUAL | LESS_THAN | LOGICAL_AND | LOGICAL_NOT
+    // | LOGICAL_OR | LPAREN | MINUS |
+    // MINUS_ASSIGN | MOD | MOD_ASSIGN | NOT | NOT_EQUAL | OR | OR_ASSIGN | PLUS | PLUS_ASSIGN |
+    // QUESTION | RBRACK | RCURLY | RPAREN
+    // | SEMI | SHIFT_LEFT | SHIFT_LEFT_ASSIGN | SHIFT_RIGHT | SHIFT_RIGHT_ASSIGN | STAR |
+    // STAR_ASSIGN | XOR | XOR_ASSIGN | ABSTRACT
+    // | ASSERT | BOOLEAN | BREAK | BYTE | CASE | CATCH | CHAR | CLASS | CONTINUE | DEFAULT | DO |
+    // DOUBLE | ELSE | ENUM | EXTENDS |
+    // FALSE | FINAL | FINALLY | FLOAT | FOR | IF | IMPLEMENTS | INSTANCEOF | INTERFACE | IMPORT |
+    // INT | LONG | NATIVE | NEW | NULL |
+    // PACKAGE | PRIVATE | PROTECTED | PUBLIC | RETURN | SHORT | STATIC | STRICTFP | SUPER | SWITCH
+    // | SYNCHRONIZED | THIS | THROW |
+    // THROWS | TRANSIENT | TRUE | TRY | VOID | VOLATILE | WHILE | HEX_LITERAL | DECIMAL_LITERAL |
+    // OCTAL_LITERAL |
+    // FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | IDENT | WS | COMMENT |
+    // LINE_COMMENT )
     int alt28 = 110;
     alt28 = dfa28.predict(input);
     switch (alt28) {
