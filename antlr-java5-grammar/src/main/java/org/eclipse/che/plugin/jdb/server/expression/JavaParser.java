@@ -8,7 +8,8 @@
  * Contributors:
  *   Red Hat, Inc. - initial API and implementation
  */
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g 2013-02-07 15:54:12
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g
+// 2013-02-07 15:54:12
 
 package org.eclipse.che.plugin.jdb.server.expression;
 
@@ -536,7 +537,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "javaSource"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:324:1: javaSource : compilationUnit -> ^( JAVA_SOURCE
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:324:1: javaSource : compilationUnit
+  // -> ^( JAVA_SOURCE
   // compilationUnit ) ;
   public final JavaParser.javaSource_return javaSource() throws RecognitionException {
     JavaParser.javaSource_return retval = new JavaParser.javaSource_return();
@@ -552,7 +554,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 1)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:325:5: ( compilationUnit -> ^( JAVA_SOURCE compilationUnit
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:325:5: ( compilationUnit -> ^(
+      // JAVA_SOURCE compilationUnit
       // ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:325:9: compilationUnit
       {
@@ -579,7 +582,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 326:9: -> ^( JAVA_SOURCE compilationUnit )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:326:13: ^( JAVA_SOURCE compilationUnit )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:326:13: ^( JAVA_SOURCE
+            // compilationUnit )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 =
@@ -627,7 +631,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "compilationUnit"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:329:1: compilationUnit : annotationList ( packageDeclaration )? (
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:329:1: compilationUnit :
+  // annotationList ( packageDeclaration )? (
   // importDeclaration )* ( typeDecls )* ;
   public final JavaParser.compilationUnit_return compilationUnit() throws RecognitionException {
     JavaParser.compilationUnit_return retval = new JavaParser.compilationUnit_return();
@@ -647,9 +652,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 2)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:330:5: ( annotationList ( packageDeclaration )? (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:330:5: ( annotationList (
+      // packageDeclaration )? (
       // importDeclaration )* ( typeDecls )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:330:9: annotationList ( packageDeclaration )? (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:330:9: annotationList (
+      // packageDeclaration )? (
       // importDeclaration )* ( typeDecls )*
       {
         root_0 = (CommonTree) adaptor.nil();
@@ -786,7 +793,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "typeDecls"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:336:1: typeDecls : ( typeDeclaration | SEMI );
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:336:1: typeDecls : ( typeDeclaration
+  // | SEMI );
   public final JavaParser.typeDecls_return typeDecls() throws RecognitionException {
     JavaParser.typeDecls_return retval = new JavaParser.typeDecls_return();
     retval.start = input.LT(1);
@@ -890,7 +898,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "packageDeclaration"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:341:1: packageDeclaration : PACKAGE qualifiedIdentifier SEMI ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:341:1: packageDeclaration : PACKAGE
+  // qualifiedIdentifier SEMI ;
   public final JavaParser.packageDeclaration_return packageDeclaration()
       throws RecognitionException {
     JavaParser.packageDeclaration_return retval = new JavaParser.packageDeclaration_return();
@@ -909,8 +918,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 4)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:342:5: ( PACKAGE qualifiedIdentifier SEMI )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:342:9: PACKAGE qualifiedIdentifier SEMI
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:342:5: ( PACKAGE
+      // qualifiedIdentifier SEMI )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:342:9: PACKAGE
+      // qualifiedIdentifier SEMI
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -960,7 +971,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "importDeclaration"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:345:1: importDeclaration : IMPORT ( STATIC )? qualifiedIdentifier
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:345:1: importDeclaration : IMPORT (
+  // STATIC )? qualifiedIdentifier
   // ( DOTSTAR )? SEMI ;
   public final JavaParser.importDeclaration_return importDeclaration() throws RecognitionException {
     JavaParser.importDeclaration_return retval = new JavaParser.importDeclaration_return();
@@ -983,9 +995,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 5)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:346:5: ( IMPORT ( STATIC )? qualifiedIdentifier ( DOTSTAR
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:346:5: ( IMPORT ( STATIC )?
+      // qualifiedIdentifier ( DOTSTAR
       // )? SEMI )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:346:9: IMPORT ( STATIC )? qualifiedIdentifier ( DOTSTAR )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:346:9: IMPORT ( STATIC )?
+      // qualifiedIdentifier ( DOTSTAR )?
       // SEMI
       {
         root_0 = (CommonTree) adaptor.nil();
@@ -1078,8 +1092,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "typeDeclaration"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:349:1: typeDeclaration : modifierList (
-  // classTypeDeclaration[$modifierList.tree] | interfaceTypeDeclaration[$modifierList.tree] | enumTypeDeclaration[$modifierList.tree]
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:349:1: typeDeclaration : modifierList
+  // (
+  // classTypeDeclaration[$modifierList.tree] | interfaceTypeDeclaration[$modifierList.tree] |
+  // enumTypeDeclaration[$modifierList.tree]
   // | annotationTypeDeclaration[$modifierList.tree] ) ;
   public final JavaParser.typeDeclaration_return typeDeclaration() throws RecognitionException {
     JavaParser.typeDeclaration_return retval = new JavaParser.typeDeclaration_return();
@@ -1101,11 +1117,15 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 6)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:350:5: ( modifierList ( classTypeDeclaration[$modifierList
-      // .tree] | interfaceTypeDeclaration[$modifierList.tree] | enumTypeDeclaration[$modifierList.tree] |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:350:5: ( modifierList (
+      // classTypeDeclaration[$modifierList
+      // .tree] | interfaceTypeDeclaration[$modifierList.tree] |
+      // enumTypeDeclaration[$modifierList.tree] |
       // annotationTypeDeclaration[$modifierList.tree] ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:350:9: modifierList ( classTypeDeclaration[$modifierList
-      // .tree] | interfaceTypeDeclaration[$modifierList.tree] | enumTypeDeclaration[$modifierList.tree] |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:350:9: modifierList (
+      // classTypeDeclaration[$modifierList
+      // .tree] | interfaceTypeDeclaration[$modifierList.tree] |
+      // enumTypeDeclaration[$modifierList.tree] |
       // annotationTypeDeclaration[$modifierList.tree] )
       {
         root_0 = (CommonTree) adaptor.nil();
@@ -1115,7 +1135,8 @@ public class JavaParser extends Parser {
 
         state._fsp--;
         if (state.failed) return retval;
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:351:9: ( classTypeDeclaration[$modifierList.tree] |
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:351:9: (
+        // classTypeDeclaration[$modifierList.tree] |
         // interfaceTypeDeclaration[$modifierList.tree] | enumTypeDeclaration[$modifierList.tree] |
         // annotationTypeDeclaration[$modifierList.tree] )
         int alt7 = 4;
@@ -1152,7 +1173,8 @@ public class JavaParser extends Parser {
 
         switch (alt7) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:351:13: classTypeDeclaration[$modifierList.tree]
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:351:13:
+            // classTypeDeclaration[$modifierList.tree]
             {
               pushFollow(FOLLOW_classTypeDeclaration_in_typeDeclaration4708);
               classTypeDeclaration17 =
@@ -1166,7 +1188,8 @@ public class JavaParser extends Parser {
             }
             break;
           case 2:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:352:13: interfaceTypeDeclaration[$modifierList
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:352:13:
+            // interfaceTypeDeclaration[$modifierList
             // .tree]
             {
               pushFollow(FOLLOW_interfaceTypeDeclaration_in_typeDeclaration4723);
@@ -1181,7 +1204,8 @@ public class JavaParser extends Parser {
             }
             break;
           case 3:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:353:13: enumTypeDeclaration[$modifierList.tree]
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:353:13:
+            // enumTypeDeclaration[$modifierList.tree]
             {
               pushFollow(FOLLOW_enumTypeDeclaration_in_typeDeclaration4738);
               enumTypeDeclaration19 =
@@ -1242,8 +1266,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "classTypeDeclaration"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:358:1: classTypeDeclaration[CommonTree modifiers] : CLASS IDENT (
-  // genericTypeParameterList )? ( classExtendsClause )? ( implementsClause )? classBody -> ^( CLASS IDENT ( genericTypeParameterList )
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:358:1:
+  // classTypeDeclaration[CommonTree modifiers] : CLASS IDENT (
+  // genericTypeParameterList )? ( classExtendsClause )? ( implementsClause )? classBody -> ^( CLASS
+  // IDENT ( genericTypeParameterList )
   // ? ( classExtendsClause )? ( implementsClause )? classBody ) ;
   public final JavaParser.classTypeDeclaration_return classTypeDeclaration(CommonTree modifiers)
       throws RecognitionException {
@@ -1278,10 +1304,13 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 7)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:359:5: ( CLASS IDENT ( genericTypeParameterList )? (
-      // classExtendsClause )? ( implementsClause )? classBody -> ^( CLASS IDENT ( genericTypeParameterList )? ( classExtendsClause
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:359:5: ( CLASS IDENT (
+      // genericTypeParameterList )? (
+      // classExtendsClause )? ( implementsClause )? classBody -> ^( CLASS IDENT (
+      // genericTypeParameterList )? ( classExtendsClause
       // )? ( implementsClause )? classBody ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:359:9: CLASS IDENT ( genericTypeParameterList )? (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:359:9: CLASS IDENT (
+      // genericTypeParameterList )? (
       // classExtendsClause )? ( implementsClause )? classBody
       {
         CLASS21 = (Token) match(input, CLASS, FOLLOW_CLASS_in_classTypeDeclaration4788);
@@ -1292,7 +1321,8 @@ public class JavaParser extends Parser {
         if (state.failed) return retval;
         if (state.backtracking == 0) stream_IDENT.add(IDENT22);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:359:21: ( genericTypeParameterList )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:359:21: (
+        // genericTypeParameterList )?
         int alt8 = 2;
         int LA8_0 = input.LA(1);
 
@@ -1301,7 +1331,8 @@ public class JavaParser extends Parser {
         }
         switch (alt8) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: genericTypeParameterList
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+            // genericTypeParameterList
             {
               pushFollow(FOLLOW_genericTypeParameterList_in_classTypeDeclaration4792);
               genericTypeParameterList23 = genericTypeParameterList();
@@ -1366,7 +1397,8 @@ public class JavaParser extends Parser {
         if (state.backtracking == 0) stream_classBody.add(classBody26.getTree());
 
         // AST REWRITE
-        // elements: IDENT, classExtendsClause, genericTypeParameterList, CLASS, implementsClause, classBody
+        // elements: IDENT, classExtendsClause, genericTypeParameterList, CLASS, implementsClause,
+        // classBody
         // token labels:
         // rule labels: retval
         // token list labels:
@@ -1379,7 +1411,8 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 360:9: -> ^( CLASS IDENT ( genericTypeParameterList )? ( classExtendsClause )? ( implementsClause )? classBody )
+          // 360:9: -> ^( CLASS IDENT ( genericTypeParameterList )? ( classExtendsClause )? (
+          // implementsClause )? classBody )
           {
             // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:360:13: ^( CLASS IDENT (
             // genericTypeParameterList )? ( classExtendsClause )? ( implementsClause )? classBody )
@@ -1389,17 +1422,20 @@ public class JavaParser extends Parser {
 
               adaptor.addChild(root_1, modifiers);
               adaptor.addChild(root_1, stream_IDENT.nextNode());
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:360:40: ( genericTypeParameterList )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:360:40: (
+              // genericTypeParameterList )?
               if (stream_genericTypeParameterList.hasNext()) {
                 adaptor.addChild(root_1, stream_genericTypeParameterList.nextTree());
               }
               stream_genericTypeParameterList.reset();
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:360:66: ( classExtendsClause )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:360:66: (
+              // classExtendsClause )?
               if (stream_classExtendsClause.hasNext()) {
                 adaptor.addChild(root_1, stream_classExtendsClause.nextTree());
               }
               stream_classExtendsClause.reset();
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:360:86: ( implementsClause )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:360:86: (
+              // implementsClause )?
               if (stream_implementsClause.hasNext()) {
                 adaptor.addChild(root_1, stream_implementsClause.nextTree());
               }
@@ -1444,7 +1480,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "classExtendsClause"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:363:1: classExtendsClause : EXTENDS type -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:363:1: classExtendsClause : EXTENDS
+  // type -> ^(
   // EXTENDS_CLAUSE[$EXTENDS, \"EXTENDS_CLAUSE\"] type ) ;
   public final JavaParser.classExtendsClause_return classExtendsClause()
       throws RecognitionException {
@@ -1463,7 +1500,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 8)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:364:5: ( EXTENDS type -> ^( EXTENDS_CLAUSE[$EXTENDS,
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:364:5: ( EXTENDS type -> ^(
+      // EXTENDS_CLAUSE[$EXTENDS,
       // \"EXTENDS_CLAUSE\"] type ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:364:9: EXTENDS type
       {
@@ -1494,7 +1532,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 365:9: -> ^( EXTENDS_CLAUSE[$EXTENDS, \"EXTENDS_CLAUSE\"] type )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:365:13: ^( EXTENDS_CLAUSE[$EXTENDS,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:365:13: ^(
+            // EXTENDS_CLAUSE[$EXTENDS,
             // \"EXTENDS_CLAUSE\"] type )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -1544,7 +1583,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "interfaceExtendsClause"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:368:1: interfaceExtendsClause : EXTENDS typeList -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:368:1: interfaceExtendsClause :
+  // EXTENDS typeList -> ^(
   // EXTENDS_CLAUSE[$EXTENDS, \"EXTENDS_CLAUSE\"] typeList ) ;
   public final JavaParser.interfaceExtendsClause_return interfaceExtendsClause()
       throws RecognitionException {
@@ -1565,7 +1605,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 9)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:369:5: ( EXTENDS typeList -> ^( EXTENDS_CLAUSE[$EXTENDS,
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:369:5: ( EXTENDS typeList -> ^(
+      // EXTENDS_CLAUSE[$EXTENDS,
       // \"EXTENDS_CLAUSE\"] typeList ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:369:9: EXTENDS typeList
       {
@@ -1596,7 +1637,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 370:9: -> ^( EXTENDS_CLAUSE[$EXTENDS, \"EXTENDS_CLAUSE\"] typeList )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:370:13: ^( EXTENDS_CLAUSE[$EXTENDS,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:370:13: ^(
+            // EXTENDS_CLAUSE[$EXTENDS,
             // \"EXTENDS_CLAUSE\"] typeList )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -1646,7 +1688,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "implementsClause"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:373:1: implementsClause : IMPLEMENTS typeList -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:373:1: implementsClause : IMPLEMENTS
+  // typeList -> ^(
   // IMPLEMENTS_CLAUSE[$IMPLEMENTS, \"IMPLEMENTS_CLAUSE\"] typeList ) ;
   public final JavaParser.implementsClause_return implementsClause() throws RecognitionException {
     JavaParser.implementsClause_return retval = new JavaParser.implementsClause_return();
@@ -1666,7 +1709,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 10)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:374:5: ( IMPLEMENTS typeList -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:374:5: ( IMPLEMENTS typeList ->
+      // ^(
       // IMPLEMENTS_CLAUSE[$IMPLEMENTS, \"IMPLEMENTS_CLAUSE\"] typeList ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:374:9: IMPLEMENTS typeList
       {
@@ -1697,7 +1741,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 375:9: -> ^( IMPLEMENTS_CLAUSE[$IMPLEMENTS, \"IMPLEMENTS_CLAUSE\"] typeList )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:375:13: ^( IMPLEMENTS_CLAUSE[$IMPLEMENTS,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:375:13: ^(
+            // IMPLEMENTS_CLAUSE[$IMPLEMENTS,
             // \"IMPLEMENTS_CLAUSE\"] typeList )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -1748,7 +1793,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "genericTypeParameterList"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:378:1: genericTypeParameterList : LESS_THAN genericTypeParameter (
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:378:1: genericTypeParameterList :
+  // LESS_THAN genericTypeParameter (
   // COMMA genericTypeParameter )* genericTypeListClosing -> ^( GENERIC_TYPE_PARAM_LIST[$LESS_THAN,
   // \"GENERIC_TYPE_PARAM_LIST\"] ( genericTypeParameter )+ ) ;
   public final JavaParser.genericTypeParameterList_return genericTypeParameterList()
@@ -1780,10 +1826,12 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 11)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:379:5: ( LESS_THAN genericTypeParameter ( COMMA
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:379:5: ( LESS_THAN
+      // genericTypeParameter ( COMMA
       // genericTypeParameter )* genericTypeListClosing -> ^( GENERIC_TYPE_PARAM_LIST[$LESS_THAN,
       // \"GENERIC_TYPE_PARAM_LIST\"] ( genericTypeParameter )+ ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:379:9: LESS_THAN genericTypeParameter ( COMMA
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:379:9: LESS_THAN
+      // genericTypeParameter ( COMMA
       // genericTypeParameter )* genericTypeListClosing
       {
         LESS_THAN33 =
@@ -1798,7 +1846,8 @@ public class JavaParser extends Parser {
         if (state.failed) return retval;
         if (state.backtracking == 0)
           stream_genericTypeParameter.add(genericTypeParameter34.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:379:40: ( COMMA genericTypeParameter )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:379:40: ( COMMA
+        // genericTypeParameter )*
         loop11:
         do {
           int alt11 = 2;
@@ -1810,7 +1859,8 @@ public class JavaParser extends Parser {
 
           switch (alt11) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:379:41: COMMA genericTypeParameter
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:379:41: COMMA
+              // genericTypeParameter
               {
                 COMMA35 = (Token) match(input, COMMA, FOLLOW_COMMA_in_genericTypeParameterList4998);
                 if (state.failed) return retval;
@@ -1853,9 +1903,11 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 380:9: -> ^( GENERIC_TYPE_PARAM_LIST[$LESS_THAN, \"GENERIC_TYPE_PARAM_LIST\"] ( genericTypeParameter )+ )
+          // 380:9: -> ^( GENERIC_TYPE_PARAM_LIST[$LESS_THAN, \"GENERIC_TYPE_PARAM_LIST\"] (
+          // genericTypeParameter )+ )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:380:13: ^( GENERIC_TYPE_PARAM_LIST[$LESS_THAN,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:380:13: ^(
+            // GENERIC_TYPE_PARAM_LIST[$LESS_THAN,
             // \"GENERIC_TYPE_PARAM_LIST\"] ( genericTypeParameter )+ )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -1913,7 +1965,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "genericTypeListClosing"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:383:1: genericTypeListClosing : ( GREATER_THAN | SHIFT_RIGHT |
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:383:1: genericTypeListClosing : (
+  // GREATER_THAN | SHIFT_RIGHT |
   // BIT_SHIFT_RIGHT | );
   public final JavaParser.genericTypeListClosing_return genericTypeListClosing()
       throws RecognitionException {
@@ -1935,7 +1988,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 12)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:387:5: ( GREATER_THAN | SHIFT_RIGHT | BIT_SHIFT_RIGHT | )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:387:5: ( GREATER_THAN |
+      // SHIFT_RIGHT | BIT_SHIFT_RIGHT | )
       int alt12 = 4;
       switch (input.LA(1)) {
         case GREATER_THAN:
@@ -2140,7 +2194,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "genericTypeParameter"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:393:1: genericTypeParameter : IDENT ( bound )? -> ^( IDENT ( bound
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:393:1: genericTypeParameter : IDENT (
+  // bound )? -> ^( IDENT ( bound
   // )? ) ;
   public final JavaParser.genericTypeParameter_return genericTypeParameter()
       throws RecognitionException {
@@ -2159,7 +2214,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 13)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:394:5: ( IDENT ( bound )? -> ^( IDENT ( bound )? ) )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:394:5: ( IDENT ( bound )? -> ^(
+      // IDENT ( bound )? ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:394:9: IDENT ( bound )?
       {
         IDENT41 = (Token) match(input, IDENT, FOLLOW_IDENT_in_genericTypeParameter5167);
@@ -2223,7 +2279,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 395:9: -> ^( IDENT ( bound )? )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:395:13: ^( IDENT ( bound )? )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:395:13: ^( IDENT ( bound )?
+            // )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 = (CommonTree) adaptor.becomeRoot(stream_IDENT.nextNode(), root_1);
@@ -2272,7 +2329,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "bound"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:398:1: bound : EXTENDS type ( AND type )* -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:398:1: bound : EXTENDS type ( AND
+  // type )* -> ^(
   // EXTENDS_BOUND_LIST[$EXTENDS, \"EXTENDS_BOUND_LIST\"] ( type )+ ) ;
   public final JavaParser.bound_return bound() throws RecognitionException {
     JavaParser.bound_return retval = new JavaParser.bound_return();
@@ -2295,7 +2353,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 14)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:399:5: ( EXTENDS type ( AND type )* -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:399:5: ( EXTENDS type ( AND type
+      // )* -> ^(
       // EXTENDS_BOUND_LIST[$EXTENDS, \"EXTENDS_BOUND_LIST\"] ( type )+ ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:399:9: EXTENDS type ( AND type )*
       {
@@ -2357,7 +2416,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 400:9: -> ^( EXTENDS_BOUND_LIST[$EXTENDS, \"EXTENDS_BOUND_LIST\"] ( type )+ )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:400:13: ^( EXTENDS_BOUND_LIST[$EXTENDS,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:400:13: ^(
+            // EXTENDS_BOUND_LIST[$EXTENDS,
             // \"EXTENDS_BOUND_LIST\"] ( type )+ )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -2414,7 +2474,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "enumTypeDeclaration"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:403:1: enumTypeDeclaration[CommonTree modifiers] : ENUM IDENT (
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:403:1: enumTypeDeclaration[CommonTree
+  // modifiers] : ENUM IDENT (
   // implementsClause )? enumBody -> ^( ENUM IDENT ( implementsClause )? enumBody ) ;
   public final JavaParser.enumTypeDeclaration_return enumTypeDeclaration(CommonTree modifiers)
       throws RecognitionException {
@@ -2441,9 +2502,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 15)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:404:5: ( ENUM IDENT ( implementsClause )? enumBody -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:404:5: ( ENUM IDENT (
+      // implementsClause )? enumBody -> ^(
       // ENUM IDENT ( implementsClause )? enumBody ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:404:9: ENUM IDENT ( implementsClause )? enumBody
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:404:9: ENUM IDENT (
+      // implementsClause )? enumBody
       {
         ENUM47 = (Token) match(input, ENUM, FOLLOW_ENUM_in_enumTypeDeclaration5263);
         if (state.failed) return retval;
@@ -2498,7 +2561,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 405:9: -> ^( ENUM IDENT ( implementsClause )? enumBody )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:405:13: ^( ENUM IDENT ( implementsClause )?
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:405:13: ^( ENUM IDENT (
+            // implementsClause )?
             // enumBody )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -2506,7 +2570,8 @@ public class JavaParser extends Parser {
 
               adaptor.addChild(root_1, modifiers);
               adaptor.addChild(root_1, stream_IDENT.nextNode());
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:405:39: ( implementsClause )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:405:39: (
+              // implementsClause )?
               if (stream_implementsClause.hasNext()) {
                 adaptor.addChild(root_1, stream_implementsClause.nextTree());
               }
@@ -2551,7 +2616,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "enumBody"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:408:1: enumBody : LCURLY enumScopeDeclarations RCURLY -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:408:1: enumBody : LCURLY
+  // enumScopeDeclarations RCURLY -> ^(
   // ENUM_TOP_LEVEL_SCOPE[$LCURLY, \"ENUM_TOP_LEVEL_SCOPE\"] enumScopeDeclarations ) ;
   public final JavaParser.enumBody_return enumBody() throws RecognitionException {
     JavaParser.enumBody_return retval = new JavaParser.enumBody_return();
@@ -2573,9 +2639,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 16)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:409:5: ( LCURLY enumScopeDeclarations RCURLY -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:409:5: ( LCURLY
+      // enumScopeDeclarations RCURLY -> ^(
       // ENUM_TOP_LEVEL_SCOPE[$LCURLY, \"ENUM_TOP_LEVEL_SCOPE\"] enumScopeDeclarations ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:409:9: LCURLY enumScopeDeclarations RCURLY
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:409:9: LCURLY
+      // enumScopeDeclarations RCURLY
       {
         LCURLY51 = (Token) match(input, LCURLY, FOLLOW_LCURLY_in_enumBody5317);
         if (state.failed) return retval;
@@ -2606,9 +2674,11 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 410:9: -> ^( ENUM_TOP_LEVEL_SCOPE[$LCURLY, \"ENUM_TOP_LEVEL_SCOPE\"] enumScopeDeclarations )
+          // 410:9: -> ^( ENUM_TOP_LEVEL_SCOPE[$LCURLY, \"ENUM_TOP_LEVEL_SCOPE\"]
+          // enumScopeDeclarations )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:410:13: ^( ENUM_TOP_LEVEL_SCOPE[$LCURLY,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:410:13: ^(
+            // ENUM_TOP_LEVEL_SCOPE[$LCURLY,
             // \"ENUM_TOP_LEVEL_SCOPE\"] enumScopeDeclarations )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -2660,7 +2730,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "enumScopeDeclarations"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:413:1: enumScopeDeclarations : enumConstants ( COMMA )? (
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:413:1: enumScopeDeclarations :
+  // enumConstants ( COMMA )? (
   // enumClassScopeDeclarations )? ;
   public final JavaParser.enumScopeDeclarations_return enumScopeDeclarations()
       throws RecognitionException {
@@ -2680,7 +2751,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 17)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:414:5: ( enumConstants ( COMMA )? (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:414:5: ( enumConstants ( COMMA )?
+      // (
       // enumClassScopeDeclarations )? )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:414:9: enumConstants ( COMMA )? (
       // enumClassScopeDeclarations )?
@@ -2710,7 +2782,8 @@ public class JavaParser extends Parser {
             break;
         }
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:414:33: ( enumClassScopeDeclarations )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:414:33: (
+        // enumClassScopeDeclarations )?
         int alt17 = 2;
         int LA17_0 = input.LA(1);
 
@@ -2719,7 +2792,8 @@ public class JavaParser extends Parser {
         }
         switch (alt17) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: enumClassScopeDeclarations
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+            // enumClassScopeDeclarations
             {
               pushFollow(FOLLOW_enumClassScopeDeclarations_in_enumScopeDeclarations5366);
               enumClassScopeDeclarations56 = enumClassScopeDeclarations();
@@ -2763,8 +2837,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "enumClassScopeDeclarations"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:417:1: enumClassScopeDeclarations : SEMI ( classScopeDeclarations
-  // )* -> ^( CLASS_TOP_LEVEL_SCOPE[$SEMI, \"CLASS_TOP_LEVEL_SCOPE\"] ( classScopeDeclarations )* ) ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:417:1: enumClassScopeDeclarations :
+  // SEMI ( classScopeDeclarations
+  // )* -> ^( CLASS_TOP_LEVEL_SCOPE[$SEMI, \"CLASS_TOP_LEVEL_SCOPE\"] ( classScopeDeclarations )* )
+  // ;
   public final JavaParser.enumClassScopeDeclarations_return enumClassScopeDeclarations()
       throws RecognitionException {
     JavaParser.enumClassScopeDeclarations_return retval =
@@ -2784,15 +2860,18 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 18)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:418:5: ( SEMI ( classScopeDeclarations )* -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:418:5: ( SEMI (
+      // classScopeDeclarations )* -> ^(
       // CLASS_TOP_LEVEL_SCOPE[$SEMI, \"CLASS_TOP_LEVEL_SCOPE\"] ( classScopeDeclarations )* ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:418:9: SEMI ( classScopeDeclarations )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:418:9: SEMI (
+      // classScopeDeclarations )*
       {
         SEMI57 = (Token) match(input, SEMI, FOLLOW_SEMI_in_enumClassScopeDeclarations5386);
         if (state.failed) return retval;
         if (state.backtracking == 0) stream_SEMI.add(SEMI57);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:418:14: ( classScopeDeclarations )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:418:14: (
+        // classScopeDeclarations )*
         loop18:
         do {
           int alt18 = 2;
@@ -2823,7 +2902,8 @@ public class JavaParser extends Parser {
 
           switch (alt18) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: classScopeDeclarations
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+              // classScopeDeclarations
               {
                 pushFollow(FOLLOW_classScopeDeclarations_in_enumClassScopeDeclarations5388);
                 classScopeDeclarations58 = classScopeDeclarations();
@@ -2854,9 +2934,11 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 419:9: -> ^( CLASS_TOP_LEVEL_SCOPE[$SEMI, \"CLASS_TOP_LEVEL_SCOPE\"] ( classScopeDeclarations )* )
+          // 419:9: -> ^( CLASS_TOP_LEVEL_SCOPE[$SEMI, \"CLASS_TOP_LEVEL_SCOPE\"] (
+          // classScopeDeclarations )* )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:419:13: ^( CLASS_TOP_LEVEL_SCOPE[$SEMI,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:419:13: ^(
+            // CLASS_TOP_LEVEL_SCOPE[$SEMI,
             // \"CLASS_TOP_LEVEL_SCOPE\"] ( classScopeDeclarations )* )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -2868,7 +2950,8 @@ public class JavaParser extends Parser {
                                   CLASS_TOP_LEVEL_SCOPE, SEMI57, "CLASS_TOP_LEVEL_SCOPE"),
                           root_1);
 
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:419:69: ( classScopeDeclarations )*
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:419:69: (
+              // classScopeDeclarations )*
               while (stream_classScopeDeclarations.hasNext()) {
                 adaptor.addChild(root_1, stream_classScopeDeclarations.nextTree());
               }
@@ -2912,7 +2995,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "enumConstants"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:422:1: enumConstants : enumConstant ( COMMA enumConstant )* ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:422:1: enumConstants : enumConstant (
+  // COMMA enumConstant )* ;
   public final JavaParser.enumConstants_return enumConstants() throws RecognitionException {
     JavaParser.enumConstants_return retval = new JavaParser.enumConstants_return();
     retval.start = input.LT(1);
@@ -2930,8 +3014,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 19)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:423:5: ( enumConstant ( COMMA enumConstant )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:423:9: enumConstant ( COMMA enumConstant )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:423:5: ( enumConstant ( COMMA
+      // enumConstant )* )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:423:9: enumConstant ( COMMA
+      // enumConstant )*
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -2957,7 +3043,8 @@ public class JavaParser extends Parser {
 
           switch (alt19) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:423:23: COMMA enumConstant
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:423:23: COMMA
+              // enumConstant
               {
                 COMMA60 = (Token) match(input, COMMA, FOLLOW_COMMA_in_enumConstants5430);
                 if (state.failed) return retval;
@@ -3006,7 +3093,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "enumConstant"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:426:1: enumConstant : annotationList IDENT ( arguments )? (
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:426:1: enumConstant : annotationList
+  // IDENT ( arguments )? (
   // classBody )? ;
   public final JavaParser.enumConstant_return enumConstant() throws RecognitionException {
     JavaParser.enumConstant_return retval = new JavaParser.enumConstant_return();
@@ -3027,8 +3115,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 20)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:427:5: ( annotationList IDENT ( arguments )? ( classBody )? )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:427:9: annotationList IDENT ( arguments )? ( classBody )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:427:5: ( annotationList IDENT (
+      // arguments )? ( classBody )? )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:427:9: annotationList IDENT (
+      // arguments )? ( classBody )?
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -3117,8 +3207,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "interfaceTypeDeclaration"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:430:1: interfaceTypeDeclaration[CommonTree modifiers] : INTERFACE
-  // IDENT ( genericTypeParameterList )? ( interfaceExtendsClause )? interfaceBody -> ^( INTERFACE IDENT ( genericTypeParameterList )?
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:430:1:
+  // interfaceTypeDeclaration[CommonTree modifiers] : INTERFACE
+  // IDENT ( genericTypeParameterList )? ( interfaceExtendsClause )? interfaceBody -> ^( INTERFACE
+  // IDENT ( genericTypeParameterList )?
   // ( interfaceExtendsClause )? interfaceBody ) ;
   public final JavaParser.interfaceTypeDeclaration_return interfaceTypeDeclaration(
       CommonTree modifiers) throws RecognitionException {
@@ -3151,10 +3243,13 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 21)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:431:5: ( INTERFACE IDENT ( genericTypeParameterList )? (
-      // interfaceExtendsClause )? interfaceBody -> ^( INTERFACE IDENT ( genericTypeParameterList )? ( interfaceExtendsClause )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:431:5: ( INTERFACE IDENT (
+      // genericTypeParameterList )? (
+      // interfaceExtendsClause )? interfaceBody -> ^( INTERFACE IDENT ( genericTypeParameterList )?
+      // ( interfaceExtendsClause )?
       // interfaceBody ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:431:9: INTERFACE IDENT ( genericTypeParameterList )? (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:431:9: INTERFACE IDENT (
+      // genericTypeParameterList )? (
       // interfaceExtendsClause )? interfaceBody
       {
         INTERFACE66 =
@@ -3166,7 +3261,8 @@ public class JavaParser extends Parser {
         if (state.failed) return retval;
         if (state.backtracking == 0) stream_IDENT.add(IDENT67);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:431:25: ( genericTypeParameterList )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:431:25: (
+        // genericTypeParameterList )?
         int alt22 = 2;
         int LA22_0 = input.LA(1);
 
@@ -3175,7 +3271,8 @@ public class JavaParser extends Parser {
         }
         switch (alt22) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: genericTypeParameterList
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+            // genericTypeParameterList
             {
               pushFollow(FOLLOW_genericTypeParameterList_in_interfaceTypeDeclaration5495);
               genericTypeParameterList68 = genericTypeParameterList();
@@ -3188,7 +3285,8 @@ public class JavaParser extends Parser {
             break;
         }
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:431:51: ( interfaceExtendsClause )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:431:51: (
+        // interfaceExtendsClause )?
         int alt23 = 2;
         int LA23_0 = input.LA(1);
 
@@ -3218,7 +3316,8 @@ public class JavaParser extends Parser {
         if (state.backtracking == 0) stream_interfaceBody.add(interfaceBody70.getTree());
 
         // AST REWRITE
-        // elements: IDENT, genericTypeParameterList, INTERFACE, interfaceBody, interfaceExtendsClause
+        // elements: IDENT, genericTypeParameterList, INTERFACE, interfaceBody,
+        // interfaceExtendsClause
         // token labels:
         // rule labels: retval
         // token list labels:
@@ -3231,9 +3330,11 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 432:9: -> ^( INTERFACE IDENT ( genericTypeParameterList )? ( interfaceExtendsClause )? interfaceBody )
+          // 432:9: -> ^( INTERFACE IDENT ( genericTypeParameterList )? ( interfaceExtendsClause )?
+          // interfaceBody )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:432:13: ^( INTERFACE IDENT (
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:432:13: ^( INTERFACE IDENT
+            // (
             // genericTypeParameterList )? ( interfaceExtendsClause )? interfaceBody )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -3241,12 +3342,14 @@ public class JavaParser extends Parser {
 
               adaptor.addChild(root_1, modifiers);
               adaptor.addChild(root_1, stream_IDENT.nextNode());
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:432:44: ( genericTypeParameterList )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:432:44: (
+              // genericTypeParameterList )?
               if (stream_genericTypeParameterList.hasNext()) {
                 adaptor.addChild(root_1, stream_genericTypeParameterList.nextTree());
               }
               stream_genericTypeParameterList.reset();
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:432:70: ( interfaceExtendsClause )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:432:70: (
+              // interfaceExtendsClause )?
               if (stream_interfaceExtendsClause.hasNext()) {
                 adaptor.addChild(root_1, stream_interfaceExtendsClause.nextTree());
               }
@@ -3291,7 +3394,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "typeList"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:435:1: typeList : type ( COMMA type )* ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:435:1: typeList : type ( COMMA type
+  // )* ;
   public final JavaParser.typeList_return typeList() throws RecognitionException {
     JavaParser.typeList_return retval = new JavaParser.typeList_return();
     retval.start = input.LT(1);
@@ -3381,7 +3485,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "classBody"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:439:1: classBody : LCURLY ( classScopeDeclarations )* RCURLY -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:439:1: classBody : LCURLY (
+  // classScopeDeclarations )* RCURLY -> ^(
   // CLASS_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] ( classScopeDeclarations )* ) ;
   public final JavaParser.classBody_return classBody() throws RecognitionException {
     JavaParser.classBody_return retval = new JavaParser.classBody_return();
@@ -3403,15 +3508,18 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 23)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:440:5: ( LCURLY ( classScopeDeclarations )* RCURLY -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:440:5: ( LCURLY (
+      // classScopeDeclarations )* RCURLY -> ^(
       // CLASS_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] ( classScopeDeclarations )* ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:440:9: LCURLY ( classScopeDeclarations )* RCURLY
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:440:9: LCURLY (
+      // classScopeDeclarations )* RCURLY
       {
         LCURLY74 = (Token) match(input, LCURLY, FOLLOW_LCURLY_in_classBody5582);
         if (state.failed) return retval;
         if (state.backtracking == 0) stream_LCURLY.add(LCURLY74);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:440:16: ( classScopeDeclarations )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:440:16: (
+        // classScopeDeclarations )*
         loop25:
         do {
           int alt25 = 2;
@@ -3442,7 +3550,8 @@ public class JavaParser extends Parser {
 
           switch (alt25) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: classScopeDeclarations
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+              // classScopeDeclarations
               {
                 pushFollow(FOLLOW_classScopeDeclarations_in_classBody5584);
                 classScopeDeclarations75 = classScopeDeclarations();
@@ -3477,9 +3586,11 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 441:9: -> ^( CLASS_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] ( classScopeDeclarations )* )
+          // 441:9: -> ^( CLASS_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] (
+          // classScopeDeclarations )* )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:441:13: ^( CLASS_TOP_LEVEL_SCOPE[$LCURLY,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:441:13: ^(
+            // CLASS_TOP_LEVEL_SCOPE[$LCURLY,
             // \"CLASS_TOP_LEVEL_SCOPE\"] ( classScopeDeclarations )* )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -3491,7 +3602,8 @@ public class JavaParser extends Parser {
                                   CLASS_TOP_LEVEL_SCOPE, LCURLY74, "CLASS_TOP_LEVEL_SCOPE"),
                           root_1);
 
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:441:71: ( classScopeDeclarations )*
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:441:71: (
+              // classScopeDeclarations )*
               while (stream_classScopeDeclarations.hasNext()) {
                 adaptor.addChild(root_1, stream_classScopeDeclarations.nextTree());
               }
@@ -3535,8 +3647,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "interfaceBody"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:444:1: interfaceBody : LCURLY ( interfaceScopeDeclarations )*
-  // RCURLY -> ^( INTERFACE_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] ( interfaceScopeDeclarations )* ) ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:444:1: interfaceBody : LCURLY (
+  // interfaceScopeDeclarations )*
+  // RCURLY -> ^( INTERFACE_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] (
+  // interfaceScopeDeclarations )* ) ;
   public final JavaParser.interfaceBody_return interfaceBody() throws RecognitionException {
     JavaParser.interfaceBody_return retval = new JavaParser.interfaceBody_return();
     retval.start = input.LT(1);
@@ -3557,15 +3671,19 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 24)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:445:5: ( LCURLY ( interfaceScopeDeclarations )* RCURLY ->
-      // ^( INTERFACE_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] ( interfaceScopeDeclarations )* ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:445:9: LCURLY ( interfaceScopeDeclarations )* RCURLY
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:445:5: ( LCURLY (
+      // interfaceScopeDeclarations )* RCURLY ->
+      // ^( INTERFACE_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] (
+      // interfaceScopeDeclarations )* ) )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:445:9: LCURLY (
+      // interfaceScopeDeclarations )* RCURLY
       {
         LCURLY77 = (Token) match(input, LCURLY, FOLLOW_LCURLY_in_interfaceBody5629);
         if (state.failed) return retval;
         if (state.backtracking == 0) stream_LCURLY.add(LCURLY77);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:445:16: ( interfaceScopeDeclarations )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:445:16: (
+        // interfaceScopeDeclarations )*
         loop26:
         do {
           int alt26 = 2;
@@ -3595,7 +3713,8 @@ public class JavaParser extends Parser {
 
           switch (alt26) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: interfaceScopeDeclarations
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+              // interfaceScopeDeclarations
               {
                 pushFollow(FOLLOW_interfaceScopeDeclarations_in_interfaceBody5631);
                 interfaceScopeDeclarations78 = interfaceScopeDeclarations();
@@ -3630,9 +3749,11 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 446:9: -> ^( INTERFACE_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] ( interfaceScopeDeclarations )* )
+          // 446:9: -> ^( INTERFACE_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] (
+          // interfaceScopeDeclarations )* )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:446:13: ^( INTERFACE_TOP_LEVEL_SCOPE[$LCURLY,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:446:13: ^(
+            // INTERFACE_TOP_LEVEL_SCOPE[$LCURLY,
             // \"CLASS_TOP_LEVEL_SCOPE\"] ( interfaceScopeDeclarations )* )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -3644,7 +3765,8 @@ public class JavaParser extends Parser {
                                   INTERFACE_TOP_LEVEL_SCOPE, LCURLY77, "CLASS_TOP_LEVEL_SCOPE"),
                           root_1);
 
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:446:75: ( interfaceScopeDeclarations )*
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:446:75: (
+              // interfaceScopeDeclarations )*
               while (stream_interfaceScopeDeclarations.hasNext()) {
                 adaptor.addChild(root_1, stream_interfaceScopeDeclarations.nextTree());
               }
@@ -3688,14 +3810,22 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "classScopeDeclarations"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:449:1: classScopeDeclarations : ( block -> ^(
-  // CLASS_INSTANCE_INITIALIZER block ) | STATIC block -> ^( CLASS_STATIC_INITIALIZER[$STATIC, \"CLASS_STATIC_INITIALIZER\"] block ) |
-  // modifierList ( ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block |
-  // SEMI ) -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList
-  // )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) -> ^( VOID_METHOD_DECL
-  // modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) | ident= IDENT
-  // formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList (
-  // genericTypeParameterList )? formalParameterList ( throwsClause )? block ) ) | type classFieldDeclaratorList SEMI -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:449:1: classScopeDeclarations : (
+  // block -> ^(
+  // CLASS_INSTANCE_INITIALIZER block ) | STATIC block -> ^( CLASS_STATIC_INITIALIZER[$STATIC,
+  // \"CLASS_STATIC_INITIALIZER\"] block ) |
+  // modifierList ( ( genericTypeParameterList )? ( type IDENT formalParameterList (
+  // arrayDeclaratorList )? ( throwsClause )? ( block |
+  // SEMI ) -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT
+  // formalParameterList ( arrayDeclaratorList
+  // )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block |
+  // SEMI ) -> ^( VOID_METHOD_DECL
+  // modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block
+  // )? ) | ident= IDENT
+  // formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident,
+  // \"CONSTRUCTOR_DECL\"] modifierList (
+  // genericTypeParameterList )? formalParameterList ( throwsClause )? block ) ) | type
+  // classFieldDeclaratorList SEMI -> ^(
   // VAR_DECLARATION modifierList type classFieldDeclaratorList ) ) | typeDeclaration | SEMI );
   public final JavaParser.classScopeDeclarations_return classScopeDeclarations()
       throws RecognitionException {
@@ -3781,15 +3911,23 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 25)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:450:5: ( block -> ^( CLASS_INSTANCE_INITIALIZER block ) |
-      // STATIC block -> ^( CLASS_STATIC_INITIALIZER[$STATIC, \"CLASS_STATIC_INITIALIZER\"] block ) | modifierList ( (
-      // genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI )
-      // -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList
-      // )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) -> ^(
-      // VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:450:5: ( block -> ^(
+      // CLASS_INSTANCE_INITIALIZER block ) |
+      // STATIC block -> ^( CLASS_STATIC_INITIALIZER[$STATIC, \"CLASS_STATIC_INITIALIZER\"] block )
+      // | modifierList ( (
+      // genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? (
+      // throwsClause )? ( block | SEMI )
+      // -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT
+      // formalParameterList ( arrayDeclaratorList
+      // )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? (
+      // block | SEMI ) -> ^(
+      // VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList (
+      // throwsClause )? ( block )? ) |
       // ident= IDENT formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident,
-      // \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) ) | type
-      // classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) ) | typeDeclaration | SEMI )
+      // \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList (
+      // throwsClause )? block ) ) | type
+      // classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type
+      // classFieldDeclaratorList ) ) | typeDeclaration | SEMI )
       int alt36 = 5;
       alt36 = dfa36.predict(input);
       switch (alt36) {
@@ -3819,7 +3957,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 450:25: -> ^( CLASS_INSTANCE_INITIALIZER block )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:450:29: ^( CLASS_INSTANCE_INITIALIZER block )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:450:29: ^(
+                // CLASS_INSTANCE_INITIALIZER block )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
                   root_1 =
@@ -3868,7 +4007,8 @@ public class JavaParser extends Parser {
                       adaptor, "rule retval", retval != null ? retval.tree : null);
 
               root_0 = (CommonTree) adaptor.nil();
-              // 451:25: -> ^( CLASS_STATIC_INITIALIZER[$STATIC, \"CLASS_STATIC_INITIALIZER\"] block )
+              // 451:25: -> ^( CLASS_STATIC_INITIALIZER[$STATIC, \"CLASS_STATIC_INITIALIZER\"] block
+              // )
               {
                 // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:451:29: ^(
                 // CLASS_STATIC_INITIALIZER[$STATIC, \"CLASS_STATIC_INITIALIZER\"] block )
@@ -3895,14 +4035,22 @@ public class JavaParser extends Parser {
           }
           break;
         case 3:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:452:9: modifierList ( ( genericTypeParameterList )
-          // ? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) -> ^(
-          // FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList (
-          // arrayDeclaratorList )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block |
-          // SEMI ) -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause
-          // )? ( block )? ) | ident= IDENT formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident,
-          // \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) ) |
-          // type classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) )
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:452:9: modifierList ( (
+          // genericTypeParameterList )
+          // ? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block |
+          // SEMI ) -> ^(
+          // FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT
+          // formalParameterList (
+          // arrayDeclaratorList )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList
+          // ( throwsClause )? ( block |
+          // SEMI ) -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT
+          // formalParameterList ( throwsClause
+          // )? ( block )? ) | ident= IDENT formalParameterList ( throwsClause )? block -> ^(
+          // CONSTRUCTOR_DECL[$ident,
+          // \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList (
+          // throwsClause )? block ) ) |
+          // type classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type
+          // classFieldDeclaratorList ) )
           {
             pushFollow(FOLLOW_modifierList_in_classScopeDeclarations5726);
             modifierList83 = modifierList();
@@ -3910,14 +4058,21 @@ public class JavaParser extends Parser {
             state._fsp--;
             if (state.failed) return retval;
             if (state.backtracking == 0) stream_modifierList.add(modifierList83.getTree());
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:9: ( ( genericTypeParameterList )? ( type
-            // IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) -> ^( FUNCTION_METHOD_DECL
-            // modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause
-            // )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) -> ^( VOID_METHOD_DECL
-            // modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) | ident= IDENT
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:9: ( (
+            // genericTypeParameterList )? ( type
+            // IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI )
+            // -> ^( FUNCTION_METHOD_DECL
+            // modifierList ( genericTypeParameterList )? type IDENT formalParameterList (
+            // arrayDeclaratorList )? ( throwsClause
+            // )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI )
+            // -> ^( VOID_METHOD_DECL
+            // modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause
+            // )? ( block )? ) | ident= IDENT
             // formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident,
-            // \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) ) |
-            // type classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) )
+            // \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList
+            // ( throwsClause )? block ) ) |
+            // type classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type
+            // classFieldDeclaratorList ) )
             int alt35 = 2;
             switch (input.LA(1)) {
               case LESS_THAN:
@@ -3983,16 +4138,24 @@ public class JavaParser extends Parser {
 
             switch (alt35) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: ( genericTypeParameterList )? (
-                // type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) -> ^(
-                // FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList (
-                // arrayDeclaratorList )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? (
-                // block | SEMI ) -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList
-                // ( throwsClause )? ( block )? ) | ident= IDENT formalParameterList ( throwsClause )? block -> ^(
-                // CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )?
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: (
+                // genericTypeParameterList )? (
+                // type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block
+                // | SEMI ) -> ^(
+                // FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT
+                // formalParameterList (
+                // arrayDeclaratorList )? ( throwsClause )? ( block )? ) | VOID IDENT
+                // formalParameterList ( throwsClause )? (
+                // block | SEMI ) -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )?
+                // IDENT formalParameterList
+                // ( throwsClause )? ( block )? ) | ident= IDENT formalParameterList ( throwsClause
+                // )? block -> ^(
+                // CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList (
+                // genericTypeParameterList )?
                 // formalParameterList ( throwsClause )? block ) )
                 {
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: ( genericTypeParameterList )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: (
+                  // genericTypeParameterList )?
                   int alt27 = 2;
                   int LA27_0 = input.LA(1);
 
@@ -4001,7 +4164,8 @@ public class JavaParser extends Parser {
                   }
                   switch (alt27) {
                     case 1:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: genericTypeParameterList
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                      // genericTypeParameterList
                       {
                         pushFollow(FOLLOW_genericTypeParameterList_in_classScopeDeclarations5740);
                         genericTypeParameterList84 = genericTypeParameterList();
@@ -4014,13 +4178,20 @@ public class JavaParser extends Parser {
                       break;
                   }
 
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:13: ( type IDENT formalParameterList (
-                  // arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) -> ^( FUNCTION_METHOD_DECL modifierList (
-                  // genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? (
-                  // block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) -> ^( VOID_METHOD_DECL
-                  // modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) |
-                  // ident= IDENT formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident,
-                  // \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:13: ( type IDENT
+                  // formalParameterList (
+                  // arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) -> ^(
+                  // FUNCTION_METHOD_DECL modifierList (
+                  // genericTypeParameterList )? type IDENT formalParameterList (
+                  // arrayDeclaratorList )? ( throwsClause )? (
+                  // block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI )
+                  // -> ^( VOID_METHOD_DECL
+                  // modifierList ( genericTypeParameterList )? IDENT formalParameterList (
+                  // throwsClause )? ( block )? ) |
+                  // ident= IDENT formalParameterList ( throwsClause )? block -> ^(
+                  // CONSTRUCTOR_DECL[$ident,
+                  // \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )?
+                  // formalParameterList ( throwsClause )?
                   // block ) )
                   int alt34 = 3;
                   switch (input.LA(1)) {
@@ -4075,8 +4246,10 @@ public class JavaParser extends Parser {
 
                   switch (alt34) {
                     case 1:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:17: type IDENT
-                      // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI )
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:17: type
+                      // IDENT
+                      // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block |
+                      // SEMI )
                       {
                         pushFollow(FOLLOW_type_in_classScopeDeclarations5759);
                         type85 = type();
@@ -4096,7 +4269,8 @@ public class JavaParser extends Parser {
                         if (state.failed) return retval;
                         if (state.backtracking == 0)
                           stream_formalParameterList.add(formalParameterList87.getTree());
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:48: ( arrayDeclaratorList )?
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:48: (
+                        // arrayDeclaratorList )?
                         int alt28 = 2;
                         int LA28_0 = input.LA(1);
 
@@ -4105,7 +4279,8 @@ public class JavaParser extends Parser {
                         }
                         switch (alt28) {
                           case 1:
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: arrayDeclaratorList
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                            // arrayDeclaratorList
                             {
                               pushFollow(FOLLOW_arrayDeclaratorList_in_classScopeDeclarations5765);
                               arrayDeclaratorList88 = arrayDeclaratorList();
@@ -4118,7 +4293,8 @@ public class JavaParser extends Parser {
                             break;
                         }
 
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:69: ( throwsClause )?
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:69: (
+                        // throwsClause )?
                         int alt29 = 2;
                         int LA29_0 = input.LA(1);
 
@@ -4127,7 +4303,8 @@ public class JavaParser extends Parser {
                         }
                         switch (alt29) {
                           case 1:
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: throwsClause
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                            // throwsClause
                             {
                               pushFollow(FOLLOW_throwsClause_in_classScopeDeclarations5768);
                               throwsClause89 = throwsClause();
@@ -4140,7 +4317,8 @@ public class JavaParser extends Parser {
                             break;
                         }
 
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:83: ( block | SEMI )
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:83: ( block
+                        // | SEMI )
                         int alt30 = 2;
                         int LA30_0 = input.LA(1);
 
@@ -4159,7 +4337,8 @@ public class JavaParser extends Parser {
                         }
                         switch (alt30) {
                           case 1:
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:84: block
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:84:
+                            // block
                             {
                               pushFollow(FOLLOW_block_in_classScopeDeclarations5772);
                               block90 = block();
@@ -4170,7 +4349,8 @@ public class JavaParser extends Parser {
                             }
                             break;
                           case 2:
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:92: SEMI
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:92:
+                            // SEMI
                             {
                               SEMI91 =
                                   (Token)
@@ -4182,7 +4362,8 @@ public class JavaParser extends Parser {
                         }
 
                         // AST REWRITE
-                        // elements: formalParameterList, arrayDeclaratorList, modifierList, type, genericTypeParameterList,
+                        // elements: formalParameterList, arrayDeclaratorList, modifierList, type,
+                        // genericTypeParameterList,
                         // block, throwsClause, IDENT
                         // token labels:
                         // rule labels: retval
@@ -4196,12 +4377,16 @@ public class JavaParser extends Parser {
                                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
                           root_0 = (CommonTree) adaptor.nil();
-                          // 455:17: -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT
-                          // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? )
+                          // 455:17: -> ^( FUNCTION_METHOD_DECL modifierList (
+                          // genericTypeParameterList )? type IDENT
+                          // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block
+                          // )? )
                           {
                             // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:455:21: ^(
-                            // FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT
-                            // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? )
+                            // FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type
+                            // IDENT
+                            // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? (
+                            // block )? )
                             {
                               CommonTree root_1 = (CommonTree) adaptor.nil();
                               root_1 =
@@ -4223,19 +4408,22 @@ public class JavaParser extends Parser {
                               adaptor.addChild(root_1, stream_type.nextTree());
                               adaptor.addChild(root_1, stream_IDENT.nextNode());
                               adaptor.addChild(root_1, stream_formalParameterList.nextTree());
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:455:114: (
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:455:114:
+                              // (
                               // arrayDeclaratorList )?
                               if (stream_arrayDeclaratorList.hasNext()) {
                                 adaptor.addChild(root_1, stream_arrayDeclaratorList.nextTree());
                               }
                               stream_arrayDeclaratorList.reset();
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:455:135: (
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:455:135:
+                              // (
                               // throwsClause )?
                               if (stream_throwsClause.hasNext()) {
                                 adaptor.addChild(root_1, stream_throwsClause.nextTree());
                               }
                               stream_throwsClause.reset();
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:455:149: ( block )?
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:455:149:
+                              // ( block )?
                               if (stream_block.hasNext()) {
                                 adaptor.addChild(root_1, stream_block.nextTree());
                               }
@@ -4250,7 +4438,8 @@ public class JavaParser extends Parser {
                       }
                       break;
                     case 2:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:17: VOID IDENT
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:17: VOID
+                      // IDENT
                       // formalParameterList ( throwsClause )? ( block | SEMI )
                       {
                         VOID92 =
@@ -4270,7 +4459,8 @@ public class JavaParser extends Parser {
                         if (state.failed) return retval;
                         if (state.backtracking == 0)
                           stream_formalParameterList.add(formalParameterList94.getTree());
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:48: ( throwsClause )?
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:48: (
+                        // throwsClause )?
                         int alt31 = 2;
                         int LA31_0 = input.LA(1);
 
@@ -4279,7 +4469,8 @@ public class JavaParser extends Parser {
                         }
                         switch (alt31) {
                           case 1:
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: throwsClause
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                            // throwsClause
                             {
                               pushFollow(FOLLOW_throwsClause_in_classScopeDeclarations5844);
                               throwsClause95 = throwsClause();
@@ -4292,7 +4483,8 @@ public class JavaParser extends Parser {
                             break;
                         }
 
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:62: ( block | SEMI )
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:62: ( block
+                        // | SEMI )
                         int alt32 = 2;
                         int LA32_0 = input.LA(1);
 
@@ -4311,7 +4503,8 @@ public class JavaParser extends Parser {
                         }
                         switch (alt32) {
                           case 1:
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:63: block
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:63:
+                            // block
                             {
                               pushFollow(FOLLOW_block_in_classScopeDeclarations5848);
                               block96 = block();
@@ -4322,7 +4515,8 @@ public class JavaParser extends Parser {
                             }
                             break;
                           case 2:
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:71: SEMI
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:71:
+                            // SEMI
                             {
                               SEMI97 =
                                   (Token)
@@ -4334,7 +4528,8 @@ public class JavaParser extends Parser {
                         }
 
                         // AST REWRITE
-                        // elements: throwsClause, formalParameterList, genericTypeParameterList, modifierList, block, IDENT
+                        // elements: throwsClause, formalParameterList, genericTypeParameterList,
+                        // modifierList, block, IDENT
                         // token labels:
                         // rule labels: retval
                         // token list labels:
@@ -4347,11 +4542,13 @@ public class JavaParser extends Parser {
                                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
                           root_0 = (CommonTree) adaptor.nil();
-                          // 457:17: -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT
+                          // 457:17: -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList
+                          // )? IDENT
                           // formalParameterList ( throwsClause )? ( block )? )
                           {
                             // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:457:21: ^(
-                            // VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList (
+                            // VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT
+                            // formalParameterList (
                             // throwsClause )? ( block )? )
                             {
                               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -4372,13 +4569,15 @@ public class JavaParser extends Parser {
                               stream_genericTypeParameterList.reset();
                               adaptor.addChild(root_1, stream_IDENT.nextNode());
                               adaptor.addChild(root_1, stream_formalParameterList.nextTree());
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:457:105: (
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:457:105:
+                              // (
                               // throwsClause )?
                               if (stream_throwsClause.hasNext()) {
                                 adaptor.addChild(root_1, stream_throwsClause.nextTree());
                               }
                               stream_throwsClause.reset();
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:457:119: ( block )?
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:457:119:
+                              // ( block )?
                               if (stream_block.hasNext()) {
                                 adaptor.addChild(root_1, stream_block.nextTree());
                               }
@@ -4393,7 +4592,8 @@ public class JavaParser extends Parser {
                       }
                       break;
                     case 3:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:458:17: ident= IDENT
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:458:17: ident=
+                      // IDENT
                       // formalParameterList ( throwsClause )? block
                       {
                         ident =
@@ -4408,7 +4608,8 @@ public class JavaParser extends Parser {
                         if (state.failed) return retval;
                         if (state.backtracking == 0)
                           stream_formalParameterList.add(formalParameterList98.getTree());
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:458:49: ( throwsClause )?
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:458:49: (
+                        // throwsClause )?
                         int alt33 = 2;
                         int LA33_0 = input.LA(1);
 
@@ -4417,7 +4618,8 @@ public class JavaParser extends Parser {
                         }
                         switch (alt33) {
                           case 1:
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: throwsClause
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                            // throwsClause
                             {
                               pushFollow(FOLLOW_throwsClause_in_classScopeDeclarations5915);
                               throwsClause99 = throwsClause();
@@ -4438,7 +4640,8 @@ public class JavaParser extends Parser {
                         if (state.backtracking == 0) stream_block.add(block100.getTree());
 
                         // AST REWRITE
-                        // elements: block, throwsClause, modifierList, genericTypeParameterList, formalParameterList
+                        // elements: block, throwsClause, modifierList, genericTypeParameterList,
+                        // formalParameterList
                         // token labels:
                         // rule labels: retval
                         // token list labels:
@@ -4451,11 +4654,14 @@ public class JavaParser extends Parser {
                                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
                           root_0 = (CommonTree) adaptor.nil();
-                          // 459:17: -> ^( CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList (
-                          // genericTypeParameterList )? formalParameterList ( throwsClause )? block )
+                          // 459:17: -> ^( CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"]
+                          // modifierList (
+                          // genericTypeParameterList )? formalParameterList ( throwsClause )? block
+                          // )
                           {
                             // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:459:21: ^(
-                            // CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )?
+                            // CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList (
+                            // genericTypeParameterList )?
                             // formalParameterList ( throwsClause )? block )
                             {
                               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -4476,7 +4682,8 @@ public class JavaParser extends Parser {
                               }
                               stream_genericTypeParameterList.reset();
                               adaptor.addChild(root_1, stream_formalParameterList.nextTree());
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:459:127: (
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:459:127:
+                              // (
                               // throwsClause )?
                               if (stream_throwsClause.hasNext()) {
                                 adaptor.addChild(root_1, stream_throwsClause.nextTree());
@@ -4496,7 +4703,8 @@ public class JavaParser extends Parser {
                 }
                 break;
               case 2:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:461:13: type classFieldDeclaratorList SEMI
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:461:13: type
+                // classFieldDeclaratorList SEMI
                 {
                   pushFollow(FOLLOW_type_in_classScopeDeclarations5982);
                   type101 = type();
@@ -4531,7 +4739,8 @@ public class JavaParser extends Parser {
                     root_0 = (CommonTree) adaptor.nil();
                     // 462:13: -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList )
                     {
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:462:17: ^( VAR_DECLARATION
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:462:17: ^(
+                      // VAR_DECLARATION
                       // modifierList type classFieldDeclaratorList )
                       {
                         CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -4609,11 +4818,16 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "interfaceScopeDeclarations"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:468:1: interfaceScopeDeclarations : ( modifierList ( (
-  // genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI -> ^(
-  // FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? (
-  // throwsClause )? ) | VOID IDENT formalParameterList ( throwsClause )? SEMI -> ^( VOID_METHOD_DECL modifierList (
-  // genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ) ) | type interfaceFieldDeclaratorList SEMI -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:468:1: interfaceScopeDeclarations : (
+  // modifierList ( (
+  // genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? (
+  // throwsClause )? SEMI -> ^(
+  // FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList
+  // ( arrayDeclaratorList )? (
+  // throwsClause )? ) | VOID IDENT formalParameterList ( throwsClause )? SEMI -> ^(
+  // VOID_METHOD_DECL modifierList (
+  // genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ) ) | type
+  // interfaceFieldDeclaratorList SEMI -> ^(
   // VAR_DECLARATION modifierList type interfaceFieldDeclaratorList ) ) | typeDeclaration | SEMI );
   public final JavaParser.interfaceScopeDeclarations_return interfaceScopeDeclarations()
       throws RecognitionException {
@@ -4679,21 +4893,31 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 26)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:469:5: ( modifierList ( ( genericTypeParameterList )? (
-      // type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI -> ^( FUNCTION_METHOD_DECL modifierList (
-      // genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ) | VOID IDENT
-      // formalParameterList ( throwsClause )? SEMI -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT
-      // formalParameterList ( throwsClause )? ) ) | type interfaceFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:469:5: ( modifierList ( (
+      // genericTypeParameterList )? (
+      // type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI -> ^(
+      // FUNCTION_METHOD_DECL modifierList (
+      // genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? (
+      // throwsClause )? ) | VOID IDENT
+      // formalParameterList ( throwsClause )? SEMI -> ^( VOID_METHOD_DECL modifierList (
+      // genericTypeParameterList )? IDENT
+      // formalParameterList ( throwsClause )? ) ) | type interfaceFieldDeclaratorList SEMI -> ^(
+      // VAR_DECLARATION modifierList type
       // interfaceFieldDeclaratorList ) ) | typeDeclaration | SEMI )
       int alt43 = 3;
       alt43 = dfa43.predict(input);
       switch (alt43) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:469:9: modifierList ( ( genericTypeParameterList )
-          // ? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI -> ^( FUNCTION_METHOD_DECL
-          // modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause
-          // )? ) | VOID IDENT formalParameterList ( throwsClause )? SEMI -> ^( VOID_METHOD_DECL modifierList (
-          // genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ) ) | type interfaceFieldDeclaratorList
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:469:9: modifierList ( (
+          // genericTypeParameterList )
+          // ? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI ->
+          // ^( FUNCTION_METHOD_DECL
+          // modifierList ( genericTypeParameterList )? type IDENT formalParameterList (
+          // arrayDeclaratorList )? ( throwsClause
+          // )? ) | VOID IDENT formalParameterList ( throwsClause )? SEMI -> ^( VOID_METHOD_DECL
+          // modifierList (
+          // genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ) ) | type
+          // interfaceFieldDeclaratorList
           // SEMI -> ^( VAR_DECLARATION modifierList type interfaceFieldDeclaratorList ) )
           {
             pushFollow(FOLLOW_modifierList_in_interfaceScopeDeclarations6073);
@@ -4702,11 +4926,16 @@ public class JavaParser extends Parser {
             state._fsp--;
             if (state.failed) return retval;
             if (state.backtracking == 0) stream_modifierList.add(modifierList106.getTree());
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:9: ( ( genericTypeParameterList )? ( type
-            // IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI -> ^( FUNCTION_METHOD_DECL modifierList
-            // ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ) | VOID
-            // IDENT formalParameterList ( throwsClause )? SEMI -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )?
-            // IDENT formalParameterList ( throwsClause )? ) ) | type interfaceFieldDeclaratorList SEMI -> ^( VAR_DECLARATION
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:9: ( (
+            // genericTypeParameterList )? ( type
+            // IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI -> ^(
+            // FUNCTION_METHOD_DECL modifierList
+            // ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )?
+            // ( throwsClause )? ) | VOID
+            // IDENT formalParameterList ( throwsClause )? SEMI -> ^( VOID_METHOD_DECL modifierList
+            // ( genericTypeParameterList )?
+            // IDENT formalParameterList ( throwsClause )? ) ) | type interfaceFieldDeclaratorList
+            // SEMI -> ^( VAR_DECLARATION
             // modifierList type interfaceFieldDeclaratorList ) )
             int alt42 = 2;
             switch (input.LA(1)) {
@@ -4773,13 +5002,19 @@ public class JavaParser extends Parser {
 
             switch (alt42) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: ( genericTypeParameterList )? (
-                // type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI -> ^( FUNCTION_METHOD_DECL
-                // modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? (
-                // throwsClause )? ) | VOID IDENT formalParameterList ( throwsClause )? SEMI -> ^( VOID_METHOD_DECL
-                // modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ) )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: (
+                // genericTypeParameterList )? (
+                // type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI ->
+                // ^( FUNCTION_METHOD_DECL
+                // modifierList ( genericTypeParameterList )? type IDENT formalParameterList (
+                // arrayDeclaratorList )? (
+                // throwsClause )? ) | VOID IDENT formalParameterList ( throwsClause )? SEMI -> ^(
+                // VOID_METHOD_DECL
+                // modifierList ( genericTypeParameterList )? IDENT formalParameterList (
+                // throwsClause )? ) )
                 {
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: ( genericTypeParameterList )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: (
+                  // genericTypeParameterList )?
                   int alt37 = 2;
                   int LA37_0 = input.LA(1);
 
@@ -4788,7 +5023,8 @@ public class JavaParser extends Parser {
                   }
                   switch (alt37) {
                     case 1:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: genericTypeParameterList
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                      // genericTypeParameterList
                       {
                         pushFollow(
                             FOLLOW_genericTypeParameterList_in_interfaceScopeDeclarations6087);
@@ -4803,10 +5039,14 @@ public class JavaParser extends Parser {
                       break;
                   }
 
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:13: ( type IDENT formalParameterList (
-                  // arrayDeclaratorList )? ( throwsClause )? SEMI -> ^( FUNCTION_METHOD_DECL modifierList (
-                  // genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ) |
-                  // VOID IDENT formalParameterList ( throwsClause )? SEMI -> ^( VOID_METHOD_DECL modifierList (
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:13: ( type IDENT
+                  // formalParameterList (
+                  // arrayDeclaratorList )? ( throwsClause )? SEMI -> ^( FUNCTION_METHOD_DECL
+                  // modifierList (
+                  // genericTypeParameterList )? type IDENT formalParameterList (
+                  // arrayDeclaratorList )? ( throwsClause )? ) |
+                  // VOID IDENT formalParameterList ( throwsClause )? SEMI -> ^( VOID_METHOD_DECL
+                  // modifierList (
                   // genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ) )
                   int alt41 = 2;
                   int LA41_0 = input.LA(1);
@@ -4833,7 +5073,8 @@ public class JavaParser extends Parser {
                   }
                   switch (alt41) {
                     case 1:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:17: type IDENT
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:17: type
+                      // IDENT
                       // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI
                       {
                         pushFollow(FOLLOW_type_in_interfaceScopeDeclarations6106);
@@ -4855,7 +5096,8 @@ public class JavaParser extends Parser {
                         if (state.failed) return retval;
                         if (state.backtracking == 0)
                           stream_formalParameterList.add(formalParameterList110.getTree());
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:48: ( arrayDeclaratorList )?
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:48: (
+                        // arrayDeclaratorList )?
                         int alt38 = 2;
                         int LA38_0 = input.LA(1);
 
@@ -4864,7 +5106,8 @@ public class JavaParser extends Parser {
                         }
                         switch (alt38) {
                           case 1:
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: arrayDeclaratorList
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                            // arrayDeclaratorList
                             {
                               pushFollow(
                                   FOLLOW_arrayDeclaratorList_in_interfaceScopeDeclarations6112);
@@ -4878,7 +5121,8 @@ public class JavaParser extends Parser {
                             break;
                         }
 
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:69: ( throwsClause )?
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:69: (
+                        // throwsClause )?
                         int alt39 = 2;
                         int LA39_0 = input.LA(1);
 
@@ -4887,7 +5131,8 @@ public class JavaParser extends Parser {
                         }
                         switch (alt39) {
                           case 1:
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: throwsClause
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                            // throwsClause
                             {
                               pushFollow(FOLLOW_throwsClause_in_interfaceScopeDeclarations6115);
                               throwsClause112 = throwsClause();
@@ -4907,7 +5152,8 @@ public class JavaParser extends Parser {
                         if (state.backtracking == 0) stream_SEMI.add(SEMI113);
 
                         // AST REWRITE
-                        // elements: formalParameterList, genericTypeParameterList, throwsClause, arrayDeclaratorList,
+                        // elements: formalParameterList, genericTypeParameterList, throwsClause,
+                        // arrayDeclaratorList,
                         // modifierList, IDENT, type
                         // token labels:
                         // rule labels: retval
@@ -4921,11 +5167,13 @@ public class JavaParser extends Parser {
                                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
                           root_0 = (CommonTree) adaptor.nil();
-                          // 472:17: -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT
+                          // 472:17: -> ^( FUNCTION_METHOD_DECL modifierList (
+                          // genericTypeParameterList )? type IDENT
                           // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? )
                           {
                             // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:472:21: ^(
-                            // FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT
+                            // FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type
+                            // IDENT
                             // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? )
                             {
                               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -4948,13 +5196,15 @@ public class JavaParser extends Parser {
                               adaptor.addChild(root_1, stream_type.nextTree());
                               adaptor.addChild(root_1, stream_IDENT.nextNode());
                               adaptor.addChild(root_1, stream_formalParameterList.nextTree());
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:472:114: (
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:472:114:
+                              // (
                               // arrayDeclaratorList )?
                               if (stream_arrayDeclaratorList.hasNext()) {
                                 adaptor.addChild(root_1, stream_arrayDeclaratorList.nextTree());
                               }
                               stream_arrayDeclaratorList.reset();
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:472:135: (
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:472:135:
+                              // (
                               // throwsClause )?
                               if (stream_throwsClause.hasNext()) {
                                 adaptor.addChild(root_1, stream_throwsClause.nextTree());
@@ -4970,7 +5220,8 @@ public class JavaParser extends Parser {
                       }
                       break;
                     case 2:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:473:17: VOID IDENT
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:473:17: VOID
+                      // IDENT
                       // formalParameterList ( throwsClause )? SEMI
                       {
                         VOID114 =
@@ -4992,7 +5243,8 @@ public class JavaParser extends Parser {
                         if (state.failed) return retval;
                         if (state.backtracking == 0)
                           stream_formalParameterList.add(formalParameterList116.getTree());
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:473:48: ( throwsClause )?
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:473:48: (
+                        // throwsClause )?
                         int alt40 = 2;
                         int LA40_0 = input.LA(1);
 
@@ -5001,7 +5253,8 @@ public class JavaParser extends Parser {
                         }
                         switch (alt40) {
                           case 1:
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: throwsClause
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                            // throwsClause
                             {
                               pushFollow(FOLLOW_throwsClause_in_interfaceScopeDeclarations6182);
                               throwsClause117 = throwsClause();
@@ -5021,7 +5274,8 @@ public class JavaParser extends Parser {
                         if (state.backtracking == 0) stream_SEMI.add(SEMI118);
 
                         // AST REWRITE
-                        // elements: formalParameterList, genericTypeParameterList, modifierList, throwsClause, IDENT
+                        // elements: formalParameterList, genericTypeParameterList, modifierList,
+                        // throwsClause, IDENT
                         // token labels:
                         // rule labels: retval
                         // token list labels:
@@ -5034,11 +5288,13 @@ public class JavaParser extends Parser {
                                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
                           root_0 = (CommonTree) adaptor.nil();
-                          // 474:17: -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT
+                          // 474:17: -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList
+                          // )? IDENT
                           // formalParameterList ( throwsClause )? )
                           {
                             // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:474:21: ^(
-                            // VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList (
+                            // VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT
+                            // formalParameterList (
                             // throwsClause )? )
                             {
                               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -5059,7 +5315,8 @@ public class JavaParser extends Parser {
                               stream_genericTypeParameterList.reset();
                               adaptor.addChild(root_1, stream_IDENT.nextNode());
                               adaptor.addChild(root_1, stream_formalParameterList.nextTree());
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:474:105: (
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:474:105:
+                              // (
                               // throwsClause )?
                               if (stream_throwsClause.hasNext()) {
                                 adaptor.addChild(root_1, stream_throwsClause.nextTree());
@@ -5078,7 +5335,8 @@ public class JavaParser extends Parser {
                 }
                 break;
               case 2:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:476:13: type interfaceFieldDeclaratorList
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:476:13: type
+                // interfaceFieldDeclaratorList
                 // SEMI
                 {
                   pushFollow(FOLLOW_type_in_interfaceScopeDeclarations6248);
@@ -5114,9 +5372,11 @@ public class JavaParser extends Parser {
                             adaptor, "rule retval", retval != null ? retval.tree : null);
 
                     root_0 = (CommonTree) adaptor.nil();
-                    // 477:13: -> ^( VAR_DECLARATION modifierList type interfaceFieldDeclaratorList )
+                    // 477:13: -> ^( VAR_DECLARATION modifierList type interfaceFieldDeclaratorList
+                    // )
                     {
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:477:17: ^( VAR_DECLARATION
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:477:17: ^(
+                      // VAR_DECLARATION
                       // modifierList type interfaceFieldDeclaratorList )
                       {
                         CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -5194,7 +5454,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "classFieldDeclaratorList"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:483:1: classFieldDeclaratorList : classFieldDeclarator ( COMMA
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:483:1: classFieldDeclaratorList :
+  // classFieldDeclarator ( COMMA
   // classFieldDeclarator )* -> ^( VAR_DECLARATOR_LIST ( classFieldDeclarator )+ ) ;
   public final JavaParser.classFieldDeclaratorList_return classFieldDeclaratorList()
       throws RecognitionException {
@@ -5217,9 +5478,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 27)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:484:5: ( classFieldDeclarator ( COMMA classFieldDeclarator
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:484:5: ( classFieldDeclarator (
+      // COMMA classFieldDeclarator
       // )* -> ^( VAR_DECLARATOR_LIST ( classFieldDeclarator )+ ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:484:9: classFieldDeclarator ( COMMA classFieldDeclarator )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:484:9: classFieldDeclarator (
+      // COMMA classFieldDeclarator )*
       {
         pushFollow(FOLLOW_classFieldDeclarator_in_classFieldDeclaratorList6327);
         classFieldDeclarator124 = classFieldDeclarator();
@@ -5228,7 +5491,8 @@ public class JavaParser extends Parser {
         if (state.failed) return retval;
         if (state.backtracking == 0)
           stream_classFieldDeclarator.add(classFieldDeclarator124.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:484:30: ( COMMA classFieldDeclarator )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:484:30: ( COMMA
+        // classFieldDeclarator )*
         loop44:
         do {
           int alt44 = 2;
@@ -5240,7 +5504,8 @@ public class JavaParser extends Parser {
 
           switch (alt44) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:484:31: COMMA classFieldDeclarator
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:484:31: COMMA
+              // classFieldDeclarator
               {
                 COMMA125 =
                     (Token) match(input, COMMA, FOLLOW_COMMA_in_classFieldDeclaratorList6330);
@@ -5278,7 +5543,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 485:9: -> ^( VAR_DECLARATOR_LIST ( classFieldDeclarator )+ )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:485:13: ^( VAR_DECLARATOR_LIST (
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:485:13: ^(
+            // VAR_DECLARATOR_LIST (
             // classFieldDeclarator )+ )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -5334,7 +5600,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "classFieldDeclarator"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:488:1: classFieldDeclarator : variableDeclaratorId ( ASSIGN
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:488:1: classFieldDeclarator :
+  // variableDeclaratorId ( ASSIGN
   // variableInitializer )? -> ^( VAR_DECLARATOR variableDeclaratorId ( variableInitializer )? ) ;
   public final JavaParser.classFieldDeclarator_return classFieldDeclarator()
       throws RecognitionException {
@@ -5358,9 +5625,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 28)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:489:5: ( variableDeclaratorId ( ASSIGN variableInitializer
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:489:5: ( variableDeclaratorId (
+      // ASSIGN variableInitializer
       // )? -> ^( VAR_DECLARATOR variableDeclaratorId ( variableInitializer )? ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:489:9: variableDeclaratorId ( ASSIGN variableInitializer )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:489:9: variableDeclaratorId (
+      // ASSIGN variableInitializer )?
       {
         pushFollow(FOLLOW_variableDeclaratorId_in_classFieldDeclarator6371);
         variableDeclaratorId127 = variableDeclaratorId();
@@ -5369,7 +5638,8 @@ public class JavaParser extends Parser {
         if (state.failed) return retval;
         if (state.backtracking == 0)
           stream_variableDeclaratorId.add(variableDeclaratorId127.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:489:30: ( ASSIGN variableInitializer )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:489:30: ( ASSIGN
+        // variableInitializer )?
         int alt45 = 2;
         int LA45_0 = input.LA(1);
 
@@ -5378,7 +5648,8 @@ public class JavaParser extends Parser {
         }
         switch (alt45) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:489:31: ASSIGN variableInitializer
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:489:31: ASSIGN
+            // variableInitializer
             {
               ASSIGN128 = (Token) match(input, ASSIGN, FOLLOW_ASSIGN_in_classFieldDeclarator6374);
               if (state.failed) return retval;
@@ -5411,7 +5682,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 490:9: -> ^( VAR_DECLARATOR variableDeclaratorId ( variableInitializer )? )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:490:13: ^( VAR_DECLARATOR variableDeclaratorId
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:490:13: ^( VAR_DECLARATOR
+            // variableDeclaratorId
             // ( variableInitializer )? )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -5421,7 +5693,8 @@ public class JavaParser extends Parser {
                           (CommonTree) adaptor.create(VAR_DECLARATOR, "VAR_DECLARATOR"), root_1);
 
               adaptor.addChild(root_1, stream_variableDeclaratorId.nextTree());
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:490:51: ( variableInitializer )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:490:51: (
+              // variableInitializer )?
               if (stream_variableInitializer.hasNext()) {
                 adaptor.addChild(root_1, stream_variableInitializer.nextTree());
               }
@@ -5465,7 +5738,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "interfaceFieldDeclaratorList"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:493:1: interfaceFieldDeclaratorList : interfaceFieldDeclarator (
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:493:1: interfaceFieldDeclaratorList :
+  // interfaceFieldDeclarator (
   // COMMA interfaceFieldDeclarator )* -> ^( VAR_DECLARATOR_LIST ( interfaceFieldDeclarator )+ ) ;
   public final JavaParser.interfaceFieldDeclaratorList_return interfaceFieldDeclaratorList()
       throws RecognitionException {
@@ -5488,9 +5762,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 29)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:494:5: ( interfaceFieldDeclarator ( COMMA
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:494:5: ( interfaceFieldDeclarator
+      // ( COMMA
       // interfaceFieldDeclarator )* -> ^( VAR_DECLARATOR_LIST ( interfaceFieldDeclarator )+ ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:494:9: interfaceFieldDeclarator ( COMMA
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:494:9: interfaceFieldDeclarator (
+      // COMMA
       // interfaceFieldDeclarator )*
       {
         pushFollow(FOLLOW_interfaceFieldDeclarator_in_interfaceFieldDeclaratorList6421);
@@ -5500,7 +5776,8 @@ public class JavaParser extends Parser {
         if (state.failed) return retval;
         if (state.backtracking == 0)
           stream_interfaceFieldDeclarator.add(interfaceFieldDeclarator130.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:494:34: ( COMMA interfaceFieldDeclarator )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:494:34: ( COMMA
+        // interfaceFieldDeclarator )*
         loop46:
         do {
           int alt46 = 2;
@@ -5512,7 +5789,8 @@ public class JavaParser extends Parser {
 
           switch (alt46) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:494:35: COMMA interfaceFieldDeclarator
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:494:35: COMMA
+              // interfaceFieldDeclarator
               {
                 COMMA131 =
                     (Token) match(input, COMMA, FOLLOW_COMMA_in_interfaceFieldDeclaratorList6424);
@@ -5550,7 +5828,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 495:9: -> ^( VAR_DECLARATOR_LIST ( interfaceFieldDeclarator )+ )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:495:13: ^( VAR_DECLARATOR_LIST (
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:495:13: ^(
+            // VAR_DECLARATOR_LIST (
             // interfaceFieldDeclarator )+ )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -5606,7 +5885,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "interfaceFieldDeclarator"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:498:1: interfaceFieldDeclarator : variableDeclaratorId ASSIGN
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:498:1: interfaceFieldDeclarator :
+  // variableDeclaratorId ASSIGN
   // variableInitializer -> ^( VAR_DECLARATOR variableDeclaratorId variableInitializer ) ;
   public final JavaParser.interfaceFieldDeclarator_return interfaceFieldDeclarator()
       throws RecognitionException {
@@ -5631,9 +5911,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 30)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:499:5: ( variableDeclaratorId ASSIGN variableInitializer
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:499:5: ( variableDeclaratorId
+      // ASSIGN variableInitializer
       // -> ^( VAR_DECLARATOR variableDeclaratorId variableInitializer ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:499:9: variableDeclaratorId ASSIGN variableInitializer
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:499:9: variableDeclaratorId
+      // ASSIGN variableInitializer
       {
         pushFollow(FOLLOW_variableDeclaratorId_in_interfaceFieldDeclarator6465);
         variableDeclaratorId133 = variableDeclaratorId();
@@ -5670,7 +5952,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 500:9: -> ^( VAR_DECLARATOR variableDeclaratorId variableInitializer )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:500:13: ^( VAR_DECLARATOR variableDeclaratorId
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:500:13: ^( VAR_DECLARATOR
+            // variableDeclaratorId
             // variableInitializer )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -5720,7 +6003,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "variableDeclaratorId"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:503:1: variableDeclaratorId : IDENT ( arrayDeclaratorList )? ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:503:1: variableDeclaratorId : IDENT (
+  // arrayDeclaratorList )? ;
   public final JavaParser.variableDeclaratorId_return variableDeclaratorId()
       throws RecognitionException {
     JavaParser.variableDeclaratorId_return retval = new JavaParser.variableDeclaratorId_return();
@@ -5737,8 +6021,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 31)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:504:5: ( IDENT ( arrayDeclaratorList )? )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:504:9: IDENT ( arrayDeclaratorList )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:504:5: ( IDENT (
+      // arrayDeclaratorList )? )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:504:9: IDENT (
+      // arrayDeclaratorList )?
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -5748,7 +6034,8 @@ public class JavaParser extends Parser {
           IDENT136_tree = (CommonTree) adaptor.create(IDENT136);
           root_0 = (CommonTree) adaptor.becomeRoot(IDENT136_tree, root_0);
         }
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:504:16: ( arrayDeclaratorList )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:504:16: ( arrayDeclaratorList
+        // )?
         int alt47 = 2;
         int LA47_0 = input.LA(1);
 
@@ -5801,7 +6088,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "variableInitializer"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:507:1: variableInitializer : ( arrayInitializer | expression );
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:507:1: variableInitializer : (
+  // arrayInitializer | expression );
   public final JavaParser.variableInitializer_return variableInitializer()
       throws RecognitionException {
     JavaParser.variableInitializer_return retval = new JavaParser.variableInitializer_return();
@@ -5817,7 +6105,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 32)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:508:5: ( arrayInitializer | expression )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:508:5: ( arrayInitializer |
+      // expression )
       int alt48 = 2;
       int LA48_0 = input.LA(1);
 
@@ -5912,7 +6201,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "arrayDeclarator"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:512:1: arrayDeclarator : LBRACK RBRACK -> ^( ARRAY_DECLARATOR ) ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:512:1: arrayDeclarator : LBRACK
+  // RBRACK -> ^( ARRAY_DECLARATOR ) ;
   public final JavaParser.arrayDeclarator_return arrayDeclarator() throws RecognitionException {
     JavaParser.arrayDeclarator_return retval = new JavaParser.arrayDeclarator_return();
     retval.start = input.LT(1);
@@ -5931,7 +6221,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 33)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:513:5: ( LBRACK RBRACK -> ^( ARRAY_DECLARATOR ) )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:513:5: ( LBRACK RBRACK -> ^(
+      // ARRAY_DECLARATOR ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:513:9: LBRACK RBRACK
       {
         LBRACK140 = (Token) match(input, LBRACK, FOLLOW_LBRACK_in_arrayDeclarator6563);
@@ -5958,7 +6249,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 514:9: -> ^( ARRAY_DECLARATOR )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:514:13: ^( ARRAY_DECLARATOR )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:514:13: ^( ARRAY_DECLARATOR
+            // )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 =
@@ -6005,7 +6297,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "arrayDeclaratorList"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:517:1: arrayDeclaratorList : ( arrayDeclarator )+ -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:517:1: arrayDeclaratorList : (
+  // arrayDeclarator )+ -> ^(
   // ARRAY_DECLARATOR_LIST ( arrayDeclarator )+ ) ;
   public final JavaParser.arrayDeclaratorList_return arrayDeclaratorList()
       throws RecognitionException {
@@ -6022,7 +6315,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 34)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:518:5: ( ( arrayDeclarator )+ -> ^( ARRAY_DECLARATOR_LIST
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:518:5: ( ( arrayDeclarator )+ ->
+      // ^( ARRAY_DECLARATOR_LIST
       // ( arrayDeclarator )+ ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:518:9: ( arrayDeclarator )+
       {
@@ -6083,7 +6377,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 519:9: -> ^( ARRAY_DECLARATOR_LIST ( arrayDeclarator )+ )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:519:13: ^( ARRAY_DECLARATOR_LIST (
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:519:13: ^(
+            // ARRAY_DECLARATOR_LIST (
             // arrayDeclarator )+ )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -6140,8 +6435,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "arrayInitializer"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:522:1: arrayInitializer : LCURLY ( variableInitializer ( COMMA
-  // variableInitializer )* ( COMMA )? )? RCURLY -> ^( ARRAY_INITIALIZER[$LCURLY, \"ARRAY_INITIALIZER\"] ( variableInitializer )* ) ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:522:1: arrayInitializer : LCURLY (
+  // variableInitializer ( COMMA
+  // variableInitializer )* ( COMMA )? )? RCURLY -> ^( ARRAY_INITIALIZER[$LCURLY,
+  // \"ARRAY_INITIALIZER\"] ( variableInitializer )* ) ;
   public final JavaParser.arrayInitializer_return arrayInitializer() throws RecognitionException {
     JavaParser.arrayInitializer_return retval = new JavaParser.arrayInitializer_return();
     retval.start = input.LT(1);
@@ -6169,17 +6466,21 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 35)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:523:5: ( LCURLY ( variableInitializer ( COMMA
-      // variableInitializer )* ( COMMA )? )? RCURLY -> ^( ARRAY_INITIALIZER[$LCURLY, \"ARRAY_INITIALIZER\"] ( variableInitializer
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:523:5: ( LCURLY (
+      // variableInitializer ( COMMA
+      // variableInitializer )* ( COMMA )? )? RCURLY -> ^( ARRAY_INITIALIZER[$LCURLY,
+      // \"ARRAY_INITIALIZER\"] ( variableInitializer
       // )* ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:523:9: LCURLY ( variableInitializer ( COMMA
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:523:9: LCURLY (
+      // variableInitializer ( COMMA
       // variableInitializer )* ( COMMA )? )? RCURLY
       {
         LCURLY143 = (Token) match(input, LCURLY, FOLLOW_LCURLY_in_arrayInitializer6644);
         if (state.failed) return retval;
         if (state.backtracking == 0) stream_LCURLY.add(LCURLY143);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:523:16: ( variableInitializer ( COMMA
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:523:16: ( variableInitializer (
+        // COMMA
         // variableInitializer )* ( COMMA )? )?
         int alt52 = 2;
         int LA52_0 = input.LA(1);
@@ -6210,7 +6511,8 @@ public class JavaParser extends Parser {
         }
         switch (alt52) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:523:17: variableInitializer ( COMMA
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:523:17: variableInitializer
+            // ( COMMA
             // variableInitializer )* ( COMMA )?
             {
               pushFollow(FOLLOW_variableInitializer_in_arrayInitializer6647);
@@ -6220,7 +6522,8 @@ public class JavaParser extends Parser {
               if (state.failed) return retval;
               if (state.backtracking == 0)
                 stream_variableInitializer.add(variableInitializer144.getTree());
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:523:37: ( COMMA variableInitializer )*
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:523:37: ( COMMA
+              // variableInitializer )*
               loop50:
               do {
                 int alt50 = 2;
@@ -6257,7 +6560,8 @@ public class JavaParser extends Parser {
 
                 switch (alt50) {
                   case 1:
-                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:523:38: COMMA variableInitializer
+                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:523:38: COMMA
+                    // variableInitializer
                     {
                       COMMA145 = (Token) match(input, COMMA, FOLLOW_COMMA_in_arrayInitializer6650);
                       if (state.failed) return retval;
@@ -6317,9 +6621,11 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 524:9: -> ^( ARRAY_INITIALIZER[$LCURLY, \"ARRAY_INITIALIZER\"] ( variableInitializer )* )
+          // 524:9: -> ^( ARRAY_INITIALIZER[$LCURLY, \"ARRAY_INITIALIZER\"] ( variableInitializer )*
+          // )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:524:13: ^( ARRAY_INITIALIZER[$LCURLY,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:524:13: ^(
+            // ARRAY_INITIALIZER[$LCURLY,
             // \"ARRAY_INITIALIZER\"] ( variableInitializer )* )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -6330,7 +6636,8 @@ public class JavaParser extends Parser {
                               adaptor.create(ARRAY_INITIALIZER, LCURLY143, "ARRAY_INITIALIZER"),
                           root_1);
 
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:524:63: ( variableInitializer )*
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:524:63: (
+              // variableInitializer )*
               while (stream_variableInitializer.hasNext()) {
                 adaptor.addChild(root_1, stream_variableInitializer.nextTree());
               }
@@ -6374,7 +6681,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "throwsClause"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:527:1: throwsClause : THROWS qualifiedIdentList -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:527:1: throwsClause : THROWS
+  // qualifiedIdentList -> ^(
   // THROWS_CLAUSE[$THROWS, \"THROWS_CLAUSE\"] qualifiedIdentList ) ;
   public final JavaParser.throwsClause_return throwsClause() throws RecognitionException {
     JavaParser.throwsClause_return retval = new JavaParser.throwsClause_return();
@@ -6393,7 +6701,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 36)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:528:5: ( THROWS qualifiedIdentList -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:528:5: ( THROWS
+      // qualifiedIdentList -> ^(
       // THROWS_CLAUSE[$THROWS, \"THROWS_CLAUSE\"] qualifiedIdentList ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:528:9: THROWS qualifiedIdentList
       {
@@ -6424,7 +6733,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 529:9: -> ^( THROWS_CLAUSE[$THROWS, \"THROWS_CLAUSE\"] qualifiedIdentList )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:529:13: ^( THROWS_CLAUSE[$THROWS,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:529:13: ^(
+            // THROWS_CLAUSE[$THROWS,
             // \"THROWS_CLAUSE\"] qualifiedIdentList )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -6474,7 +6784,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "modifierList"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:532:1: modifierList : ( modifier )* -> ^( MODIFIER_LIST ( modifier
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:532:1: modifierList : ( modifier )*
+  // -> ^( MODIFIER_LIST ( modifier
   // )* ) ;
   public final JavaParser.modifierList_return modifierList() throws RecognitionException {
     JavaParser.modifierList_return retval = new JavaParser.modifierList_return();
@@ -6490,7 +6801,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 37)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:533:5: ( ( modifier )* -> ^( MODIFIER_LIST ( modifier )* ) )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:533:5: ( ( modifier )* -> ^(
+      // MODIFIER_LIST ( modifier )* ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:533:9: ( modifier )*
       {
         // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:533:9: ( modifier )*
@@ -6551,7 +6863,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 534:9: -> ^( MODIFIER_LIST ( modifier )* )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:534:13: ^( MODIFIER_LIST ( modifier )* )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:534:13: ^( MODIFIER_LIST (
+            // modifier )* )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 =
@@ -6603,7 +6916,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "modifier"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:537:1: modifier : ( PUBLIC | PROTECTED | PRIVATE | STATIC |
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:537:1: modifier : ( PUBLIC |
+  // PROTECTED | PRIVATE | STATIC |
   // ABSTRACT | NATIVE | SYNCHRONIZED | TRANSIENT | VOLATILE | STRICTFP | localModifier );
   public final JavaParser.modifier_return modifier() throws RecognitionException {
     JavaParser.modifier_return retval = new JavaParser.modifier_return();
@@ -6638,7 +6952,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 38)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:538:5: ( PUBLIC | PROTECTED | PRIVATE | STATIC | ABSTRACT
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:538:5: ( PUBLIC | PROTECTED |
+      // PRIVATE | STATIC | ABSTRACT
       // | NATIVE | SYNCHRONIZED | TRANSIENT | VOLATILE | STRICTFP | localModifier )
       int alt54 = 11;
       switch (input.LA(1)) {
@@ -6884,7 +7199,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "localModifierList"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:551:1: localModifierList : ( localModifier )* -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:551:1: localModifierList : (
+  // localModifier )* -> ^(
   // LOCAL_MODIFIER_LIST ( localModifier )* ) ;
   public final JavaParser.localModifierList_return localModifierList() throws RecognitionException {
     JavaParser.localModifierList_return retval = new JavaParser.localModifierList_return();
@@ -6900,7 +7216,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 39)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:552:5: ( ( localModifier )* -> ^( LOCAL_MODIFIER_LIST (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:552:5: ( ( localModifier )* -> ^(
+      // LOCAL_MODIFIER_LIST (
       // localModifier )* ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:552:9: ( localModifier )*
       {
@@ -6948,7 +7265,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 553:9: -> ^( LOCAL_MODIFIER_LIST ( localModifier )* )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:553:12: ^( LOCAL_MODIFIER_LIST ( localModifier
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:553:12: ^(
+            // LOCAL_MODIFIER_LIST ( localModifier
             // )* )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -6958,7 +7276,8 @@ public class JavaParser extends Parser {
                           (CommonTree) adaptor.create(LOCAL_MODIFIER_LIST, "LOCAL_MODIFIER_LIST"),
                           root_1);
 
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:553:34: ( localModifier )*
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:553:34: ( localModifier
+              // )*
               while (stream_localModifier.hasNext()) {
                 adaptor.addChild(root_1, stream_localModifier.nextTree());
               }
@@ -7002,7 +7321,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "localModifier"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:556:1: localModifier : ( FINAL | annotation );
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:556:1: localModifier : ( FINAL |
+  // annotation );
   public final JavaParser.localModifier_return localModifier() throws RecognitionException {
     JavaParser.localModifier_return retval = new JavaParser.localModifier_return();
     retval.start = input.LT(1);
@@ -7093,7 +7413,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "type"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:561:1: type : ( simpleType | objectType );
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:561:1: type : ( simpleType |
+  // objectType );
   public final JavaParser.type_return type() throws RecognitionException {
     JavaParser.type_return retval = new JavaParser.type_return();
     retval.start = input.LT(1);
@@ -7108,7 +7429,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 41)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:562:5: ( simpleType | objectType )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:562:5: ( simpleType | objectType
+      // )
       int alt57 = 2;
       int LA57_0 = input.LA(1);
 
@@ -7189,7 +7511,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "simpleType"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:566:1: simpleType : primitiveType ( arrayDeclaratorList )? -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:566:1: simpleType : primitiveType (
+  // arrayDeclaratorList )? -> ^(
   // TYPE primitiveType ( arrayDeclaratorList )? ) ;
   public final JavaParser.simpleType_return simpleType() throws RecognitionException {
     JavaParser.simpleType_return retval = new JavaParser.simpleType_return();
@@ -7209,9 +7532,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 42)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:567:5: ( primitiveType ( arrayDeclaratorList )? -> ^( TYPE
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:567:5: ( primitiveType (
+      // arrayDeclaratorList )? -> ^( TYPE
       // primitiveType ( arrayDeclaratorList )? ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:567:9: primitiveType ( arrayDeclaratorList )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:567:9: primitiveType (
+      // arrayDeclaratorList )?
       {
         pushFollow(FOLLOW_primitiveType_in_simpleType6998);
         primitiveType168 = primitiveType();
@@ -7219,7 +7544,8 @@ public class JavaParser extends Parser {
         state._fsp--;
         if (state.failed) return retval;
         if (state.backtracking == 0) stream_primitiveType.add(primitiveType168.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:567:23: ( arrayDeclaratorList )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:567:23: ( arrayDeclaratorList
+        // )?
         int alt58 = 2;
         int LA58_0 = input.LA(1);
 
@@ -7265,7 +7591,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 568:9: -> ^( TYPE primitiveType ( arrayDeclaratorList )? )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:568:13: ^( TYPE primitiveType (
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:568:13: ^( TYPE
+            // primitiveType (
             // arrayDeclaratorList )? )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -7274,7 +7601,8 @@ public class JavaParser extends Parser {
                       adaptor.becomeRoot((CommonTree) adaptor.create(TYPE, "TYPE"), root_1);
 
               adaptor.addChild(root_1, stream_primitiveType.nextTree());
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:568:34: ( arrayDeclaratorList )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:568:34: (
+              // arrayDeclaratorList )?
               if (stream_arrayDeclaratorList.hasNext()) {
                 adaptor.addChild(root_1, stream_arrayDeclaratorList.nextTree());
               }
@@ -7318,7 +7646,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "objectType"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:571:1: objectType : qualifiedTypeIdent ( arrayDeclaratorList )? ->
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:571:1: objectType :
+  // qualifiedTypeIdent ( arrayDeclaratorList )? ->
   // ^( TYPE qualifiedTypeIdent ( arrayDeclaratorList )? ) ;
   public final JavaParser.objectType_return objectType() throws RecognitionException {
     JavaParser.objectType_return retval = new JavaParser.objectType_return();
@@ -7338,9 +7667,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 43)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:572:5: ( qualifiedTypeIdent ( arrayDeclaratorList )? -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:572:5: ( qualifiedTypeIdent (
+      // arrayDeclaratorList )? -> ^(
       // TYPE qualifiedTypeIdent ( arrayDeclaratorList )? ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:572:9: qualifiedTypeIdent ( arrayDeclaratorList )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:572:9: qualifiedTypeIdent (
+      // arrayDeclaratorList )?
       {
         pushFollow(FOLLOW_qualifiedTypeIdent_in_objectType7047);
         qualifiedTypeIdent170 = qualifiedTypeIdent();
@@ -7348,7 +7679,8 @@ public class JavaParser extends Parser {
         state._fsp--;
         if (state.failed) return retval;
         if (state.backtracking == 0) stream_qualifiedTypeIdent.add(qualifiedTypeIdent170.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:572:28: ( arrayDeclaratorList )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:572:28: ( arrayDeclaratorList
+        // )?
         int alt59 = 2;
         int LA59_0 = input.LA(1);
 
@@ -7390,7 +7722,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 573:9: -> ^( TYPE qualifiedTypeIdent ( arrayDeclaratorList )? )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:573:13: ^( TYPE qualifiedTypeIdent (
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:573:13: ^( TYPE
+            // qualifiedTypeIdent (
             // arrayDeclaratorList )? )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -7399,7 +7732,8 @@ public class JavaParser extends Parser {
                       adaptor.becomeRoot((CommonTree) adaptor.create(TYPE, "TYPE"), root_1);
 
               adaptor.addChild(root_1, stream_qualifiedTypeIdent.nextTree());
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:573:39: ( arrayDeclaratorList )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:573:39: (
+              // arrayDeclaratorList )?
               if (stream_arrayDeclaratorList.hasNext()) {
                 adaptor.addChild(root_1, stream_arrayDeclaratorList.nextTree());
               }
@@ -7443,7 +7777,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "objectTypeSimplified"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:576:1: objectTypeSimplified : qualifiedTypeIdentSimplified (
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:576:1: objectTypeSimplified :
+  // qualifiedTypeIdentSimplified (
   // arrayDeclaratorList )? -> ^( TYPE qualifiedTypeIdentSimplified ( arrayDeclaratorList )? ) ;
   public final JavaParser.objectTypeSimplified_return objectTypeSimplified()
       throws RecognitionException {
@@ -7464,9 +7799,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 44)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:577:5: ( qualifiedTypeIdentSimplified (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:577:5: (
+      // qualifiedTypeIdentSimplified (
       // arrayDeclaratorList )? -> ^( TYPE qualifiedTypeIdentSimplified ( arrayDeclaratorList )? ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:577:9: qualifiedTypeIdentSimplified ( arrayDeclaratorList )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:577:9:
+      // qualifiedTypeIdentSimplified ( arrayDeclaratorList )?
       {
         pushFollow(FOLLOW_qualifiedTypeIdentSimplified_in_objectTypeSimplified7089);
         qualifiedTypeIdentSimplified172 = qualifiedTypeIdentSimplified();
@@ -7475,7 +7812,8 @@ public class JavaParser extends Parser {
         if (state.failed) return retval;
         if (state.backtracking == 0)
           stream_qualifiedTypeIdentSimplified.add(qualifiedTypeIdentSimplified172.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:577:38: ( arrayDeclaratorList )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:577:38: ( arrayDeclaratorList
+        // )?
         int alt60 = 2;
         int LA60_0 = input.LA(1);
 
@@ -7513,7 +7851,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 578:9: -> ^( TYPE qualifiedTypeIdentSimplified ( arrayDeclaratorList )? )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:578:13: ^( TYPE qualifiedTypeIdentSimplified (
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:578:13: ^( TYPE
+            // qualifiedTypeIdentSimplified (
             // arrayDeclaratorList )? )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -7522,7 +7861,8 @@ public class JavaParser extends Parser {
                       adaptor.becomeRoot((CommonTree) adaptor.create(TYPE, "TYPE"), root_1);
 
               adaptor.addChild(root_1, stream_qualifiedTypeIdentSimplified.nextTree());
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:578:49: ( arrayDeclaratorList )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:578:49: (
+              // arrayDeclaratorList )?
               if (stream_arrayDeclaratorList.hasNext()) {
                 adaptor.addChild(root_1, stream_arrayDeclaratorList.nextTree());
               }
@@ -7566,7 +7906,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "qualifiedTypeIdent"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:581:1: qualifiedTypeIdent : typeIdent ( DOT typeIdent )* -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:581:1: qualifiedTypeIdent : typeIdent
+  // ( DOT typeIdent )* -> ^(
   // QUALIFIED_TYPE_IDENT ( typeIdent )+ ) ;
   public final JavaParser.qualifiedTypeIdent_return qualifiedTypeIdent()
       throws RecognitionException {
@@ -7588,9 +7929,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 45)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:582:5: ( typeIdent ( DOT typeIdent )* -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:582:5: ( typeIdent ( DOT
+      // typeIdent )* -> ^(
       // QUALIFIED_TYPE_IDENT ( typeIdent )+ ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:582:9: typeIdent ( DOT typeIdent )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:582:9: typeIdent ( DOT typeIdent
+      // )*
       {
         pushFollow(FOLLOW_typeIdent_in_qualifiedTypeIdent7131);
         typeIdent174 = typeIdent();
@@ -7650,7 +7993,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 583:9: -> ^( QUALIFIED_TYPE_IDENT ( typeIdent )+ )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:583:13: ^( QUALIFIED_TYPE_IDENT ( typeIdent )+ )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:583:13: ^(
+            // QUALIFIED_TYPE_IDENT ( typeIdent )+ )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 =
@@ -7705,7 +8049,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "qualifiedTypeIdentSimplified"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:586:1: qualifiedTypeIdentSimplified : typeIdentSimplified ( DOT
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:586:1: qualifiedTypeIdentSimplified :
+  // typeIdentSimplified ( DOT
   // typeIdentSimplified )* -> ^( QUALIFIED_TYPE_IDENT ( typeIdentSimplified )+ ) ;
   public final JavaParser.qualifiedTypeIdentSimplified_return qualifiedTypeIdentSimplified()
       throws RecognitionException {
@@ -7728,9 +8073,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 46)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:587:5: ( typeIdentSimplified ( DOT typeIdentSimplified )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:587:5: ( typeIdentSimplified (
+      // DOT typeIdentSimplified )*
       // -> ^( QUALIFIED_TYPE_IDENT ( typeIdentSimplified )+ ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:587:9: typeIdentSimplified ( DOT typeIdentSimplified )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:587:9: typeIdentSimplified ( DOT
+      // typeIdentSimplified )*
       {
         pushFollow(FOLLOW_typeIdentSimplified_in_qualifiedTypeIdentSimplified7176);
         typeIdentSimplified177 = typeIdentSimplified();
@@ -7739,7 +8086,8 @@ public class JavaParser extends Parser {
         if (state.failed) return retval;
         if (state.backtracking == 0)
           stream_typeIdentSimplified.add(typeIdentSimplified177.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:587:29: ( DOT typeIdentSimplified )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:587:29: ( DOT
+        // typeIdentSimplified )*
         loop62:
         do {
           int alt62 = 2;
@@ -7751,7 +8099,8 @@ public class JavaParser extends Parser {
 
           switch (alt62) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:587:30: DOT typeIdentSimplified
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:587:30: DOT
+              // typeIdentSimplified
               {
                 DOT178 = (Token) match(input, DOT, FOLLOW_DOT_in_qualifiedTypeIdentSimplified7179);
                 if (state.failed) return retval;
@@ -7788,7 +8137,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 588:9: -> ^( QUALIFIED_TYPE_IDENT ( typeIdentSimplified )+ )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:588:13: ^( QUALIFIED_TYPE_IDENT (
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:588:13: ^(
+            // QUALIFIED_TYPE_IDENT (
             // typeIdentSimplified )+ )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -7844,7 +8194,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "typeIdent"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:591:1: typeIdent : IDENT ( genericTypeArgumentList )? ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:591:1: typeIdent : IDENT (
+  // genericTypeArgumentList )? ;
   public final JavaParser.typeIdent_return typeIdent() throws RecognitionException {
     JavaParser.typeIdent_return retval = new JavaParser.typeIdent_return();
     retval.start = input.LT(1);
@@ -7860,8 +8211,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 47)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:592:5: ( IDENT ( genericTypeArgumentList )? )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:592:9: IDENT ( genericTypeArgumentList )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:592:5: ( IDENT (
+      // genericTypeArgumentList )? )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:592:9: IDENT (
+      // genericTypeArgumentList )?
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -7871,7 +8224,8 @@ public class JavaParser extends Parser {
           IDENT180_tree = (CommonTree) adaptor.create(IDENT180);
           root_0 = (CommonTree) adaptor.becomeRoot(IDENT180_tree, root_0);
         }
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:592:16: ( genericTypeArgumentList )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:592:16: (
+        // genericTypeArgumentList )?
         int alt63 = 2;
         int LA63_0 = input.LA(1);
 
@@ -7880,7 +8234,8 @@ public class JavaParser extends Parser {
         }
         switch (alt63) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: genericTypeArgumentList
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+            // genericTypeArgumentList
             {
               pushFollow(FOLLOW_genericTypeArgumentList_in_typeIdent7224);
               genericTypeArgumentList181 = genericTypeArgumentList();
@@ -7942,8 +8297,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 48)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:596:5: ( IDENT ( genericTypeArgumentListSimplified )? )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:596:9: IDENT ( genericTypeArgumentListSimplified )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:596:5: ( IDENT (
+      // genericTypeArgumentListSimplified )? )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:596:9: IDENT (
+      // genericTypeArgumentListSimplified )?
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -7953,7 +8310,8 @@ public class JavaParser extends Parser {
           IDENT182_tree = (CommonTree) adaptor.create(IDENT182);
           root_0 = (CommonTree) adaptor.becomeRoot(IDENT182_tree, root_0);
         }
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:596:16: ( genericTypeArgumentListSimplified )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:596:16: (
+        // genericTypeArgumentListSimplified )?
         int alt64 = 2;
         int LA64_0 = input.LA(1);
 
@@ -7962,7 +8320,8 @@ public class JavaParser extends Parser {
         }
         switch (alt64) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: genericTypeArgumentListSimplified
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+            // genericTypeArgumentListSimplified
             {
               pushFollow(FOLLOW_genericTypeArgumentListSimplified_in_typeIdentSimplified7247);
               genericTypeArgumentListSimplified183 = genericTypeArgumentListSimplified();
@@ -8006,7 +8365,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "primitiveType"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:599:1: primitiveType : ( BOOLEAN | CHAR | BYTE | SHORT | INT |
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:599:1: primitiveType : ( BOOLEAN |
+  // CHAR | BYTE | SHORT | INT |
   // LONG | FLOAT | DOUBLE );
   public final JavaParser.primitiveType_return primitiveType() throws RecognitionException {
     JavaParser.primitiveType_return retval = new JavaParser.primitiveType_return();
@@ -8022,7 +8382,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 49)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:600:5: ( BOOLEAN | CHAR | BYTE | SHORT | INT | LONG |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:600:5: ( BOOLEAN | CHAR | BYTE |
+      // SHORT | INT | LONG |
       // FLOAT | DOUBLE )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:
       {
@@ -8081,7 +8442,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "genericTypeArgumentList"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:610:1: genericTypeArgumentList : LESS_THAN genericTypeArgument (
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:610:1: genericTypeArgumentList :
+  // LESS_THAN genericTypeArgument (
   // COMMA genericTypeArgument )* genericTypeListClosing -> ^( GENERIC_TYPE_ARG_LIST[$LESS_THAN,
   // \"GENERIC_TYPE_ARG_LIST\"] ( genericTypeArgument )+ ) ;
   public final JavaParser.genericTypeArgumentList_return genericTypeArgumentList()
@@ -8113,10 +8475,12 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 50)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:611:5: ( LESS_THAN genericTypeArgument ( COMMA
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:611:5: ( LESS_THAN
+      // genericTypeArgument ( COMMA
       // genericTypeArgument )* genericTypeListClosing -> ^( GENERIC_TYPE_ARG_LIST[$LESS_THAN,
       // \"GENERIC_TYPE_ARG_LIST\"] ( genericTypeArgument )+ ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:611:9: LESS_THAN genericTypeArgument ( COMMA
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:611:9: LESS_THAN
+      // genericTypeArgument ( COMMA
       // genericTypeArgument )* genericTypeListClosing
       {
         LESS_THAN185 =
@@ -8131,7 +8495,8 @@ public class JavaParser extends Parser {
         if (state.failed) return retval;
         if (state.backtracking == 0)
           stream_genericTypeArgument.add(genericTypeArgument186.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:611:39: ( COMMA genericTypeArgument )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:611:39: ( COMMA
+        // genericTypeArgument )*
         loop65:
         do {
           int alt65 = 2;
@@ -8147,7 +8512,8 @@ public class JavaParser extends Parser {
 
           switch (alt65) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:611:40: COMMA genericTypeArgument
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:611:40: COMMA
+              // genericTypeArgument
               {
                 COMMA187 = (Token) match(input, COMMA, FOLLOW_COMMA_in_genericTypeArgumentList7361);
                 if (state.failed) return retval;
@@ -8190,9 +8556,11 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 612:9: -> ^( GENERIC_TYPE_ARG_LIST[$LESS_THAN, \"GENERIC_TYPE_ARG_LIST\"] ( genericTypeArgument )+ )
+          // 612:9: -> ^( GENERIC_TYPE_ARG_LIST[$LESS_THAN, \"GENERIC_TYPE_ARG_LIST\"] (
+          // genericTypeArgument )+ )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:612:13: ^( GENERIC_TYPE_ARG_LIST[$LESS_THAN,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:612:13: ^(
+            // GENERIC_TYPE_ARG_LIST[$LESS_THAN,
             // \"GENERIC_TYPE_ARG_LIST\"] ( genericTypeArgument )+ )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -8250,7 +8618,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "genericTypeArgument"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:615:1: genericTypeArgument : ( type | QUESTION (
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:615:1: genericTypeArgument : ( type |
+  // QUESTION (
   // genericWildcardBoundType )? -> ^( QUESTION ( genericWildcardBoundType )? ) );
   public final JavaParser.genericTypeArgument_return genericTypeArgument()
       throws RecognitionException {
@@ -8272,7 +8641,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 51)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:616:5: ( type | QUESTION ( genericWildcardBoundType )? ->
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:616:5: ( type | QUESTION (
+      // genericWildcardBoundType )? ->
       // ^( QUESTION ( genericWildcardBoundType )? ) )
       int alt67 = 2;
       int LA67_0 = input.LA(1);
@@ -8312,14 +8682,16 @@ public class JavaParser extends Parser {
           }
           break;
         case 2:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:617:9: QUESTION ( genericWildcardBoundType )?
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:617:9: QUESTION (
+          // genericWildcardBoundType )?
           {
             QUESTION191 =
                 (Token) match(input, QUESTION, FOLLOW_QUESTION_in_genericTypeArgument7415);
             if (state.failed) return retval;
             if (state.backtracking == 0) stream_QUESTION.add(QUESTION191);
 
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:617:18: ( genericWildcardBoundType )?
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:617:18: (
+            // genericWildcardBoundType )?
             int alt66 = 2;
             int LA66_0 = input.LA(1);
 
@@ -8361,7 +8733,8 @@ public class JavaParser extends Parser {
             }
             switch (alt66) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: genericWildcardBoundType
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                // genericWildcardBoundType
                 {
                   pushFollow(FOLLOW_genericWildcardBoundType_in_genericTypeArgument7417);
                   genericWildcardBoundType192 = genericWildcardBoundType();
@@ -8396,7 +8769,8 @@ public class JavaParser extends Parser {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
                   root_1 = (CommonTree) adaptor.becomeRoot(stream_QUESTION.nextNode(), root_1);
 
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:618:24: ( genericWildcardBoundType )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:618:24: (
+                  // genericWildcardBoundType )?
                   if (stream_genericWildcardBoundType.hasNext()) {
                     adaptor.addChild(root_1, stream_genericWildcardBoundType.nextTree());
                   }
@@ -8441,7 +8815,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "genericWildcardBoundType"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:621:1: genericWildcardBoundType : ( EXTENDS | SUPER ) type ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:621:1: genericWildcardBoundType : (
+  // EXTENDS | SUPER ) type ;
   public final JavaParser.genericWildcardBoundType_return genericWildcardBoundType()
       throws RecognitionException {
     JavaParser.genericWildcardBoundType_return retval =
@@ -8459,7 +8834,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 52)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:622:5: ( ( EXTENDS | SUPER ) type )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:622:5: ( ( EXTENDS | SUPER ) type
+      // )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:622:9: ( EXTENDS | SUPER ) type
       {
         root_0 = (CommonTree) adaptor.nil();
@@ -8519,9 +8895,12 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "genericTypeArgumentListSimplified"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:625:1: genericTypeArgumentListSimplified : LESS_THAN
-  // genericTypeArgumentSimplified ( COMMA genericTypeArgumentSimplified )* genericTypeListClosing -> ^(
-  // GENERIC_TYPE_ARG_LIST[$LESS_THAN, \"GENERIC_TYPE_ARG_LIST\"] ( genericTypeArgumentSimplified )+ ) ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:625:1:
+  // genericTypeArgumentListSimplified : LESS_THAN
+  // genericTypeArgumentSimplified ( COMMA genericTypeArgumentSimplified )* genericTypeListClosing
+  // -> ^(
+  // GENERIC_TYPE_ARG_LIST[$LESS_THAN, \"GENERIC_TYPE_ARG_LIST\"] ( genericTypeArgumentSimplified )+
+  // ) ;
   public final JavaParser.genericTypeArgumentListSimplified_return
       genericTypeArgumentListSimplified() throws RecognitionException {
     JavaParser.genericTypeArgumentListSimplified_return retval =
@@ -8551,10 +8930,13 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 53)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:626:5: ( LESS_THAN genericTypeArgumentSimplified ( COMMA
-      // genericTypeArgumentSimplified )* genericTypeListClosing -> ^( GENERIC_TYPE_ARG_LIST[$LESS_THAN,
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:626:5: ( LESS_THAN
+      // genericTypeArgumentSimplified ( COMMA
+      // genericTypeArgumentSimplified )* genericTypeListClosing -> ^(
+      // GENERIC_TYPE_ARG_LIST[$LESS_THAN,
       // \"GENERIC_TYPE_ARG_LIST\"] ( genericTypeArgumentSimplified )+ ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:626:9: LESS_THAN genericTypeArgumentSimplified ( COMMA
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:626:9: LESS_THAN
+      // genericTypeArgumentSimplified ( COMMA
       // genericTypeArgumentSimplified )* genericTypeListClosing
       {
         LESS_THAN195 =
@@ -8570,7 +8952,8 @@ public class JavaParser extends Parser {
         if (state.failed) return retval;
         if (state.backtracking == 0)
           stream_genericTypeArgumentSimplified.add(genericTypeArgumentSimplified196.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:626:49: ( COMMA genericTypeArgumentSimplified )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:626:49: ( COMMA
+        // genericTypeArgumentSimplified )*
         loop68:
         do {
           int alt68 = 2;
@@ -8582,7 +8965,8 @@ public class JavaParser extends Parser {
 
           switch (alt68) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:626:50: COMMA genericTypeArgumentSimplified
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:626:50: COMMA
+              // genericTypeArgumentSimplified
               {
                 COMMA197 =
                     (Token)
@@ -8629,9 +9013,11 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 627:9: -> ^( GENERIC_TYPE_ARG_LIST[$LESS_THAN, \"GENERIC_TYPE_ARG_LIST\"] ( genericTypeArgumentSimplified )+ )
+          // 627:9: -> ^( GENERIC_TYPE_ARG_LIST[$LESS_THAN, \"GENERIC_TYPE_ARG_LIST\"] (
+          // genericTypeArgumentSimplified )+ )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:627:13: ^( GENERIC_TYPE_ARG_LIST[$LESS_THAN,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:627:13: ^(
+            // GENERIC_TYPE_ARG_LIST[$LESS_THAN,
             // \"GENERIC_TYPE_ARG_LIST\"] ( genericTypeArgumentSimplified )+ )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -8689,7 +9075,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "genericTypeArgumentSimplified"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:630:1: genericTypeArgumentSimplified : ( type | QUESTION );
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:630:1: genericTypeArgumentSimplified
+  // : ( type | QUESTION );
   public final JavaParser.genericTypeArgumentSimplified_return genericTypeArgumentSimplified()
       throws RecognitionException {
     JavaParser.genericTypeArgumentSimplified_return retval =
@@ -8791,7 +9178,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "qualifiedIdentList"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:635:1: qualifiedIdentList : qualifiedIdentifier ( COMMA
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:635:1: qualifiedIdentList :
+  // qualifiedIdentifier ( COMMA
   // qualifiedIdentifier )* ;
   public final JavaParser.qualifiedIdentList_return qualifiedIdentList()
       throws RecognitionException {
@@ -8811,8 +9199,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 55)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:636:5: ( qualifiedIdentifier ( COMMA qualifiedIdentifier )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:636:9: qualifiedIdentifier ( COMMA qualifiedIdentifier )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:636:5: ( qualifiedIdentifier (
+      // COMMA qualifiedIdentifier )* )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:636:9: qualifiedIdentifier (
+      // COMMA qualifiedIdentifier )*
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -8822,7 +9212,8 @@ public class JavaParser extends Parser {
         state._fsp--;
         if (state.failed) return retval;
         if (state.backtracking == 0) adaptor.addChild(root_0, qualifiedIdentifier202.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:636:29: ( COMMA qualifiedIdentifier )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:636:29: ( COMMA
+        // qualifiedIdentifier )*
         loop70:
         do {
           int alt70 = 2;
@@ -8834,7 +9225,8 @@ public class JavaParser extends Parser {
 
           switch (alt70) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:636:30: COMMA qualifiedIdentifier
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:636:30: COMMA
+              // qualifiedIdentifier
               {
                 COMMA203 = (Token) match(input, COMMA, FOLLOW_COMMA_in_qualifiedIdentList7576);
                 if (state.failed) return retval;
@@ -8884,10 +9276,14 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "formalParameterList"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:639:1: formalParameterList : LPAREN ( formalParameterStandardDecl
-  // ( COMMA formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )? -> ^( FORMAL_PARAM_LIST[$LPAREN,
-  // \"FORMAL_PARAM_LIST\"] ( formalParameterStandardDecl )+ ( formalParameterVarArgDecl )? ) | formalParameterVarArgDecl -> ^(
-  // FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] formalParameterVarArgDecl ) | -> ^( FORMAL_PARAM_LIST[$LPAREN,
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:639:1: formalParameterList : LPAREN (
+  // formalParameterStandardDecl
+  // ( COMMA formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )? -> ^(
+  // FORMAL_PARAM_LIST[$LPAREN,
+  // \"FORMAL_PARAM_LIST\"] ( formalParameterStandardDecl )+ ( formalParameterVarArgDecl )? ) |
+  // formalParameterVarArgDecl -> ^(
+  // FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] formalParameterVarArgDecl ) | -> ^(
+  // FORMAL_PARAM_LIST[$LPAREN,
   // \"FORMAL_PARAM_LIST\"] ) ) RPAREN ;
   public final JavaParser.formalParameterList_return formalParameterList()
       throws RecognitionException {
@@ -8923,25 +9319,37 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 56)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:640:5: ( LPAREN ( formalParameterStandardDecl ( COMMA
-      // formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )? -> ^( FORMAL_PARAM_LIST[$LPAREN,
-      // \"FORMAL_PARAM_LIST\"] ( formalParameterStandardDecl )+ ( formalParameterVarArgDecl )? ) | formalParameterVarArgDecl -> ^(
-      // FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] formalParameterVarArgDecl ) | -> ^( FORMAL_PARAM_LIST[$LPAREN,
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:640:5: ( LPAREN (
+      // formalParameterStandardDecl ( COMMA
+      // formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )? -> ^(
+      // FORMAL_PARAM_LIST[$LPAREN,
+      // \"FORMAL_PARAM_LIST\"] ( formalParameterStandardDecl )+ ( formalParameterVarArgDecl )? ) |
+      // formalParameterVarArgDecl -> ^(
+      // FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] formalParameterVarArgDecl ) | -> ^(
+      // FORMAL_PARAM_LIST[$LPAREN,
       // \"FORMAL_PARAM_LIST\"] ) ) RPAREN )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:640:9: LPAREN ( formalParameterStandardDecl ( COMMA
-      // formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )? -> ^( FORMAL_PARAM_LIST[$LPAREN,
-      // \"FORMAL_PARAM_LIST\"] ( formalParameterStandardDecl )+ ( formalParameterVarArgDecl )? ) | formalParameterVarArgDecl -> ^(
-      // FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] formalParameterVarArgDecl ) | -> ^( FORMAL_PARAM_LIST[$LPAREN,
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:640:9: LPAREN (
+      // formalParameterStandardDecl ( COMMA
+      // formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )? -> ^(
+      // FORMAL_PARAM_LIST[$LPAREN,
+      // \"FORMAL_PARAM_LIST\"] ( formalParameterStandardDecl )+ ( formalParameterVarArgDecl )? ) |
+      // formalParameterVarArgDecl -> ^(
+      // FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] formalParameterVarArgDecl ) | -> ^(
+      // FORMAL_PARAM_LIST[$LPAREN,
       // \"FORMAL_PARAM_LIST\"] ) ) RPAREN
       {
         LPAREN205 = (Token) match(input, LPAREN, FOLLOW_LPAREN_in_formalParameterList7604);
         if (state.failed) return retval;
         if (state.backtracking == 0) stream_LPAREN.add(LPAREN205);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:641:9: ( formalParameterStandardDecl ( COMMA
-        // formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )? -> ^( FORMAL_PARAM_LIST[$LPAREN,
-        // \"FORMAL_PARAM_LIST\"] ( formalParameterStandardDecl )+ ( formalParameterVarArgDecl )? ) | formalParameterVarArgDecl
-        // -> ^( FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] formalParameterVarArgDecl ) | -> ^( FORMAL_PARAM_LIST[$LPAREN,
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:641:9: (
+        // formalParameterStandardDecl ( COMMA
+        // formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )? -> ^(
+        // FORMAL_PARAM_LIST[$LPAREN,
+        // \"FORMAL_PARAM_LIST\"] ( formalParameterStandardDecl )+ ( formalParameterVarArgDecl )? )
+        // | formalParameterVarArgDecl
+        // -> ^( FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] formalParameterVarArgDecl ) | ->
+        // ^( FORMAL_PARAM_LIST[$LPAREN,
         // \"FORMAL_PARAM_LIST\"] ) )
         int alt73 = 3;
         switch (input.LA(1)) {
@@ -9045,7 +9453,8 @@ public class JavaParser extends Parser {
 
         switch (alt73) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:13: formalParameterStandardDecl ( COMMA
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:13:
+            // formalParameterStandardDecl ( COMMA
             // formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )?
             {
               pushFollow(FOLLOW_formalParameterStandardDecl_in_formalParameterList7632);
@@ -9055,7 +9464,8 @@ public class JavaParser extends Parser {
               if (state.failed) return retval;
               if (state.backtracking == 0)
                 stream_formalParameterStandardDecl.add(formalParameterStandardDecl206.getTree());
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:41: ( COMMA formalParameterStandardDecl )*
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:41: ( COMMA
+              // formalParameterStandardDecl )*
               loop71:
               do {
                 int alt71 = 2;
@@ -9095,7 +9505,8 @@ public class JavaParser extends Parser {
                 }
               } while (true);
 
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:78: ( COMMA formalParameterVarArgDecl )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:78: ( COMMA
+              // formalParameterVarArgDecl )?
               int alt72 = 2;
               int LA72_0 = input.LA(1);
 
@@ -9104,7 +9515,8 @@ public class JavaParser extends Parser {
               }
               switch (alt72) {
                 case 1:
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:79: COMMA formalParameterVarArgDecl
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:79: COMMA
+                  // formalParameterVarArgDecl
                   {
                     COMMA209 = (Token) match(input, COMMA, FOLLOW_COMMA_in_formalParameterList7642);
                     if (state.failed) return retval;
@@ -9135,11 +9547,14 @@ public class JavaParser extends Parser {
                         adaptor, "rule retval", retval != null ? retval.tree : null);
 
                 root_0 = (CommonTree) adaptor.nil();
-                // 643:13: -> ^( FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] ( formalParameterStandardDecl )+ (
+                // 643:13: -> ^( FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] (
+                // formalParameterStandardDecl )+ (
                 // formalParameterVarArgDecl )? )
                 {
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:643:17: ^( FORMAL_PARAM_LIST[$LPAREN,
-                  // \"FORMAL_PARAM_LIST\"] ( formalParameterStandardDecl )+ ( formalParameterVarArgDecl )? )
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:643:17: ^(
+                  // FORMAL_PARAM_LIST[$LPAREN,
+                  // \"FORMAL_PARAM_LIST\"] ( formalParameterStandardDecl )+ (
+                  // formalParameterVarArgDecl )? )
                   {
                     CommonTree root_1 = (CommonTree) adaptor.nil();
                     root_1 =
@@ -9173,7 +9588,8 @@ public class JavaParser extends Parser {
             }
             break;
           case 2:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:645:13: formalParameterVarArgDecl
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:645:13:
+            // formalParameterVarArgDecl
             {
               pushFollow(FOLLOW_formalParameterVarArgDecl_in_formalParameterList7701);
               formalParameterVarArgDecl211 = formalParameterVarArgDecl();
@@ -9197,9 +9613,11 @@ public class JavaParser extends Parser {
                         adaptor, "rule retval", retval != null ? retval.tree : null);
 
                 root_0 = (CommonTree) adaptor.nil();
-                // 646:13: -> ^( FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] formalParameterVarArgDecl )
+                // 646:13: -> ^( FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"]
+                // formalParameterVarArgDecl )
                 {
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:646:17: ^( FORMAL_PARAM_LIST[$LPAREN,
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:646:17: ^(
+                  // FORMAL_PARAM_LIST[$LPAREN,
                   // \"FORMAL_PARAM_LIST\"] formalParameterVarArgDecl )
                   {
                     CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -9241,7 +9659,8 @@ public class JavaParser extends Parser {
                 root_0 = (CommonTree) adaptor.nil();
                 // 648:13: -> ^( FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] )
                 {
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:648:17: ^( FORMAL_PARAM_LIST[$LPAREN,
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:648:17: ^(
+                  // FORMAL_PARAM_LIST[$LPAREN,
                   // \"FORMAL_PARAM_LIST\"] )
                   {
                     CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -9298,8 +9717,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "formalParameterStandardDecl"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:653:1: formalParameterStandardDecl : localModifierList type
-  // variableDeclaratorId -> ^( FORMAL_PARAM_STD_DECL localModifierList type variableDeclaratorId ) ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:653:1: formalParameterStandardDecl :
+  // localModifierList type
+  // variableDeclaratorId -> ^( FORMAL_PARAM_STD_DECL localModifierList type variableDeclaratorId )
+  // ;
   public final JavaParser.formalParameterStandardDecl_return formalParameterStandardDecl()
       throws RecognitionException {
     JavaParser.formalParameterStandardDecl_return retval =
@@ -9323,9 +9744,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 57)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:654:5: ( localModifierList type variableDeclaratorId -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:654:5: ( localModifierList type
+      // variableDeclaratorId -> ^(
       // FORMAL_PARAM_STD_DECL localModifierList type variableDeclaratorId ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:654:9: localModifierList type variableDeclaratorId
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:654:9: localModifierList type
+      // variableDeclaratorId
       {
         pushFollow(FOLLOW_localModifierList_in_formalParameterStandardDecl7801);
         localModifierList213 = localModifierList();
@@ -9363,7 +9786,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 655:9: -> ^( FORMAL_PARAM_STD_DECL localModifierList type variableDeclaratorId )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:655:13: ^( FORMAL_PARAM_STD_DECL
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:655:13: ^(
+            // FORMAL_PARAM_STD_DECL
             // localModifierList type variableDeclaratorId )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -9416,8 +9840,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "formalParameterVarArgDecl"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:658:1: formalParameterVarArgDecl : localModifierList type ELLIPSIS
-  // variableDeclaratorId -> ^( FORMAL_PARAM_VARARG_DECL localModifierList type variableDeclaratorId ) ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:658:1: formalParameterVarArgDecl :
+  // localModifierList type ELLIPSIS
+  // variableDeclaratorId -> ^( FORMAL_PARAM_VARARG_DECL localModifierList type variableDeclaratorId
+  // ) ;
   public final JavaParser.formalParameterVarArgDecl_return formalParameterVarArgDecl()
       throws RecognitionException {
     JavaParser.formalParameterVarArgDecl_return retval =
@@ -9444,9 +9870,12 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 58)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:659:5: ( localModifierList type ELLIPSIS
-      // variableDeclaratorId -> ^( FORMAL_PARAM_VARARG_DECL localModifierList type variableDeclaratorId ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:659:9: localModifierList type ELLIPSIS variableDeclaratorId
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:659:5: ( localModifierList type
+      // ELLIPSIS
+      // variableDeclaratorId -> ^( FORMAL_PARAM_VARARG_DECL localModifierList type
+      // variableDeclaratorId ) )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:659:9: localModifierList type
+      // ELLIPSIS variableDeclaratorId
       {
         pushFollow(FOLLOW_localModifierList_in_formalParameterVarArgDecl7849);
         localModifierList216 = localModifierList();
@@ -9489,7 +9918,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 660:9: -> ^( FORMAL_PARAM_VARARG_DECL localModifierList type variableDeclaratorId )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:660:13: ^( FORMAL_PARAM_VARARG_DECL
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:660:13: ^(
+            // FORMAL_PARAM_VARARG_DECL
             // localModifierList type variableDeclaratorId )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -9542,7 +9972,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "qualifiedIdentifier"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:663:1: qualifiedIdentifier : ( IDENT -> IDENT ) ( DOT ident= IDENT
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:663:1: qualifiedIdentifier : ( IDENT
+  // -> IDENT ) ( DOT ident= IDENT
   // -> ^( DOT $qualifiedIdentifier $ident) )* ;
   public final JavaParser.qualifiedIdentifier_return qualifiedIdentifier()
       throws RecognitionException {
@@ -9565,9 +9996,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 59)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:664:5: ( ( IDENT -> IDENT ) ( DOT ident= IDENT -> ^( DOT
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:664:5: ( ( IDENT -> IDENT ) ( DOT
+      // ident= IDENT -> ^( DOT
       // $qualifiedIdentifier $ident) )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:664:9: ( IDENT -> IDENT ) ( DOT ident= IDENT -> ^( DOT
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:664:9: ( IDENT -> IDENT ) ( DOT
+      // ident= IDENT -> ^( DOT
       // $qualifiedIdentifier $ident) )*
       {
         // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:664:9: ( IDENT -> IDENT )
@@ -9600,7 +10033,8 @@ public class JavaParser extends Parser {
           }
         }
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:666:9: ( DOT ident= IDENT -> ^( DOT
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:666:9: ( DOT ident= IDENT -> ^(
+        // DOT
         // $qualifiedIdentifier $ident) )*
         loop74:
         do {
@@ -9703,7 +10137,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "annotationList"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:672:1: annotationList : ( annotation )* -> ^( ANNOTATION_LIST (
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:672:1: annotationList : ( annotation
+  // )* -> ^( ANNOTATION_LIST (
   // annotation )* ) ;
   public final JavaParser.annotationList_return annotationList() throws RecognitionException {
     JavaParser.annotationList_return retval = new JavaParser.annotationList_return();
@@ -9719,7 +10154,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 60)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:673:5: ( ( annotation )* -> ^( ANNOTATION_LIST (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:673:5: ( ( annotation )* -> ^(
+      // ANNOTATION_LIST (
       // annotation )* ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:673:9: ( annotation )*
       {
@@ -9775,7 +10211,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 674:9: -> ^( ANNOTATION_LIST ( annotation )* )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:674:13: ^( ANNOTATION_LIST ( annotation )* )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:674:13: ^( ANNOTATION_LIST
+            // ( annotation )* )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 =
@@ -9827,7 +10264,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "annotation"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:677:1: annotation : AT qualifiedIdentifier ( annotationInit )? ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:677:1: annotation : AT
+  // qualifiedIdentifier ( annotationInit )? ;
   public final JavaParser.annotation_return annotation() throws RecognitionException {
     JavaParser.annotation_return retval = new JavaParser.annotation_return();
     retval.start = input.LT(1);
@@ -9845,8 +10283,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 61)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:678:5: ( AT qualifiedIdentifier ( annotationInit )? )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:678:9: AT qualifiedIdentifier ( annotationInit )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:678:5: ( AT qualifiedIdentifier (
+      // annotationInit )? )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:678:9: AT qualifiedIdentifier (
+      // annotationInit )?
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -9914,7 +10354,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "annotationInit"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:681:1: annotationInit : LPAREN annotationInitializers RPAREN -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:681:1: annotationInit : LPAREN
+  // annotationInitializers RPAREN -> ^(
   // ANNOTATION_INIT_BLOCK[$LPAREN, \"ANNOTATION_INIT_BLOCK\"] annotationInitializers ) ;
   public final JavaParser.annotationInit_return annotationInit() throws RecognitionException {
     JavaParser.annotationInit_return retval = new JavaParser.annotationInit_return();
@@ -9936,9 +10377,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 62)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:682:5: ( LPAREN annotationInitializers RPAREN -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:682:5: ( LPAREN
+      // annotationInitializers RPAREN -> ^(
       // ANNOTATION_INIT_BLOCK[$LPAREN, \"ANNOTATION_INIT_BLOCK\"] annotationInitializers ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:682:9: LPAREN annotationInitializers RPAREN
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:682:9: LPAREN
+      // annotationInitializers RPAREN
       {
         LPAREN226 = (Token) match(input, LPAREN, FOLLOW_LPAREN_in_annotationInit8070);
         if (state.failed) return retval;
@@ -9969,9 +10412,11 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 683:9: -> ^( ANNOTATION_INIT_BLOCK[$LPAREN, \"ANNOTATION_INIT_BLOCK\"] annotationInitializers )
+          // 683:9: -> ^( ANNOTATION_INIT_BLOCK[$LPAREN, \"ANNOTATION_INIT_BLOCK\"]
+          // annotationInitializers )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:683:13: ^( ANNOTATION_INIT_BLOCK[$LPAREN,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:683:13: ^(
+            // ANNOTATION_INIT_BLOCK[$LPAREN,
             // \"ANNOTATION_INIT_BLOCK\"] annotationInitializers )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -10023,8 +10468,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "annotationInitializers"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:686:1: annotationInitializers : ( annotationInitializer ( COMMA
-  // annotationInitializer )* -> ^( ANNOTATION_INIT_KEY_LIST ( annotationInitializer )+ ) | annotationElementValue -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:686:1: annotationInitializers : (
+  // annotationInitializer ( COMMA
+  // annotationInitializer )* -> ^( ANNOTATION_INIT_KEY_LIST ( annotationInitializer )+ ) |
+  // annotationElementValue -> ^(
   // ANNOTATION_INIT_DEFAULT_KEY annotationElementValue ) );
   public final JavaParser.annotationInitializers_return annotationInitializers()
       throws RecognitionException {
@@ -10051,8 +10498,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 63)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:687:5: ( annotationInitializer ( COMMA
-      // annotationInitializer )* -> ^( ANNOTATION_INIT_KEY_LIST ( annotationInitializer )+ ) | annotationElementValue -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:687:5: ( annotationInitializer (
+      // COMMA
+      // annotationInitializer )* -> ^( ANNOTATION_INIT_KEY_LIST ( annotationInitializer )+ ) |
+      // annotationElementValue -> ^(
       // ANNOTATION_INIT_DEFAULT_KEY annotationElementValue ) )
       int alt78 = 2;
       int LA78_0 = input.LA(1);
@@ -10124,7 +10573,8 @@ public class JavaParser extends Parser {
       }
       switch (alt78) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:687:9: annotationInitializer ( COMMA
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:687:9: annotationInitializer
+          // ( COMMA
           // annotationInitializer )*
           {
             pushFollow(FOLLOW_annotationInitializer_in_annotationInitializers8111);
@@ -10134,7 +10584,8 @@ public class JavaParser extends Parser {
             if (state.failed) return retval;
             if (state.backtracking == 0)
               stream_annotationInitializer.add(annotationInitializer229.getTree());
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:687:31: ( COMMA annotationInitializer )*
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:687:31: ( COMMA
+            // annotationInitializer )*
             loop77:
             do {
               int alt77 = 2;
@@ -10146,7 +10597,8 @@ public class JavaParser extends Parser {
 
               switch (alt77) {
                 case 1:
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:687:32: COMMA annotationInitializer
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:687:32: COMMA
+                  // annotationInitializer
                   {
                     COMMA230 =
                         (Token) match(input, COMMA, FOLLOW_COMMA_in_annotationInitializers8114);
@@ -10184,7 +10636,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 688:9: -> ^( ANNOTATION_INIT_KEY_LIST ( annotationInitializer )+ )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:688:13: ^( ANNOTATION_INIT_KEY_LIST (
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:688:13: ^(
+                // ANNOTATION_INIT_KEY_LIST (
                 // annotationInitializer )+ )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -10239,7 +10692,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 690:9: -> ^( ANNOTATION_INIT_DEFAULT_KEY annotationElementValue )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:690:13: ^( ANNOTATION_INIT_DEFAULT_KEY
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:690:13: ^(
+                // ANNOTATION_INIT_DEFAULT_KEY
                 // annotationElementValue )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -10292,7 +10746,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "annotationInitializer"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:693:1: annotationInitializer : IDENT ASSIGN annotationElementValue ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:693:1: annotationInitializer : IDENT
+  // ASSIGN annotationElementValue ;
   public final JavaParser.annotationInitializer_return annotationInitializer()
       throws RecognitionException {
     JavaParser.annotationInitializer_return retval = new JavaParser.annotationInitializer_return();
@@ -10311,8 +10766,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 64)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:694:5: ( IDENT ASSIGN annotationElementValue )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:694:9: IDENT ASSIGN annotationElementValue
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:694:5: ( IDENT ASSIGN
+      // annotationElementValue )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:694:9: IDENT ASSIGN
+      // annotationElementValue
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -10362,7 +10819,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "annotationElementValue"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:697:1: annotationElementValue : ( annotationElementValueExpression
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:697:1: annotationElementValue : (
+  // annotationElementValueExpression
   // | annotation | annotationElementValueArrayInitializer );
   public final JavaParser.annotationElementValue_return annotationElementValue()
       throws RecognitionException {
@@ -10383,7 +10841,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 65)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:698:5: ( annotationElementValueExpression | annotation |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:698:5: (
+      // annotationElementValueExpression | annotation |
       // annotationElementValueArrayInitializer )
       int alt79 = 3;
       switch (input.LA(1)) {
@@ -10443,7 +10902,8 @@ public class JavaParser extends Parser {
 
       switch (alt79) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:698:9: annotationElementValueExpression
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:698:9:
+          // annotationElementValueExpression
           {
             root_0 = (CommonTree) adaptor.nil();
 
@@ -10470,7 +10930,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 3:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:700:9: annotationElementValueArrayInitializer
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:700:9:
+          // annotationElementValueArrayInitializer
           {
             root_0 = (CommonTree) adaptor.nil();
 
@@ -10514,7 +10975,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "annotationElementValueExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:703:1: annotationElementValueExpression : conditionalExpression ->
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:703:1:
+  // annotationElementValueExpression : conditionalExpression ->
   // ^( EXPR conditionalExpression ) ;
   public final JavaParser.annotationElementValueExpression_return annotationElementValueExpression()
       throws RecognitionException {
@@ -10532,7 +10994,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 66)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:704:5: ( conditionalExpression -> ^( EXPR
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:704:5: ( conditionalExpression ->
+      // ^( EXPR
       // conditionalExpression ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:704:9: conditionalExpression
       {
@@ -10560,7 +11023,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 705:9: -> ^( EXPR conditionalExpression )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:705:13: ^( EXPR conditionalExpression )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:705:13: ^( EXPR
+            // conditionalExpression )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 =
@@ -10607,8 +11071,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "annotationElementValueArrayInitializer"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:708:1: annotationElementValueArrayInitializer : LCURLY (
-  // annotationElementValue ( COMMA annotationElementValue )* )? ( COMMA )? RCURLY -> ^( ANNOTATION_INIT_ARRAY_ELEMENT[$LCURLY,
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:708:1:
+  // annotationElementValueArrayInitializer : LCURLY (
+  // annotationElementValue ( COMMA annotationElementValue )* )? ( COMMA )? RCURLY -> ^(
+  // ANNOTATION_INIT_ARRAY_ELEMENT[$LCURLY,
   // \"ANNOTATION_ELEM_VALUE_ARRAY_INIT\"] ( annotationElementValue )* ) ;
   public final JavaParser.annotationElementValueArrayInitializer_return
       annotationElementValueArrayInitializer() throws RecognitionException {
@@ -10639,10 +11105,12 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 67)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:709:5: ( LCURLY ( annotationElementValue ( COMMA
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:709:5: ( LCURLY (
+      // annotationElementValue ( COMMA
       // annotationElementValue )* )? ( COMMA )? RCURLY -> ^( ANNOTATION_INIT_ARRAY_ELEMENT[$LCURLY,
       // \"ANNOTATION_ELEM_VALUE_ARRAY_INIT\"] ( annotationElementValue )* ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:709:9: LCURLY ( annotationElementValue ( COMMA
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:709:9: LCURLY (
+      // annotationElementValue ( COMMA
       // annotationElementValue )* )? ( COMMA )? RCURLY
       {
         LCURLY240 =
@@ -10651,7 +11119,8 @@ public class JavaParser extends Parser {
         if (state.failed) return retval;
         if (state.backtracking == 0) stream_LCURLY.add(LCURLY240);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:709:16: ( annotationElementValue ( COMMA
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:709:16: (
+        // annotationElementValue ( COMMA
         // annotationElementValue )* )?
         int alt81 = 2;
         int LA81_0 = input.LA(1);
@@ -10683,7 +11152,8 @@ public class JavaParser extends Parser {
         }
         switch (alt81) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:709:17: annotationElementValue ( COMMA
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:709:17:
+            // annotationElementValue ( COMMA
             // annotationElementValue )*
             {
               pushFollow(
@@ -10694,7 +11164,8 @@ public class JavaParser extends Parser {
               if (state.failed) return retval;
               if (state.backtracking == 0)
                 stream_annotationElementValue.add(annotationElementValue241.getTree());
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:709:40: ( COMMA annotationElementValue )*
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:709:40: ( COMMA
+              // annotationElementValue )*
               loop80:
               do {
                 int alt80 = 2;
@@ -10732,7 +11203,8 @@ public class JavaParser extends Parser {
 
                 switch (alt80) {
                   case 1:
-                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:709:41: COMMA annotationElementValue
+                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:709:41: COMMA
+                    // annotationElementValue
                     {
                       COMMA242 =
                           (Token)
@@ -10803,11 +11275,13 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 710:9: -> ^( ANNOTATION_INIT_ARRAY_ELEMENT[$LCURLY, \"ANNOTATION_ELEM_VALUE_ARRAY_INIT\"] ( annotationElementValue
+          // 710:9: -> ^( ANNOTATION_INIT_ARRAY_ELEMENT[$LCURLY,
+          // \"ANNOTATION_ELEM_VALUE_ARRAY_INIT\"] ( annotationElementValue
           // )* )
           {
             // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:710:13: ^(
-            // ANNOTATION_INIT_ARRAY_ELEMENT[$LCURLY, \"ANNOTATION_ELEM_VALUE_ARRAY_INIT\"] ( annotationElementValue )* )
+            // ANNOTATION_INIT_ARRAY_ELEMENT[$LCURLY, \"ANNOTATION_ELEM_VALUE_ARRAY_INIT\"] (
+            // annotationElementValue )* )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 =
@@ -10820,7 +11294,8 @@ public class JavaParser extends Parser {
                                   "ANNOTATION_ELEM_VALUE_ARRAY_INIT"),
                           root_1);
 
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:710:90: ( annotationElementValue )*
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:710:90: (
+              // annotationElementValue )*
               while (stream_annotationElementValue.hasNext()) {
                 adaptor.addChild(root_1, stream_annotationElementValue.nextTree());
               }
@@ -10864,7 +11339,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "annotationTypeDeclaration"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:713:1: annotationTypeDeclaration[CommonTree modifiers] : AT
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:713:1:
+  // annotationTypeDeclaration[CommonTree modifiers] : AT
   // INTERFACE IDENT annotationBody -> ^( AT IDENT annotationBody ) ;
   public final JavaParser.annotationTypeDeclaration_return annotationTypeDeclaration(
       CommonTree modifiers) throws RecognitionException {
@@ -10892,9 +11368,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 68)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:714:5: ( AT INTERFACE IDENT annotationBody -> ^( AT IDENT
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:714:5: ( AT INTERFACE IDENT
+      // annotationBody -> ^( AT IDENT
       // annotationBody ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:714:9: AT INTERFACE IDENT annotationBody
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:714:9: AT INTERFACE IDENT
+      // annotationBody
       {
         AT246 = (Token) match(input, AT, FOLLOW_AT_in_annotationTypeDeclaration8361);
         if (state.failed) return retval;
@@ -10932,7 +11410,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 715:9: -> ^( AT IDENT annotationBody )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:715:12: ^( AT IDENT annotationBody )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:715:12: ^( AT IDENT
+            // annotationBody )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 = (CommonTree) adaptor.becomeRoot(stream_AT.nextNode(), root_1);
@@ -10979,8 +11458,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "annotationBody"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:718:1: annotationBody : LCURLY ( annotationScopeDeclarations )*
-  // RCURLY -> ^( ANNOTATION_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] ( annotationScopeDeclarations )* ) ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:718:1: annotationBody : LCURLY (
+  // annotationScopeDeclarations )*
+  // RCURLY -> ^( ANNOTATION_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] (
+  // annotationScopeDeclarations )* ) ;
   public final JavaParser.annotationBody_return annotationBody() throws RecognitionException {
     JavaParser.annotationBody_return retval = new JavaParser.annotationBody_return();
     retval.start = input.LT(1);
@@ -11001,15 +11482,19 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 69)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:719:5: ( LCURLY ( annotationScopeDeclarations )* RCURLY ->
-      // ^( ANNOTATION_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] ( annotationScopeDeclarations )* ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:719:9: LCURLY ( annotationScopeDeclarations )* RCURLY
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:719:5: ( LCURLY (
+      // annotationScopeDeclarations )* RCURLY ->
+      // ^( ANNOTATION_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] (
+      // annotationScopeDeclarations )* ) )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:719:9: LCURLY (
+      // annotationScopeDeclarations )* RCURLY
       {
         LCURLY250 = (Token) match(input, LCURLY, FOLLOW_LCURLY_in_annotationBody8410);
         if (state.failed) return retval;
         if (state.backtracking == 0) stream_LCURLY.add(LCURLY250);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:719:16: ( annotationScopeDeclarations )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:719:16: (
+        // annotationScopeDeclarations )*
         loop83:
         do {
           int alt83 = 2;
@@ -11038,7 +11523,8 @@ public class JavaParser extends Parser {
 
           switch (alt83) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: annotationScopeDeclarations
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+              // annotationScopeDeclarations
               {
                 pushFollow(FOLLOW_annotationScopeDeclarations_in_annotationBody8412);
                 annotationScopeDeclarations251 = annotationScopeDeclarations();
@@ -11073,9 +11559,11 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 720:9: -> ^( ANNOTATION_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] ( annotationScopeDeclarations )* )
+          // 720:9: -> ^( ANNOTATION_TOP_LEVEL_SCOPE[$LCURLY, \"CLASS_TOP_LEVEL_SCOPE\"] (
+          // annotationScopeDeclarations )* )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:720:13: ^( ANNOTATION_TOP_LEVEL_SCOPE[$LCURLY,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:720:13: ^(
+            // ANNOTATION_TOP_LEVEL_SCOPE[$LCURLY,
             // \"CLASS_TOP_LEVEL_SCOPE\"] ( annotationScopeDeclarations )* )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -11087,7 +11575,8 @@ public class JavaParser extends Parser {
                                   ANNOTATION_TOP_LEVEL_SCOPE, LCURLY250, "CLASS_TOP_LEVEL_SCOPE"),
                           root_1);
 
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:720:76: ( annotationScopeDeclarations )*
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:720:76: (
+              // annotationScopeDeclarations )*
               while (stream_annotationScopeDeclarations.hasNext()) {
                 adaptor.addChild(root_1, stream_annotationScopeDeclarations.nextTree());
               }
@@ -11131,9 +11620,12 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "annotationScopeDeclarations"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:723:1: annotationScopeDeclarations : ( modifierList type ( IDENT
-  // LPAREN RPAREN ( annotationDefaultValue )? SEMI -> ^( ANNOTATION_METHOD_DECL modifierList type IDENT ( annotationDefaultValue )? )
-  // | classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) ) | typeDeclaration );
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:723:1: annotationScopeDeclarations :
+  // ( modifierList type ( IDENT
+  // LPAREN RPAREN ( annotationDefaultValue )? SEMI -> ^( ANNOTATION_METHOD_DECL modifierList type
+  // IDENT ( annotationDefaultValue )? )
+  // | classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type
+  // classFieldDeclaratorList ) ) | typeDeclaration );
   public final JavaParser.annotationScopeDeclarations_return annotationScopeDeclarations()
       throws RecognitionException {
     JavaParser.annotationScopeDeclarations_return retval =
@@ -11177,16 +11669,22 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 70)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:724:5: ( modifierList type ( IDENT LPAREN RPAREN (
-      // annotationDefaultValue )? SEMI -> ^( ANNOTATION_METHOD_DECL modifierList type IDENT ( annotationDefaultValue )? ) |
-      // classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) ) | typeDeclaration )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:724:5: ( modifierList type (
+      // IDENT LPAREN RPAREN (
+      // annotationDefaultValue )? SEMI -> ^( ANNOTATION_METHOD_DECL modifierList type IDENT (
+      // annotationDefaultValue )? ) |
+      // classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type
+      // classFieldDeclaratorList ) ) | typeDeclaration )
       int alt86 = 2;
       alt86 = dfa86.predict(input);
       switch (alt86) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:724:9: modifierList type ( IDENT LPAREN RPAREN (
-          // annotationDefaultValue )? SEMI -> ^( ANNOTATION_METHOD_DECL modifierList type IDENT ( annotationDefaultValue )? )
-          // | classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) )
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:724:9: modifierList type (
+          // IDENT LPAREN RPAREN (
+          // annotationDefaultValue )? SEMI -> ^( ANNOTATION_METHOD_DECL modifierList type IDENT (
+          // annotationDefaultValue )? )
+          // | classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type
+          // classFieldDeclaratorList ) )
           {
             pushFollow(FOLLOW_modifierList_in_annotationScopeDeclarations8457);
             modifierList253 = modifierList();
@@ -11200,9 +11698,12 @@ public class JavaParser extends Parser {
             state._fsp--;
             if (state.failed) return retval;
             if (state.backtracking == 0) stream_type.add(type254.getTree());
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:725:9: ( IDENT LPAREN RPAREN (
-            // annotationDefaultValue )? SEMI -> ^( ANNOTATION_METHOD_DECL modifierList type IDENT ( annotationDefaultValue )? )
-            // | classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:725:9: ( IDENT LPAREN
+            // RPAREN (
+            // annotationDefaultValue )? SEMI -> ^( ANNOTATION_METHOD_DECL modifierList type IDENT (
+            // annotationDefaultValue )? )
+            // | classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type
+            // classFieldDeclaratorList ) )
             int alt85 = 2;
             int LA85_0 = input.LA(1);
 
@@ -11236,7 +11737,8 @@ public class JavaParser extends Parser {
             }
             switch (alt85) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:725:13: IDENT LPAREN RPAREN (
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:725:13: IDENT LPAREN
+                // RPAREN (
                 // annotationDefaultValue )? SEMI
                 {
                   IDENT255 =
@@ -11256,7 +11758,8 @@ public class JavaParser extends Parser {
                   if (state.failed) return retval;
                   if (state.backtracking == 0) stream_RPAREN.add(RPAREN257);
 
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:725:33: ( annotationDefaultValue )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:725:33: (
+                  // annotationDefaultValue )?
                   int alt84 = 2;
                   int LA84_0 = input.LA(1);
 
@@ -11265,7 +11768,8 @@ public class JavaParser extends Parser {
                   }
                   switch (alt84) {
                     case 1:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: annotationDefaultValue
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                      // annotationDefaultValue
                       {
                         pushFollow(
                             FOLLOW_annotationDefaultValue_in_annotationScopeDeclarations8479);
@@ -11298,9 +11802,11 @@ public class JavaParser extends Parser {
                             adaptor, "rule retval", retval != null ? retval.tree : null);
 
                     root_0 = (CommonTree) adaptor.nil();
-                    // 726:13: -> ^( ANNOTATION_METHOD_DECL modifierList type IDENT ( annotationDefaultValue )? )
+                    // 726:13: -> ^( ANNOTATION_METHOD_DECL modifierList type IDENT (
+                    // annotationDefaultValue )? )
                     {
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:726:17: ^( ANNOTATION_METHOD_DECL
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:726:17: ^(
+                      // ANNOTATION_METHOD_DECL
                       // modifierList type IDENT ( annotationDefaultValue )? )
                       {
                         CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -11331,7 +11837,8 @@ public class JavaParser extends Parser {
                 }
                 break;
               case 2:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:727:13: classFieldDeclaratorList SEMI
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:727:13:
+                // classFieldDeclaratorList SEMI
                 {
                   pushFollow(FOLLOW_classFieldDeclaratorList_in_annotationScopeDeclarations8524);
                   classFieldDeclaratorList260 = classFieldDeclaratorList();
@@ -11361,7 +11868,8 @@ public class JavaParser extends Parser {
                     root_0 = (CommonTree) adaptor.nil();
                     // 728:13: -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList )
                     {
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:728:17: ^( VAR_DECLARATION
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:728:17: ^(
+                      // VAR_DECLARATION
                       // modifierList type classFieldDeclaratorList )
                       {
                         CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -11430,7 +11938,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "annotationDefaultValue"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:733:1: annotationDefaultValue : DEFAULT annotationElementValue ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:733:1: annotationDefaultValue :
+  // DEFAULT annotationElementValue ;
   public final JavaParser.annotationDefaultValue_return annotationDefaultValue()
       throws RecognitionException {
     JavaParser.annotationDefaultValue_return retval =
@@ -11448,8 +11957,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 71)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:734:5: ( DEFAULT annotationElementValue )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:734:9: DEFAULT annotationElementValue
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:734:5: ( DEFAULT
+      // annotationElementValue )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:734:9: DEFAULT
+      // annotationElementValue
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -11497,7 +12008,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "block"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:739:1: block : LCURLY ( blockStatement )* RCURLY -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:739:1: block : LCURLY (
+  // blockStatement )* RCURLY -> ^(
   // BLOCK_SCOPE[$LCURLY, \"BLOCK_SCOPE\"] ( blockStatement )* ) ;
   public final JavaParser.block_return block() throws RecognitionException {
     JavaParser.block_return retval = new JavaParser.block_return();
@@ -11519,9 +12031,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 72)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:740:5: ( LCURLY ( blockStatement )* RCURLY -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:740:5: ( LCURLY ( blockStatement
+      // )* RCURLY -> ^(
       // BLOCK_SCOPE[$LCURLY, \"BLOCK_SCOPE\"] ( blockStatement )* ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:740:9: LCURLY ( blockStatement )* RCURLY
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:740:9: LCURLY ( blockStatement )*
+      // RCURLY
       {
         LCURLY265 = (Token) match(input, LCURLY, FOLLOW_LCURLY_in_block8618);
         if (state.failed) return retval;
@@ -11595,7 +12109,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 741:9: -> ^( BLOCK_SCOPE[$LCURLY, \"BLOCK_SCOPE\"] ( blockStatement )* )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:741:13: ^( BLOCK_SCOPE[$LCURLY,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:741:13: ^(
+            // BLOCK_SCOPE[$LCURLY,
             // \"BLOCK_SCOPE\"] ( blockStatement )* )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -11605,7 +12120,8 @@ public class JavaParser extends Parser {
                           (CommonTree) adaptor.create(BLOCK_SCOPE, LCURLY265, "BLOCK_SCOPE"),
                           root_1);
 
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:741:51: ( blockStatement )*
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:741:51: ( blockStatement
+              // )*
               while (stream_blockStatement.hasNext()) {
                 adaptor.addChild(root_1, stream_blockStatement.nextTree());
               }
@@ -11649,7 +12165,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "blockStatement"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:744:1: blockStatement : ( localVariableDeclaration SEMI |
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:744:1: blockStatement : (
+  // localVariableDeclaration SEMI |
   // typeDeclaration | statement );
   public final JavaParser.blockStatement_return blockStatement() throws RecognitionException {
     JavaParser.blockStatement_return retval = new JavaParser.blockStatement_return();
@@ -11670,13 +12187,15 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 73)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:745:5: ( localVariableDeclaration SEMI | typeDeclaration |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:745:5: ( localVariableDeclaration
+      // SEMI | typeDeclaration |
       // statement )
       int alt88 = 3;
       alt88 = dfa88.predict(input);
       switch (alt88) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:745:9: localVariableDeclaration SEMI
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:745:9:
+          // localVariableDeclaration SEMI
           {
             root_0 = (CommonTree) adaptor.nil();
 
@@ -11748,8 +12267,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "localVariableDeclaration"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:750:1: localVariableDeclaration : localModifierList type
-  // classFieldDeclaratorList -> ^( VAR_DECLARATION localModifierList type classFieldDeclaratorList ) ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:750:1: localVariableDeclaration :
+  // localModifierList type
+  // classFieldDeclaratorList -> ^( VAR_DECLARATION localModifierList type classFieldDeclaratorList
+  // ) ;
   public final JavaParser.localVariableDeclaration_return localVariableDeclaration()
       throws RecognitionException {
     JavaParser.localVariableDeclaration_return retval =
@@ -11773,9 +12294,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 74)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:751:5: ( localModifierList type classFieldDeclaratorList
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:751:5: ( localModifierList type
+      // classFieldDeclaratorList
       // -> ^( VAR_DECLARATION localModifierList type classFieldDeclaratorList ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:751:9: localModifierList type classFieldDeclaratorList
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:751:9: localModifierList type
+      // classFieldDeclaratorList
       {
         pushFollow(FOLLOW_localModifierList_in_localVariableDeclaration8707);
         localModifierList272 = localModifierList();
@@ -11813,7 +12336,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 752:9: -> ^( VAR_DECLARATION localModifierList type classFieldDeclaratorList )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:752:13: ^( VAR_DECLARATION localModifierList
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:752:13: ^( VAR_DECLARATION
+            // localModifierList
             // type classFieldDeclaratorList )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -11864,17 +12388,28 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "statement"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:756:1: statement : ( block | ASSERT expr1= expression ( COLON
-  // expr2= expression SEMI -> ^( ASSERT $expr1 $expr2) | SEMI -> ^( ASSERT $expr1) ) | IF parenthesizedExpression ifStat= statement (
-  // ELSE elseStat= statement -> ^( IF parenthesizedExpression $ifStat $elseStat) | -> ^( IF parenthesizedExpression $ifStat) ) | FOR
-  // LPAREN ( forInit SEMI forCondition SEMI forUpdater RPAREN statement -> ^( FOR forInit forCondition forUpdater statement ) |
-  // localModifierList type IDENT COLON expression RPAREN statement -> ^( FOR_EACH[$FOR, \"FOR_EACH\"] localModifierList type IDENT
-  // expression statement ) ) | WHILE parenthesizedExpression statement -> ^( WHILE parenthesizedExpression statement ) | DO statement
-  // WHILE parenthesizedExpression SEMI -> ^( DO statement parenthesizedExpression ) | TRY block ( catches ( finallyClause )? |
-  // finallyClause ) -> ^( TRY block ( catches )? ( finallyClause )? ) | SWITCH parenthesizedExpression LCURLY switchBlockLabels RCURLY
-  // -> ^( SWITCH parenthesizedExpression switchBlockLabels ) | SYNCHRONIZED parenthesizedExpression block -> ^( SYNCHRONIZED
-  // parenthesizedExpression block ) | RETURN ( expression )? SEMI -> ^( RETURN ( expression )? ) | THROW expression SEMI -> ^( THROW
-  // expression ) | BREAK ( IDENT )? SEMI -> ^( BREAK ( IDENT )? ) | CONTINUE ( IDENT )? SEMI -> ^( CONTINUE ( IDENT )? ) | IDENT COLON
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:756:1: statement : ( block | ASSERT
+  // expr1= expression ( COLON
+  // expr2= expression SEMI -> ^( ASSERT $expr1 $expr2) | SEMI -> ^( ASSERT $expr1) ) | IF
+  // parenthesizedExpression ifStat= statement (
+  // ELSE elseStat= statement -> ^( IF parenthesizedExpression $ifStat $elseStat) | -> ^( IF
+  // parenthesizedExpression $ifStat) ) | FOR
+  // LPAREN ( forInit SEMI forCondition SEMI forUpdater RPAREN statement -> ^( FOR forInit
+  // forCondition forUpdater statement ) |
+  // localModifierList type IDENT COLON expression RPAREN statement -> ^( FOR_EACH[$FOR,
+  // \"FOR_EACH\"] localModifierList type IDENT
+  // expression statement ) ) | WHILE parenthesizedExpression statement -> ^( WHILE
+  // parenthesizedExpression statement ) | DO statement
+  // WHILE parenthesizedExpression SEMI -> ^( DO statement parenthesizedExpression ) | TRY block (
+  // catches ( finallyClause )? |
+  // finallyClause ) -> ^( TRY block ( catches )? ( finallyClause )? ) | SWITCH
+  // parenthesizedExpression LCURLY switchBlockLabels RCURLY
+  // -> ^( SWITCH parenthesizedExpression switchBlockLabels ) | SYNCHRONIZED parenthesizedExpression
+  // block -> ^( SYNCHRONIZED
+  // parenthesizedExpression block ) | RETURN ( expression )? SEMI -> ^( RETURN ( expression )? ) |
+  // THROW expression SEMI -> ^( THROW
+  // expression ) | BREAK ( IDENT )? SEMI -> ^( BREAK ( IDENT )? ) | CONTINUE ( IDENT )? SEMI -> ^(
+  // CONTINUE ( IDENT )? ) | IDENT COLON
   // statement -> ^( LABELED_STATEMENT IDENT statement ) | expression SEMI | SEMI );
   public final JavaParser.statement_return statement() throws RecognitionException {
     JavaParser.statement_return retval = new JavaParser.statement_return();
@@ -12061,18 +12596,30 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 75)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:757:5: ( block | ASSERT expr1= expression ( COLON expr2=
-      // expression SEMI -> ^( ASSERT $expr1 $expr2) | SEMI -> ^( ASSERT $expr1) ) | IF parenthesizedExpression ifStat= statement (
-      // ELSE elseStat= statement -> ^( IF parenthesizedExpression $ifStat $elseStat) | -> ^( IF parenthesizedExpression $ifStat) )
-      // | FOR LPAREN ( forInit SEMI forCondition SEMI forUpdater RPAREN statement -> ^( FOR forInit forCondition forUpdater
-      // statement ) | localModifierList type IDENT COLON expression RPAREN statement -> ^( FOR_EACH[$FOR,
-      // \"FOR_EACH\"] localModifierList type IDENT expression statement ) ) | WHILE parenthesizedExpression statement -> ^( WHILE
-      // parenthesizedExpression statement ) | DO statement WHILE parenthesizedExpression SEMI -> ^( DO statement
-      // parenthesizedExpression ) | TRY block ( catches ( finallyClause )? | finallyClause ) -> ^( TRY block ( catches )? (
-      // finallyClause )? ) | SWITCH parenthesizedExpression LCURLY switchBlockLabels RCURLY -> ^( SWITCH parenthesizedExpression
-      // switchBlockLabels ) | SYNCHRONIZED parenthesizedExpression block -> ^( SYNCHRONIZED parenthesizedExpression block ) |
-      // RETURN ( expression )? SEMI -> ^( RETURN ( expression )? ) | THROW expression SEMI -> ^( THROW expression ) | BREAK (
-      // IDENT )? SEMI -> ^( BREAK ( IDENT )? ) | CONTINUE ( IDENT )? SEMI -> ^( CONTINUE ( IDENT )? ) | IDENT COLON statement -> ^
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:757:5: ( block | ASSERT expr1=
+      // expression ( COLON expr2=
+      // expression SEMI -> ^( ASSERT $expr1 $expr2) | SEMI -> ^( ASSERT $expr1) ) | IF
+      // parenthesizedExpression ifStat= statement (
+      // ELSE elseStat= statement -> ^( IF parenthesizedExpression $ifStat $elseStat) | -> ^( IF
+      // parenthesizedExpression $ifStat) )
+      // | FOR LPAREN ( forInit SEMI forCondition SEMI forUpdater RPAREN statement -> ^( FOR forInit
+      // forCondition forUpdater
+      // statement ) | localModifierList type IDENT COLON expression RPAREN statement -> ^(
+      // FOR_EACH[$FOR,
+      // \"FOR_EACH\"] localModifierList type IDENT expression statement ) ) | WHILE
+      // parenthesizedExpression statement -> ^( WHILE
+      // parenthesizedExpression statement ) | DO statement WHILE parenthesizedExpression SEMI -> ^(
+      // DO statement
+      // parenthesizedExpression ) | TRY block ( catches ( finallyClause )? | finallyClause ) -> ^(
+      // TRY block ( catches )? (
+      // finallyClause )? ) | SWITCH parenthesizedExpression LCURLY switchBlockLabels RCURLY -> ^(
+      // SWITCH parenthesizedExpression
+      // switchBlockLabels ) | SYNCHRONIZED parenthesizedExpression block -> ^( SYNCHRONIZED
+      // parenthesizedExpression block ) |
+      // RETURN ( expression )? SEMI -> ^( RETURN ( expression )? ) | THROW expression SEMI -> ^(
+      // THROW expression ) | BREAK (
+      // IDENT )? SEMI -> ^( BREAK ( IDENT )? ) | CONTINUE ( IDENT )? SEMI -> ^( CONTINUE ( IDENT )?
+      // ) | IDENT COLON statement -> ^
       // ( LABELED_STATEMENT IDENT statement ) | expression SEMI | SEMI )
       int alt97 = 16;
       alt97 = dfa97.predict(input);
@@ -12091,7 +12638,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 2:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:758:9: ASSERT expr1= expression ( COLON expr2=
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:758:9: ASSERT expr1=
+          // expression ( COLON expr2=
           // expression SEMI -> ^( ASSERT $expr1 $expr2) | SEMI -> ^( ASSERT $expr1) )
           {
             ASSERT276 = (Token) match(input, ASSERT, FOLLOW_ASSERT_in_statement8774);
@@ -12104,7 +12652,8 @@ public class JavaParser extends Parser {
             state._fsp--;
             if (state.failed) return retval;
             if (state.backtracking == 0) stream_expression.add(expr1.getTree());
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:759:9: ( COLON expr2= expression SEMI -> ^( ASSERT
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:759:9: ( COLON expr2=
+            // expression SEMI -> ^( ASSERT
             // $expr1 $expr2) | SEMI -> ^( ASSERT $expr1) )
             int alt89 = 2;
             int LA89_0 = input.LA(1);
@@ -12124,7 +12673,8 @@ public class JavaParser extends Parser {
             }
             switch (alt89) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:759:13: COLON expr2= expression SEMI
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:759:13: COLON expr2=
+                // expression SEMI
                 {
                   COLON277 = (Token) match(input, COLON, FOLLOW_COLON_in_statement8793);
                   if (state.failed) return retval;
@@ -12162,7 +12712,8 @@ public class JavaParser extends Parser {
                     root_0 = (CommonTree) adaptor.nil();
                     // 759:77: -> ^( ASSERT $expr1 $expr2)
                     {
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:759:81: ^( ASSERT $expr1 $expr2)
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:759:81: ^( ASSERT
+                      // $expr1 $expr2)
                       {
                         CommonTree root_1 = (CommonTree) adaptor.nil();
                         root_1 = (CommonTree) adaptor.becomeRoot(stream_ASSERT.nextNode(), root_1);
@@ -12204,7 +12755,8 @@ public class JavaParser extends Parser {
                     root_0 = (CommonTree) adaptor.nil();
                     // 760:77: -> ^( ASSERT $expr1)
                     {
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:760:81: ^( ASSERT $expr1)
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:760:81: ^( ASSERT
+                      // $expr1)
                       {
                         CommonTree root_1 = (CommonTree) adaptor.nil();
                         root_1 = (CommonTree) adaptor.becomeRoot(stream_ASSERT.nextNode(), root_1);
@@ -12223,8 +12775,10 @@ public class JavaParser extends Parser {
           }
           break;
         case 3:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:762:9: IF parenthesizedExpression ifStat=
-          // statement ( ELSE elseStat= statement -> ^( IF parenthesizedExpression $ifStat $elseStat) | -> ^( IF
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:762:9: IF
+          // parenthesizedExpression ifStat=
+          // statement ( ELSE elseStat= statement -> ^( IF parenthesizedExpression $ifStat
+          // $elseStat) | -> ^( IF
           // parenthesizedExpression $ifStat) )
           {
             IF280 = (Token) match(input, IF, FOLLOW_IF_in_statement8951);
@@ -12244,8 +12798,10 @@ public class JavaParser extends Parser {
             state._fsp--;
             if (state.failed) return retval;
             if (state.backtracking == 0) stream_statement.add(ifStat.getTree());
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:763:9: ( ELSE elseStat= statement -> ^( IF
-            // parenthesizedExpression $ifStat $elseStat) | -> ^( IF parenthesizedExpression $ifStat) )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:763:9: ( ELSE elseStat=
+            // statement -> ^( IF
+            // parenthesizedExpression $ifStat $elseStat) | -> ^( IF parenthesizedExpression
+            // $ifStat) )
             int alt90 = 2;
             int LA90_0 = input.LA(1);
 
@@ -12299,7 +12855,8 @@ public class JavaParser extends Parser {
             }
             switch (alt90) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:763:13: ELSE elseStat= statement
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:763:13: ELSE elseStat=
+                // statement
                 {
                   ELSE282 = (Token) match(input, ELSE, FOLLOW_ELSE_in_statement8972);
                   if (state.failed) return retval;
@@ -12396,9 +12953,12 @@ public class JavaParser extends Parser {
           }
           break;
         case 4:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:766:9: FOR LPAREN ( forInit SEMI forCondition SEMI
-          // forUpdater RPAREN statement -> ^( FOR forInit forCondition forUpdater statement ) | localModifierList type IDENT
-          // COLON expression RPAREN statement -> ^( FOR_EACH[$FOR, \"FOR_EACH\"] localModifierList type IDENT expression
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:766:9: FOR LPAREN ( forInit
+          // SEMI forCondition SEMI
+          // forUpdater RPAREN statement -> ^( FOR forInit forCondition forUpdater statement ) |
+          // localModifierList type IDENT
+          // COLON expression RPAREN statement -> ^( FOR_EACH[$FOR, \"FOR_EACH\"] localModifierList
+          // type IDENT expression
           // statement ) )
           {
             FOR283 = (Token) match(input, FOR, FOLLOW_FOR_in_statement9142);
@@ -12409,14 +12969,18 @@ public class JavaParser extends Parser {
             if (state.failed) return retval;
             if (state.backtracking == 0) stream_LPAREN.add(LPAREN284);
 
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:767:9: ( forInit SEMI forCondition SEMI forUpdater
-            // RPAREN statement -> ^( FOR forInit forCondition forUpdater statement ) | localModifierList type IDENT COLON
-            // expression RPAREN statement -> ^( FOR_EACH[$FOR, \"FOR_EACH\"] localModifierList type IDENT expression statement ) )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:767:9: ( forInit SEMI
+            // forCondition SEMI forUpdater
+            // RPAREN statement -> ^( FOR forInit forCondition forUpdater statement ) |
+            // localModifierList type IDENT COLON
+            // expression RPAREN statement -> ^( FOR_EACH[$FOR, \"FOR_EACH\"] localModifierList type
+            // IDENT expression statement ) )
             int alt91 = 2;
             alt91 = dfa91.predict(input);
             switch (alt91) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:767:13: forInit SEMI forCondition SEMI
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:767:13: forInit SEMI
+                // forCondition SEMI
                 // forUpdater RPAREN statement
                 {
                   pushFollow(FOLLOW_forInit_in_statement9159);
@@ -12472,7 +13036,8 @@ public class JavaParser extends Parser {
                     root_0 = (CommonTree) adaptor.nil();
                     // 767:77: -> ^( FOR forInit forCondition forUpdater statement )
                     {
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:767:81: ^( FOR forInit
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:767:81: ^( FOR
+                      // forInit
                       // forCondition forUpdater statement )
                       {
                         CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -12492,7 +13057,8 @@ public class JavaParser extends Parser {
                 }
                 break;
               case 2:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:768:13: localModifierList type IDENT COLON
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:768:13:
+                // localModifierList type IDENT COLON
                 // expression RPAREN statement
                 {
                   pushFollow(FOLLOW_localModifierList_in_statement9206);
@@ -12547,9 +13113,11 @@ public class JavaParser extends Parser {
                             adaptor, "rule retval", retval != null ? retval.tree : null);
 
                     root_0 = (CommonTree) adaptor.nil();
-                    // 769:77: -> ^( FOR_EACH[$FOR, \"FOR_EACH\"] localModifierList type IDENT expression statement )
+                    // 769:77: -> ^( FOR_EACH[$FOR, \"FOR_EACH\"] localModifierList type IDENT
+                    // expression statement )
                     {
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:769:81: ^( FOR_EACH[$FOR,
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:769:81: ^(
+                      // FOR_EACH[$FOR,
                       // \"FOR_EACH\"] localModifierList type IDENT expression statement )
                       {
                         CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -12577,7 +13145,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 5:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:771:9: WHILE parenthesizedExpression statement
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:771:9: WHILE
+          // parenthesizedExpression statement
           {
             WHILE299 = (Token) match(input, WHILE, FOLLOW_WHILE_in_statement9333);
             if (state.failed) return retval;
@@ -12613,7 +13182,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 771:77: -> ^( WHILE parenthesizedExpression statement )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:771:81: ^( WHILE parenthesizedExpression
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:771:81: ^( WHILE
+                // parenthesizedExpression
                 // statement )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -12631,7 +13201,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 6:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:772:9: DO statement WHILE parenthesizedExpression
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:772:9: DO statement WHILE
+          // parenthesizedExpression
           // SEMI
           {
             DO302 = (Token) match(input, DO, FOLLOW_DO_in_statement9386);
@@ -12693,7 +13264,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 7:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:773:9: TRY block ( catches ( finallyClause )? |
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:773:9: TRY block ( catches (
+          // finallyClause )? |
           // finallyClause )
           {
             TRY307 = (Token) match(input, TRY, FOLLOW_TRY_in_statement9435);
@@ -12706,7 +13278,8 @@ public class JavaParser extends Parser {
             state._fsp--;
             if (state.failed) return retval;
             if (state.backtracking == 0) stream_block.add(block308.getTree());
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:773:19: ( catches ( finallyClause )? |
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:773:19: ( catches (
+            // finallyClause )? |
             // finallyClause )
             int alt93 = 2;
             int LA93_0 = input.LA(1);
@@ -12726,7 +13299,8 @@ public class JavaParser extends Parser {
             }
             switch (alt93) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:773:20: catches ( finallyClause )?
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:773:20: catches (
+                // finallyClause )?
                 {
                   pushFollow(FOLLOW_catches_in_statement9440);
                   catches309 = catches();
@@ -12734,7 +13308,8 @@ public class JavaParser extends Parser {
                   state._fsp--;
                   if (state.failed) return retval;
                   if (state.backtracking == 0) stream_catches.add(catches309.getTree());
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:773:28: ( finallyClause )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:773:28: (
+                  // finallyClause )?
                   int alt92 = 2;
                   int LA92_0 = input.LA(1);
 
@@ -12743,7 +13318,8 @@ public class JavaParser extends Parser {
                   }
                   switch (alt92) {
                     case 1:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: finallyClause
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                      // finallyClause
                       {
                         pushFollow(FOLLOW_finallyClause_in_statement9442);
                         finallyClause310 = finallyClause();
@@ -12786,7 +13362,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 773:77: -> ^( TRY block ( catches )? ( finallyClause )? )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:773:81: ^( TRY block ( catches )? (
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:773:81: ^( TRY block (
+                // catches )? (
                 // finallyClause )? )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -12798,7 +13375,8 @@ public class JavaParser extends Parser {
                     adaptor.addChild(root_1, stream_catches.nextTree());
                   }
                   stream_catches.reset();
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:773:102: ( finallyClause )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:773:102: (
+                  // finallyClause )?
                   if (stream_finallyClause.hasNext()) {
                     adaptor.addChild(root_1, stream_finallyClause.nextTree());
                   }
@@ -12813,7 +13391,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 8:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:774:9: SWITCH parenthesizedExpression LCURLY
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:774:9: SWITCH
+          // parenthesizedExpression LCURLY
           // switchBlockLabels RCURLY
           {
             SWITCH312 = (Token) match(input, SWITCH, FOLLOW_SWITCH_in_statement9490);
@@ -12858,7 +13437,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 774:77: -> ^( SWITCH parenthesizedExpression switchBlockLabels )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:774:81: ^( SWITCH parenthesizedExpression
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:774:81: ^( SWITCH
+                // parenthesizedExpression
                 // switchBlockLabels )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -12876,7 +13456,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 9:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:775:9: SYNCHRONIZED parenthesizedExpression block
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:775:9: SYNCHRONIZED
+          // parenthesizedExpression block
           {
             SYNCHRONIZED317 =
                 (Token) match(input, SYNCHRONIZED, FOLLOW_SYNCHRONIZED_in_statement9524);
@@ -12931,7 +13512,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 10:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:776:9: RETURN ( expression )? SEMI
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:776:9: RETURN ( expression )?
+          // SEMI
           {
             RETURN320 = (Token) match(input, RETURN, FOLLOW_RETURN_in_statement9574);
             if (state.failed) return retval;
@@ -12998,12 +13580,14 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 776:77: -> ^( RETURN ( expression )? )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:776:81: ^( RETURN ( expression )? )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:776:81: ^( RETURN (
+                // expression )? )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
                   root_1 = (CommonTree) adaptor.becomeRoot(stream_RETURN.nextNode(), root_1);
 
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:776:90: ( expression )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:776:90: ( expression
+                  // )?
                   if (stream_expression.hasNext()) {
                     adaptor.addChild(root_1, stream_expression.nextTree());
                   }
@@ -13050,7 +13634,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 777:77: -> ^( THROW expression )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:777:81: ^( THROW expression )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:777:81: ^( THROW
+                // expression )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
                   root_1 = (CommonTree) adaptor.becomeRoot(stream_THROW.nextNode(), root_1);
@@ -13110,7 +13695,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 778:77: -> ^( BREAK ( IDENT )? )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:778:81: ^( BREAK ( IDENT )? )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:778:81: ^( BREAK (
+                // IDENT )? )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
                   root_1 = (CommonTree) adaptor.becomeRoot(stream_BREAK.nextNode(), root_1);
@@ -13130,7 +13716,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 13:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:779:9: CONTINUE ( IDENT )? SEMI
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:779:9: CONTINUE ( IDENT )?
+          // SEMI
           {
             CONTINUE329 = (Token) match(input, CONTINUE, FOLLOW_CONTINUE_in_statement9787);
             if (state.failed) return retval;
@@ -13174,7 +13761,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 779:77: -> ^( CONTINUE ( IDENT )? )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:779:81: ^( CONTINUE ( IDENT )? )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:779:81: ^( CONTINUE (
+                // IDENT )? )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
                   root_1 = (CommonTree) adaptor.becomeRoot(stream_CONTINUE.nextNode(), root_1);
@@ -13227,7 +13815,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 780:77: -> ^( LABELED_STATEMENT IDENT statement )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:780:81: ^( LABELED_STATEMENT IDENT
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:780:81: ^(
+                // LABELED_STATEMENT IDENT
                 // statement )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -13307,7 +13896,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "catches"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:785:1: catches : ( catchClause )+ -> ^( CATCH_CLAUSE_LIST (
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:785:1: catches : ( catchClause )+ ->
+  // ^( CATCH_CLAUSE_LIST (
   // catchClause )+ ) ;
   public final JavaParser.catches_return catches() throws RecognitionException {
     JavaParser.catches_return retval = new JavaParser.catches_return();
@@ -13323,7 +13913,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 76)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:786:5: ( ( catchClause )+ -> ^( CATCH_CLAUSE_LIST (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:786:5: ( ( catchClause )+ -> ^(
+      // CATCH_CLAUSE_LIST (
       // catchClause )+ ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:786:9: ( catchClause )+
       {
@@ -13379,7 +13970,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 787:9: -> ^( CATCH_CLAUSE_LIST ( catchClause )+ )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:787:13: ^( CATCH_CLAUSE_LIST ( catchClause )+ )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:787:13: ^(
+            // CATCH_CLAUSE_LIST ( catchClause )+ )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 =
@@ -13434,7 +14026,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "catchClause"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:790:1: catchClause : CATCH LPAREN formalParameterStandardDecl
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:790:1: catchClause : CATCH LPAREN
+  // formalParameterStandardDecl
   // RPAREN block ;
   public final JavaParser.catchClause_return catchClause() throws RecognitionException {
     JavaParser.catchClause_return retval = new JavaParser.catchClause_return();
@@ -13457,9 +14050,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 77)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:791:5: ( CATCH LPAREN formalParameterStandardDecl RPAREN
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:791:5: ( CATCH LPAREN
+      // formalParameterStandardDecl RPAREN
       // block )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:791:9: CATCH LPAREN formalParameterStandardDecl RPAREN block
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:791:9: CATCH LPAREN
+      // formalParameterStandardDecl RPAREN block
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -13518,7 +14113,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "finallyClause"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:794:1: finallyClause : FINALLY block -> block ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:794:1: finallyClause : FINALLY block
+  // -> block ;
   public final JavaParser.finallyClause_return finallyClause() throws RecognitionException {
     JavaParser.finallyClause_return retval = new JavaParser.finallyClause_return();
     retval.start = input.LT(1);
@@ -13602,8 +14198,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "switchBlockLabels"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:799:1: switchBlockLabels : switchCaseLabels ( switchDefaultLabel )
-  // ? switchCaseLabels -> ^( SWITCH_BLOCK_LABEL_LIST switchCaseLabels ( switchDefaultLabel )? switchCaseLabels ) ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:799:1: switchBlockLabels :
+  // switchCaseLabels ( switchDefaultLabel )
+  // ? switchCaseLabels -> ^( SWITCH_BLOCK_LABEL_LIST switchCaseLabels ( switchDefaultLabel )?
+  // switchCaseLabels ) ;
   public final JavaParser.switchBlockLabels_return switchBlockLabels() throws RecognitionException {
     JavaParser.switchBlockLabels_return retval = new JavaParser.switchBlockLabels_return();
     retval.start = input.LT(1);
@@ -13624,9 +14222,12 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 79)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:800:5: ( switchCaseLabels ( switchDefaultLabel )?
-      // switchCaseLabels -> ^( SWITCH_BLOCK_LABEL_LIST switchCaseLabels ( switchDefaultLabel )? switchCaseLabels ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:800:9: switchCaseLabels ( switchDefaultLabel )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:800:5: ( switchCaseLabels (
+      // switchDefaultLabel )?
+      // switchCaseLabels -> ^( SWITCH_BLOCK_LABEL_LIST switchCaseLabels ( switchDefaultLabel )?
+      // switchCaseLabels ) )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:800:9: switchCaseLabels (
+      // switchDefaultLabel )?
       // switchCaseLabels
       {
         pushFollow(FOLLOW_switchCaseLabels_in_switchBlockLabels10088);
@@ -13678,9 +14279,11 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 801:9: -> ^( SWITCH_BLOCK_LABEL_LIST switchCaseLabels ( switchDefaultLabel )? switchCaseLabels )
+          // 801:9: -> ^( SWITCH_BLOCK_LABEL_LIST switchCaseLabels ( switchDefaultLabel )?
+          // switchCaseLabels )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:801:13: ^( SWITCH_BLOCK_LABEL_LIST
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:801:13: ^(
+            // SWITCH_BLOCK_LABEL_LIST
             // switchCaseLabels ( switchDefaultLabel )? switchCaseLabels )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -13692,7 +14295,8 @@ public class JavaParser extends Parser {
                           root_1);
 
               adaptor.addChild(root_1, stream_switchCaseLabels.nextTree());
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:801:56: ( switchDefaultLabel )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:801:56: (
+              // switchDefaultLabel )?
               if (stream_switchDefaultLabel.hasNext()) {
                 adaptor.addChild(root_1, stream_switchDefaultLabel.nextTree());
               }
@@ -13737,7 +14341,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "switchCaseLabels"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:804:1: switchCaseLabels : ( switchCaseLabel )* ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:804:1: switchCaseLabels : (
+  // switchCaseLabel )* ;
   public final JavaParser.switchCaseLabels_return switchCaseLabels() throws RecognitionException {
     JavaParser.switchCaseLabels_return retval = new JavaParser.switchCaseLabels_return();
     retval.start = input.LT(1);
@@ -13818,7 +14423,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "switchCaseLabel"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:808:1: switchCaseLabel : CASE expression COLON ( blockStatement )* ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:808:1: switchCaseLabel : CASE
+  // expression COLON ( blockStatement )* ;
   public final JavaParser.switchCaseLabel_return switchCaseLabel() throws RecognitionException {
     JavaParser.switchCaseLabel_return retval = new JavaParser.switchCaseLabel_return();
     retval.start = input.LT(1);
@@ -13838,8 +14444,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 81)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:809:5: ( CASE expression COLON ( blockStatement )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:809:9: CASE expression COLON ( blockStatement )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:809:5: ( CASE expression COLON (
+      // blockStatement )* )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:809:9: CASE expression COLON (
+      // blockStatement )*
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -13936,7 +14544,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "switchDefaultLabel"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:812:1: switchDefaultLabel : DEFAULT COLON ( blockStatement )* ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:812:1: switchDefaultLabel : DEFAULT
+  // COLON ( blockStatement )* ;
   public final JavaParser.switchDefaultLabel_return switchDefaultLabel()
       throws RecognitionException {
     JavaParser.switchDefaultLabel_return retval = new JavaParser.switchDefaultLabel_return();
@@ -13955,8 +14564,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 82)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:813:5: ( DEFAULT COLON ( blockStatement )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:813:9: DEFAULT COLON ( blockStatement )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:813:5: ( DEFAULT COLON (
+      // blockStatement )* )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:813:9: DEFAULT COLON (
+      // blockStatement )*
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -14047,8 +14658,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "forInit"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:816:1: forInit : ( localVariableDeclaration -> ^( FOR_INIT
-  // localVariableDeclaration ) | expressionList -> ^( FOR_INIT expressionList ) | -> ^( FOR_INIT ) );
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:816:1: forInit : (
+  // localVariableDeclaration -> ^( FOR_INIT
+  // localVariableDeclaration ) | expressionList -> ^( FOR_INIT expressionList ) | -> ^( FOR_INIT )
+  // );
   public final JavaParser.forInit_return forInit() throws RecognitionException {
     JavaParser.forInit_return retval = new JavaParser.forInit_return();
     retval.start = input.LT(1);
@@ -14067,13 +14680,16 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 83)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:817:5: ( localVariableDeclaration -> ^( FOR_INIT
-      // localVariableDeclaration ) | expressionList -> ^( FOR_INIT expressionList ) | -> ^( FOR_INIT ) )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:817:5: ( localVariableDeclaration
+      // -> ^( FOR_INIT
+      // localVariableDeclaration ) | expressionList -> ^( FOR_INIT expressionList ) | -> ^(
+      // FOR_INIT ) )
       int alt103 = 3;
       alt103 = dfa103.predict(input);
       switch (alt103) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:817:9: localVariableDeclaration
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:817:9:
+          // localVariableDeclaration
           {
             pushFollow(FOLLOW_localVariableDeclaration_in_forInit10228);
             localVariableDeclaration357 = localVariableDeclaration();
@@ -14144,7 +14760,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 818:37: -> ^( FOR_INIT expressionList )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:818:41: ^( FOR_INIT expressionList )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:818:41: ^( FOR_INIT
+                // expressionList )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
                   root_1 =
@@ -14229,7 +14846,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "forCondition"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:822:1: forCondition : ( expression )? -> ^( FOR_CONDITION (
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:822:1: forCondition : ( expression )?
+  // -> ^( FOR_CONDITION (
   // expression )? ) ;
   public final JavaParser.forCondition_return forCondition() throws RecognitionException {
     JavaParser.forCondition_return retval = new JavaParser.forCondition_return();
@@ -14245,7 +14863,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 84)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:823:5: ( ( expression )? -> ^( FOR_CONDITION ( expression
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:823:5: ( ( expression )? -> ^(
+      // FOR_CONDITION ( expression
       // )? ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:823:9: ( expression )?
       {
@@ -14306,7 +14925,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 824:9: -> ^( FOR_CONDITION ( expression )? )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:824:13: ^( FOR_CONDITION ( expression )? )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:824:13: ^( FOR_CONDITION (
+            // expression )? )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 =
@@ -14358,7 +14978,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "forUpdater"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:827:1: forUpdater : ( expressionList )? -> ^( FOR_UPDATE (
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:827:1: forUpdater : ( expressionList
+  // )? -> ^( FOR_UPDATE (
   // expressionList )? ) ;
   public final JavaParser.forUpdater_return forUpdater() throws RecognitionException {
     JavaParser.forUpdater_return retval = new JavaParser.forUpdater_return();
@@ -14374,7 +14995,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 85)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:828:5: ( ( expressionList )? -> ^( FOR_UPDATE (
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:828:5: ( ( expressionList )? ->
+      // ^( FOR_UPDATE (
       // expressionList )? ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:828:9: ( expressionList )?
       {
@@ -14435,7 +15057,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 829:9: -> ^( FOR_UPDATE ( expressionList )? )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:829:13: ^( FOR_UPDATE ( expressionList )? )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:829:13: ^( FOR_UPDATE (
+            // expressionList )? )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 =
@@ -14443,7 +15066,8 @@ public class JavaParser extends Parser {
                       adaptor.becomeRoot(
                           (CommonTree) adaptor.create(FOR_UPDATE, "FOR_UPDATE"), root_1);
 
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:829:26: ( expressionList )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:829:26: ( expressionList
+              // )?
               if (stream_expressionList.hasNext()) {
                 adaptor.addChild(root_1, stream_expressionList.nextTree());
               }
@@ -14487,7 +15111,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "parenthesizedExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:834:1: parenthesizedExpression : LPAREN expression RPAREN -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:834:1: parenthesizedExpression :
+  // LPAREN expression RPAREN -> ^(
   // PARENTESIZED_EXPR[$LPAREN, \"PARENTESIZED_EXPR\"] expression ) ;
   public final JavaParser.parenthesizedExpression_return parenthesizedExpression()
       throws RecognitionException {
@@ -14511,7 +15136,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 86)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:835:5: ( LPAREN expression RPAREN -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:835:5: ( LPAREN expression RPAREN
+      // -> ^(
       // PARENTESIZED_EXPR[$LPAREN, \"PARENTESIZED_EXPR\"] expression ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:835:9: LPAREN expression RPAREN
       {
@@ -14545,7 +15171,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 836:9: -> ^( PARENTESIZED_EXPR[$LPAREN, \"PARENTESIZED_EXPR\"] expression )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:836:13: ^( PARENTESIZED_EXPR[$LPAREN,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:836:13: ^(
+            // PARENTESIZED_EXPR[$LPAREN,
             // \"PARENTESIZED_EXPR\"] expression )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -14596,7 +15223,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "expressionList"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:839:1: expressionList : expression ( COMMA expression )* ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:839:1: expressionList : expression (
+  // COMMA expression )* ;
   public final JavaParser.expressionList_return expressionList() throws RecognitionException {
     JavaParser.expressionList_return retval = new JavaParser.expressionList_return();
     retval.start = input.LT(1);
@@ -14614,8 +15242,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 87)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:840:5: ( expression ( COMMA expression )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:840:9: expression ( COMMA expression )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:840:5: ( expression ( COMMA
+      // expression )* )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:840:9: expression ( COMMA
+      // expression )*
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -14686,7 +15316,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "expression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:843:1: expression : assignmentExpression -> ^( EXPR
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:843:1: expression :
+  // assignmentExpression -> ^( EXPR
   // assignmentExpression ) ;
   public final JavaParser.expression_return expression() throws RecognitionException {
     JavaParser.expression_return retval = new JavaParser.expression_return();
@@ -14702,7 +15333,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 88)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:844:5: ( assignmentExpression -> ^( EXPR
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:844:5: ( assignmentExpression ->
+      // ^( EXPR
       // assignmentExpression ) )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:844:9: assignmentExpression
       {
@@ -14730,7 +15362,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 845:9: -> ^( EXPR assignmentExpression )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:845:13: ^( EXPR assignmentExpression )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:845:13: ^( EXPR
+            // assignmentExpression )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 =
@@ -14777,8 +15410,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "assignmentExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:848:1: assignmentExpression : conditionalExpression ( ( ASSIGN |
-  // PLUS_ASSIGN | MINUS_ASSIGN | STAR_ASSIGN | DIV_ASSIGN | AND_ASSIGN | OR_ASSIGN | XOR_ASSIGN | MOD_ASSIGN | SHIFT_LEFT_ASSIGN |
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:848:1: assignmentExpression :
+  // conditionalExpression ( ( ASSIGN |
+  // PLUS_ASSIGN | MINUS_ASSIGN | STAR_ASSIGN | DIV_ASSIGN | AND_ASSIGN | OR_ASSIGN | XOR_ASSIGN |
+  // MOD_ASSIGN | SHIFT_LEFT_ASSIGN |
   // SHIFT_RIGHT_ASSIGN | BIT_SHIFT_RIGHT_ASSIGN ) assignmentExpression )? ;
   public final JavaParser.assignmentExpression_return assignmentExpression()
       throws RecognitionException {
@@ -14820,11 +15455,15 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 89)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:849:5: ( conditionalExpression ( ( ASSIGN | PLUS_ASSIGN |
-      // MINUS_ASSIGN | STAR_ASSIGN | DIV_ASSIGN | AND_ASSIGN | OR_ASSIGN | XOR_ASSIGN | MOD_ASSIGN | SHIFT_LEFT_ASSIGN |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:849:5: ( conditionalExpression (
+      // ( ASSIGN | PLUS_ASSIGN |
+      // MINUS_ASSIGN | STAR_ASSIGN | DIV_ASSIGN | AND_ASSIGN | OR_ASSIGN | XOR_ASSIGN | MOD_ASSIGN
+      // | SHIFT_LEFT_ASSIGN |
       // SHIFT_RIGHT_ASSIGN | BIT_SHIFT_RIGHT_ASSIGN ) assignmentExpression )? )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:849:9: conditionalExpression ( ( ASSIGN | PLUS_ASSIGN |
-      // MINUS_ASSIGN | STAR_ASSIGN | DIV_ASSIGN | AND_ASSIGN | OR_ASSIGN | XOR_ASSIGN | MOD_ASSIGN | SHIFT_LEFT_ASSIGN |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:849:9: conditionalExpression ( (
+      // ASSIGN | PLUS_ASSIGN |
+      // MINUS_ASSIGN | STAR_ASSIGN | DIV_ASSIGN | AND_ASSIGN | OR_ASSIGN | XOR_ASSIGN | MOD_ASSIGN
+      // | SHIFT_LEFT_ASSIGN |
       // SHIFT_RIGHT_ASSIGN | BIT_SHIFT_RIGHT_ASSIGN ) assignmentExpression )?
       {
         root_0 = (CommonTree) adaptor.nil();
@@ -14835,8 +15474,10 @@ public class JavaParser extends Parser {
         state._fsp--;
         if (state.failed) return retval;
         if (state.backtracking == 0) adaptor.addChild(root_0, conditionalExpression368.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:850:9: ( ( ASSIGN | PLUS_ASSIGN | MINUS_ASSIGN |
-        // STAR_ASSIGN | DIV_ASSIGN | AND_ASSIGN | OR_ASSIGN | XOR_ASSIGN | MOD_ASSIGN | SHIFT_LEFT_ASSIGN | SHIFT_RIGHT_ASSIGN |
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:850:9: ( ( ASSIGN | PLUS_ASSIGN
+        // | MINUS_ASSIGN |
+        // STAR_ASSIGN | DIV_ASSIGN | AND_ASSIGN | OR_ASSIGN | XOR_ASSIGN | MOD_ASSIGN |
+        // SHIFT_LEFT_ASSIGN | SHIFT_RIGHT_ASSIGN |
         // BIT_SHIFT_RIGHT_ASSIGN ) assignmentExpression )?
         int alt108 = 2;
         int LA108_0 = input.LA(1);
@@ -14856,12 +15497,16 @@ public class JavaParser extends Parser {
         }
         switch (alt108) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:850:13: ( ASSIGN | PLUS_ASSIGN | MINUS_ASSIGN
-            // | STAR_ASSIGN | DIV_ASSIGN | AND_ASSIGN | OR_ASSIGN | XOR_ASSIGN | MOD_ASSIGN | SHIFT_LEFT_ASSIGN |
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:850:13: ( ASSIGN |
+            // PLUS_ASSIGN | MINUS_ASSIGN
+            // | STAR_ASSIGN | DIV_ASSIGN | AND_ASSIGN | OR_ASSIGN | XOR_ASSIGN | MOD_ASSIGN |
+            // SHIFT_LEFT_ASSIGN |
             // SHIFT_RIGHT_ASSIGN | BIT_SHIFT_RIGHT_ASSIGN ) assignmentExpression
             {
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:850:13: ( ASSIGN | PLUS_ASSIGN | MINUS_ASSIGN
-              // | STAR_ASSIGN | DIV_ASSIGN | AND_ASSIGN | OR_ASSIGN | XOR_ASSIGN | MOD_ASSIGN | SHIFT_LEFT_ASSIGN |
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:850:13: ( ASSIGN |
+              // PLUS_ASSIGN | MINUS_ASSIGN
+              // | STAR_ASSIGN | DIV_ASSIGN | AND_ASSIGN | OR_ASSIGN | XOR_ASSIGN | MOD_ASSIGN |
+              // SHIFT_LEFT_ASSIGN |
               // SHIFT_RIGHT_ASSIGN | BIT_SHIFT_RIGHT_ASSIGN )
               int alt107 = 12;
               switch (input.LA(1)) {
@@ -15066,7 +15711,8 @@ public class JavaParser extends Parser {
                   }
                   break;
                 case 10:
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:859:17: SHIFT_LEFT_ASSIGN
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:859:17:
+                  // SHIFT_LEFT_ASSIGN
                   {
                     SHIFT_LEFT_ASSIGN378 =
                         (Token)
@@ -15082,7 +15728,8 @@ public class JavaParser extends Parser {
                   }
                   break;
                 case 11:
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:860:17: SHIFT_RIGHT_ASSIGN
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:860:17:
+                  // SHIFT_RIGHT_ASSIGN
                   {
                     SHIFT_RIGHT_ASSIGN379 =
                         (Token)
@@ -15099,7 +15746,8 @@ public class JavaParser extends Parser {
                   }
                   break;
                 case 12:
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:861:17: BIT_SHIFT_RIGHT_ASSIGN
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:861:17:
+                  // BIT_SHIFT_RIGHT_ASSIGN
                   {
                     BIT_SHIFT_RIGHT_ASSIGN380 =
                         (Token)
@@ -15160,7 +15808,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "conditionalExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:866:1: conditionalExpression : logicalOrExpression ( QUESTION
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:866:1: conditionalExpression :
+  // logicalOrExpression ( QUESTION
   // assignmentExpression COLON conditionalExpression )? ;
   public final JavaParser.conditionalExpression_return conditionalExpression()
       throws RecognitionException {
@@ -15184,9 +15833,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 90)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:867:5: ( logicalOrExpression ( QUESTION
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:867:5: ( logicalOrExpression (
+      // QUESTION
       // assignmentExpression COLON conditionalExpression )? )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:867:9: logicalOrExpression ( QUESTION assignmentExpression
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:867:9: logicalOrExpression (
+      // QUESTION assignmentExpression
       // COLON conditionalExpression )?
       {
         root_0 = (CommonTree) adaptor.nil();
@@ -15197,7 +15848,8 @@ public class JavaParser extends Parser {
         state._fsp--;
         if (state.failed) return retval;
         if (state.backtracking == 0) adaptor.addChild(root_0, logicalOrExpression382.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:867:29: ( QUESTION assignmentExpression COLON
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:867:29: ( QUESTION
+        // assignmentExpression COLON
         // conditionalExpression )?
         int alt109 = 2;
         int LA109_0 = input.LA(1);
@@ -15207,7 +15859,8 @@ public class JavaParser extends Parser {
         }
         switch (alt109) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:867:30: QUESTION assignmentExpression COLON
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:867:30: QUESTION
+            // assignmentExpression COLON
             // conditionalExpression
             {
               QUESTION383 =
@@ -15268,7 +15921,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "logicalOrExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:870:1: logicalOrExpression : logicalAndExpression ( LOGICAL_OR
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:870:1: logicalOrExpression :
+  // logicalAndExpression ( LOGICAL_OR
   // logicalAndExpression )* ;
   public final JavaParser.logicalOrExpression_return logicalOrExpression()
       throws RecognitionException {
@@ -15288,9 +15942,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 91)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:871:5: ( logicalAndExpression ( LOGICAL_OR
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:871:5: ( logicalAndExpression (
+      // LOGICAL_OR
       // logicalAndExpression )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:871:9: logicalAndExpression ( LOGICAL_OR
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:871:9: logicalAndExpression (
+      // LOGICAL_OR
       // logicalAndExpression )*
       {
         root_0 = (CommonTree) adaptor.nil();
@@ -15301,7 +15957,8 @@ public class JavaParser extends Parser {
         state._fsp--;
         if (state.failed) return retval;
         if (state.backtracking == 0) adaptor.addChild(root_0, logicalAndExpression387.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:871:30: ( LOGICAL_OR logicalAndExpression )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:871:30: ( LOGICAL_OR
+        // logicalAndExpression )*
         loop110:
         do {
           int alt110 = 2;
@@ -15313,7 +15970,8 @@ public class JavaParser extends Parser {
 
           switch (alt110) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:871:31: LOGICAL_OR logicalAndExpression
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:871:31: LOGICAL_OR
+              // logicalAndExpression
               {
                 LOGICAL_OR388 =
                     (Token) match(input, LOGICAL_OR, FOLLOW_LOGICAL_OR_in_logicalOrExpression10838);
@@ -15368,7 +16026,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "logicalAndExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:874:1: logicalAndExpression : inclusiveOrExpression ( LOGICAL_AND
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:874:1: logicalAndExpression :
+  // inclusiveOrExpression ( LOGICAL_AND
   // inclusiveOrExpression )* ;
   public final JavaParser.logicalAndExpression_return logicalAndExpression()
       throws RecognitionException {
@@ -15388,9 +16047,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 92)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:875:5: ( inclusiveOrExpression ( LOGICAL_AND
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:875:5: ( inclusiveOrExpression (
+      // LOGICAL_AND
       // inclusiveOrExpression )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:875:9: inclusiveOrExpression ( LOGICAL_AND
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:875:9: inclusiveOrExpression (
+      // LOGICAL_AND
       // inclusiveOrExpression )*
       {
         root_0 = (CommonTree) adaptor.nil();
@@ -15401,7 +16062,8 @@ public class JavaParser extends Parser {
         state._fsp--;
         if (state.failed) return retval;
         if (state.backtracking == 0) adaptor.addChild(root_0, inclusiveOrExpression390.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:875:31: ( LOGICAL_AND inclusiveOrExpression )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:875:31: ( LOGICAL_AND
+        // inclusiveOrExpression )*
         loop111:
         do {
           int alt111 = 2;
@@ -15413,7 +16075,8 @@ public class JavaParser extends Parser {
 
           switch (alt111) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:875:32: LOGICAL_AND inclusiveOrExpression
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:875:32: LOGICAL_AND
+              // inclusiveOrExpression
               {
                 LOGICAL_AND391 =
                     (Token)
@@ -15469,7 +16132,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "inclusiveOrExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:878:1: inclusiveOrExpression : exclusiveOrExpression ( OR
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:878:1: inclusiveOrExpression :
+  // exclusiveOrExpression ( OR
   // exclusiveOrExpression )* ;
   public final JavaParser.inclusiveOrExpression_return inclusiveOrExpression()
       throws RecognitionException {
@@ -15489,9 +16153,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 93)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:879:5: ( exclusiveOrExpression ( OR exclusiveOrExpression
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:879:5: ( exclusiveOrExpression (
+      // OR exclusiveOrExpression
       // )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:879:9: exclusiveOrExpression ( OR exclusiveOrExpression )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:879:9: exclusiveOrExpression ( OR
+      // exclusiveOrExpression )*
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -15501,7 +16167,8 @@ public class JavaParser extends Parser {
         state._fsp--;
         if (state.failed) return retval;
         if (state.backtracking == 0) adaptor.addChild(root_0, exclusiveOrExpression393.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:879:31: ( OR exclusiveOrExpression )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:879:31: ( OR
+        // exclusiveOrExpression )*
         loop112:
         do {
           int alt112 = 2;
@@ -15513,7 +16180,8 @@ public class JavaParser extends Parser {
 
           switch (alt112) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:879:32: OR exclusiveOrExpression
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:879:32: OR
+              // exclusiveOrExpression
               {
                 OR394 = (Token) match(input, OR, FOLLOW_OR_in_inclusiveOrExpression10892);
                 if (state.failed) return retval;
@@ -15567,7 +16235,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "exclusiveOrExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:882:1: exclusiveOrExpression : andExpression ( XOR andExpression )* ;
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:882:1: exclusiveOrExpression :
+  // andExpression ( XOR andExpression )* ;
   public final JavaParser.exclusiveOrExpression_return exclusiveOrExpression()
       throws RecognitionException {
     JavaParser.exclusiveOrExpression_return retval = new JavaParser.exclusiveOrExpression_return();
@@ -15586,8 +16255,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 94)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:883:5: ( andExpression ( XOR andExpression )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:883:9: andExpression ( XOR andExpression )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:883:5: ( andExpression ( XOR
+      // andExpression )* )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:883:9: andExpression ( XOR
+      // andExpression )*
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -15662,7 +16333,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "andExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:886:1: andExpression : equalityExpression ( AND equalityExpression
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:886:1: andExpression :
+  // equalityExpression ( AND equalityExpression
   // )* ;
   public final JavaParser.andExpression_return andExpression() throws RecognitionException {
     JavaParser.andExpression_return retval = new JavaParser.andExpression_return();
@@ -15681,8 +16353,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 95)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:887:5: ( equalityExpression ( AND equalityExpression )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:887:9: equalityExpression ( AND equalityExpression )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:887:5: ( equalityExpression ( AND
+      // equalityExpression )* )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:887:9: equalityExpression ( AND
+      // equalityExpression )*
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -15692,7 +16366,8 @@ public class JavaParser extends Parser {
         state._fsp--;
         if (state.failed) return retval;
         if (state.backtracking == 0) adaptor.addChild(root_0, equalityExpression399.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:887:28: ( AND equalityExpression )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:887:28: ( AND
+        // equalityExpression )*
         loop114:
         do {
           int alt114 = 2;
@@ -15704,7 +16379,8 @@ public class JavaParser extends Parser {
 
           switch (alt114) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:887:29: AND equalityExpression
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:887:29: AND
+              // equalityExpression
               {
                 AND400 = (Token) match(input, AND, FOLLOW_AND_in_andExpression10946);
                 if (state.failed) return retval;
@@ -15758,7 +16434,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "equalityExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:890:1: equalityExpression : instanceOfExpression ( ( EQUAL |
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:890:1: equalityExpression :
+  // instanceOfExpression ( ( EQUAL |
   // NOT_EQUAL ) instanceOfExpression )* ;
   public final JavaParser.equalityExpression_return equalityExpression()
       throws RecognitionException {
@@ -15780,9 +16457,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 96)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:891:5: ( instanceOfExpression ( ( EQUAL | NOT_EQUAL )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:891:5: ( instanceOfExpression ( (
+      // EQUAL | NOT_EQUAL )
       // instanceOfExpression )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:891:9: instanceOfExpression ( ( EQUAL | NOT_EQUAL )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:891:9: instanceOfExpression ( (
+      // EQUAL | NOT_EQUAL )
       // instanceOfExpression )*
       {
         root_0 = (CommonTree) adaptor.nil();
@@ -15793,7 +16472,8 @@ public class JavaParser extends Parser {
         state._fsp--;
         if (state.failed) return retval;
         if (state.backtracking == 0) adaptor.addChild(root_0, instanceOfExpression402.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:892:9: ( ( EQUAL | NOT_EQUAL ) instanceOfExpression )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:892:9: ( ( EQUAL | NOT_EQUAL )
+        // instanceOfExpression )*
         loop116:
         do {
           int alt116 = 2;
@@ -15805,10 +16485,12 @@ public class JavaParser extends Parser {
 
           switch (alt116) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:892:13: ( EQUAL | NOT_EQUAL )
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:892:13: ( EQUAL |
+              // NOT_EQUAL )
               // instanceOfExpression
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:892:13: ( EQUAL | NOT_EQUAL )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:892:13: ( EQUAL |
+                // NOT_EQUAL )
                 int alt115 = 2;
                 int LA115_0 = input.LA(1);
 
@@ -15899,7 +16581,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "instanceOfExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:899:1: instanceOfExpression : relationalExpression ( INSTANCEOF
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:899:1: instanceOfExpression :
+  // relationalExpression ( INSTANCEOF
   // type )? ;
   public final JavaParser.instanceOfExpression_return instanceOfExpression()
       throws RecognitionException {
@@ -15919,8 +16602,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 97)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:900:5: ( relationalExpression ( INSTANCEOF type )? )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:900:9: relationalExpression ( INSTANCEOF type )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:900:5: ( relationalExpression (
+      // INSTANCEOF type )? )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:900:9: relationalExpression (
+      // INSTANCEOF type )?
       {
         root_0 = (CommonTree) adaptor.nil();
 
@@ -15989,7 +16674,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "relationalExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:903:1: relationalExpression : shiftExpression ( ( LESS_OR_EQUAL |
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:903:1: relationalExpression :
+  // shiftExpression ( ( LESS_OR_EQUAL |
   // GREATER_OR_EQUAL | LESS_THAN | GREATER_THAN ) shiftExpression )* ;
   public final JavaParser.relationalExpression_return relationalExpression()
       throws RecognitionException {
@@ -16015,9 +16701,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 98)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:904:5: ( shiftExpression ( ( LESS_OR_EQUAL |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:904:5: ( shiftExpression ( (
+      // LESS_OR_EQUAL |
       // GREATER_OR_EQUAL | LESS_THAN | GREATER_THAN ) shiftExpression )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:904:9: shiftExpression ( ( LESS_OR_EQUAL |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:904:9: shiftExpression ( (
+      // LESS_OR_EQUAL |
       // GREATER_OR_EQUAL | LESS_THAN | GREATER_THAN ) shiftExpression )*
       {
         root_0 = (CommonTree) adaptor.nil();
@@ -16028,7 +16716,8 @@ public class JavaParser extends Parser {
         state._fsp--;
         if (state.failed) return retval;
         if (state.backtracking == 0) adaptor.addChild(root_0, shiftExpression409.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:905:9: ( ( LESS_OR_EQUAL | GREATER_OR_EQUAL |
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:905:9: ( ( LESS_OR_EQUAL |
+        // GREATER_OR_EQUAL |
         // LESS_THAN | GREATER_THAN ) shiftExpression )*
         loop119:
         do {
@@ -16042,10 +16731,12 @@ public class JavaParser extends Parser {
 
           switch (alt119) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:905:13: ( LESS_OR_EQUAL | GREATER_OR_EQUAL
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:905:13: ( LESS_OR_EQUAL |
+              // GREATER_OR_EQUAL
               // | LESS_THAN | GREATER_THAN ) shiftExpression
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:905:13: ( LESS_OR_EQUAL | GREATER_OR_EQUAL
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:905:13: ( LESS_OR_EQUAL
+                // | GREATER_OR_EQUAL
                 // | LESS_THAN | GREATER_THAN )
                 int alt118 = 4;
                 switch (input.LA(1)) {
@@ -16081,7 +16772,8 @@ public class JavaParser extends Parser {
 
                 switch (alt118) {
                   case 1:
-                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:905:17: LESS_OR_EQUAL
+                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:905:17:
+                    // LESS_OR_EQUAL
                     {
                       LESS_OR_EQUAL410 =
                           (Token)
@@ -16097,7 +16789,8 @@ public class JavaParser extends Parser {
                     }
                     break;
                   case 2:
-                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:906:17: GREATER_OR_EQUAL
+                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:906:17:
+                    // GREATER_OR_EQUAL
                     {
                       GREATER_OR_EQUAL411 =
                           (Token)
@@ -16127,7 +16820,8 @@ public class JavaParser extends Parser {
                     }
                     break;
                   case 4:
-                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:908:17: GREATER_THAN
+                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:908:17:
+                    // GREATER_THAN
                     {
                       GREATER_THAN413 =
                           (Token)
@@ -16189,7 +16883,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "shiftExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:914:1: shiftExpression : additiveExpression ( ( BIT_SHIFT_RIGHT |
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:914:1: shiftExpression :
+  // additiveExpression ( ( BIT_SHIFT_RIGHT |
   // SHIFT_RIGHT | SHIFT_LEFT ) additiveExpression )* ;
   public final JavaParser.shiftExpression_return shiftExpression() throws RecognitionException {
     JavaParser.shiftExpression_return retval = new JavaParser.shiftExpression_return();
@@ -16212,9 +16907,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 99)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:915:5: ( additiveExpression ( ( BIT_SHIFT_RIGHT |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:915:5: ( additiveExpression ( (
+      // BIT_SHIFT_RIGHT |
       // SHIFT_RIGHT | SHIFT_LEFT ) additiveExpression )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:915:9: additiveExpression ( ( BIT_SHIFT_RIGHT |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:915:9: additiveExpression ( (
+      // BIT_SHIFT_RIGHT |
       // SHIFT_RIGHT | SHIFT_LEFT ) additiveExpression )*
       {
         root_0 = (CommonTree) adaptor.nil();
@@ -16225,7 +16922,8 @@ public class JavaParser extends Parser {
         state._fsp--;
         if (state.failed) return retval;
         if (state.backtracking == 0) adaptor.addChild(root_0, additiveExpression415.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:916:9: ( ( BIT_SHIFT_RIGHT | SHIFT_RIGHT | SHIFT_LEFT
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:916:9: ( ( BIT_SHIFT_RIGHT |
+        // SHIFT_RIGHT | SHIFT_LEFT
         // ) additiveExpression )*
         loop121:
         do {
@@ -16238,10 +16936,12 @@ public class JavaParser extends Parser {
 
           switch (alt121) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:916:13: ( BIT_SHIFT_RIGHT | SHIFT_RIGHT |
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:916:13: ( BIT_SHIFT_RIGHT
+              // | SHIFT_RIGHT |
               // SHIFT_LEFT ) additiveExpression
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:916:13: ( BIT_SHIFT_RIGHT | SHIFT_RIGHT |
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:916:13: (
+                // BIT_SHIFT_RIGHT | SHIFT_RIGHT |
                 // SHIFT_LEFT )
                 int alt120 = 3;
                 switch (input.LA(1)) {
@@ -16272,7 +16972,8 @@ public class JavaParser extends Parser {
 
                 switch (alt120) {
                   case 1:
-                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:916:17: BIT_SHIFT_RIGHT
+                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:916:17:
+                    // BIT_SHIFT_RIGHT
                     {
                       BIT_SHIFT_RIGHT416 =
                           (Token)
@@ -16361,7 +17062,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "additiveExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:924:1: additiveExpression : multiplicativeExpression ( ( PLUS |
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:924:1: additiveExpression :
+  // multiplicativeExpression ( ( PLUS |
   // MINUS ) multiplicativeExpression )* ;
   public final JavaParser.additiveExpression_return additiveExpression()
       throws RecognitionException {
@@ -16383,9 +17085,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 100)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:925:5: ( multiplicativeExpression ( ( PLUS | MINUS )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:925:5: ( multiplicativeExpression
+      // ( ( PLUS | MINUS )
       // multiplicativeExpression )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:925:9: multiplicativeExpression ( ( PLUS | MINUS )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:925:9: multiplicativeExpression (
+      // ( PLUS | MINUS )
       // multiplicativeExpression )*
       {
         root_0 = (CommonTree) adaptor.nil();
@@ -16397,7 +17101,8 @@ public class JavaParser extends Parser {
         if (state.failed) return retval;
         if (state.backtracking == 0)
           adaptor.addChild(root_0, multiplicativeExpression420.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:926:9: ( ( PLUS | MINUS ) multiplicativeExpression )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:926:9: ( ( PLUS | MINUS )
+        // multiplicativeExpression )*
         loop123:
         do {
           int alt123 = 2;
@@ -16412,7 +17117,8 @@ public class JavaParser extends Parser {
               // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:926:13: ( PLUS | MINUS )
               // multiplicativeExpression
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:926:13: ( PLUS | MINUS )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:926:13: ( PLUS | MINUS
+                // )
                 int alt122 = 2;
                 int LA122_0 = input.LA(1);
 
@@ -16501,7 +17207,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "multiplicativeExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:933:1: multiplicativeExpression : unaryExpression ( ( STAR | DIV |
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:933:1: multiplicativeExpression :
+  // unaryExpression ( ( STAR | DIV |
   // MOD ) unaryExpression )* ;
   public final JavaParser.multiplicativeExpression_return multiplicativeExpression()
       throws RecognitionException {
@@ -16526,9 +17233,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 101)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:934:5: ( unaryExpression ( ( STAR | DIV | MOD )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:934:5: ( unaryExpression ( ( STAR
+      // | DIV | MOD )
       // unaryExpression )* )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:934:9: unaryExpression ( ( STAR | DIV | MOD )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:934:9: unaryExpression ( ( STAR |
+      // DIV | MOD )
       // unaryExpression )*
       {
         root_0 = (CommonTree) adaptor.nil();
@@ -16539,7 +17248,8 @@ public class JavaParser extends Parser {
         state._fsp--;
         if (state.failed) return retval;
         if (state.backtracking == 0) adaptor.addChild(root_0, unaryExpression424.getTree());
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:935:9: ( ( STAR | DIV | MOD ) unaryExpression )*
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:935:9: ( ( STAR | DIV | MOD )
+        // unaryExpression )*
         loop125:
         do {
           int alt125 = 2;
@@ -16551,9 +17261,11 @@ public class JavaParser extends Parser {
 
           switch (alt125) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:935:13: ( STAR | DIV | MOD ) unaryExpression
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:935:13: ( STAR | DIV |
+              // MOD ) unaryExpression
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:935:13: ( STAR | DIV | MOD )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:935:13: ( STAR | DIV |
+                // MOD )
                 int alt124 = 3;
                 switch (input.LA(1)) {
                   case STAR:
@@ -16665,10 +17377,14 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "unaryExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:943:1: unaryExpression : ( PLUS unaryExpression -> ^(
-  // UNARY_PLUS[$PLUS, \"UNARY_PLUS\"] unaryExpression ) | MINUS unaryExpression -> ^( UNARY_MINUS[$MINUS,
-  // \"UNARY_MINUS\"] unaryExpression ) | INC postfixedExpression -> ^( PRE_INC[$INC, \"PRE_INC\"] postfixedExpression ) | DEC
-  // postfixedExpression -> ^( PRE_DEC[$DEC, \"PRE_DEC\"] postfixedExpression ) | unaryExpressionNotPlusMinus );
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:943:1: unaryExpression : ( PLUS
+  // unaryExpression -> ^(
+  // UNARY_PLUS[$PLUS, \"UNARY_PLUS\"] unaryExpression ) | MINUS unaryExpression -> ^(
+  // UNARY_MINUS[$MINUS,
+  // \"UNARY_MINUS\"] unaryExpression ) | INC postfixedExpression -> ^( PRE_INC[$INC, \"PRE_INC\"]
+  // postfixedExpression ) | DEC
+  // postfixedExpression -> ^( PRE_DEC[$DEC, \"PRE_DEC\"] postfixedExpression ) |
+  // unaryExpressionNotPlusMinus );
   public final JavaParser.unaryExpression_return unaryExpression() throws RecognitionException {
     JavaParser.unaryExpression_return retval = new JavaParser.unaryExpression_return();
     retval.start = input.LT(1);
@@ -16705,10 +17421,13 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 102)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:944:5: ( PLUS unaryExpression -> ^( UNARY_PLUS[$PLUS,
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:944:5: ( PLUS unaryExpression ->
+      // ^( UNARY_PLUS[$PLUS,
       // \"UNARY_PLUS\"] unaryExpression ) | MINUS unaryExpression -> ^( UNARY_MINUS[$MINUS,
-      // \"UNARY_MINUS\"] unaryExpression ) | INC postfixedExpression -> ^( PRE_INC[$INC, \"PRE_INC\"] postfixedExpression ) | DEC
-      // postfixedExpression -> ^( PRE_DEC[$DEC, \"PRE_DEC\"] postfixedExpression ) | unaryExpressionNotPlusMinus )
+      // \"UNARY_MINUS\"] unaryExpression ) | INC postfixedExpression -> ^( PRE_INC[$INC,
+      // \"PRE_INC\"] postfixedExpression ) | DEC
+      // postfixedExpression -> ^( PRE_DEC[$DEC, \"PRE_DEC\"] postfixedExpression ) |
+      // unaryExpressionNotPlusMinus )
       int alt126 = 5;
       switch (input.LA(1)) {
         case PLUS:
@@ -16802,7 +17521,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 944:37: -> ^( UNARY_PLUS[$PLUS, \"UNARY_PLUS\"] unaryExpression )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:944:41: ^( UNARY_PLUS[$PLUS,
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:944:41: ^(
+                // UNARY_PLUS[$PLUS,
                 // \"UNARY_PLUS\"] unaryExpression )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -16852,7 +17572,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 945:37: -> ^( UNARY_MINUS[$MINUS, \"UNARY_MINUS\"] unaryExpression )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:945:41: ^( UNARY_MINUS[$MINUS,
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:945:41: ^(
+                // UNARY_MINUS[$MINUS,
                 // \"UNARY_MINUS\"] unaryExpression )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -16873,7 +17594,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 3:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:946:9: INC postfixedExpression
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:946:9: INC
+          // postfixedExpression
           {
             INC433 = (Token) match(input, INC, FOLLOW_INC_in_unaryExpression11622);
             if (state.failed) return retval;
@@ -16903,7 +17625,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 946:37: -> ^( PRE_INC[$INC, \"PRE_INC\"] postfixedExpression )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:946:41: ^( PRE_INC[$INC,
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:946:41: ^(
+                // PRE_INC[$INC,
                 // \"PRE_INC\"] postfixedExpression )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -16923,7 +17646,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 4:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:947:9: DEC postfixedExpression
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:947:9: DEC
+          // postfixedExpression
           {
             DEC435 = (Token) match(input, DEC, FOLLOW_DEC_in_unaryExpression11648);
             if (state.failed) return retval;
@@ -16953,7 +17677,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 947:37: -> ^( PRE_DEC[$DEC, \"PRE_DEC\"] postfixedExpression )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:947:41: ^( PRE_DEC[$DEC,
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:947:41: ^(
+                // PRE_DEC[$DEC,
                 // \"PRE_DEC\"] postfixedExpression )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -16973,7 +17698,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 5:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:948:9: unaryExpressionNotPlusMinus
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:948:9:
+          // unaryExpressionNotPlusMinus
           {
             root_0 = (CommonTree) adaptor.nil();
 
@@ -17017,8 +17743,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "unaryExpressionNotPlusMinus"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:951:1: unaryExpressionNotPlusMinus : ( NOT unaryExpression -> ^(
-  // NOT unaryExpression ) | LOGICAL_NOT unaryExpression -> ^( LOGICAL_NOT unaryExpression ) | LPAREN type RPAREN unaryExpression -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:951:1: unaryExpressionNotPlusMinus :
+  // ( NOT unaryExpression -> ^(
+  // NOT unaryExpression ) | LOGICAL_NOT unaryExpression -> ^( LOGICAL_NOT unaryExpression ) |
+  // LPAREN type RPAREN unaryExpression -> ^(
   // CAST_EXPR[$LPAREN, \"CAST_EXPR\"] type unaryExpression ) | postfixedExpression );
   public final JavaParser.unaryExpressionNotPlusMinus_return unaryExpressionNotPlusMinus()
       throws RecognitionException {
@@ -17058,8 +17786,10 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 103)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:952:5: ( NOT unaryExpression -> ^( NOT unaryExpression ) |
-      // LOGICAL_NOT unaryExpression -> ^( LOGICAL_NOT unaryExpression ) | LPAREN type RPAREN unaryExpression -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:952:5: ( NOT unaryExpression ->
+      // ^( NOT unaryExpression ) |
+      // LOGICAL_NOT unaryExpression -> ^( LOGICAL_NOT unaryExpression ) | LPAREN type RPAREN
+      // unaryExpression -> ^(
       // CAST_EXPR[$LPAREN, \"CAST_EXPR\"] type unaryExpression ) | postfixedExpression )
       int alt127 = 4;
       alt127 = dfa127.predict(input);
@@ -17094,7 +17824,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 952:57: -> ^( NOT unaryExpression )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:952:61: ^( NOT unaryExpression )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:952:61: ^( NOT
+                // unaryExpression )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
                   root_1 = (CommonTree) adaptor.becomeRoot(stream_NOT.nextNode(), root_1);
@@ -17110,7 +17841,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 2:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:953:9: LOGICAL_NOT unaryExpression
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:953:9: LOGICAL_NOT
+          // unaryExpression
           {
             LOGICAL_NOT440 =
                 (Token)
@@ -17142,7 +17874,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 953:57: -> ^( LOGICAL_NOT unaryExpression )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:953:61: ^( LOGICAL_NOT unaryExpression )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:953:61: ^( LOGICAL_NOT
+                // unaryExpression )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
                   root_1 = (CommonTree) adaptor.becomeRoot(stream_LOGICAL_NOT.nextNode(), root_1);
@@ -17158,7 +17891,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 3:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:954:9: LPAREN type RPAREN unaryExpression
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:954:9: LPAREN type RPAREN
+          // unaryExpression
           {
             LPAREN442 =
                 (Token) match(input, LPAREN, FOLLOW_LPAREN_in_unaryExpressionNotPlusMinus11783);
@@ -17199,7 +17933,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 954:57: -> ^( CAST_EXPR[$LPAREN, \"CAST_EXPR\"] type unaryExpression )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:954:61: ^( CAST_EXPR[$LPAREN,
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:954:61: ^(
+                // CAST_EXPR[$LPAREN,
                 // \"CAST_EXPR\"] type unaryExpression )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -17264,14 +17999,21 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "postfixedExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:958:1: postfixedExpression : ( primaryExpression ->
-  // primaryExpression ) (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) (
-  // arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:958:1: postfixedExpression : (
+  // primaryExpression ->
+  // primaryExpression ) (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT
+  // $postfixedExpression IDENT ) ) (
+  // arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )?
+  // arguments ) )? | THIS -> ^( DOT
   // $postfixedExpression THIS ) | Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super,
-  // \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot
-  // $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^
-  // ( DOT $postfixedExpression innerNewExpression ) ) | LBRACK expression RBRACK -> ^( ARRAY_ELEMENT_ACCESS $postfixedExpression
-  // expression ) )* ( INC -> ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC,
+  // \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT ->
+  // ^( $innerDot ^( $outerDot
+  // $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression
+  // arguments ) )? | innerNewExpression -> ^
+  // ( DOT $postfixedExpression innerNewExpression ) ) | LBRACK expression RBRACK -> ^(
+  // ARRAY_ELEMENT_ACCESS $postfixedExpression
+  // expression ) )* ( INC -> ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression) | DEC -> ^(
+  // POST_DEC[$DEC,
   // \"POST_DEC\"] $postfixedExpression) )? ;
   public final JavaParser.postfixedExpression_return postfixedExpression()
       throws RecognitionException {
@@ -17338,26 +18080,41 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 104)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:960:5: ( ( primaryExpression -> primaryExpression )
-      // (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^(
-      // METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:960:5: ( ( primaryExpression ->
+      // primaryExpression )
+      // (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT
+      // $postfixedExpression IDENT ) ) ( arguments -> ^(
+      // METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? |
+      // THIS -> ^( DOT
       // $postfixedExpression THIS ) | Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super,
-      // \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot
-      // $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? |
-      // innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) ) | LBRACK expression RBRACK -> ^(
+      // \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT
+      // -> ^( $innerDot ^( $outerDot
+      // $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression
+      // arguments ) )? |
+      // innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) ) | LBRACK
+      // expression RBRACK -> ^(
       // ARRAY_ELEMENT_ACCESS $postfixedExpression expression ) )* ( INC -> ^( POST_INC[$INC,
-      // \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression) )? )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:960:9: ( primaryExpression -> primaryExpression )
-      // (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^(
-      // METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT
+      // \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"]
+      // $postfixedExpression) )? )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:960:9: ( primaryExpression ->
+      // primaryExpression )
+      // (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT
+      // $postfixedExpression IDENT ) ) ( arguments -> ^(
+      // METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? |
+      // THIS -> ^( DOT
       // $postfixedExpression THIS ) | Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super,
-      // \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot
-      // $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? |
-      // innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) ) | LBRACK expression RBRACK -> ^(
+      // \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT
+      // -> ^( $innerDot ^( $outerDot
+      // $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression
+      // arguments ) )? |
+      // innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) ) | LBRACK
+      // expression RBRACK -> ^(
       // ARRAY_ELEMENT_ACCESS $postfixedExpression expression ) )* ( INC -> ^( POST_INC[$INC,
-      // \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression) )?
+      // \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"]
+      // $postfixedExpression) )?
       {
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:960:9: ( primaryExpression -> primaryExpression )
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:960:9: ( primaryExpression ->
+        // primaryExpression )
         // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:960:13: primaryExpression
         {
           pushFollow(FOLLOW_primaryExpression_in_postfixedExpression11860);
@@ -17391,12 +18148,18 @@ public class JavaParser extends Parser {
         }
 
         // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:963:9: (outerDot= DOT ( ( (
-        // genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL
-        // $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS
-        // ) | Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression
-        // arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) (
-        // arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression
-        // innerNewExpression ) ) | LBRACK expression RBRACK -> ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression ) )*
+        // genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) (
+        // arguments -> ^( METHOD_CALL
+        // $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^(
+        // DOT $postfixedExpression THIS
+        // ) | Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super,
+        // \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression
+        // arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot
+        // $postfixedExpression SUPER ) IDENT ) ) (
+        // arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression ->
+        // ^( DOT $postfixedExpression
+        // innerNewExpression ) ) | LBRACK expression RBRACK -> ^( ARRAY_ELEMENT_ACCESS
+        // $postfixedExpression expression ) )*
         loop132:
         do {
           int alt132 = 3;
@@ -17410,25 +18173,38 @@ public class JavaParser extends Parser {
 
           switch (alt132) {
             case 1:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:963:13: outerDot= DOT ( ( (
-              // genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^(
-              // METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT
-              // $postfixedExpression THIS ) | Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super,
-              // \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot
-              // ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression
-              // arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) )
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:963:13: outerDot= DOT ( (
+              // (
+              // genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) )
+              // ( arguments -> ^(
+              // METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments )
+              // )? | THIS -> ^( DOT
+              // $postfixedExpression THIS ) | Super= SUPER arguments -> ^(
+              // SUPER_CONSTRUCTOR_CALL[$Super,
+              // \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot=
+              // DOT IDENT -> ^( $innerDot
+              // ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL
+              // $postfixedExpression
+              // arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression
+              // innerNewExpression ) )
               {
                 outerDot = (Token) match(input, DOT, FOLLOW_DOT_in_postfixedExpression11922);
                 if (state.failed) return retval;
                 if (state.backtracking == 0) stream_DOT.add(outerDot);
 
                 // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:964:13: ( ( (
-                // genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^(
-                // METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT
-                // $postfixedExpression THIS ) | Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super,
-                // \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot
-                // ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression
-                // arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) )
+                // genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT )
+                // ) ( arguments -> ^(
+                // METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments
+                // ) )? | THIS -> ^( DOT
+                // $postfixedExpression THIS ) | Super= SUPER arguments -> ^(
+                // SUPER_CONSTRUCTOR_CALL[$Super,
+                // \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot=
+                // DOT IDENT -> ^( $innerDot
+                // ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL
+                // $postfixedExpression
+                // arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression
+                // innerNewExpression ) )
                 int alt131 = 5;
                 switch (input.LA(1)) {
                   case LESS_THAN:
@@ -17479,11 +18255,14 @@ public class JavaParser extends Parser {
                 switch (alt131) {
                   case 1:
                     // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:964:17: ( (
-                    // genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments ->
-                    // ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )?
+                    // genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression
+                    // IDENT ) ) ( arguments ->
+                    // ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )?
+                    // arguments ) )?
                     {
                       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:964:17: ( (
-                      // genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) )
+                      // genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression
+                      // IDENT ) )
                       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:964:21: (
                       // genericTypeArgumentListSimplified )? IDENT
                       {
@@ -17535,7 +18314,8 @@ public class JavaParser extends Parser {
                           root_0 = (CommonTree) adaptor.nil();
                           // 966:53: -> ^( DOT $postfixedExpression IDENT )
                           {
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:966:57: ^( DOT
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:966:57: ^(
+                            // DOT
                             // $postfixedExpression IDENT )
                             {
                               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -17553,8 +18333,10 @@ public class JavaParser extends Parser {
                         }
                       }
 
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:968:17: ( arguments -> ^(
-                      // METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )?
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:968:17: (
+                      // arguments -> ^(
+                      // METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )?
+                      // arguments ) )?
                       int alt129 = 2;
                       int LA129_0 = input.LA(1);
 
@@ -17563,7 +18345,8 @@ public class JavaParser extends Parser {
                       }
                       switch (alt129) {
                         case 1:
-                          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:968:21: arguments
+                          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:968:21:
+                          // arguments
                           {
                             pushFollow(FOLLOW_arguments_in_postfixedExpression12133);
                             arguments450 = arguments();
@@ -17574,7 +18357,8 @@ public class JavaParser extends Parser {
                               stream_arguments.add(arguments450.getTree());
 
                             // AST REWRITE
-                            // elements: postfixedExpression, arguments, genericTypeArgumentListSimplified
+                            // elements: postfixedExpression, arguments,
+                            // genericTypeArgumentListSimplified
                             // token labels:
                             // rule labels: retval
                             // token list labels:
@@ -17587,11 +18371,14 @@ public class JavaParser extends Parser {
                                       adaptor, "rule retval", retval != null ? retval.tree : null);
 
                               root_0 = (CommonTree) adaptor.nil();
-                              // 968:53: -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )?
+                              // 968:53: -> ^( METHOD_CALL $postfixedExpression (
+                              // genericTypeArgumentListSimplified )?
                               // arguments )
                               {
-                                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:968:57: ^(
-                                // METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments )
+                                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:968:57:
+                                // ^(
+                                // METHOD_CALL $postfixedExpression (
+                                // genericTypeArgumentListSimplified )? arguments )
                                 {
                                   CommonTree root_1 = (CommonTree) adaptor.nil();
                                   root_1 =
@@ -17646,7 +18433,8 @@ public class JavaParser extends Parser {
                         root_0 = (CommonTree) adaptor.nil();
                         // 970:53: -> ^( DOT $postfixedExpression THIS )
                         {
-                          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:970:57: ^( DOT
+                          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:970:57: ^(
+                          // DOT
                           // $postfixedExpression THIS )
                           {
                             CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -17664,7 +18452,8 @@ public class JavaParser extends Parser {
                     }
                     break;
                   case 3:
-                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:971:17: Super= SUPER arguments
+                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:971:17: Super=
+                    // SUPER arguments
                     {
                       Super = (Token) match(input, SUPER, FOLLOW_SUPER_in_postfixedExpression12270);
                       if (state.failed) return retval;
@@ -17691,11 +18480,13 @@ public class JavaParser extends Parser {
                                 adaptor, "rule retval", retval != null ? retval.tree : null);
 
                         root_0 = (CommonTree) adaptor.nil();
-                        // 971:57: -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression
+                        // 971:57: -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"]
+                        // $postfixedExpression
                         // arguments )
                         {
                           // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:971:61: ^(
-                          // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments )
+                          // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"]
+                          // $postfixedExpression arguments )
                           {
                             CommonTree root_1 = (CommonTree) adaptor.nil();
                             root_1 =
@@ -17720,13 +18511,17 @@ public class JavaParser extends Parser {
                     }
                     break;
                   case 4:
-                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:972:17: ( SUPER innerDot= DOT
-                    // IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^(
+                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:972:17: ( SUPER
+                    // innerDot= DOT
+                    // IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) (
+                    // arguments -> ^(
                     // METHOD_CALL $postfixedExpression arguments ) )?
                     {
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:972:17: ( SUPER innerDot= DOT
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:972:17: ( SUPER
+                      // innerDot= DOT
                       // IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) )
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:972:21: SUPER innerDot= DOT IDENT
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:972:21: SUPER
+                      // innerDot= DOT IDENT
                       {
                         SUPER453 =
                             (Token) match(input, SUPER, FOLLOW_SUPER_in_postfixedExpression12325);
@@ -17761,9 +18556,11 @@ public class JavaParser extends Parser {
                                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
                           root_0 = (CommonTree) adaptor.nil();
-                          // 972:53: -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT )
+                          // 972:53: -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT
+                          // )
                           {
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:972:57: ^( $innerDot ^
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:972:57: ^(
+                            // $innerDot ^
                             // ( $outerDot $postfixedExpression SUPER ) IDENT )
                             {
                               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -17771,7 +18568,8 @@ public class JavaParser extends Parser {
                                   (CommonTree)
                                       adaptor.becomeRoot(stream_innerDot.nextNode(), root_1);
 
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:972:69: ^(
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:972:69:
+                              // ^(
                               // $outerDot $postfixedExpression SUPER )
                               {
                                 CommonTree root_2 = (CommonTree) adaptor.nil();
@@ -17794,7 +18592,8 @@ public class JavaParser extends Parser {
                         }
                       }
 
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:974:17: ( arguments -> ^(
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:974:17: (
+                      // arguments -> ^(
                       // METHOD_CALL $postfixedExpression arguments ) )?
                       int alt130 = 2;
                       int LA130_0 = input.LA(1);
@@ -17804,7 +18603,8 @@ public class JavaParser extends Parser {
                       }
                       switch (alt130) {
                         case 1:
-                          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:974:21: arguments
+                          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:974:21:
+                          // arguments
                           {
                             pushFollow(FOLLOW_arguments_in_postfixedExpression12398);
                             arguments455 = arguments();
@@ -17830,7 +18630,8 @@ public class JavaParser extends Parser {
                               root_0 = (CommonTree) adaptor.nil();
                               // 974:53: -> ^( METHOD_CALL $postfixedExpression arguments )
                               {
-                                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:974:57: ^(
+                                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:974:57:
+                                // ^(
                                 // METHOD_CALL $postfixedExpression arguments )
                                 {
                                   CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -17856,7 +18657,8 @@ public class JavaParser extends Parser {
                     }
                     break;
                   case 5:
-                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:976:17: innerNewExpression
+                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:976:17:
+                    // innerNewExpression
                     {
                       pushFollow(FOLLOW_innerNewExpression_in_postfixedExpression12469);
                       innerNewExpression456 = innerNewExpression();
@@ -17882,7 +18684,8 @@ public class JavaParser extends Parser {
                         root_0 = (CommonTree) adaptor.nil();
                         // 976:53: -> ^( DOT $postfixedExpression innerNewExpression )
                         {
-                          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:976:57: ^( DOT
+                          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:976:57: ^(
+                          // DOT
                           // $postfixedExpression innerNewExpression )
                           {
                             CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -17903,7 +18706,8 @@ public class JavaParser extends Parser {
               }
               break;
             case 2:
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:978:13: LBRACK expression RBRACK
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:978:13: LBRACK expression
+              // RBRACK
               {
                 LBRACK457 = (Token) match(input, LBRACK, FOLLOW_LBRACK_in_postfixedExpression12526);
                 if (state.failed) return retval;
@@ -17935,7 +18739,8 @@ public class JavaParser extends Parser {
                   root_0 = (CommonTree) adaptor.nil();
                   // 978:53: -> ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression )
                   {
-                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:978:57: ^( ARRAY_ELEMENT_ACCESS
+                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:978:57: ^(
+                    // ARRAY_ELEMENT_ACCESS
                     // $postfixedExpression expression )
                     {
                       CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -17963,8 +18768,10 @@ public class JavaParser extends Parser {
           }
         } while (true);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:981:9: ( INC -> ^( POST_INC[$INC,
-        // \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression) )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:981:9: ( INC -> ^(
+        // POST_INC[$INC,
+        // \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"]
+        // $postfixedExpression) )?
         int alt133 = 3;
         int LA133_0 = input.LA(1);
 
@@ -17997,7 +18804,8 @@ public class JavaParser extends Parser {
                 root_0 = (CommonTree) adaptor.nil();
                 // 981:17: -> ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression)
                 {
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:981:20: ^( POST_INC[$INC,
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:981:20: ^(
+                  // POST_INC[$INC,
                   // \"POST_INC\"] $postfixedExpression)
                   {
                     CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -18039,7 +18847,8 @@ public class JavaParser extends Parser {
                 root_0 = (CommonTree) adaptor.nil();
                 // 982:17: -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression)
                 {
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:982:20: ^( POST_DEC[$DEC,
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:982:20: ^(
+                  // POST_DEC[$DEC,
                   // \"POST_DEC\"] $postfixedExpression)
                   {
                     CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -18091,15 +18900,24 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "primaryExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:986:1: primaryExpression : ( parenthesizedExpression | literal |
-  // newExpression | qualifiedIdentExpression | genericTypeArgumentListSimplified ( SUPER ( arguments -> ^(
-  // SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments ->
-  // ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) | IDENT arguments -> ^( METHOD_CALL IDENT
-  // genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS,
-  // \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) ) | ( THIS -> THIS ) ( arguments -> ^(
-  // THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments ) )? | SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER,
-  // \"SUPER_CONSTRUCTOR_CALL\"] arguments ) | ( SUPER DOT IDENT ) ( arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments ) | ->
-  // ^( DOT SUPER IDENT ) ) | ( primitiveType -> primitiveType ) ( arrayDeclarator -> ^( arrayDeclarator $primaryExpression) )* DOT
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:986:1: primaryExpression : (
+  // parenthesizedExpression | literal |
+  // newExpression | qualifiedIdentExpression | genericTypeArgumentListSimplified ( SUPER (
+  // arguments -> ^(
+  // SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified
+  // arguments ) | DOT IDENT arguments ->
+  // ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) | IDENT
+  // arguments -> ^( METHOD_CALL IDENT
+  // genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^(
+  // THIS_CONSTRUCTOR_CALL[$THIS,
+  // \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) ) | ( THIS -> THIS ) (
+  // arguments -> ^(
+  // THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments ) )? | SUPER arguments -> ^(
+  // SUPER_CONSTRUCTOR_CALL[$SUPER,
+  // \"SUPER_CONSTRUCTOR_CALL\"] arguments ) | ( SUPER DOT IDENT ) ( arguments -> ^( METHOD_CALL ^(
+  // DOT SUPER IDENT ) arguments ) | ->
+  // ^( DOT SUPER IDENT ) ) | ( primitiveType -> primitiveType ) ( arrayDeclarator -> ^(
+  // arrayDeclarator $primaryExpression) )* DOT
   // CLASS -> ^( DOT $primaryExpression CLASS ) | VOID DOT CLASS -> ^( DOT VOID CLASS ) );
   public final JavaParser.primaryExpression_return primaryExpression() throws RecognitionException {
     JavaParser.primaryExpression_return retval = new JavaParser.primaryExpression_return();
@@ -18183,22 +19001,33 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 105)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:987:5: ( parenthesizedExpression | literal | newExpression
-      // | qualifiedIdentExpression | genericTypeArgumentListSimplified ( SUPER ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER,
-      // \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT
-      // SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) | IDENT arguments -> ^( METHOD_CALL IDENT
-      // genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS,
-      // \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) ) | ( THIS -> THIS ) ( arguments -> ^(
-      // THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments ) )? | SUPER arguments -> ^(
-      // SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] arguments ) | ( SUPER DOT IDENT ) ( arguments -> ^( METHOD_CALL
-      // ^( DOT SUPER IDENT ) arguments ) | -> ^( DOT SUPER IDENT ) ) | ( primitiveType -> primitiveType ) ( arrayDeclarator -> ^(
-      // arrayDeclarator $primaryExpression) )* DOT CLASS -> ^( DOT $primaryExpression CLASS ) | VOID DOT CLASS -> ^( DOT VOID
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:987:5: ( parenthesizedExpression
+      // | literal | newExpression
+      // | qualifiedIdentExpression | genericTypeArgumentListSimplified ( SUPER ( arguments -> ^(
+      // SUPER_CONSTRUCTOR_CALL[$SUPER,
+      // \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT
+      // arguments -> ^( METHOD_CALL ^( DOT
+      // SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) | IDENT arguments -> ^(
+      // METHOD_CALL IDENT
+      // genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^(
+      // THIS_CONSTRUCTOR_CALL[$THIS,
+      // \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) ) | ( THIS -> THIS
+      // ) ( arguments -> ^(
+      // THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments ) )? | SUPER arguments ->
+      // ^(
+      // SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] arguments ) | ( SUPER DOT IDENT
+      // ) ( arguments -> ^( METHOD_CALL
+      // ^( DOT SUPER IDENT ) arguments ) | -> ^( DOT SUPER IDENT ) ) | ( primitiveType ->
+      // primitiveType ) ( arrayDeclarator -> ^(
+      // arrayDeclarator $primaryExpression) )* DOT CLASS -> ^( DOT $primaryExpression CLASS ) |
+      // VOID DOT CLASS -> ^( DOT VOID
       // CLASS ) )
       int alt139 = 10;
       alt139 = dfa139.predict(input);
       switch (alt139) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:987:9: parenthesizedExpression
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:987:9:
+          // parenthesizedExpression
           {
             root_0 = (CommonTree) adaptor.nil();
 
@@ -18238,7 +19067,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 4:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:990:9: qualifiedIdentExpression
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:990:9:
+          // qualifiedIdentExpression
           {
             root_0 = (CommonTree) adaptor.nil();
 
@@ -18252,11 +19082,16 @@ public class JavaParser extends Parser {
           }
           break;
         case 5:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:991:9: genericTypeArgumentListSimplified ( SUPER (
-          // arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified
-          // arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified
-          // arguments ) ) | IDENT arguments -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments ) | THIS
-          // arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:991:9:
+          // genericTypeArgumentListSimplified ( SUPER (
+          // arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"]
+          // genericTypeArgumentListSimplified
+          // arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT )
+          // genericTypeArgumentListSimplified
+          // arguments ) ) | IDENT arguments -> ^( METHOD_CALL IDENT
+          // genericTypeArgumentListSimplified arguments ) | THIS
+          // arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"]
+          // genericTypeArgumentListSimplified
           // arguments ) )
           {
             pushFollow(FOLLOW_genericTypeArgumentListSimplified_in_primaryExpression12703);
@@ -18267,11 +19102,16 @@ public class JavaParser extends Parser {
             if (state.backtracking == 0)
               stream_genericTypeArgumentListSimplified.add(
                   genericTypeArgumentListSimplified466.getTree());
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:992:9: ( SUPER ( arguments -> ^(
-            // SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT
-            // IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) | IDENT
-            // arguments -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^(
-            // THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:992:9: ( SUPER ( arguments
+            // -> ^(
+            // SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"]
+            // genericTypeArgumentListSimplified arguments ) | DOT
+            // IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT )
+            // genericTypeArgumentListSimplified arguments ) ) | IDENT
+            // arguments -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments ) |
+            // THIS arguments -> ^(
+            // THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"]
+            // genericTypeArgumentListSimplified arguments ) )
             int alt135 = 3;
             switch (input.LA(1)) {
               case SUPER:
@@ -18301,17 +19141,23 @@ public class JavaParser extends Parser {
 
             switch (alt135) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:992:13: SUPER ( arguments -> ^(
-                // SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) |
-                // DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:992:13: SUPER (
+                // arguments -> ^(
+                // SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"]
+                // genericTypeArgumentListSimplified arguments ) |
+                // DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT )
+                // genericTypeArgumentListSimplified arguments ) )
                 {
                   SUPER467 = (Token) match(input, SUPER, FOLLOW_SUPER_in_primaryExpression12718);
                   if (state.failed) return retval;
                   if (state.backtracking == 0) stream_SUPER.add(SUPER467);
 
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:993:13: ( arguments -> ^(
-                  // SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) |
-                  // DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) )
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:993:13: ( arguments
+                  // -> ^(
+                  // SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"]
+                  // genericTypeArgumentListSimplified arguments ) |
+                  // DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT )
+                  // genericTypeArgumentListSimplified arguments ) )
                   int alt134 = 2;
                   int LA134_0 = input.LA(1);
 
@@ -18354,11 +19200,13 @@ public class JavaParser extends Parser {
 
                           root_0 = (CommonTree) adaptor.nil();
                           // 993:57: -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER,
-                          // \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments )
+                          // \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments
+                          // )
                           {
                             // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:993:61: ^(
                             // SUPER_CONSTRUCTOR_CALL[$SUPER,
-                            // \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments )
+                            // \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified
+                            // arguments )
                             {
                               CommonTree root_1 = (CommonTree) adaptor.nil();
                               root_1 =
@@ -18384,7 +19232,8 @@ public class JavaParser extends Parser {
                       }
                       break;
                     case 2:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:994:17: DOT IDENT arguments
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:994:17: DOT IDENT
+                      // arguments
                       {
                         DOT469 = (Token) match(input, DOT, FOLLOW_DOT_in_primaryExpression12796);
                         if (state.failed) return retval;
@@ -18416,9 +19265,11 @@ public class JavaParser extends Parser {
                                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
                           root_0 = (CommonTree) adaptor.nil();
-                          // 994:57: -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments )
+                          // 994:57: -> ^( METHOD_CALL ^( DOT SUPER IDENT )
+                          // genericTypeArgumentListSimplified arguments )
                           {
-                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:994:61: ^( METHOD_CALL ^(
+                            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:994:61: ^(
+                            // METHOD_CALL ^(
                             // DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments )
                             {
                               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -18428,7 +19279,8 @@ public class JavaParser extends Parser {
                                           (CommonTree) adaptor.create(METHOD_CALL, "METHOD_CALL"),
                                           root_1);
 
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:994:75: ^( DOT SUPER
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:994:75:
+                              // ^( DOT SUPER
                               // IDENT )
                               {
                                 CommonTree root_2 = (CommonTree) adaptor.nil();
@@ -18485,7 +19337,8 @@ public class JavaParser extends Parser {
                     root_0 = (CommonTree) adaptor.nil();
                     // 996:57: -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments )
                     {
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:996:61: ^( METHOD_CALL IDENT
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:996:61: ^(
+                      // METHOD_CALL IDENT
                       // genericTypeArgumentListSimplified arguments )
                       {
                         CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -18540,7 +19393,8 @@ public class JavaParser extends Parser {
                     // \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments )
                     {
                       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:997:61: ^(
-                      // THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments )
+                      // THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"]
+                      // genericTypeArgumentListSimplified arguments )
                       {
                         CommonTree root_1 = (CommonTree) adaptor.nil();
                         root_1 =
@@ -18569,7 +19423,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 6:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:999:9: ( THIS -> THIS ) ( arguments -> ^(
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:999:9: ( THIS -> THIS ) (
+          // arguments -> ^(
           // THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments ) )?
           {
             // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:999:9: ( THIS -> THIS )
@@ -18635,7 +19490,8 @@ public class JavaParser extends Parser {
                             adaptor, "rule retval", retval != null ? retval.tree : null);
 
                     root_0 = (CommonTree) adaptor.nil();
-                    // 1001:57: -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments )
+                    // 1001:57: -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"]
+                    // arguments )
                     {
                       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1001:61: ^(
                       // THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments )
@@ -18692,9 +19548,11 @@ public class JavaParser extends Parser {
                       adaptor, "rule retval", retval != null ? retval.tree : null);
 
               root_0 = (CommonTree) adaptor.nil();
-              // 1003:57: -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] arguments )
+              // 1003:57: -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] arguments
+              // )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1003:61: ^( SUPER_CONSTRUCTOR_CALL[$SUPER,
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1003:61: ^(
+                // SUPER_CONSTRUCTOR_CALL[$SUPER,
                 // \"SUPER_CONSTRUCTOR_CALL\"] arguments )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -18717,7 +19575,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 8:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1004:9: ( SUPER DOT IDENT ) ( arguments -> ^(
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1004:9: ( SUPER DOT IDENT ) (
+          // arguments -> ^(
           // METHOD_CALL ^( DOT SUPER IDENT ) arguments ) | -> ^( DOT SUPER IDENT ) )
           {
             // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1004:9: ( SUPER DOT IDENT )
@@ -18736,7 +19595,8 @@ public class JavaParser extends Parser {
               if (state.backtracking == 0) stream_IDENT.add(IDENT482);
             }
 
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1006:9: ( arguments -> ^( METHOD_CALL ^( DOT SUPER
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1006:9: ( arguments -> ^(
+            // METHOD_CALL ^( DOT SUPER
             // IDENT ) arguments ) | -> ^( DOT SUPER IDENT ) )
             int alt137 = 2;
             int LA137_0 = input.LA(1);
@@ -18789,7 +19649,8 @@ public class JavaParser extends Parser {
                     root_0 = (CommonTree) adaptor.nil();
                     // 1006:57: -> ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments )
                     {
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1006:61: ^( METHOD_CALL ^( DOT
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1006:61: ^(
+                      // METHOD_CALL ^( DOT
                       // SUPER IDENT ) arguments )
                       {
                         CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -18799,7 +19660,8 @@ public class JavaParser extends Parser {
                                     (CommonTree) adaptor.create(METHOD_CALL, "METHOD_CALL"),
                                     root_1);
 
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1006:75: ^( DOT SUPER IDENT )
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1006:75: ^( DOT
+                        // SUPER IDENT )
                         {
                           CommonTree root_2 = (CommonTree) adaptor.nil();
                           root_2 = (CommonTree) adaptor.becomeRoot(stream_DOT.nextNode(), root_2);
@@ -18839,7 +19701,8 @@ public class JavaParser extends Parser {
                     root_0 = (CommonTree) adaptor.nil();
                     // 1007:57: -> ^( DOT SUPER IDENT )
                     {
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1007:61: ^( DOT SUPER IDENT )
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1007:61: ^( DOT
+                      // SUPER IDENT )
                       {
                         CommonTree root_1 = (CommonTree) adaptor.nil();
                         root_1 = (CommonTree) adaptor.becomeRoot(stream_DOT.nextNode(), root_1);
@@ -18859,10 +19722,12 @@ public class JavaParser extends Parser {
           }
           break;
         case 9:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1009:9: ( primitiveType -> primitiveType ) (
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1009:9: ( primitiveType ->
+          // primitiveType ) (
           // arrayDeclarator -> ^( arrayDeclarator $primaryExpression) )* DOT CLASS
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1009:9: ( primitiveType -> primitiveType )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1009:9: ( primitiveType ->
+            // primitiveType )
             // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1009:13: primitiveType
             {
               pushFollow(FOLLOW_primitiveType_in_primaryExpression13352);
@@ -18895,7 +19760,8 @@ public class JavaParser extends Parser {
               }
             }
 
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1011:9: ( arrayDeclarator -> ^( arrayDeclarator
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1011:9: ( arrayDeclarator
+            // -> ^( arrayDeclarator
             // $primaryExpression) )*
             loop138:
             do {
@@ -18908,7 +19774,8 @@ public class JavaParser extends Parser {
 
               switch (alt138) {
                 case 1:
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1011:13: arrayDeclarator
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1011:13:
+                  // arrayDeclarator
                   {
                     pushFollow(FOLLOW_arrayDeclarator_in_primaryExpression13411);
                     arrayDeclarator485 = arrayDeclarator();
@@ -18934,7 +19801,8 @@ public class JavaParser extends Parser {
                       root_0 = (CommonTree) adaptor.nil();
                       // 1011:57: -> ^( arrayDeclarator $primaryExpression)
                       {
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1011:61: ^( arrayDeclarator
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1011:61: ^(
+                        // arrayDeclarator
                         // $primaryExpression)
                         {
                           CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -18982,7 +19850,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 1013:57: -> ^( DOT $primaryExpression CLASS )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1013:61: ^( DOT $primaryExpression CLASS )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1013:61: ^( DOT
+                // $primaryExpression CLASS )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
                   root_1 = (CommonTree) adaptor.becomeRoot(stream_DOT.nextNode(), root_1);
@@ -19029,7 +19898,8 @@ public class JavaParser extends Parser {
               root_0 = (CommonTree) adaptor.nil();
               // 1014:57: -> ^( DOT VOID CLASS )
               {
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1014:61: ^( DOT VOID CLASS )
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1014:61: ^( DOT VOID
+                // CLASS )
                 {
                   CommonTree root_1 = (CommonTree) adaptor.nil();
                   root_1 = (CommonTree) adaptor.becomeRoot(stream_DOT.nextNode(), root_1);
@@ -19076,15 +19946,24 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "qualifiedIdentExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1017:1: qualifiedIdentExpression : ( qualifiedIdentifier ->
-  // qualifiedIdentifier ) ( ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT
-  // $qualifiedIdentExpression CLASS ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments ) | outerDot= DOT ( CLASS -> ^(
-  // DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super,
-  // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT
-  // arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified
-  // arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) )
-  // | THIS -> ^( DOT qualifiedIdentifier THIS ) | Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super,
-  // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1017:1: qualifiedIdentExpression : (
+  // qualifiedIdentifier ->
+  // qualifiedIdentifier ) ( ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ (
+  // DOT CLASS -> ^( DOT
+  // $qualifiedIdentExpression CLASS ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments
+  // ) | outerDot= DOT ( CLASS -> ^(
+  // DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments ->
+  // ^( SUPER_CONSTRUCTOR_CALL[$Super,
+  // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) |
+  // SUPER innerDot= DOT IDENT
+  // arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT )
+  // genericTypeArgumentListSimplified
+  // arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT )
+  // genericTypeArgumentListSimplified arguments ) )
+  // | THIS -> ^( DOT qualifiedIdentifier THIS ) | Super= SUPER arguments -> ^(
+  // SUPER_CONSTRUCTOR_CALL[$Super,
+  // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT
+  // qualifiedIdentifier innerNewExpression
   // ) ) )? ;
   public final JavaParser.qualifiedIdentExpression_return qualifiedIdentExpression()
       throws RecognitionException {
@@ -19151,28 +20030,46 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 106)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1019:5: ( ( qualifiedIdentifier -> qualifiedIdentifier ) (
-      // ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression
-      // CLASS ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments ) | outerDot= DOT ( CLASS -> ^( DOT
-      // qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^(
-      // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments
-      // ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT )
-      // genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT )
-      // genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) | Super= SUPER arguments -> ^(
-      // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1019:5: ( ( qualifiedIdentifier
+      // -> qualifiedIdentifier ) (
+      // ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT
+      // $qualifiedIdentExpression
+      // CLASS ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments ) | outerDot= DOT (
+      // CLASS -> ^( DOT
+      // qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments ->
+      // ^(
+      // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier
+      // genericTypeArgumentListSimplified arguments
+      // ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot
+      // qualifiedIdentifier SUPER ) IDENT )
+      // genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT
+      // qualifiedIdentifier IDENT )
+      // genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS )
+      // | Super= SUPER arguments -> ^(
+      // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments )
+      // | innerNewExpression -> ^( DOT
       // qualifiedIdentifier innerNewExpression ) ) )? )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1019:9: ( qualifiedIdentifier -> qualifiedIdentifier ) ( (
-      // arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS
-      // ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments ) | outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier
-      // CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super,
-      // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1019:9: ( qualifiedIdentifier ->
+      // qualifiedIdentifier ) ( (
+      // arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT
+      // $qualifiedIdentExpression CLASS
+      // ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments ) | outerDot= DOT ( CLASS
+      // -> ^( DOT qualifiedIdentifier
+      // CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^(
+      // SUPER_CONSTRUCTOR_CALL[$Super,
+      // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments
+      // ) | SUPER innerDot= DOT IDENT
       // arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT )
-      // genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT )
-      // genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) | Super= SUPER arguments -> ^(
-      // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT
+      // genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT
+      // qualifiedIdentifier IDENT )
+      // genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS )
+      // | Super= SUPER arguments -> ^(
+      // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments )
+      // | innerNewExpression -> ^( DOT
       // qualifiedIdentifier innerNewExpression ) ) )?
       {
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1019:9: ( qualifiedIdentifier -> qualifiedIdentifier )
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1019:9: ( qualifiedIdentifier
+        // -> qualifiedIdentifier )
         // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1019:13: qualifiedIdentifier
         {
           pushFollow(FOLLOW_qualifiedIdentifier_in_qualifiedIdentExpression13620);
@@ -19206,24 +20103,36 @@ public class JavaParser extends Parser {
           }
         }
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1022:9: ( ( arrayDeclarator -> ^( arrayDeclarator
-        // $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) ) | arguments -> ^( METHOD_CALL
-        // qualifiedIdentifier arguments ) | outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) |
-        // genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super,
-        // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT
-        // IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT )
-        // genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT )
-        // genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) | Super= SUPER arguments
-        // -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1022:9: ( ( arrayDeclarator ->
+        // ^( arrayDeclarator
+        // $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) ) |
+        // arguments -> ^( METHOD_CALL
+        // qualifiedIdentifier arguments ) | outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier
+        // CLASS ) |
+        // genericTypeArgumentListSimplified (Super= SUPER arguments -> ^(
+        // SUPER_CONSTRUCTOR_CALL[$Super,
+        // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified
+        // arguments ) | SUPER innerDot= DOT
+        // IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER )
+        // IDENT )
+        // genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT
+        // qualifiedIdentifier IDENT )
+        // genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS
+        // ) | Super= SUPER arguments
+        // -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier
+        // arguments ) | innerNewExpression
         // -> ^( DOT qualifiedIdentifier innerNewExpression ) ) )?
         int alt143 = 4;
         alt143 = dfa143.predict(input);
         switch (alt143) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1022:13: ( arrayDeclarator -> ^(
-            // arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1022:13: ( arrayDeclarator
+            // -> ^(
+            // arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT
+            // $qualifiedIdentExpression CLASS ) )
             {
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1022:13: ( arrayDeclarator -> ^(
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1022:13: (
+              // arrayDeclarator -> ^(
               // arrayDeclarator $qualifiedIdentExpression) )+
               int cnt140 = 0;
               loop140:
@@ -19237,7 +20146,8 @@ public class JavaParser extends Parser {
 
                 switch (alt140) {
                   case 1:
-                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1022:17: arrayDeclarator
+                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1022:17:
+                    // arrayDeclarator
                     {
                       pushFollow(FOLLOW_arrayDeclarator_in_qualifiedIdentExpression13690);
                       arrayDeclarator492 = arrayDeclarator();
@@ -19294,7 +20204,8 @@ public class JavaParser extends Parser {
                 cnt140++;
               } while (true);
 
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1024:13: ( DOT CLASS -> ^( DOT
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1024:13: ( DOT CLASS ->
+              // ^( DOT
               // $qualifiedIdentExpression CLASS ) )
               // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1024:17: DOT CLASS
               {
@@ -19367,7 +20278,8 @@ public class JavaParser extends Parser {
                 root_0 = (CommonTree) adaptor.nil();
                 // 1026:57: -> ^( METHOD_CALL qualifiedIdentifier arguments )
                 {
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1026:61: ^( METHOD_CALL
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1026:61: ^(
+                  // METHOD_CALL
                   // qualifiedIdentifier arguments )
                   {
                     CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -19388,27 +20300,41 @@ public class JavaParser extends Parser {
             }
             break;
           case 3:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1027:13: outerDot= DOT ( CLASS -> ^( DOT
-            // qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^(
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1027:13: outerDot= DOT (
+            // CLASS -> ^( DOT
+            // qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER
+            // arguments -> ^(
             // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier
-            // genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^(
-            // $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) |
-            // IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified
-            // arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) | Super= SUPER arguments -> ^(
-            // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) |
+            // genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments
+            // -> ^( METHOD_CALL ^(
+            // $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT )
+            // genericTypeArgumentListSimplified arguments ) |
+            // IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT )
+            // genericTypeArgumentListSimplified
+            // arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) | Super= SUPER arguments ->
+            // ^(
+            // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier
+            // arguments ) |
             // innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) )
             {
               outerDot = (Token) match(input, DOT, FOLLOW_DOT_in_qualifiedIdentExpression13891);
               if (state.failed) return retval;
               if (state.backtracking == 0) stream_DOT.add(outerDot);
 
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1028:13: ( CLASS -> ^( DOT qualifiedIdentifier
-              // CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super,
-              // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER
-              // innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT )
-              // genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier
-              // IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) | Super=
-              // SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1028:13: ( CLASS -> ^(
+              // DOT qualifiedIdentifier
+              // CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^(
+              // SUPER_CONSTRUCTOR_CALL[$Super,
+              // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified
+              // arguments ) | SUPER
+              // innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot
+              // qualifiedIdentifier SUPER ) IDENT )
+              // genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL
+              // ^( DOT qualifiedIdentifier
+              // IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT
+              // qualifiedIdentifier THIS ) | Super=
+              // SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"]
+              // qualifiedIdentifier arguments
               // ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) )
               int alt142 = 5;
               switch (input.LA(1)) {
@@ -19491,10 +20417,14 @@ public class JavaParser extends Parser {
                   break;
                 case 2:
                   // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1029:17:
-                  // genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super,
-                  // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER
-                  // innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER )
-                  // IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT
+                  // genericTypeArgumentListSimplified (Super= SUPER arguments -> ^(
+                  // SUPER_CONSTRUCTOR_CALL[$Super,
+                  // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier
+                  // genericTypeArgumentListSimplified arguments ) | SUPER
+                  // innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot
+                  // qualifiedIdentifier SUPER )
+                  // IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^(
+                  // METHOD_CALL ^( DOT
                   // qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) )
                   {
                     pushFollow(
@@ -19506,11 +20436,16 @@ public class JavaParser extends Parser {
                     if (state.backtracking == 0)
                       stream_genericTypeArgumentListSimplified.add(
                           genericTypeArgumentListSimplified497.getTree());
-                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1030:17: (Super= SUPER arguments -> ^(
-                    // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier
-                    // genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL
-                    // ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified
-                    // arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT )
+                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1030:17: (Super=
+                    // SUPER arguments -> ^(
+                    // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"]
+                    // qualifiedIdentifier
+                    // genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT
+                    // arguments -> ^( METHOD_CALL
+                    // ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT )
+                    // genericTypeArgumentListSimplified
+                    // arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier
+                    // IDENT )
                     // genericTypeArgumentListSimplified arguments ) )
                     int alt141 = 3;
                     int LA141_0 = input.LA(1);
@@ -19544,7 +20479,8 @@ public class JavaParser extends Parser {
                     }
                     switch (alt141) {
                       case 1:
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1030:21: Super= SUPER arguments
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1030:21: Super=
+                        // SUPER arguments
                         {
                           Super =
                               (Token)
@@ -19561,7 +20497,8 @@ public class JavaParser extends Parser {
                           if (state.backtracking == 0) stream_arguments.add(arguments498.getTree());
 
                           // AST REWRITE
-                          // elements: qualifiedIdentifier, arguments, genericTypeArgumentListSimplified
+                          // elements: qualifiedIdentifier, arguments,
+                          // genericTypeArgumentListSimplified
                           // token labels:
                           // rule labels: retval
                           // token list labels:
@@ -19575,10 +20512,13 @@ public class JavaParser extends Parser {
 
                             root_0 = (CommonTree) adaptor.nil();
                             // 1030:57: -> ^( SUPER_CONSTRUCTOR_CALL[$Super,
-                            // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments )
+                            // \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier
+                            // genericTypeArgumentListSimplified arguments )
                             {
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1030:61: ^(
-                              // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1030:61:
+                              // ^(
+                              // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"]
+                              // qualifiedIdentifier
                               // genericTypeArgumentListSimplified arguments )
                               {
                                 CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -19606,7 +20546,8 @@ public class JavaParser extends Parser {
                         }
                         break;
                       case 2:
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1031:21: SUPER innerDot= DOT
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1031:21: SUPER
+                        // innerDot= DOT
                         // IDENT arguments
                         {
                           SUPER499 =
@@ -19655,11 +20596,14 @@ public class JavaParser extends Parser {
                                     adaptor, "rule retval", retval != null ? retval.tree : null);
 
                             root_0 = (CommonTree) adaptor.nil();
-                            // 1031:57: -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT )
+                            // 1031:57: -> ^( METHOD_CALL ^( $innerDot ^( $outerDot
+                            // qualifiedIdentifier SUPER ) IDENT )
                             // genericTypeArgumentListSimplified arguments )
                             {
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1031:61: ^(
-                              // METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT )
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1031:61:
+                              // ^(
+                              // METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER )
+                              // IDENT )
                               // genericTypeArgumentListSimplified arguments )
                               {
                                 CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -19707,7 +20651,8 @@ public class JavaParser extends Parser {
                         }
                         break;
                       case 3:
-                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1032:21: IDENT arguments
+                        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1032:21: IDENT
+                        // arguments
                         {
                           IDENT502 =
                               (Token)
@@ -19724,7 +20669,8 @@ public class JavaParser extends Parser {
                           if (state.backtracking == 0) stream_arguments.add(arguments503.getTree());
 
                           // AST REWRITE
-                          // elements: arguments, qualifiedIdentifier, IDENT, genericTypeArgumentListSimplified, DOT
+                          // elements: arguments, qualifiedIdentifier, IDENT,
+                          // genericTypeArgumentListSimplified, DOT
                           // token labels:
                           // rule labels: retval
                           // token list labels:
@@ -19740,8 +20686,10 @@ public class JavaParser extends Parser {
                             // 1032:57: -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT )
                             // genericTypeArgumentListSimplified arguments )
                             {
-                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1032:61: ^(
-                              // METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified
+                              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1032:61:
+                              // ^(
+                              // METHOD_CALL ^( DOT qualifiedIdentifier IDENT )
+                              // genericTypeArgumentListSimplified
                               // arguments )
                               {
                                 CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -19821,7 +20769,8 @@ public class JavaParser extends Parser {
                   }
                   break;
                 case 4:
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1035:17: Super= SUPER arguments
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1035:17: Super= SUPER
+                  // arguments
                   {
                     Super =
                         (Token) match(input, SUPER, FOLLOW_SUPER_in_qualifiedIdentExpression14250);
@@ -19849,11 +20798,13 @@ public class JavaParser extends Parser {
                               adaptor, "rule retval", retval != null ? retval.tree : null);
 
                       root_0 = (CommonTree) adaptor.nil();
-                      // 1035:57: -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier
+                      // 1035:57: -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"]
+                      // qualifiedIdentifier
                       // arguments )
                       {
                         // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1035:61: ^(
-                        // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments )
+                        // SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"]
+                        // qualifiedIdentifier arguments )
                         {
                           CommonTree root_1 = (CommonTree) adaptor.nil();
                           root_1 =
@@ -19878,7 +20829,8 @@ public class JavaParser extends Parser {
                   }
                   break;
                 case 5:
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1036:17: innerNewExpression
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1036:17:
+                  // innerNewExpression
                   {
                     pushFollow(FOLLOW_innerNewExpression_in_qualifiedIdentExpression14300);
                     innerNewExpression506 = innerNewExpression();
@@ -19957,11 +20909,16 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "newExpression"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1041:1: newExpression : NEW ( primitiveType newArrayConstruction
-  // -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) | (
-  // genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW,
-  // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments (
-  // classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )?
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1041:1: newExpression : NEW (
+  // primitiveType newArrayConstruction
+  // -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction )
+  // | (
+  // genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^(
+  // STATIC_ARRAY_CREATOR[$NEW,
+  // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified
+  // newArrayConstruction ) | arguments (
+  // classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] (
+  // genericTypeArgumentListSimplified )?
   // qualifiedTypeIdentSimplified arguments ( classBody )? ) ) ) ;
   public final JavaParser.newExpression_return newExpression() throws RecognitionException {
     JavaParser.newExpression_return retval = new JavaParser.newExpression_return();
@@ -20002,29 +20959,45 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 107)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1042:5: ( NEW ( primitiveType newArrayConstruction -> ^(
-      // STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) | (
-      // genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW,
-      // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) |
-      // arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1042:5: ( NEW ( primitiveType
+      // newArrayConstruction -> ^(
+      // STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) |
+      // (
+      // genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction ->
+      // ^( STATIC_ARRAY_CREATOR[$NEW,
+      // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )?
+      // qualifiedTypeIdentSimplified newArrayConstruction ) |
+      // arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] (
+      // genericTypeArgumentListSimplified
       // )? qualifiedTypeIdentSimplified arguments ( classBody )? ) ) ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1042:9: NEW ( primitiveType newArrayConstruction -> ^(
-      // STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) | (
-      // genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW,
-      // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) |
-      // arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1042:9: NEW ( primitiveType
+      // newArrayConstruction -> ^(
+      // STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) |
+      // (
+      // genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction ->
+      // ^( STATIC_ARRAY_CREATOR[$NEW,
+      // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )?
+      // qualifiedTypeIdentSimplified newArrayConstruction ) |
+      // arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] (
+      // genericTypeArgumentListSimplified
       // )? qualifiedTypeIdentSimplified arguments ( classBody )? ) ) )
       {
         NEW507 = (Token) match(input, NEW, FOLLOW_NEW_in_newExpression14376);
         if (state.failed) return retval;
         if (state.backtracking == 0) stream_NEW.add(NEW507);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1043:9: ( primitiveType newArrayConstruction -> ^(
-        // STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) | (
-        // genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^(
-        // STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )?
-        // qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW,
-        // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1043:9: ( primitiveType
+        // newArrayConstruction -> ^(
+        // STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction )
+        // | (
+        // genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction
+        // -> ^(
+        // STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified
+        // )?
+        // qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^(
+        // CLASS_CONSTRUCTOR_CALL[$NEW,
+        // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )?
+        // qualifiedTypeIdentSimplified arguments ( classBody )?
         // ) ) )
         int alt147 = 2;
         int LA147_0 = input.LA(1);
@@ -20050,7 +21023,8 @@ public class JavaParser extends Parser {
         }
         switch (alt147) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1043:13: primitiveType newArrayConstruction
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1043:13: primitiveType
+            // newArrayConstruction
             {
               pushFollow(FOLLOW_primitiveType_in_newExpression14392);
               primitiveType508 = primitiveType();
@@ -20080,9 +21054,11 @@ public class JavaParser extends Parser {
                         adaptor, "rule retval", retval != null ? retval.tree : null);
 
                 root_0 = (CommonTree) adaptor.nil();
-                // 1044:13: -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction )
+                // 1044:13: -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType
+                // newArrayConstruction )
                 {
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1044:17: ^( STATIC_ARRAY_CREATOR[$NEW,
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1044:17: ^(
+                  // STATIC_ARRAY_CREATOR[$NEW,
                   // \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction )
                   {
                     CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -20106,14 +21082,19 @@ public class JavaParser extends Parser {
             }
             break;
           case 2:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1045:13: ( genericTypeArgumentListSimplified )
-            // ? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW,
-            // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1045:13: (
+            // genericTypeArgumentListSimplified )
+            // ? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^(
+            // STATIC_ARRAY_CREATOR[$NEW,
+            // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )?
+            // qualifiedTypeIdentSimplified
             // newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW,
-            // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments (
+            // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )?
+            // qualifiedTypeIdentSimplified arguments (
             // classBody )? ) )
             {
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1045:13: ( genericTypeArgumentListSimplified )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1045:13: (
+              // genericTypeArgumentListSimplified )?
               int alt144 = 2;
               int LA144_0 = input.LA(1);
 
@@ -20122,7 +21103,8 @@ public class JavaParser extends Parser {
               }
               switch (alt144) {
                 case 1:
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: genericTypeArgumentListSimplified
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                  // genericTypeArgumentListSimplified
                   {
                     pushFollow(FOLLOW_genericTypeArgumentListSimplified_in_newExpression14438);
                     genericTypeArgumentListSimplified510 = genericTypeArgumentListSimplified();
@@ -20143,10 +21125,14 @@ public class JavaParser extends Parser {
               if (state.failed) return retval;
               if (state.backtracking == 0)
                 stream_qualifiedTypeIdentSimplified.add(qualifiedTypeIdentSimplified511.getTree());
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1046:13: ( newArrayConstruction -> ^(
-              // STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )?
-              // qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^(
-              // CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1046:13: (
+              // newArrayConstruction -> ^(
+              // STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] (
+              // genericTypeArgumentListSimplified )?
+              // qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? ->
+              // ^(
+              // CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] (
+              // genericTypeArgumentListSimplified )?
               // qualifiedTypeIdentSimplified arguments ( classBody )? ) )
               int alt146 = 2;
               int LA146_0 = input.LA(1);
@@ -20166,7 +21152,8 @@ public class JavaParser extends Parser {
               }
               switch (alt146) {
                 case 1:
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1046:17: newArrayConstruction
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1046:17:
+                  // newArrayConstruction
                   {
                     pushFollow(FOLLOW_newArrayConstruction_in_newExpression14459);
                     newArrayConstruction512 = newArrayConstruction();
@@ -20177,7 +21164,8 @@ public class JavaParser extends Parser {
                       stream_newArrayConstruction.add(newArrayConstruction512.getTree());
 
                     // AST REWRITE
-                    // elements: newArrayConstruction, qualifiedTypeIdentSimplified, genericTypeArgumentListSimplified
+                    // elements: newArrayConstruction, qualifiedTypeIdentSimplified,
+                    // genericTypeArgumentListSimplified
                     // token labels:
                     // rule labels: retval
                     // token list labels:
@@ -20191,11 +21179,13 @@ public class JavaParser extends Parser {
 
                       root_0 = (CommonTree) adaptor.nil();
                       // 1047:17: -> ^( STATIC_ARRAY_CREATOR[$NEW,
-                      // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified
+                      // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )?
+                      // qualifiedTypeIdentSimplified
                       // newArrayConstruction )
                       {
                         // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1047:21: ^(
-                        // STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )?
+                        // STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] (
+                        // genericTypeArgumentListSimplified )?
                         // qualifiedTypeIdentSimplified newArrayConstruction )
                         {
                           CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -20226,7 +21216,8 @@ public class JavaParser extends Parser {
                   }
                   break;
                 case 2:
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1048:17: arguments ( classBody )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1048:17: arguments (
+                  // classBody )?
                   {
                     pushFollow(FOLLOW_arguments_in_newExpression14524);
                     arguments513 = arguments();
@@ -20234,7 +21225,8 @@ public class JavaParser extends Parser {
                     state._fsp--;
                     if (state.failed) return retval;
                     if (state.backtracking == 0) stream_arguments.add(arguments513.getTree());
-                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1048:27: ( classBody )?
+                    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1048:27: (
+                    // classBody )?
                     int alt145 = 2;
                     int LA145_0 = input.LA(1);
 
@@ -20256,7 +21248,8 @@ public class JavaParser extends Parser {
                     }
 
                     // AST REWRITE
-                    // elements: genericTypeArgumentListSimplified, arguments, classBody, qualifiedTypeIdentSimplified
+                    // elements: genericTypeArgumentListSimplified, arguments, classBody,
+                    // qualifiedTypeIdentSimplified
                     // token labels:
                     // rule labels: retval
                     // token list labels:
@@ -20270,11 +21263,13 @@ public class JavaParser extends Parser {
 
                       root_0 = (CommonTree) adaptor.nil();
                       // 1049:17: -> ^( CLASS_CONSTRUCTOR_CALL[$NEW,
-                      // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified
+                      // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )?
+                      // qualifiedTypeIdentSimplified
                       // arguments ( classBody )? )
                       {
                         // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1049:21: ^(
-                        // CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )?
+                        // CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] (
+                        // genericTypeArgumentListSimplified )?
                         // qualifiedTypeIdentSimplified arguments ( classBody )? )
                         {
                           CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -20297,7 +21292,8 @@ public class JavaParser extends Parser {
                           stream_genericTypeArgumentListSimplified.reset();
                           adaptor.addChild(root_1, stream_qualifiedTypeIdentSimplified.nextTree());
                           adaptor.addChild(root_1, stream_arguments.nextTree());
-                          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1049:150: ( classBody )?
+                          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1049:150: (
+                          // classBody )?
                           if (stream_classBody.hasNext()) {
                             adaptor.addChild(root_1, stream_classBody.nextTree());
                           }
@@ -20348,8 +21344,10 @@ public class JavaParser extends Parser {
 
   // $ANTLR start "innerNewExpression"
   // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1054:1: innerNewExpression : NEW (
-  // genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW,
-  // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? ) ;
+  // genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? -> ^(
+  // CLASS_CONSTRUCTOR_CALL[$NEW,
+  // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )?
+  // ) ;
   public final JavaParser.innerNewExpression_return innerNewExpression()
       throws RecognitionException {
     JavaParser.innerNewExpression_return retval = new JavaParser.innerNewExpression_return();
@@ -20379,17 +21377,21 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 108)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1055:5: ( NEW ( genericTypeArgumentListSimplified )? IDENT
-      // arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1055:5: ( NEW (
+      // genericTypeArgumentListSimplified )? IDENT
+      // arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] (
+      // genericTypeArgumentListSimplified
       // )? IDENT arguments ( classBody )? ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1055:9: NEW ( genericTypeArgumentListSimplified )? IDENT
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1055:9: NEW (
+      // genericTypeArgumentListSimplified )? IDENT
       // arguments ( classBody )?
       {
         NEW515 = (Token) match(input, NEW, FOLLOW_NEW_in_innerNewExpression14625);
         if (state.failed) return retval;
         if (state.backtracking == 0) stream_NEW.add(NEW515);
 
-        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1055:13: ( genericTypeArgumentListSimplified )?
+        // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1055:13: (
+        // genericTypeArgumentListSimplified )?
         int alt148 = 2;
         int LA148_0 = input.LA(1);
 
@@ -20398,7 +21400,8 @@ public class JavaParser extends Parser {
         }
         switch (alt148) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: genericTypeArgumentListSimplified
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+            // genericTypeArgumentListSimplified
             {
               pushFollow(FOLLOW_genericTypeArgumentListSimplified_in_innerNewExpression14627);
               genericTypeArgumentListSimplified516 = genericTypeArgumentListSimplified();
@@ -20457,11 +21460,14 @@ public class JavaParser extends Parser {
                   adaptor, "rule retval", retval != null ? retval.tree : null);
 
           root_0 = (CommonTree) adaptor.nil();
-          // 1056:9: -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? IDENT
+          // 1056:9: -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] (
+          // genericTypeArgumentListSimplified )? IDENT
           // arguments ( classBody )? )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1056:13: ^( CLASS_CONSTRUCTOR_CALL[$NEW,
-            // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1056:13: ^(
+            // CLASS_CONSTRUCTOR_CALL[$NEW,
+            // \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? IDENT arguments (
+            // classBody )? )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
               root_1 =
@@ -20524,8 +21530,10 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "newArrayConstruction"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1059:1: newArrayConstruction : ( arrayDeclaratorList
-  // arrayInitializer | LBRACK expression RBRACK ( LBRACK expression RBRACK )* ( arrayDeclaratorList )? );
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1059:1: newArrayConstruction : (
+  // arrayDeclaratorList
+  // arrayInitializer | LBRACK expression RBRACK ( LBRACK expression RBRACK )* ( arrayDeclaratorList
+  // )? );
   public final JavaParser.newArrayConstruction_return newArrayConstruction()
       throws RecognitionException {
     JavaParser.newArrayConstruction_return retval = new JavaParser.newArrayConstruction_return();
@@ -20556,7 +21564,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 109)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1060:5: ( arrayDeclaratorList arrayInitializer | LBRACK
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1060:5: ( arrayDeclaratorList
+      // arrayInitializer | LBRACK
       // expression RBRACK ( LBRACK expression RBRACK )* ( arrayDeclaratorList )? )
       int alt152 = 2;
       int LA152_0 = input.LA(1);
@@ -20608,7 +21617,8 @@ public class JavaParser extends Parser {
       }
       switch (alt152) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1060:9: arrayDeclaratorList arrayInitializer
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1060:9: arrayDeclaratorList
+          // arrayInitializer
           {
             root_0 = (CommonTree) adaptor.nil();
 
@@ -20627,7 +21637,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 2:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1061:9: LBRACK expression RBRACK ( LBRACK
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1061:9: LBRACK expression
+          // RBRACK ( LBRACK
           // expression RBRACK )* ( arrayDeclaratorList )?
           {
             root_0 = (CommonTree) adaptor.nil();
@@ -20642,14 +21653,16 @@ public class JavaParser extends Parser {
             if (state.backtracking == 0) adaptor.addChild(root_0, expression523.getTree());
             RBRACK524 = (Token) match(input, RBRACK, FOLLOW_RBRACK_in_newArrayConstruction14697);
             if (state.failed) return retval;
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1061:36: ( LBRACK expression RBRACK )*
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1061:36: ( LBRACK
+            // expression RBRACK )*
             loop150:
             do {
               int alt150 = 2;
               alt150 = dfa150.predict(input);
               switch (alt150) {
                 case 1:
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1061:37: LBRACK expression RBRACK
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1061:37: LBRACK
+                  // expression RBRACK
                   {
                     LBRACK525 =
                         (Token) match(input, LBRACK, FOLLOW_LBRACK_in_newArrayConstruction14701);
@@ -20671,7 +21684,8 @@ public class JavaParser extends Parser {
               }
             } while (true);
 
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1061:66: ( arrayDeclaratorList )?
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1061:66: (
+            // arrayDeclaratorList )?
             int alt151 = 2;
             int LA151_0 = input.LA(1);
 
@@ -20684,7 +21698,8 @@ public class JavaParser extends Parser {
             }
             switch (alt151) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: arrayDeclaratorList
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                // arrayDeclaratorList
                 {
                   pushFollow(FOLLOW_arrayDeclaratorList_in_newArrayConstruction14711);
                   arrayDeclaratorList528 = arrayDeclaratorList();
@@ -20729,7 +21744,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "arguments"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1064:1: arguments : LPAREN ( expressionList )? RPAREN -> ^(
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1064:1: arguments : LPAREN (
+  // expressionList )? RPAREN -> ^(
   // ARGUMENT_LIST[$LPAREN, \"ARGUMENT_LIST\"] ( expressionList )? ) ;
   public final JavaParser.arguments_return arguments() throws RecognitionException {
     JavaParser.arguments_return retval = new JavaParser.arguments_return();
@@ -20751,9 +21767,11 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 110)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1065:5: ( LPAREN ( expressionList )? RPAREN -> ^(
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1065:5: ( LPAREN ( expressionList
+      // )? RPAREN -> ^(
       // ARGUMENT_LIST[$LPAREN, \"ARGUMENT_LIST\"] ( expressionList )? ) )
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1065:9: LPAREN ( expressionList )? RPAREN
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1065:9: LPAREN ( expressionList
+      // )? RPAREN
       {
         LPAREN529 = (Token) match(input, LPAREN, FOLLOW_LPAREN_in_arguments14731);
         if (state.failed) return retval;
@@ -20820,7 +21838,8 @@ public class JavaParser extends Parser {
           root_0 = (CommonTree) adaptor.nil();
           // 1066:9: -> ^( ARGUMENT_LIST[$LPAREN, \"ARGUMENT_LIST\"] ( expressionList )? )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1066:13: ^( ARGUMENT_LIST[$LPAREN,
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1066:13: ^(
+            // ARGUMENT_LIST[$LPAREN,
             // \"ARGUMENT_LIST\"] ( expressionList )? )
             {
               CommonTree root_1 = (CommonTree) adaptor.nil();
@@ -20830,7 +21849,8 @@ public class JavaParser extends Parser {
                           (CommonTree) adaptor.create(ARGUMENT_LIST, LPAREN529, "ARGUMENT_LIST"),
                           root_1);
 
-              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1066:55: ( expressionList )?
+              // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1066:55: ( expressionList
+              // )?
               if (stream_expressionList.hasNext()) {
                 adaptor.addChild(root_1, stream_expressionList.nextTree());
               }
@@ -20874,7 +21894,8 @@ public class JavaParser extends Parser {
   };
 
   // $ANTLR start "literal"
-  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1069:1: literal : ( HEX_LITERAL | OCTAL_LITERAL | DECIMAL_LITERAL
+  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1069:1: literal : ( HEX_LITERAL |
+  // OCTAL_LITERAL | DECIMAL_LITERAL
   // | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | TRUE | FALSE | NULL );
   public final JavaParser.literal_return literal() throws RecognitionException {
     JavaParser.literal_return retval = new JavaParser.literal_return();
@@ -20890,7 +21911,8 @@ public class JavaParser extends Parser {
       if (state.backtracking > 0 && alreadyParsedRule(input, 111)) {
         return retval;
       }
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1070:5: ( HEX_LITERAL | OCTAL_LITERAL | DECIMAL_LITERAL |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1070:5: ( HEX_LITERAL |
+      // OCTAL_LITERAL | DECIMAL_LITERAL |
       // FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | TRUE | FALSE | NULL )
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:
       {
@@ -21004,14 +22026,20 @@ public class JavaParser extends Parser {
   public final void synpred42_Java_fragment() throws RecognitionException {
     Token ident = null;
 
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: ( ( genericTypeParameterList )? ( type IDENT
-    // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT formalParameterList (
-    // throwsClause )? ( block | SEMI ) | ident= IDENT formalParameterList ( throwsClause )? block ) )
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: ( genericTypeParameterList )? ( type IDENT
-    // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT formalParameterList (
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: ( (
+    // genericTypeParameterList )? ( type IDENT
+    // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT
+    // formalParameterList (
+    // throwsClause )? ( block | SEMI ) | ident= IDENT formalParameterList ( throwsClause )? block )
+    // )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: ( genericTypeParameterList
+    // )? ( type IDENT
+    // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT
+    // formalParameterList (
     // throwsClause )? ( block | SEMI ) | ident= IDENT formalParameterList ( throwsClause )? block )
     {
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: ( genericTypeParameterList )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: (
+      // genericTypeParameterList )?
       int alt159 = 2;
       int LA159_0 = input.LA(1);
 
@@ -21031,8 +22059,10 @@ public class JavaParser extends Parser {
           break;
       }
 
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:13: ( type IDENT formalParameterList (
-      // arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT formalParameterList ( throwsClause )? ( block |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:13: ( type IDENT
+      // formalParameterList (
+      // arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT formalParameterList
+      // ( throwsClause )? ( block |
       // SEMI ) | ident= IDENT formalParameterList ( throwsClause )? block )
       int alt166 = 3;
       switch (input.LA(1)) {
@@ -21084,7 +22114,8 @@ public class JavaParser extends Parser {
 
       switch (alt166) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:17: type IDENT formalParameterList (
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:17: type IDENT
+          // formalParameterList (
           // arrayDeclaratorList )? ( throwsClause )? ( block | SEMI )
           {
             pushFollow(FOLLOW_type_in_synpred42_Java5759);
@@ -21099,7 +22130,8 @@ public class JavaParser extends Parser {
 
             state._fsp--;
             if (state.failed) return;
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:48: ( arrayDeclaratorList )?
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:48: (
+            // arrayDeclaratorList )?
             int alt160 = 2;
             int LA160_0 = input.LA(1);
 
@@ -21108,7 +22140,8 @@ public class JavaParser extends Parser {
             }
             switch (alt160) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: arrayDeclaratorList
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                // arrayDeclaratorList
                 {
                   pushFollow(FOLLOW_arrayDeclaratorList_in_synpred42_Java5765);
                   arrayDeclaratorList();
@@ -21178,7 +22211,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 2:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:17: VOID IDENT formalParameterList (
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:17: VOID IDENT
+          // formalParameterList (
           // throwsClause )? ( block | SEMI )
           {
             match(input, VOID, FOLLOW_VOID_in_synpred42_Java5838);
@@ -21249,7 +22283,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 3:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:458:17: ident= IDENT formalParameterList (
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:458:17: ident= IDENT
+          // formalParameterList (
           // throwsClause )? block
           {
             ident = (Token) match(input, IDENT, FOLLOW_IDENT_in_synpred42_Java5911);
@@ -21295,13 +22330,19 @@ public class JavaParser extends Parser {
   public final void synpred43_Java_fragment() throws RecognitionException {
     Token ident = null;
 
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:452:9: ( modifierList ( ( genericTypeParameterList )? ( type
-    // IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT formalParameterList (
-    // throwsClause )? ( block | SEMI ) | ident= IDENT formalParameterList ( throwsClause )? block ) | type classFieldDeclaratorList
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:452:9: ( modifierList ( (
+    // genericTypeParameterList )? ( type
+    // IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID
+    // IDENT formalParameterList (
+    // throwsClause )? ( block | SEMI ) | ident= IDENT formalParameterList ( throwsClause )? block )
+    // | type classFieldDeclaratorList
     // SEMI ) )
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:452:9: modifierList ( ( genericTypeParameterList )? ( type
-    // IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT formalParameterList (
-    // throwsClause )? ( block | SEMI ) | ident= IDENT formalParameterList ( throwsClause )? block ) | type classFieldDeclaratorList
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:452:9: modifierList ( (
+    // genericTypeParameterList )? ( type
+    // IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID
+    // IDENT formalParameterList (
+    // throwsClause )? ( block | SEMI ) | ident= IDENT formalParameterList ( throwsClause )? block )
+    // | type classFieldDeclaratorList
     // SEMI )
     {
       pushFollow(FOLLOW_modifierList_in_synpred43_Java5726);
@@ -21309,9 +22350,12 @@ public class JavaParser extends Parser {
 
       state._fsp--;
       if (state.failed) return;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:9: ( ( genericTypeParameterList )? ( type IDENT
-      // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT formalParameterList (
-      // throwsClause )? ( block | SEMI ) | ident= IDENT formalParameterList ( throwsClause )? block ) | type
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:9: ( (
+      // genericTypeParameterList )? ( type IDENT
+      // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID
+      // IDENT formalParameterList (
+      // throwsClause )? ( block | SEMI ) | ident= IDENT formalParameterList ( throwsClause )? block
+      // ) | type
       // classFieldDeclaratorList SEMI )
       int alt175 = 2;
       switch (input.LA(1)) {
@@ -21378,11 +22422,15 @@ public class JavaParser extends Parser {
 
       switch (alt175) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: ( genericTypeParameterList )? ( type IDENT
-          // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT formalParameterList (
-          // throwsClause )? ( block | SEMI ) | ident= IDENT formalParameterList ( throwsClause )? block )
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: (
+          // genericTypeParameterList )? ( type IDENT
+          // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID
+          // IDENT formalParameterList (
+          // throwsClause )? ( block | SEMI ) | ident= IDENT formalParameterList ( throwsClause )?
+          // block )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: ( genericTypeParameterList )?
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:453:13: (
+            // genericTypeParameterList )?
             int alt167 = 2;
             int LA167_0 = input.LA(1);
 
@@ -21391,7 +22439,8 @@ public class JavaParser extends Parser {
             }
             switch (alt167) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: genericTypeParameterList
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                // genericTypeParameterList
                 {
                   pushFollow(FOLLOW_genericTypeParameterList_in_synpred43_Java5740);
                   genericTypeParameterList();
@@ -21402,8 +22451,10 @@ public class JavaParser extends Parser {
                 break;
             }
 
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:13: ( type IDENT formalParameterList (
-            // arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT formalParameterList ( throwsClause )? (
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:13: ( type IDENT
+            // formalParameterList (
+            // arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT
+            // formalParameterList ( throwsClause )? (
             // block | SEMI ) | ident= IDENT formalParameterList ( throwsClause )? block )
             int alt174 = 3;
             switch (input.LA(1)) {
@@ -21458,7 +22509,8 @@ public class JavaParser extends Parser {
 
             switch (alt174) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:17: type IDENT formalParameterList (
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:17: type IDENT
+                // formalParameterList (
                 // arrayDeclaratorList )? ( throwsClause )? ( block | SEMI )
                 {
                   pushFollow(FOLLOW_type_in_synpred43_Java5759);
@@ -21473,7 +22525,8 @@ public class JavaParser extends Parser {
 
                   state._fsp--;
                   if (state.failed) return;
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:48: ( arrayDeclaratorList )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:48: (
+                  // arrayDeclaratorList )?
                   int alt168 = 2;
                   int LA168_0 = input.LA(1);
 
@@ -21482,7 +22535,8 @@ public class JavaParser extends Parser {
                   }
                   switch (alt168) {
                     case 1:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: arrayDeclaratorList
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                      // arrayDeclaratorList
                       {
                         pushFollow(FOLLOW_arrayDeclaratorList_in_synpred43_Java5765);
                         arrayDeclaratorList();
@@ -21493,7 +22547,8 @@ public class JavaParser extends Parser {
                       break;
                   }
 
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:69: ( throwsClause )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:69: (
+                  // throwsClause )?
                   int alt169 = 2;
                   int LA169_0 = input.LA(1);
 
@@ -21513,7 +22568,8 @@ public class JavaParser extends Parser {
                       break;
                   }
 
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:83: ( block | SEMI )
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:454:83: ( block |
+                  // SEMI )
                   int alt170 = 2;
                   int LA170_0 = input.LA(1);
 
@@ -21552,7 +22608,8 @@ public class JavaParser extends Parser {
                 }
                 break;
               case 2:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:17: VOID IDENT formalParameterList (
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:17: VOID IDENT
+                // formalParameterList (
                 // throwsClause )? ( block | SEMI )
                 {
                   match(input, VOID, FOLLOW_VOID_in_synpred43_Java5838);
@@ -21564,7 +22621,8 @@ public class JavaParser extends Parser {
 
                   state._fsp--;
                   if (state.failed) return;
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:48: ( throwsClause )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:48: (
+                  // throwsClause )?
                   int alt171 = 2;
                   int LA171_0 = input.LA(1);
 
@@ -21584,7 +22642,8 @@ public class JavaParser extends Parser {
                       break;
                   }
 
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:62: ( block | SEMI )
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:456:62: ( block |
+                  // SEMI )
                   int alt172 = 2;
                   int LA172_0 = input.LA(1);
 
@@ -21623,7 +22682,8 @@ public class JavaParser extends Parser {
                 }
                 break;
               case 3:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:458:17: ident= IDENT formalParameterList (
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:458:17: ident= IDENT
+                // formalParameterList (
                 // throwsClause )? block
                 {
                   ident = (Token) match(input, IDENT, FOLLOW_IDENT_in_synpred43_Java5911);
@@ -21633,7 +22693,8 @@ public class JavaParser extends Parser {
 
                   state._fsp--;
                   if (state.failed) return;
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:458:49: ( throwsClause )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:458:49: (
+                  // throwsClause )?
                   int alt173 = 2;
                   int LA173_0 = input.LA(1);
 
@@ -21664,7 +22725,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 2:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:461:13: type classFieldDeclaratorList SEMI
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:461:13: type
+          // classFieldDeclaratorList SEMI
           {
             pushFollow(FOLLOW_type_in_synpred43_Java5982);
             type();
@@ -21701,12 +22763,17 @@ public class JavaParser extends Parser {
 
   // $ANTLR start synpred50_Java
   public final void synpred50_Java_fragment() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: ( ( genericTypeParameterList )? ( type IDENT
-    // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT formalParameterList ( throwsClause )? SEMI ) )
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: ( genericTypeParameterList )? ( type IDENT
-    // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT formalParameterList ( throwsClause )? SEMI )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: ( (
+    // genericTypeParameterList )? ( type IDENT
+    // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT
+    // formalParameterList ( throwsClause )? SEMI ) )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: ( genericTypeParameterList
+    // )? ( type IDENT
+    // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT
+    // formalParameterList ( throwsClause )? SEMI )
     {
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: ( genericTypeParameterList )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: (
+      // genericTypeParameterList )?
       int alt178 = 2;
       int LA178_0 = input.LA(1);
 
@@ -21726,8 +22793,10 @@ public class JavaParser extends Parser {
           break;
       }
 
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:13: ( type IDENT formalParameterList (
-      // arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT formalParameterList ( throwsClause )? SEMI )
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:13: ( type IDENT
+      // formalParameterList (
+      // arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT formalParameterList (
+      // throwsClause )? SEMI )
       int alt182 = 2;
       int LA182_0 = input.LA(1);
 
@@ -21753,7 +22822,8 @@ public class JavaParser extends Parser {
       }
       switch (alt182) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:17: type IDENT formalParameterList (
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:17: type IDENT
+          // formalParameterList (
           // arrayDeclaratorList )? ( throwsClause )? SEMI
           {
             pushFollow(FOLLOW_type_in_synpred50_Java6106);
@@ -21768,7 +22838,8 @@ public class JavaParser extends Parser {
 
             state._fsp--;
             if (state.failed) return;
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:48: ( arrayDeclaratorList )?
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:48: (
+            // arrayDeclaratorList )?
             int alt179 = 2;
             int LA179_0 = input.LA(1);
 
@@ -21777,7 +22848,8 @@ public class JavaParser extends Parser {
             }
             switch (alt179) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: arrayDeclaratorList
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                // arrayDeclaratorList
                 {
                   pushFollow(FOLLOW_arrayDeclaratorList_in_synpred50_Java6112);
                   arrayDeclaratorList();
@@ -21813,7 +22885,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 2:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:473:17: VOID IDENT formalParameterList (
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:473:17: VOID IDENT
+          // formalParameterList (
           // throwsClause )? SEMI
           {
             match(input, VOID, FOLLOW_VOID_in_synpred50_Java6176);
@@ -21856,11 +22929,15 @@ public class JavaParser extends Parser {
 
   // $ANTLR start synpred51_Java
   public final void synpred51_Java_fragment() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:469:9: ( modifierList ( ( genericTypeParameterList )? ( type
-    // IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT formalParameterList ( throwsClause )?
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:469:9: ( modifierList ( (
+    // genericTypeParameterList )? ( type
+    // IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT
+    // formalParameterList ( throwsClause )?
     // SEMI ) | type interfaceFieldDeclaratorList SEMI ) )
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:469:9: modifierList ( ( genericTypeParameterList )? ( type
-    // IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT formalParameterList ( throwsClause )?
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:469:9: modifierList ( (
+    // genericTypeParameterList )? ( type
+    // IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT
+    // formalParameterList ( throwsClause )?
     // SEMI ) | type interfaceFieldDeclaratorList SEMI )
     {
       pushFollow(FOLLOW_modifierList_in_synpred51_Java6073);
@@ -21868,8 +22945,10 @@ public class JavaParser extends Parser {
 
       state._fsp--;
       if (state.failed) return;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:9: ( ( genericTypeParameterList )? ( type IDENT
-      // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT formalParameterList ( throwsClause )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:9: ( (
+      // genericTypeParameterList )? ( type IDENT
+      // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT
+      // formalParameterList ( throwsClause )?
       // SEMI ) | type interfaceFieldDeclaratorList SEMI )
       int alt188 = 2;
       switch (input.LA(1)) {
@@ -21936,11 +23015,14 @@ public class JavaParser extends Parser {
 
       switch (alt188) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: ( genericTypeParameterList )? ( type IDENT
-          // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT formalParameterList (
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: (
+          // genericTypeParameterList )? ( type IDENT
+          // formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT
+          // formalParameterList (
           // throwsClause )? SEMI )
           {
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: ( genericTypeParameterList )?
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:470:13: (
+            // genericTypeParameterList )?
             int alt183 = 2;
             int LA183_0 = input.LA(1);
 
@@ -21949,7 +23031,8 @@ public class JavaParser extends Parser {
             }
             switch (alt183) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: genericTypeParameterList
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                // genericTypeParameterList
                 {
                   pushFollow(FOLLOW_genericTypeParameterList_in_synpred51_Java6087);
                   genericTypeParameterList();
@@ -21960,8 +23043,10 @@ public class JavaParser extends Parser {
                 break;
             }
 
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:13: ( type IDENT formalParameterList (
-            // arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT formalParameterList ( throwsClause )? SEMI )
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:13: ( type IDENT
+            // formalParameterList (
+            // arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT formalParameterList (
+            // throwsClause )? SEMI )
             int alt187 = 2;
             int LA187_0 = input.LA(1);
 
@@ -21987,7 +23072,8 @@ public class JavaParser extends Parser {
             }
             switch (alt187) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:17: type IDENT formalParameterList (
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:17: type IDENT
+                // formalParameterList (
                 // arrayDeclaratorList )? ( throwsClause )? SEMI
                 {
                   pushFollow(FOLLOW_type_in_synpred51_Java6106);
@@ -22002,7 +23088,8 @@ public class JavaParser extends Parser {
 
                   state._fsp--;
                   if (state.failed) return;
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:48: ( arrayDeclaratorList )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:48: (
+                  // arrayDeclaratorList )?
                   int alt184 = 2;
                   int LA184_0 = input.LA(1);
 
@@ -22011,7 +23098,8 @@ public class JavaParser extends Parser {
                   }
                   switch (alt184) {
                     case 1:
-                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: arrayDeclaratorList
+                      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                      // arrayDeclaratorList
                       {
                         pushFollow(FOLLOW_arrayDeclaratorList_in_synpred51_Java6112);
                         arrayDeclaratorList();
@@ -22022,7 +23110,8 @@ public class JavaParser extends Parser {
                       break;
                   }
 
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:69: ( throwsClause )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:471:69: (
+                  // throwsClause )?
                   int alt185 = 2;
                   int LA185_0 = input.LA(1);
 
@@ -22047,7 +23136,8 @@ public class JavaParser extends Parser {
                 }
                 break;
               case 2:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:473:17: VOID IDENT formalParameterList (
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:473:17: VOID IDENT
+                // formalParameterList (
                 // throwsClause )? SEMI
                 {
                   match(input, VOID, FOLLOW_VOID_in_synpred51_Java6176);
@@ -22059,7 +23149,8 @@ public class JavaParser extends Parser {
 
                   state._fsp--;
                   if (state.failed) return;
-                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:473:48: ( throwsClause )?
+                  // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:473:48: (
+                  // throwsClause )?
                   int alt186 = 2;
                   int LA186_0 = input.LA(1);
 
@@ -22087,7 +23178,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 2:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:476:13: type interfaceFieldDeclaratorList SEMI
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:476:13: type
+          // interfaceFieldDeclaratorList SEMI
           {
             pushFollow(FOLLOW_type_in_synpred51_Java6248);
             type();
@@ -22182,7 +23274,8 @@ public class JavaParser extends Parser {
 
   // $ANTLR start synpred90_Java
   public final void synpred90_Java_fragment() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:611:40: ( COMMA genericTypeArgument )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:611:40: ( COMMA genericTypeArgument
+    // )
     // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:611:40: COMMA genericTypeArgument
     {
       match(input, COMMA, FOLLOW_COMMA_in_synpred90_Java7361);
@@ -22198,7 +23291,8 @@ public class JavaParser extends Parser {
 
   // $ANTLR start synpred92_Java
   public final void synpred92_Java_fragment() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:617:18: ( genericWildcardBoundType )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:617:18: ( genericWildcardBoundType
+    // )
     // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:617:18: genericWildcardBoundType
     {
       pushFollow(FOLLOW_genericWildcardBoundType_in_synpred92_Java7417);
@@ -22212,8 +23306,10 @@ public class JavaParser extends Parser {
 
   // $ANTLR start synpred97_Java
   public final void synpred97_Java_fragment() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:42: ( COMMA formalParameterStandardDecl )
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:42: COMMA formalParameterStandardDecl
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:42: ( COMMA
+    // formalParameterStandardDecl )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:42: COMMA
+    // formalParameterStandardDecl
     {
       match(input, COMMA, FOLLOW_COMMA_in_synpred97_Java7635);
       if (state.failed) return;
@@ -22228,9 +23324,11 @@ public class JavaParser extends Parser {
 
   // $ANTLR start synpred99_Java
   public final void synpred99_Java_fragment() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:13: ( formalParameterStandardDecl ( COMMA
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:13: (
+    // formalParameterStandardDecl ( COMMA
     // formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )? )
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:13: formalParameterStandardDecl ( COMMA
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:13: formalParameterStandardDecl
+    // ( COMMA
     // formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )?
     {
       pushFollow(FOLLOW_formalParameterStandardDecl_in_synpred99_Java7632);
@@ -22238,7 +23336,8 @@ public class JavaParser extends Parser {
 
       state._fsp--;
       if (state.failed) return;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:41: ( COMMA formalParameterStandardDecl )*
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:41: ( COMMA
+      // formalParameterStandardDecl )*
       loop191:
       do {
         int alt191 = 2;
@@ -22254,7 +23353,8 @@ public class JavaParser extends Parser {
 
         switch (alt191) {
           case 1:
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:42: COMMA formalParameterStandardDecl
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:42: COMMA
+            // formalParameterStandardDecl
             {
               match(input, COMMA, FOLLOW_COMMA_in_synpred99_Java7635);
               if (state.failed) return;
@@ -22271,7 +23371,8 @@ public class JavaParser extends Parser {
         }
       } while (true);
 
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:78: ( COMMA formalParameterVarArgDecl )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:78: ( COMMA
+      // formalParameterVarArgDecl )?
       int alt192 = 2;
       int LA192_0 = input.LA(1);
 
@@ -22280,7 +23381,8 @@ public class JavaParser extends Parser {
       }
       switch (alt192) {
         case 1:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:79: COMMA formalParameterVarArgDecl
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:642:79: COMMA
+          // formalParameterVarArgDecl
           {
             match(input, COMMA, FOLLOW_COMMA_in_synpred99_Java7642);
             if (state.failed) return;
@@ -22298,7 +23400,8 @@ public class JavaParser extends Parser {
 
   // $ANTLR start synpred100_Java
   public final void synpred100_Java_fragment() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:645:13: ( formalParameterVarArgDecl )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:645:13: ( formalParameterVarArgDecl
+    // )
     // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:645:13: formalParameterVarArgDecl
     {
       pushFollow(FOLLOW_formalParameterVarArgDecl_in_synpred100_Java7701);
@@ -22341,9 +23444,11 @@ public class JavaParser extends Parser {
 
   // $ANTLR start synpred114_Java
   public final void synpred114_Java_fragment() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:724:9: ( modifierList type ( IDENT LPAREN RPAREN (
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:724:9: ( modifierList type ( IDENT
+    // LPAREN RPAREN (
     // annotationDefaultValue )? SEMI | classFieldDeclaratorList SEMI ) )
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:724:9: modifierList type ( IDENT LPAREN RPAREN (
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:724:9: modifierList type ( IDENT
+    // LPAREN RPAREN (
     // annotationDefaultValue )? SEMI | classFieldDeclaratorList SEMI )
     {
       pushFollow(FOLLOW_modifierList_in_synpred114_Java8457);
@@ -22356,7 +23461,8 @@ public class JavaParser extends Parser {
 
       state._fsp--;
       if (state.failed) return;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:725:9: ( IDENT LPAREN RPAREN ( annotationDefaultValue )?
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:725:9: ( IDENT LPAREN RPAREN (
+      // annotationDefaultValue )?
       // SEMI | classFieldDeclaratorList SEMI )
       int alt197 = 2;
       int LA197_0 = input.LA(1);
@@ -22400,7 +23506,8 @@ public class JavaParser extends Parser {
             if (state.failed) return;
             match(input, RPAREN, FOLLOW_RPAREN_in_synpred114_Java8477);
             if (state.failed) return;
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:725:33: ( annotationDefaultValue )?
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:725:33: (
+            // annotationDefaultValue )?
             int alt196 = 2;
             int LA196_0 = input.LA(1);
 
@@ -22409,7 +23516,8 @@ public class JavaParser extends Parser {
             }
             switch (alt196) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0: annotationDefaultValue
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:0:0:
+                // annotationDefaultValue
                 {
                   pushFollow(FOLLOW_annotationDefaultValue_in_synpred114_Java8479);
                   annotationDefaultValue();
@@ -22425,7 +23533,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 2:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:727:13: classFieldDeclaratorList SEMI
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:727:13:
+          // classFieldDeclaratorList SEMI
           {
             pushFollow(FOLLOW_classFieldDeclaratorList_in_synpred114_Java8524);
             classFieldDeclaratorList();
@@ -22443,8 +23552,10 @@ public class JavaParser extends Parser {
 
   // $ANTLR start synpred116_Java
   public final void synpred116_Java_fragment() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:745:9: ( localVariableDeclaration SEMI )
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:745:9: localVariableDeclaration SEMI
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:745:9: ( localVariableDeclaration
+    // SEMI )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:745:9: localVariableDeclaration
+    // SEMI
     {
       pushFollow(FOLLOW_localVariableDeclaration_in_synpred116_Java8661);
       localVariableDeclaration();
@@ -22475,7 +23586,8 @@ public class JavaParser extends Parser {
   public final void synpred121_Java_fragment() throws RecognitionException {
     JavaParser.statement_return elseStat = null;
 
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:763:13: ( ELSE elseStat= statement )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:763:13: ( ELSE elseStat= statement
+    // )
     // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:763:13: ELSE elseStat= statement
     {
       match(input, ELSE, FOLLOW_ELSE_in_synpred121_Java8972);
@@ -22491,9 +23603,11 @@ public class JavaParser extends Parser {
 
   // $ANTLR start synpred123_Java
   public final void synpred123_Java_fragment() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:767:13: ( forInit SEMI forCondition SEMI forUpdater RPAREN
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:767:13: ( forInit SEMI forCondition
+    // SEMI forUpdater RPAREN
     // statement )
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:767:13: forInit SEMI forCondition SEMI forUpdater RPAREN
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:767:13: forInit SEMI forCondition
+    // SEMI forUpdater RPAREN
     // statement
     {
       pushFollow(FOLLOW_forInit_in_synpred123_Java9159);
@@ -22570,8 +23684,10 @@ public class JavaParser extends Parser {
 
   // $ANTLR start synpred190_Java
   public final void synpred190_Java_fragment() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:954:9: ( LPAREN type RPAREN unaryExpression )
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:954:9: LPAREN type RPAREN unaryExpression
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:954:9: ( LPAREN type RPAREN
+    // unaryExpression )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:954:9: LPAREN type RPAREN
+    // unaryExpression
     {
       match(input, LPAREN, FOLLOW_LPAREN_in_synpred190_Java11783);
       if (state.failed) return;
@@ -22593,8 +23709,10 @@ public class JavaParser extends Parser {
 
   // $ANTLR start synpred218_Java
   public final void synpred218_Java_fragment() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1022:13: ( ( arrayDeclarator )+ ( DOT CLASS ) )
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1022:13: ( arrayDeclarator )+ ( DOT CLASS )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1022:13: ( ( arrayDeclarator )+ (
+    // DOT CLASS ) )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1022:13: ( arrayDeclarator )+ ( DOT
+    // CLASS )
     {
       // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1022:13: ( arrayDeclarator )+
       int cnt220 = 0;
@@ -22650,16 +23768,20 @@ public class JavaParser extends Parser {
     Token innerDot = null;
 
     // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1027:13: (outerDot= DOT ( CLASS |
-    // genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS |
+    // genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT
+    // arguments | IDENT arguments ) | THIS |
     // Super= SUPER arguments | innerNewExpression ) )
     // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1027:13: outerDot= DOT ( CLASS |
-    // genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS |
+    // genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT
+    // arguments | IDENT arguments ) | THIS |
     // Super= SUPER arguments | innerNewExpression )
     {
       outerDot = (Token) match(input, DOT, FOLLOW_DOT_in_synpred226_Java13891);
       if (state.failed) return;
-      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1028:13: ( CLASS | genericTypeArgumentListSimplified
-      // (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS | Super= SUPER arguments |
+      // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1028:13: ( CLASS |
+      // genericTypeArgumentListSimplified
+      // (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS |
+      // Super= SUPER arguments |
       // innerNewExpression )
       int alt223 = 5;
       switch (input.LA(1)) {
@@ -22707,7 +23829,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 2:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1029:17: genericTypeArgumentListSimplified (Super=
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1029:17:
+          // genericTypeArgumentListSimplified (Super=
           // SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments )
           {
             pushFollow(FOLLOW_genericTypeArgumentListSimplified_in_synpred226_Java13972);
@@ -22715,7 +23838,8 @@ public class JavaParser extends Parser {
 
             state._fsp--;
             if (state.failed) return;
-            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1030:17: (Super= SUPER arguments | SUPER innerDot=
+            // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1030:17: (Super= SUPER
+            // arguments | SUPER innerDot=
             // DOT IDENT arguments | IDENT arguments )
             int alt222 = 3;
             int LA222_0 = input.LA(1);
@@ -22749,7 +23873,8 @@ public class JavaParser extends Parser {
             }
             switch (alt222) {
               case 1:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1030:21: Super= SUPER arguments
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1030:21: Super= SUPER
+                // arguments
                 {
                   Super = (Token) match(input, SUPER, FOLLOW_SUPER_in_synpred226_Java13997);
                   if (state.failed) return;
@@ -22761,7 +23886,8 @@ public class JavaParser extends Parser {
                 }
                 break;
               case 2:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1031:21: SUPER innerDot= DOT IDENT arguments
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1031:21: SUPER
+                // innerDot= DOT IDENT arguments
                 {
                   match(input, SUPER, FOLLOW_SUPER_in_synpred226_Java14049);
                   if (state.failed) return;
@@ -22777,7 +23903,8 @@ public class JavaParser extends Parser {
                 }
                 break;
               case 3:
-                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1032:21: IDENT arguments
+                // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1032:21: IDENT
+                // arguments
                 {
                   match(input, IDENT, FOLLOW_IDENT_in_synpred226_Java14107);
                   if (state.failed) return;
@@ -22799,7 +23926,8 @@ public class JavaParser extends Parser {
           }
           break;
         case 4:
-          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1035:17: Super= SUPER arguments
+          // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1035:17: Super= SUPER
+          // arguments
           {
             Super = (Token) match(input, SUPER, FOLLOW_SUPER_in_synpred226_Java14250);
             if (state.failed) return;
@@ -22827,7 +23955,8 @@ public class JavaParser extends Parser {
 
   // $ANTLR start synpred234_Java
   public final void synpred234_Java_fragment() throws RecognitionException {
-    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1061:37: ( LBRACK expression RBRACK )
+    // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1061:37: ( LBRACK expression RBRACK
+    // )
     // org/eclipse/che/ide/ext/java/jdi/server/expression/Java.g:1061:37: LBRACK expression RBRACK
     {
       match(input, LBRACK, FOLLOW_LBRACK_in_synpred234_Java14701);
