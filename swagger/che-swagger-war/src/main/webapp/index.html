@@ -66,8 +66,9 @@
             hljs.highlightBlock(e)
           });
 
-          addApiKeyAuthorization();
+          addMachineTokenAuthorization();
           addCsrfAuthorization();
+          addKeycloakAuthorization();
         },
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
@@ -101,9 +102,24 @@
             }
           }
         });
-      };
+      }
 
-      $('#input_apiKey').change(addApiKeyAuthorization);
+      function addKeycloakAuthorization() {
+        $.when(initializeKeycloak()).then(function(keycloak) {
+          window.swaggerUi.api.clientAuthorizations.add("keycloak", new SwaggerClient.KeycloakAuthorization(keycloak));
+        });
+      }
+
+      function addMachineTokenAuthorization(){
+        var key = encodeURIComponent($('#input_apiKey')[0].value);
+        if(key && key.trim() != "") {
+          var machineTokenAuth = new SwaggerClient.ApiKeyAuthorization("token", key, "query");
+          window.swaggerUi.api.clientAuthorizations.add("machine_token", machineTokenAuth);
+          log("added machine token " + key);
+        }
+      }
+
+      $('#input_apiKey').change(addMachineTokenAuthorization);
 
       // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
       /*
@@ -118,7 +134,53 @@
           console.log.apply(console, arguments);
         }
       }
-  });
+
+      function initializeKeycloak() {
+        var deferred = $.Deferred();
+        if (this.keycloak) {
+          return deferred.resolve(keycloak);
+        } else {
+          $.when(getKeycloakConfiguration()).done(function(data) {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = keycloakSettings.url + "/js/keycloak.js";
+            script.onload = function () {
+              this.keycloak = Keycloak(keycloakSettings);
+              this.keycloak.init({
+                onLoad: 'login-required', checkLoginIframe: false
+              }).success(function (authenticated) {
+                deferred.resolve(this.keycloak);
+              }.bind(this)).error(function () {
+                console.log("Failed to load Keycloak script");
+                deferred.reject();
+              });
+            }.bind(this);
+            document.head.appendChild(script);
+          }.bind(this));
+          return deferred.promise();
+        }
+      }
+      
+      function getKeycloakConfiguration() {
+        var deferred = $.Deferred();
+        $.ajax({
+          url : "/api/keycloak/settings",
+          dataType: "json",
+          success: function(data) {
+            keycloakSettings = {
+              url: data['che.keycloak.auth_server_url'],
+              realm: data['che.keycloak.realm'],
+              clientId: data['che.keycloak.client_id']
+            };
+            deferred.resolve(keycloakSettings);
+          },
+          error: function () {
+            deferred.reject();
+          }
+        });
+        return deferred.promise();
+      }
+    });
   </script>
 </head>
 
@@ -128,7 +190,7 @@
     <a id="logo" href="http://swagger.io"></a>
     <form id='api_selector'>
       <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
-      <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
+      <div class='input'><input placeholder="token" id="input_apiKey" name="apiKey" type="text"/></div>
       <div class='input'><a id="explore" href="#" data-sw-translate>Explore</a></div>
     </form>
   </div>
