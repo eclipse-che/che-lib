@@ -12,6 +12,9 @@
 
 -->
 <configuration>
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
 
     <property name="max.retention.days" value="60" />
 
@@ -42,6 +45,8 @@
     <logger name="org.apache.catalina.loader" level="OFF"/>
     <logger name="org.apache.catalina.session.PersistentManagerBase" level="OFF"/>
     <logger name="org.apache.jasper.servlet.TldScanner" level="OFF"/>
+    <logger name="okhttp3.OkHttpClient" level="DEBUG"/>
+    <logger name="io.fabric8.kubernetes.client.dsl.internal.ExecWebSocketListener" level="DEBUG"/>
 
     <root level="${che.logs.level:-INFO}">
         <appender-ref ref="stdout"/>
