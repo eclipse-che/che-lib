@@ -16,7 +16,7 @@
     <parent>
         <artifactId>che-lib-parent</artifactId>
         <groupId>org.eclipse.che.lib</groupId>
-        <version>6.0.0-M2-SNAPSHOT</version>
+        <version>6.0.0-M3-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>che-tomcat8-slf4j-logback</artifactId>
@@ -90,7 +90,6 @@
                                     <include>ch.qos.logback:logback-core</include>
                                 </includes>
                             </artifactSet>
-
                             <filters>
                                 <filter>
                                     <artifact>org.apache.tomcat:tomcat-juli</artifact>

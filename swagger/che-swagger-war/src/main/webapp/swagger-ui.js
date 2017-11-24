@@ -955,6 +955,7 @@ module.exports = SwaggerClient;
 SwaggerClient.ApiKeyAuthorization = auth.ApiKeyAuthorization;
 SwaggerClient.PasswordAuthorization = auth.PasswordAuthorization;
 SwaggerClient.CookieAuthorization = auth.CookieAuthorization;
+SwaggerClient.KeycloakAuthorization = auth.KeycloakAuthorization;
 SwaggerClient.SwaggerApi = deprecationWrapper;
 SwaggerClient.SwaggerClient = deprecationWrapper;
 SwaggerClient.SchemaMarkup = require('./lib/schema-markup');
@@ -1104,6 +1105,24 @@ PasswordAuthorization.prototype.apply = function (obj) {
     obj.headers.Authorization = 'Basic ' + btoa(this.username + ':' + this.password);
   }
 
+  return true;
+};
+
+/**
+ * Keycloak Authorization uses Keycloak Javascript Adapter to retrieve and refresh token
+ */
+var KeycloakAuthorization = module.exports.KeycloakAuthorization = function (keycloak) {
+  this.keycloak = keycloak;
+};
+
+KeycloakAuthorization.prototype.apply = function (obj) {
+  if(typeof obj.headers.Authorization === 'undefined') {
+    this.keycloak.updateToken(5).success(function(refreshed) {
+      obj.headers.Authorization = 'Bearer ' + this.keycloak.token;
+    }.bind(this)).error(function() {
+      console.log("failed to refresh Keycloak token");
+    });
+  }
   return true;
 };
 
