@@ -12,6 +12,9 @@
 
 -->
 <configuration>
+    <contextListener class="org.apache.juli.logging.ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
 
     <property name="max.retention.days" value="60" />
 
