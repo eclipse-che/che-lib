@@ -12,6 +12,9 @@
 
 -->
 <configuration>
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
 
     <property name="max.retention.days" value="60" />
 
@@ -38,7 +41,6 @@
 
 
     <include optional="true" file="${che.local.conf.dir}/logback/logback-additional-appenders.xml"/>
-
     <include optional="true" file="${catalina.home}/conf/logback-additional-appenders.xml"/>
 
     <logger name="org.apache.catalina.loader" level="OFF"/>
