@@ -16,17 +16,16 @@
     <parent>
         <artifactId>maven-depmgt-pom</artifactId>
         <groupId>org.eclipse.che.depmgt</groupId>
-        <version>5.23.0-SNAPSHOT</version>
+        <version>6.0.0-M4-SNAPSHOT</version>
     </parent>
     <groupId>org.eclipse.che.lib</groupId>
     <artifactId>che-lib-parent</artifactId>
-    <version>5.23.0-SNAPSHOT</version>
+    <version>6.0.0-M4-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Che Lib :: Parent</name>
     <modules>
         <module>che-tomcat8-slf4j-logback</module>
         <module>swagger</module>
-        <module>websocket-terminal</module>
         <module>org-eclipse-jdt-core-repack</module>
         <module>che-orion-editor</module>
         <module>che-terminal-client</module>

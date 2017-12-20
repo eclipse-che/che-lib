@@ -15,10 +15,6 @@ test-output/
 *.iws
 .idea/
 
-# Che files #
-#############
-.che
-
 # Compiled source #
 ###################
 *.com
@@ -43,6 +39,8 @@ test-output/
 *.zip
 *.war
 *.ear
+
+
 
 # Logs and databases #
 ######################
