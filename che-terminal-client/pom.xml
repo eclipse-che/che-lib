@@ -101,7 +101,7 @@
                         </goals>
                         <configuration>
                             <target name="copy xterm.js">
-                                <copy todir="${project.build.outputDirectory}">
+                                <copy todir="${project.build.outputDirectory}/org/eclipse/che/lib/terminal/client">
                                     <fileset dir="${basedir}/build" />
                                 </copy>
                             </target>

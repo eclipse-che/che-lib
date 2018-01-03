@@ -37,13 +37,12 @@
     }
     var parentElementStyle = window.getComputedStyle(term.element.parentElement),
         parentElementHeight = parseInt(parentElementStyle.getPropertyValue('height')),
-        parentElementWidth = Math.max(0, parseInt(parentElementStyle.getPropertyValue('width')) - 17),
+        parentElementWidth = Math.max(0, parseInt(parentElementStyle.getPropertyValue('width')) - (term.scrollBarMeasure.getVerticalWidth() || 17)),
         elementStyle = window.getComputedStyle(term.element),
         elementPaddingVer = parseInt(elementStyle.getPropertyValue('padding-top')) + parseInt(elementStyle.getPropertyValue('padding-bottom')),
         elementPaddingHor = parseInt(elementStyle.getPropertyValue('padding-right')) + parseInt(elementStyle.getPropertyValue('padding-left')),
         availableHeight = parentElementHeight - elementPaddingVer,
         availableWidth = parentElementWidth - elementPaddingHor,
-        container = term.rowContainer,
         subjectRow = term.rowContainer.firstElementChild,
         contentBuffer = subjectRow.innerHTML,
         characterHeight,
@@ -51,6 +50,10 @@
         characterWidth,
         cols,
         geometry;
+
+    if (term.readOnly) {
+      availableHeight -= term.scrollBarMeasure.getHorizontalWidth() || 17;
+    }
 
     subjectRow.style.display = 'inline';
     subjectRow.innerHTML = 'W'; // Common character for measuring width, although on monospace

@@ -50,7 +50,7 @@ export class InputHandler implements IInputHandler {
 
       // goto next line if ch would overflow
       // TODO: needs a global min terminal width of 2
-      if (this._terminal.x + ch_width - 1 >= this._terminal.cols) {
+      if (this._terminal.x + ch_width - 1 >= this._terminal.cols && !this._terminal.readOnly) {
         // autowrap - DECAWM
         if (this._terminal.wraparoundMode) {
           this._terminal.x = 0;
@@ -91,6 +91,9 @@ export class InputHandler implements IInputHandler {
       if (ch_width === 2) {
         this._terminal.lines.get(row)[this._terminal.x] = [this._terminal.curAttr, '', 0];
         this._terminal.x++;
+      }
+      if (this._terminal.readOnly && this._terminal.maxLineWidth < this._terminal.x) {
+        this._terminal.maxLineWidth = this._terminal.x;
       }
     }
   }

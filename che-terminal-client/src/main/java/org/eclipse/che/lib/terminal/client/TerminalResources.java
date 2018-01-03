@@ -12,10 +12,14 @@ package org.eclipse.che.lib.terminal.client;
 
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
+import com.google.gwt.resources.client.TextResource;
 
 /** @author Alexander Andrienko */
 public interface TerminalResources extends ClientBundle {
   @CssResource.NotStrict
   @Source({"xterm.css"})
   CssResource getTerminalStyle();
+
+  @Source("xterm.js")
+  TextResource xtermScript();
 }

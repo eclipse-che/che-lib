@@ -19,6 +19,7 @@ export interface IBrowser {
 
 export interface ITerminal {
   element: HTMLElement;
+  rowContainerWrapper: HTMLElement;
   rowContainer: HTMLElement;
   textarea: HTMLTextAreaElement;
   ybase: number;
@@ -26,6 +27,8 @@ export interface ITerminal {
   lines: ICircularList<string>;
   rows: number;
   cols: number;
+  maxLineWidth: number;
+  readOnly: boolean;
   browser: IBrowser;
   writeBuffer: string[];
   children: HTMLElement[];
@@ -50,6 +53,12 @@ export interface ITerminal {
 export interface ICharMeasure {
   width: number;
   height: number;
+  measure(): void;
+}
+
+export interface IScrollBarMeasure {
+  verticalWidth: number;
+  horizontalWidth: number;
   measure(): void;
 }
 

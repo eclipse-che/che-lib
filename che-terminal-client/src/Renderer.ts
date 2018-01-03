@@ -123,7 +123,7 @@ export class Renderer {
     if (end - start >= this._terminal.rows / 2) {
       parent = this._terminal.element.parentNode;
       if (parent) {
-        this._terminal.element.removeChild(this._terminal.rowContainer);
+        this._terminal.rowContainerWrapper.removeChild(this._terminal.rowContainer);
       }
     }
 
@@ -281,7 +281,7 @@ export class Renderer {
     }
 
     if (parent) {
-      this._terminal.element.appendChild(this._terminal.rowContainer);
+      this._terminal.rowContainerWrapper.appendChild(this._terminal.rowContainer);
     }
 
     this._terminal.emit('refresh', {element: this._terminal.element, start: start, end: end});

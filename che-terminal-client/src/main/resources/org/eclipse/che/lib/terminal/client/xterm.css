@@ -39,10 +39,22 @@
 @eval blueIconColor org.eclipse.che.ide.api.theme.Style.theme.getBlueIconColor();
 @eval outputFontColor org.eclipse.che.ide.api.theme.Style.theme.getOutputFontColor();
 
+.rows-wrapper {
+    position: absolute;
+    overflow: hidden;
+    margin: 0px;
+    border-width: 0px;
+    padding: 0px;
+    background: transparent;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
 .terminal {
     background-color: outputBackgroundColor;
     color: outputFontColor;
-    border-color: transparent;
     font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
     font-feature-settings: "liga" 0;
     font-size: 11px;
@@ -174,16 +186,29 @@
 
 .terminal .xterm-rows {
     position: absolute;
-    left: 0;
-    top: 0;
+    border-width: 0px;
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    z-index: 1;
+
+    user-select: text;
     -moz-user-select: text;
     -webkit-user-select: text;
-    user-select: text;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    /*white-space: pre;*/
+    /*word-wrap: normal;*/
 }
 
 .terminal .xterm-rows > div {
     /* Lines containing spans and text nodes ocassionally wrap despite being the same width (#327) */
     white-space: nowrap;
+    float: left;
 }
 
 .terminal .xterm-scroll-area {

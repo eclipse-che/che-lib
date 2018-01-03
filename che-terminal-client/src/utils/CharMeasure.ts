@@ -19,6 +19,14 @@ export class CharMeasure extends EventEmitter {
     super();
     this._document = document;
     this._parentElement = parentElement;
+
+    this._measureElement = this._document.createElement('span');
+    this._measureElement.style.position = 'absolute';
+    this._measureElement.style.top = '0';
+    this._measureElement.style.left = '-9999em';
+    this._measureElement.textContent = 'W';
+    this._measureElement.setAttribute('aria-hidden', 'true');
+    this._parentElement.appendChild(this._measureElement);
   }
 
   public get width(): number {
@@ -30,23 +38,6 @@ export class CharMeasure extends EventEmitter {
   }
 
   public measure(): void {
-    if (!this._measureElement) {
-      this._measureElement = this._document.createElement('span');
-      this._measureElement.style.position = 'absolute';
-      this._measureElement.style.top = '0';
-      this._measureElement.style.left = '-9999em';
-      this._measureElement.textContent = 'W';
-      this._measureElement.setAttribute('aria-hidden', 'true');
-      this._parentElement.appendChild(this._measureElement);
-      // Perform _doMeasure async if the element was just attached as sometimes
-      // getBoundingClientRect does not return accurate values without this.
-      setTimeout(() => this._doMeasure(), 0);
-    } else {
-      this._doMeasure();
-    }
-  }
-
-  private _doMeasure(): void {
     const geometry = this._measureElement.getBoundingClientRect();
     // The element is likely currently display:none, we should retain the
     // previous value.
