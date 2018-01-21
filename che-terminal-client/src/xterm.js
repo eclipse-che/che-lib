@@ -625,9 +625,6 @@ Terminal.prototype.open = function(parent) {
 
   this.viewportElement = document.createElement('div');
   this.viewportElement.classList.add('xterm-viewport');
-  if (this.readOnly) {
-    this.viewportElement.style.overflowX = "scroll";
-  }
   this.element.appendChild(this.viewportElement);
   this.viewportScrollArea = document.createElement('div');
   this.viewportScrollArea.classList.add('xterm-scroll-area');
@@ -755,6 +752,10 @@ Terminal.prototype.updateCharSizeCSS = function() {
 Terminal.prototype.updateReadOnlyCSS = function () {
   if (this.readOnly) {
     this.viewportElement.style.overflowX = "scroll";
+    this.viewportElement.style.bottom = 0 + "px";
+    this.viewportElement.style.top = "initial";
+
+    this.rowContainerWrapper.style.top = "initial";
     this.rowContainerWrapper.style.bottom = this.scrollBarMeasure.getHorizontalWidth() + "px";
   }
 };
@@ -1839,6 +1840,10 @@ Terminal.prototype.resize = function(x, y) {
     return;
   }
 
+  if (this.readOnly && this.charMeasure && this.charMeasure.height > 0) {
+    this.rowContainerWrapper.style.height = y * this.charMeasure.height + "px";
+  }
+
   var line
   , el
   , i
@@ -2236,6 +2241,13 @@ Terminal.prototype.reverseIndex = function() {
 Terminal.prototype.reset = function() {
   this.options.rows = this.rows;
   this.options.cols = this.cols;
+  if (this.readOnly) {
+    var cols = Math.floor(this.rowContainerWrapper.clientWidth / this.charMeasure.width);
+    if (this.maxLineWidth > cols) {
+      this.maxLineWidth = 0;
+      this.options.cols = cols;
+    }
+  }
   var customKeydownHandler = this.customKeydownHandler;
   var normal = this.normal;
   Terminal.call(this, this.options);

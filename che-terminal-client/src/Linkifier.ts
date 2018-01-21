@@ -186,7 +186,7 @@ export class Linkifier {
       const node = nodes[i];
       const searchIndex = node.textContent.indexOf(uri);
       if (searchIndex >= 0) {
-        const linkElement = this._createAnchorElement(uri, handler, isHttpLinkMatcher);
+        const linkElement = this._createAnchorElement(uri, node.textContent, handler, isHttpLinkMatcher);
         if (node.textContent.length === uri.length) {
           // Matches entire string
 
@@ -229,7 +229,7 @@ export class Linkifier {
    * @param {string} uri The uri of the link.
    * @return {HTMLAnchorElement} The link.
    */
-  private _createAnchorElement(uri: string, handler: LinkMatcherHandler, isHypertextLinkHandler: boolean): HTMLAnchorElement {
+  private _createAnchorElement(uri: string, content: string, handler: LinkMatcherHandler, isHypertextLinkHandler: boolean): HTMLAnchorElement {
     const element = this._document.createElement('a');
     element.textContent = uri;
     if (isHypertextLinkHandler) {
@@ -238,7 +238,7 @@ export class Linkifier {
       element.target = '_blank';
       element.addEventListener('click', (event: MouseEvent) => {
         if (handler) {
-          return handler(event, uri);
+          return handler(event, uri, content);
         }
       });
     } else {
@@ -247,7 +247,9 @@ export class Linkifier {
         if (element.classList.contains(INVALID_LINK_CLASS)) {
           return;
         }
-        return handler(event, uri);
+        if (handler) {
+          return handler(event, uri, content);
+        }
       });
     }
     return element;

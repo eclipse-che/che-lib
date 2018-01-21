@@ -49,7 +49,7 @@
     left: 0;
     top: 0;
     right: 0;
-    bottom: 0;
+    height: 100%;
 }
 
 .terminal {
@@ -59,6 +59,7 @@
     font-feature-settings: "liga" 0;
     font-size: 11px;
     position: relative;
+    height: 100%;
 }
 
 .terminal.focus,
@@ -178,6 +179,12 @@
     /* On OS X this is required in order for the scroll bar to appear fully opaque */
     background-color: outputBackgroundColor;
     overflow-y: scroll;
+    overflow-x: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .terminal .xterm-wide-char {
@@ -198,17 +205,12 @@
 
     left: 0;
     right: 0;
-    bottom: 0;
     top: 0;
-
-    /*white-space: pre;*/
-    /*word-wrap: normal;*/
 }
 
 .terminal .xterm-rows > div {
     /* Lines containing spans and text nodes ocassionally wrap despite being the same width (#327) */
     white-space: nowrap;
-    float: left;
 }
 
 .terminal .xterm-scroll-area {

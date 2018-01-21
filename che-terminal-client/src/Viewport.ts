@@ -61,7 +61,7 @@ export class Viewport {
         this.lastRecordedViewportHeight = this.terminal.rows;
         let newHeight = this.charMeasure.height * this.terminal.rows;
         if (this.terminal.readOnly) {
-          this.viewportElement.style.height = '100%';
+          this.viewportElement.style.height = newHeight + this.scrollBarMeasure.getHorizontalWidth() + 'px';
         } else {
           this.viewportElement.style.height = newHeight + 'px';
         }
