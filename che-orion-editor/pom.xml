@@ -47,6 +47,7 @@
                         <configuration>
                             <patchDirectory>${patches.location}</patchDirectory>
                             <patches>
+                                <patch>add_hide_tooltip.diff</patch>
                                 <patch>fix_linked_mode.diff</patch>
                                 <patch>fix_focus.diff</patch>
                                 <patch>fix_goto_line.diff</patch>
