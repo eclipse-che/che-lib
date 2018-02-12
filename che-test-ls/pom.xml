@@ -34,7 +34,6 @@
                             <goal>run</goal>
                         </goals>
                         <configuration>
-                            <tarLongFileMode>posix</tarLongFileMode>
                             <target>
                                 <!-- Download NPM dependencies -->
                                 <exec dir="${basedir}/src" executable="npm" failonerror="true">
@@ -56,6 +55,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
+                            <tarLongFileMode>posix</tarLongFileMode>
                             <appendAssemblyId>false</appendAssemblyId>
                             <descriptors>
                                 <descriptor>assembly/assembly.xml</descriptor>
