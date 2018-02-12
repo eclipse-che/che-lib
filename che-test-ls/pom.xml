@@ -34,6 +34,7 @@
                             <goal>run</goal>
                         </goals>
                         <configuration>
+                            <tarLongFileMode>posix</tarLongFileMode>
                             <target>
                                 <!-- Download NPM dependencies -->
                                 <exec dir="${basedir}/src" executable="npm" failonerror="true">
