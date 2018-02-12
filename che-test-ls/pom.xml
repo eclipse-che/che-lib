@@ -55,6 +55,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
+                            <tarLongFileMode>posix</tarLongFileMode>
                             <appendAssemblyId>false</appendAssemblyId>
                             <descriptors>
                                 <descriptor>assembly/assembly.xml</descriptor>
