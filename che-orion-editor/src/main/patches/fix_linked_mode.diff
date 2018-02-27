@@ -46,6 +46,22 @@ diff --git a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdi
  						model = this.linkedModeModel;
  					} else {
  						break;
+@@ -33555,12 +33555,15 @@
+
+                                // Cancel this modification and apply same modification to all positions in changing group
+                                this.ignoreVerify = true;
++                var delta = 0;
+                                for (i = sortedPositions.length - 1; i >= 0; i--) {
+                                        pos = sortedPositions[i];
+                                        if (pos.model === model && pos.group === changed.group) {
+                                                this.editor.setText(evnt.text, pos.oldOffset + deltaStart , pos.oldOffset + deltaEnd, false);
++                        delta = pos.oldOffset <= evnt.start ? delta + changeCount : delta;
+                                        }
+                                }
++                this.editor.setCaretOffset(evnt.end + delta);
+                                this.ignoreVerify = false;
+                                evnt.text = null;
+                                this._updateAnnotations(sortedPositions);
 @@ -33640,10 +33641,11 @@
  		 * Exits Linked Mode. Optionally places the caret at linkedMode escapePosition.
  		 * @param {Boolean} [escapePosition=false] if true, place the caret at the  escape position.
