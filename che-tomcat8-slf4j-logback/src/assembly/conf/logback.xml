@@ -15,6 +15,7 @@
     <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
         <resetJUL>true</resetJUL>
     </contextListener>
+    <contextListener class="org.eclipse.che.commons.logback.EnvironmentVariablesLogLevelPropagator"/>
 
     <property name="max.retention.days" value="60" />
 
