@@ -93,7 +93,11 @@
             <includes>
                 <include>logback-access.xml</include>
                 <include>logback.xml</include>
+                <include>logback-json-appenders.xml</include>
+                <include>logback-plaintext-appenders.xml</include>
                 <include>tomcat-logger.xml</include>
+                <include>tomcat-json-appenders.xml</include>
+                <include>tomcat-plaintext-appenders.xml</include>
                 <include>server.xml</include>
                 <include>context.xml</include>
                 <include>logging.properties</include>
