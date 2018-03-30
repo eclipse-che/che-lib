@@ -20,7 +20,7 @@
 
     <jmxConfigurator/>
 
-    <!--Include appenders file depending on the variable `che.logs.appenders_impl` -->
+    <!--Include appenders file depending on the variable `CHE_LOGS_APPENDERS_IMPL` -->
     <include optional="false" file="${catalina.home}/conf/tomcat-${CHE_LOGS_APPENDERS_IMPL:-plaintext}-appenders.xml"/>
 
     <logger name="org.apache.catalina.loader" level="OFF"/>

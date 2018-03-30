@@ -23,7 +23,7 @@
 
     <include optional="true" file="${che.local.conf.dir}/logback/logback-additional-appenders.xml"/>
     <include optional="true" file="${catalina.home}/conf/logback-additional-appenders.xml"/>
-    <!--Include appenders file depending on the variable `che.logs.appenders_impl` -->
+    <!--Include appenders file depending on the variable `CHE_LOGS_APPENDERS_IMPL` -->
     <include optional="false" file="${catalina.home}/conf/logback-${CHE_LOGS_APPENDERS_IMPL:-plaintext}-appenders.xml"/>
 
     <logger name="org.apache.catalina.loader" level="OFF"/>
