@@ -36,8 +36,24 @@
             <artifactId>logback-core</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat</groupId>
@@ -84,6 +100,10 @@
                                 <includes>
                                     <include>org.apache.tomcat:tomcat-juli</include>
                                     <include>org.slf4j:jcl-over-slf4j</include>
+                                    <include>net.logstash.logback:logstash-logback-encoder</include>
+                                    <include>com.fasterxml.jackson.core:jackson-annotations</include>
+                                    <include>com.fasterxml.jackson.core:jackson-core</include>
+                                    <include>com.fasterxml.jackson.core:jackson-databind</include>
                                     <include>org.slf4j:jul-to-slf4j</include>
                                     <include>org.slf4j:slf4j-api</include>
                                     <include>ch.qos.logback:logback-classic</include>
@@ -99,7 +119,6 @@
                                         <include>META-INF/NOTICE</include>
                                     </includes>
                                 </filter>
-
                                 <!-- Exclude services from jcl-over-slf4j as not needed in this classloader-->
                                 <filter>
                                     <artifact>org.slf4j:jcl-over-slf4j</artifact>
@@ -107,7 +126,6 @@
                                         <exclude>META-INF/services/**</exclude>
                                     </excludes>
                                 </filter>
-
                                 <!-- Exclude services from logback-classic as not needed in this classloader -->
                                 <filter>
                                     <artifact>ch.qos.logback:logback-classic</artifact>
@@ -116,7 +134,6 @@
                                     </excludes>
                                 </filter>
                             </filters>
-
                             <relocations>
                                 <relocation>
                                     <pattern>org.apache.commons.logging</pattern>
@@ -130,20 +147,17 @@
                                     <pattern>ch.qos.logback</pattern>
                                     <shadedPattern>org.apache.juli.logging.ch.qos.logback</shadedPattern>
                                 </relocation>
-
                                 <!-- Located in org.apache.juli.logging.ch.qos.logback.classic.util.ContextInitializer -->
                                 <relocation>
                                     <pattern>logback.configurationFile</pattern>
                                     <shadedPattern>juli-logback.configurationFile</shadedPattern>
                                 </relocation>
-
                                 <!-- Located in org.apache.juli.logging.ch.qos.logback.classic.ClassicConstants -->
                                 <relocation>
                                     <pattern>logback.ContextSelector</pattern>
                                     <shadedPattern>juli-logback.ContextSelector</shadedPattern>
                                 </relocation>
                             </relocations>
-
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
                                     <resource>META-INF/LICENSE</resource>
