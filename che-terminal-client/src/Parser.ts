@@ -1,9 +1,11 @@
 /**
+ * Copyright (c) 2014 The xterm.js authors. All rights reserved.
+ * Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)
  * @license MIT
  */
 
 import { C0 } from './EscapeSequences';
-import { IInputHandler } from './Interfaces';
+import { IInputHandler, IInputHandlingTerminal } from './Types';
 import { CHARSETS, DEFAULT_CHARSET } from './Charsets';
 
 const normalStateHandler: {[key: string]: (parser: Parser, handler: IInputHandler) => void} = {};
@@ -52,7 +54,7 @@ escapedStateHandler['c'] = (parser, terminal) => {
 };
 escapedStateHandler['E'] = (parser, terminal) => {
   // ESC E Next Line ( NEL is 0x85).
-  terminal.x = 0;
+  terminal.buffer.x = 0;
   terminal.index();
   parser.setState(ParserState.NORMAL);
 };
@@ -148,7 +150,7 @@ csiStateHandler['s'] = (handler, params) => handler.saveCursor(params);
 csiStateHandler['u'] = (handler, params) => handler.restoreCursor(params);
 csiStateHandler[C0.CAN] = (handler, params, prefix, postfix, parser) => parser.setState(ParserState.NORMAL);
 
-enum ParserState {
+export enum ParserState {
   NORMAL = 0,
   ESCAPED = 1,
   CSI_PARAM = 2,
@@ -181,8 +183,19 @@ export class Parser {
    *
    * @param data The data to parse.
    */
-  public parse(data: string) {
-    let l = data.length, j, cs, ch, code, low;
+  public parse(data: string): ParserState {
+    const l = data.length;
+    let cs;
+    let ch;
+    let code;
+    let low;
+
+    const cursorStartX = this._terminal.buffer.x;
+    const cursorStartY = this._terminal.buffer.y;
+
+    if (this._terminal.debug) {
+      this._terminal.log('data: ' + data);
+    }
 
     this._position = 0;
     // apply leftover surrogate high from last write
@@ -210,8 +223,9 @@ export class Parser {
         ch += data.charAt(this._position + 1);
       }
       // surrogate low - already handled above
-      if (0xDC00 <= code && code <= 0xDFFF)
+      if (0xDC00 <= code && code <= 0xDFFF) {
         continue;
+      }
 
       switch (this._state) {
         case ParserState.NORMAL:
@@ -272,36 +286,43 @@ export class Parser {
             // Single Shift Select of G2 Character Set
             // ( SS2 is 0x8e). This affects next character only.
             case 'N':
+              this._state = ParserState.NORMAL;
               break;
             // ESC O
             // Single Shift Select of G3 Character Set
             // ( SS3 is 0x8f). This affects next character only.
             case 'O':
+              this._state = ParserState.NORMAL;
               break;
             // ESC n
             // Invoke the G2 Character Set as GL (LS2).
             case 'n':
               this._terminal.setgLevel(2);
+              this._state = ParserState.NORMAL;
               break;
             // ESC o
             // Invoke the G3 Character Set as GL (LS3).
             case 'o':
               this._terminal.setgLevel(3);
+              this._state = ParserState.NORMAL;
               break;
             // ESC |
             // Invoke the G3 Character Set as GR (LS3R).
             case '|':
               this._terminal.setgLevel(3);
+              this._state = ParserState.NORMAL;
               break;
             // ESC }
             // Invoke the G2 Character Set as GR (LS2R).
             case '}':
               this._terminal.setgLevel(2);
+              this._state = ParserState.NORMAL;
               break;
             // ESC ~
             // Invoke the G1 Character Set as GR (LS1R).
             case '~':
               this._terminal.setgLevel(1);
+              this._state = ParserState.NORMAL;
               break;
 
             // ESC 7 Save Cursor (DECSC).
@@ -324,7 +345,7 @@ export class Parser {
 
             // ESC H Tab Set (HTS is 0x88).
             case 'H':
-              this._terminal.tabSet();
+              (<IInputHandlingTerminal>this._terminal).tabSet();
               this._state = ParserState.NORMAL;
               break;
 
@@ -332,7 +353,9 @@ export class Parser {
             case '=':
               this._terminal.log('Serial port requested application keypad.');
               this._terminal.applicationKeypad = true;
-              this._terminal.viewport.syncScrollArea();
+              if (this._terminal.viewport) {
+                this._terminal.viewport.syncScrollArea();
+              }
               this._state = ParserState.NORMAL;
               break;
 
@@ -340,7 +363,9 @@ export class Parser {
             case '>':
               this._terminal.log('Switching back to normal keypad.');
               this._terminal.applicationKeypad = false;
-              this._terminal.viewport.syncScrollArea();
+              if (this._terminal.viewport) {
+                this._terminal.viewport.syncScrollArea();
+              }
               this._state = ParserState.NORMAL;
               break;
 
@@ -458,6 +483,9 @@ export class Parser {
 
         case ParserState.CSI:
           if (ch in csiStateHandler) {
+            if (this._terminal.debug) {
+              this._terminal.log(`CSI ${this._terminal.prefix ? this._terminal.prefix : ''} ${this._terminal.params ? this._terminal.params.join(';') : ''} ${this._terminal.postfix ? this._terminal.postfix : ''} ${ch}`);
+            }
             csiStateHandler[ch](this._inputHandler, this._terminal.params, this._terminal.prefix, this._terminal.postfix, this);
           } else {
             this._terminal.error('Unknown CSI code: %s.', ch);
@@ -471,6 +499,8 @@ export class Parser {
         case ParserState.DCS:
           if (ch === C0.ESC || ch === C0.BEL) {
             if (ch === C0.ESC) this._position++;
+            let pt;
+            let valid: boolean;
 
             switch (this._terminal.prefix) {
               // User-Defined Keys (DECUDK).
@@ -480,8 +510,8 @@ export class Parser {
               // Request Status String (DECRQSS).
               // test: echo -e '\eP$q"p\e\\'
               case '$q':
-                let pt = this._terminal.currentParam
-                , valid = false;
+                pt = this._terminal.currentParam;
+                valid = false;
 
                 switch (pt) {
                   // DECSCA
@@ -497,9 +527,9 @@ export class Parser {
                   // DECSTBM
                   case 'r':
                     pt = ''
-                      + (this._terminal.scrollTop + 1)
+                      + (this._terminal.buffer.scrollTop + 1)
                       + ';'
-                      + (this._terminal.scrollBottom + 1)
+                      + (this._terminal.buffer.scrollBottom + 1)
                       + 'r';
                     break;
 
@@ -526,9 +556,8 @@ export class Parser {
               // This can cause a small glitch in vim.
               // test: echo -ne '\eP+q6b64\e\\'
               case '+q':
-                // TODO: Don't declare pt twice
-                /*let*/ pt = this._terminal.currentParam
-                , valid = false;
+                pt = this._terminal.currentParam;
+                valid = false;
 
                 this._terminal.send(C0.ESC + 'P' + +valid + '+r' + pt + C0.ESC + '\\');
                 break;
@@ -563,6 +592,14 @@ export class Parser {
           break;
       }
     }
+
+    // Fire the cursormove event if it's moved. This is done inside the parser
+    // as a render cannot happen in the middle of a parsing round.
+    if (this._terminal.buffer.x !== cursorStartX || this._terminal.buffer.y !== cursorStartY) {
+      this._terminal.emit('cursormove');
+    }
+
+    return this._state;
   }
 
   /**
@@ -599,7 +636,7 @@ export class Parser {
    *
    * @param param the parameter.
    */
-  public setParam(param: number) {
+  public setParam(param: number): void {
     this._terminal.currentParam = param;
   }
 

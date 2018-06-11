@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2017 The xterm.js authors. All rights reserved.
  * @license MIT
  */
 
@@ -75,4 +76,4 @@ export namespace C0 {
   export const SP  = '\x20';
   /** Delete (Caret = ^?) */
   export const DEL = '\x7f';
-};
+}
