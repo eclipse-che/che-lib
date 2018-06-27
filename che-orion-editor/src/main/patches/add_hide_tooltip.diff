@@ -1,0 +1,19 @@
+This patch adds ability to hide opened tooltips.
+===================================================================
+diff --git a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js b/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js
+--- a/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js
++++ b/org/eclipse/che/orion/public/built-codeEdit/code_edit/built-codeEdit-amd.js
+@@ -28631,6 +28631,13 @@ define("orion/editor/editor", [ //$NON-NLS-0$
+ 		getTooltip: function() {
+ 			return mTooltip.Tooltip.getTooltip(this._textView, this);
+ 		},
++        /**
++        * Hides opened tooltip.
++        */
++        hideTooltip: function() {
++            var tooltip = mTooltip.Tooltip.getTooltip(this._textView, this);
++            tooltip.hide(true);
++        },
+ 		/**
+ 		 * Returns the zoom ruler of the editor.
+ 		 *
