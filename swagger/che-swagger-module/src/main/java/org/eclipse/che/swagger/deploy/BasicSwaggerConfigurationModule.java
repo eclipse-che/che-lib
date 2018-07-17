@@ -47,7 +47,7 @@ public class BasicSwaggerConfigurationModule extends ServletModule {
           BasicSwaggerConfigurationModule.class.getProtectionDomain().getCodeSource().getLocation();
       try (JarFile jar = new JarFile(new File(url.toURI()))) {
         final Manifest manifest = requireNonNull(jar.getManifest(), "Manifest must not be null");
-        return manifest.getMainAttributes().getValue("Implementation-Version");
+        return manifest.getMainAttributes().getValue("Specification-Version");
       }
     } catch (Exception e) {
       LOG.warn("Unable to retrieve implementation version from manifest file", e);
