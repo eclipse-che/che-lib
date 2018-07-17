@@ -50,7 +50,7 @@ public class BasicSwaggerConfigurationModule extends ServletModule {
         return manifest.getMainAttributes().getValue("Specification-Version");
       }
     } catch (Exception e) {
-      LOG.warn("Unable to retrieve implementation version from manifest file", e);
+      LOG.error("Unable to retrieve implementation version from manifest file", e);
       return "unknown";
     }
   }
