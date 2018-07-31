@@ -26,7 +26,6 @@
     <modules>
         <module>che-tomcat8-slf4j-logback</module>
         <module>swagger</module>
-        <module>org-eclipse-jdt-core-repack</module>
         <module>che-orion-editor</module>
         <module>che-terminal-client</module>
         <module>che-test-ls</module>
