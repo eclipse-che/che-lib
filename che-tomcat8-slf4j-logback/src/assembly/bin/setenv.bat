@@ -1,9 +1,10 @@
 @REM
 @REM Copyright (c) 2012-2018 Red Hat, Inc.
-@REM All rights reserved. This program and the accompanying materials
-@REM are made available under the terms of the Eclipse Public License v1.0
-@REM which accompanies this distribution, and is available at
-@REM http://www.eclipse.org/legal/epl-v10.html
+@REM This program and the accompanying materials are made
+@REM available under the terms of the Eclipse Public License 2.0
+@REM which is available at https://www.eclipse.org/legal/epl-2.0/
+@REM
+@REM SPDX-License-Identifier: EPL-2.0
 @REM
 @REM Contributors:
 @REM   Red Hat, Inc. - initial API and implementation

@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2012-2018 Red Hat, Inc.
  * This program and the accompanying materials are made
  * available under the terms of the Eclipse Public License 2.0
@@ -9,7 +9,8 @@
  * Contributors:
  *   Red Hat, Inc. - initial API and implementation
  */
-/* Dummy theme file
- * Used to get orion to register the theme
- * The real <style> content is loaded as a GWT CssResource to use the color definitions
- */ 
+/** This is a dummy class to force maven to generate sources and javadoc artifacts */
+public class App {
+
+  public static void main(String[] args) {}
+}
