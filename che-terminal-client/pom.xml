@@ -77,7 +77,7 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <arguments>install browserify vinyl-buffer fs-extra gulp merge-stream sorcery vinyl-source-stream gulp-sourcemaps gulp-typescript gulp-uglify typescript --save-dev --fetch-retry-mintimeout 60000 --fetch-retries 10 --maxsockets 2</arguments>
+                            <arguments>install --save-dev --fetch-retry-mintimeout 60000 --fetch-retries 10 --maxsockets 2</arguments>
                             <npmRegistryURL>http://registry.npmjs.org/</npmRegistryURL>
                         </configuration>
                     </execution>
