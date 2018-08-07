@@ -27,7 +27,7 @@
     "src/**/*.ts"
   ],
   "devDependencies": {
-    "2": "^1.0.2",
+    "2": "1.0.2",
     "@types/node": "6.0.41",
     "browserify": "13.1.0",
     "fs-extra": "1.0.0",
