@@ -57,42 +57,45 @@
                 </configuration>
             </plugin>
             <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <!--clean-up build folders-->
-                        <id>clean-up</id>
-                        <phase>clean</phase>
+                        <id>install node and npm</id>
+                        <phase>generate-resources</phase>
                         <goals>
-                            <goal>run</goal>
+                            <goal>install-node-and-npm</goal>
                         </goals>
                         <configuration>
-                            <tasks>
-                                <delete dir="${basedir}/node_modules" />
-                                <delete dir="${basedir}/build" />
-                            </tasks>
+                            <arguments>install --fetch-retry-mintimeout 60000 --fetch-retries 10 --maxsockets 2</arguments>
                         </configuration>
                     </execution>
                     <execution>
-                        <!--compilation sources-->
-                        <id>compilation</id>
+                        <id>npm install</id>
                         <phase>compile</phase>
                         <goals>
-                            <goal>run</goal>
+                            <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <target>
-                                Download NPM dependencies
-                                <exec dir="${basedir}" executable="npm" failonerror="true">
-                                    <arg value="install" />
-                                </exec>
-                                <exec dir="${basedir}" executable="npm" failonerror="true">
-                                    <arg value="run-script" />
-                                    <arg value="build" />
-                                </exec>
-                            </target>
+                            <arguments>install --save-dev --fetch-retry-mintimeout 60000 --fetch-retries 10 --maxsockets 2</arguments>
+                            <npmRegistryURL>http://registry.npmjs.org/</npmRegistryURL>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>npm run script build</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>run-script build</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
                     <execution>
                         <!--copy compiled terminal script to output directory-->
                         <id>copy-xterm.js</id>
