@@ -35,9 +35,6 @@
                         <goals>
                             <goal>install-node-and-npm</goal>
                         </goals>
-                        <configuration>
-                            <arguments>install --fetch-retry-mintimeout 60000 --fetch-retries 10 --maxsockets 2</arguments>
-                        </configuration>
                     </execution>
                     <execution>
                         <id>npm install</id>
@@ -45,9 +42,6 @@
                         <goals>
                             <goal>npm</goal>
                         </goals>
-                        <configuration>
-                            <arguments>install --fetch-retry-mintimeout 60000 --fetch-retries 10 --maxsockets 2</arguments>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
