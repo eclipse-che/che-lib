@@ -3,13 +3,14 @@
     "module": "commonjs",
     "target": "es5",
     "rootDir": "src",
-    "allowJs": true,
     "outDir": "lib",
     "sourceMap": true,
-    "removeComments": true
+    "removeComments": true,
+    "noUnusedLocals": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "typings/xterm.d.ts"
   ],
   "exclude": [
     "src/addons/**/*"

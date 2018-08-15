@@ -1,25 +1,39 @@
 /**
- * Represents a circular list; a list with a maximum size that wraps around when push is called,
- * overriding values at the start of the list.
- * @module xterm/utils/CircularList
+ * Copyright (c) 2016 The xterm.js authors. All rights reserved.
  * @license MIT
  */
-export class CircularList<T> {
-  private _array: T[];
+
+import { EventEmitter } from '../EventEmitter';
+import { ICircularList } from '../Types';
+
+/**
+ * Represents a circular list; a list with a maximum size that wraps around when push is called,
+ * overriding values at the start of the list.
+ */
+export class CircularList<T> extends EventEmitter implements ICircularList<T> {
+  protected _array: T[];
   private _startIndex: number;
   private _length: number;
 
-  constructor(maxLength: number) {
-    this._array = new Array<T>(maxLength);
+  constructor(
+    private _maxLength: number
+  ) {
+    super();
+    this._array = new Array<T>(this._maxLength);
     this._startIndex = 0;
     this._length = 0;
   }
 
   public get maxLength(): number {
-    return this._array.length;
+    return this._maxLength;
   }
 
   public set maxLength(newMaxLength: number) {
+    // There was no change in maxLength, return early.
+    if (this._maxLength === newMaxLength) {
+      return;
+    }
+
     // Reconstruct array, starting at index 0. Only transfer values from the
     // indexes 0 to length.
     let newArray = new Array<T>(newMaxLength);
@@ -27,6 +41,7 @@ export class CircularList<T> {
       newArray[i] = this._array[this._getCyclicIndex(i)];
     }
     this._array = newArray;
+    this._maxLength = newMaxLength;
     this._startIndex = 0;
   }
 
@@ -41,10 +56,6 @@ export class CircularList<T> {
       }
     }
     this._length = newLength;
-  }
-
-  public get forEach(): (callbackfn: (value: T, index: number, array: T[]) => void) => void {
-    return this._array.forEach;
   }
 
   /**
@@ -78,11 +89,12 @@ export class CircularList<T> {
    */
   public push(value: T): void {
     this._array[this._getCyclicIndex(this._length)] = value;
-    if (this._length === this.maxLength) {
+    if (this._length === this._maxLength) {
       this._startIndex++;
-      if (this._startIndex === this.maxLength) {
+      if (this._startIndex === this._maxLength) {
         this._startIndex = 0;
       }
+      this.emit('trim', 1);
     } else {
       this._length++;
     }
@@ -106,13 +118,16 @@ export class CircularList<T> {
    * @param items The items to insert.
    */
   public splice(start: number, deleteCount: number, ...items: T[]): void {
+    // Delete items
     if (deleteCount) {
       for (let i = start; i < this._length - deleteCount; i++) {
         this._array[this._getCyclicIndex(i)] = this._array[this._getCyclicIndex(i + deleteCount)];
       }
       this._length -= deleteCount;
     }
+
     if (items && items.length) {
+      // Add items
       for (let i = this._length - 1; i >= start; i--) {
         this._array[this._getCyclicIndex(i + items.length)] = this._array[this._getCyclicIndex(i)];
       }
@@ -120,9 +135,12 @@ export class CircularList<T> {
         this._array[this._getCyclicIndex(start + i)] = items[i];
       }
 
+      // Adjust length as needed
       if (this._length + items.length > this.maxLength) {
-        this._startIndex += (this._length + items.length) - this.maxLength;
+        const countToTrim = (this._length + items.length) - this.maxLength;
+        this._startIndex += countToTrim;
         this._length = this.maxLength;
+        this.emit('trim', countToTrim);
       } else {
         this._length += items.length;
       }
@@ -139,6 +157,7 @@ export class CircularList<T> {
     }
     this._startIndex += count;
     this._length -= count;
+    this.emit('trim', count);
   }
 
   public shiftElements(start: number, count: number, offset: number): void {
@@ -162,6 +181,7 @@ export class CircularList<T> {
         while (this._length > this.maxLength) {
           this._length--;
           this._startIndex++;
+          this.emit('trim', 1);
         }
       }
     } else {

@@ -52,6 +52,9 @@
                         <exclude>**/src/handlers/**</exclude>
                         <exclude>**/src/main/resources/org/eclipse/che/lib/terminal/client/xterm.css</exclude>
                         <exclude>**/src/utils/**</exclude>
+                        <exclude>**/src/shared/**</exclude>
+                        <exclude>**/src/renderer/**</exclude>
+                        <exclude>**/src/input/**</exclude>
                         <exclude>**/src/*.*</exclude>
                     </excludes>
                 </configuration>
