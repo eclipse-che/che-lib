@@ -14044,20 +14044,44 @@ define('orion/editorCommands',[
 					var line;
 					var editor = this.editor || that.editor;
 					var model = editor.getModel();
-					if (data.parameters && data.parameters.valueFor('line')) { //$NON-NLS-0$
-						line = data.parameters.valueFor('line'); //$NON-NLS-0$
-					} else if(!util.isElectron){
-						line = model.getLineAtOffset(editor.getCaretOffset());
-						line = prompt(messages.gotoLinePrompt, line + 1);
-						if (line) {
-							line = parseInt(line, 10);
-						}
-					}
-					if (line) {
-						editor.onGotoLine(line - 1, 0);
-					}
-				}
-			});
+                    if (data.parameters && data.parameters.valueFor('line')) { //$NON-NLS-0$
+                        line = data.parameters.valueFor('line'); //$NON-NLS-0$
+                        if (!line) return;
+                        editor.onGotoLine(line - 1, 0);
+                        return;
+                    }
+
+                    line = model.getLineAtOffset(editor.getCaretOffset());
+
+                    // try to use promptIDE(title, text, defaultValue, callback) function
+                    if (window["promptIDE"]) {
+                        window["promptIDE"](messages.gotoLineTooltip, messages.gotoLinePrompt, line + 1,
+                            function(value) {
+                                if (!value) return;
+                                if (value.indexOf(":") > 0) {
+                                    var values = value.split(":");
+                                    if (!values[0] || !values[1]) return;
+                                    values[0] = parseInt(values[0], 10);
+                                    values[1] = parseInt(values[1], 10);
+                                    if (!values[0] || !values[1]) return;
+                                    editor.onGotoLine(values[0] - 1, values[1] - 1, values[1] - 1);
+                                } else {
+                                    value = parseInt(value, 10);
+                                    if (!value) return;
+                                    editor.onGotoLine(value - 1, 0);
+                                }
+                            });
+                        return;
+                    }
+
+                    // use browser based
+                    line = prompt(messages.gotoLinePrompt, line + 1);
+                    if (!line) return;
+                    line = parseInt(line, 10);
+                    if (!line) return;
+                    editor.onGotoLine(line - 1, 0);
+                }
+            });
 			this.commandService.addCommand(gotoLineCommand);
 		},
 		_createFindCommnand: function() {
@@ -23511,6 +23535,7 @@ define("orion/editor/textView", [  //$NON-NLS-1$
 		},
 		_handleMouseWheel: function (e) {
 			if (this._noScroll) return;
+            if(e.defaultPrevented) return;
 			var lineHeight = this._getLineHeight();
 			var pixelX = 0, pixelY = 0;
 			// Note: On the Mac the correct behaviour is to scroll by pixel.
@@ -33336,8 +33361,9 @@ define("orion/editor/linkedMode", [
 	'orion/editor/keyModes',
 	'orion/editor/annotations',
 	'orion/objects',
+    'orion/editor/eventTarget',
 	'orion/util'
-], function(messages, mKeyBinding, mKeyModes, mAnnotations, objects) {
+], function(messages, mKeyBinding, mKeyModes, mAnnotations, objects, mEventTarget) {
 
 	var exports = {};
 
@@ -33421,11 +33447,11 @@ define("orion/editor/linkedMode", [
 		this.linkedModeModel = null;
 		
 		textView.setAction("linkedModeEnter", function() { //$NON-NLS-0$
-			this.exitLinkedMode(true);
+			this.exitLinkedMode(true, true);
 			return true;
 		}.bind(this));
 		textView.setAction("linkedModeCancel", function() { //$NON-NLS-0$
-			this.exitLinkedMode(true);
+			this.exitLinkedMode(false, false);
 			return true;
 		}.bind(this));
 		textView.setAction("linkedModeNextGroup", function() { //$NON-NLS-0$
@@ -33463,7 +33489,7 @@ define("orion/editor/linkedMode", [
 					changed = positionChanged.position;
 					if (changed === undefined || changed.model !== model) {
 						// The change has been done outside of the positions, exit the Linked Mode
-						this.exitLinkedMode(false);
+						this.exitLinkedMode(false, false);
 						model = this.linkedModeModel;
 					} else {
 						break;
@@ -33508,7 +33534,7 @@ define("orion/editor/linkedMode", [
 					changed = positionChanged.position;
 					if (changed === undefined || changed.model !== model) {
 						// The change has been done outside of the positions, exit the Linked Mode
-						this.exitLinkedMode(false);
+						this.exitLinkedMode(false, false);
 						model = this.linkedModeModel;
 					} else {
 						break;
@@ -33555,12 +33581,15 @@ define("orion/editor/linkedMode", [
 				
 				// Cancel this modification and apply same modification to all positions in changing group
 				this.ignoreVerify = true;
+                var delta = 0;
 				for (i = sortedPositions.length - 1; i >= 0; i--) {
 					pos = sortedPositions[i];
 					if (pos.model === model && pos.group === changed.group) {
 						this.editor.setText(evnt.text, pos.oldOffset + deltaStart , pos.oldOffset + deltaEnd, false);
+                        delta = pos.oldOffset <= evnt.start ? delta + changeCount : delta;
 					}
 				}
+                this.editor.setCaretOffset(evnt.end + delta);
 				this.ignoreVerify = false;
 				evnt.text = null;
 				this._updateAnnotations(sortedPositions);
@@ -33640,10 +33669,11 @@ define("orion/editor/linkedMode", [
 		 * Exits Linked Mode. Optionally places the caret at linkedMode escapePosition. 
 		 * @param {Boolean} [escapePosition=false] if true, place the caret at the  escape position.
 		 */
-		exitLinkedMode: function(escapePosition) {
+		exitLinkedMode: function(escapePosition, successful) {
 			if (!this.isActive()) {
 				return;
 			}
+            this.dispatchEvent({type:"LinkedModeExit", isSuccessful: successful});
 			if (this._compoundChange) {
 				this.endUndo();
 				this._compoundChange = null;
@@ -33889,6 +33919,7 @@ define("orion/editor/linkedMode", [
 			annotationModel.replaceAnnotations(remove, add);
 		}
 	});
+    mEventTarget.EventTarget.addMixin(LinkedMode.prototype);
 	exports.LinkedMode = LinkedMode;
 
 	return exports;
@@ -44550,6 +44581,9 @@ define('embeddedEditor/helper/editorSetup',[
 			domNode.addEventListener("mousedown", function() { //$NON-NLS-0$
 				this.setActiveEditorView(this.editorView);
 			}.bind(this), true);
+			domNode.addEventListener("focus", function() { //$NON-NLS-0$
+                this.setActiveEditorView(this.editorView);
+            }.bind(this), true);
 			domNode.addEventListener("keyup", function() { //$NON-NLS-0$
 				this.setActiveEditorView(this.editorView);
 			}.bind(this), true);

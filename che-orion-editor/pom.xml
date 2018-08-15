@@ -24,7 +24,6 @@
     <name>Che Plugin :: Orion-14.0 :: Editor</name>
     <properties>
         <findbugs.failonerror>false</findbugs.failonerror>
-        <patches.location>${basedir}/src/main/patches</patches.location>
     </properties>
     <build>
         <resources>
@@ -33,54 +32,6 @@
             </resource>
         </resources>
         <plugins>
-            <plugin>
-                <!-- Apply patches -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-patch-plugin</artifactId>
-                <version>1.1.1</version>
-                <executions>
-                    <execution>
-                        <id>bugfix-patches</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>apply</goal>
-                        </goals>
-                        <configuration>
-                            <patchDirectory>${patches.location}</patchDirectory>
-                            <patches>
-                                <patch>fix_linked_mode.diff</patch>
-                                <patch>fix_focus.diff</patch>
-                                <patch>fix_goto_line.diff</patch>
-                                <patch>fix_scrolling.diff</patch>
-                            </patches>
-                            <optimizations>false</optimizations>
-                            <strictPatching>true</strictPatching>
-                            <strip>1</strip>
-                            <targetDirectory>${project.build.directory}/classes</targetDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <!--Fix for https://github.com/eclipse/che/issues/3768. The plugin needs for putting correct path to the resources.-->
-                <!--After upgrading Orion Editor version don't forget to add folder with images-->
-                <!--org/eclipse/che/orion/public/built-codeEdit/webtools/images-->
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>replace</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target>
-                                <replace file="${project.build.outputDirectory}/org/eclipse/che/orion/public/built-codeEdit/webtools/plugins/webToolsPlugin.js" token="../webtools/images" value="../_app/built-codeEdit/webtools/images" />
-                            </target>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>com.mycila</groupId>
                 <artifactId>license-maven-plugin</artifactId>
