@@ -30,7 +30,6 @@
         <module>org-eclipse-jdt-core-repack</module>
         <module>che-orion-editor</module>
         <module>che-terminal-client</module>
-        <module>che-test-ls</module>
         <module>antlr-java5-grammar</module>
     </modules>
     <scm>
