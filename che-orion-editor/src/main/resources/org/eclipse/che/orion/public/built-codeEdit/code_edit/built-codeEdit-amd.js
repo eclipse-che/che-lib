@@ -28656,6 +28656,15 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 		getTooltip: function() {
 			return mTooltip.Tooltip.getTooltip(this._textView, this);
 		},
+
+		/**
+         * Hides opened tooltip.
+        */
+        hideTooltip: function() {
+            var tooltip = mTooltip.Tooltip.getTooltip(this._textView, this);
+            tooltip.hide(true);
+        },
+
 		/**
 		 * Returns the zoom ruler of the editor.
 		 *
