@@ -17,11 +17,11 @@
     <parent>
         <artifactId>che-lib-parent</artifactId>
         <groupId>org.eclipse.che.lib</groupId>
-        <version>6.13.0</version>
+        <version>6.13.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>che-terminal-client</artifactId>
-    <version>6.13.0</version>
+    <version>6.13.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Terminal Client</name>
     <dependencies>
