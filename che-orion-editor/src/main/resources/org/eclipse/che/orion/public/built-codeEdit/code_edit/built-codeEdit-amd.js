@@ -30972,13 +30972,26 @@ define("orion/editor/actions", [ //$NON-NLS-0$
 			var editor = this.editor;
 			var model = editor.getModel();
 			var line = model.getLineAtOffset(editor.getCaretOffset());
-			line = prompt(messages.gotoLinePrompty, line + 1);
-			if (line) {
-				line = parseInt(line, 10);
-				editor.onGotoLine(line - 1, 0);
-			}
-			return true;
-		},
+
+            if (window["promptIdeCompareWidget"]) {
+                window["promptIdeCompareWidget"](messages.gotoLine, messages.gotoLinePrompty, line + 1,
+                    function(value) {
+                        if (!value) return;
+                        if (value) {
+                            value = parseInt(value, 10);
+                            editor.onGotoLine(value - 1, 0);
+                            return;
+                        }
+                    });
+            } else {
+                line = prompt(messages.gotoLinePrompty, line + 1);
+                if (line) {
+                    line = parseInt(line, 10);
+                    editor.onGotoLine(line - 1, 0);
+                }
+            }
+            return true;
+        },
 		moveLinesDown: function() {
 			var editor = this.editor;
 			var textView = editor.getTextView();
