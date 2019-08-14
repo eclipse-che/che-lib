@@ -17,11 +17,11 @@
     <parent>
         <artifactId>che-lib-parent</artifactId>
         <groupId>org.eclipse.che.lib</groupId>
-        <version>7.0.0</version>
+        <version>7.0.x-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>che-swagger-parent</artifactId>
-    <version>7.0.0</version>
+    <version>7.0.x-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Che Lib :: Che Swagger :: Parent</name>
     <modules>
